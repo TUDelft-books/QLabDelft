@@ -195,6 +195,11 @@ De opstelling met de Neon-buis
 10. Zet bij Acceleration de eindversnelspanning $U_Amax$ op 80 V.
 11. Zet het Grid G op 9 V.
 10. Draai de Filament spanning naar 8,4V en wacht 30 seconden om het filament de kans te geven om op te warmen. (Bij 9V heb je al een oranje gloed en dat wil je niet). 
+```{figure} ./media/franck/frank13.jpg
+    :name: Oranje-gloed 
+    :align: center 
+Onwenselijk oranje gloed zichtbaar tussen de grids
+```
 11. Het filament gloeit nu oranje, maar er is geen oranje gloed tussen de grids zichtbaar.
 12. Geef met de Reverse Bias knop (de meest rechtse) tegenspanning, zodanig dat op de oscilloscoop de lijn bijna horizontaal wordt (circa 9 V). Zie ook hieronder.
 ```{figure} ./media/franck/frank11a.jpg
