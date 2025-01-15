@@ -349,9 +349,9 @@ $\lambda = Rate \cdot \Delta t =$ verwachte aantal gebeurtenissen in dat tijdsin
 * Bereken deze kans.
 8. Het aantal keer dat deze kans voorkomt kun je berekenen door het aantal tijdsintervallen dat past in de meettijd te vermenigvuldigen met de kans. Het aantal tijdsintervallen in de screenshot hierboven (meettijd = 180 s) is 
 ```{math}
-\text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3.6 \times 10^{10}~\text{intervallen}.
+\text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3,6 \times 10^{10}~\text{intervallen}.
 ```
-Voor elk interval is is de kans 0,000304. 
+Voor elk interval is is de kans $3,25 \times  10^{-10}$
 * Bereken het totaal verwacht aantal intervallen met 2 fotonen.
 
 ## Conclusie & Evaluatie
