@@ -338,7 +338,7 @@ je berekening en vergelijk je uitkomst.
 6. Een typische meting geeft voor de frequentie waarmee de fotonen worden geteld een Rate (voor sensor A en B gecombineerd) van 5 kHz. (Zie ook screenshot hierboven). 
   - Bereken de *gemiddelde* tijdsduur tussen de fotonen. 
   - Bereken de kans om een foton aan te treffen in 5 ns.
-7. De kans om 2 fotonen te meten in $\Delta t = 5 ns$ met een Rate van 5000 fotonen per seconde kun je berekenen met een Poisson-verdeling: 
+7. De kans om 2 fotonen te meten in $\Delta t = 5 \: ns$ met een Rate van 5000 fotonen per seconde kun je berekenen met een Poisson-verdeling: 
 ```{math}
 P(k) = \frac{\lambda^k e^{-\lambda}}{k!}
 ``` 
@@ -346,7 +346,7 @@ waarbij geldt:
 <br>
 $k =$  aantal gelijktijdige fotonen,
 <br>
-$\lambda = Rate * \Delta t =$ verwachte aantal gebeurtenissen in dat tijdsinterval.
+$\lambda = Rate \cdot \Delta t =$ verwachte aantal gebeurtenissen in dat tijdsinterval.
 
 * Bereken deze kans.
 
@@ -367,6 +367,7 @@ resultaten) en het doel van de proef. Kun je antwoord geven op de volgende vrage
 ## Ideeën en bronnen:
 
 ### Experiment: Tellen van Geiger-Müller-pulsen als Poisson-proces
+*Dit experiment is tot stand gekomen met ChatGPT v4.0.*
 
 ### Doel
 1. Het aantonen van een Poisson-verdeling in een natuurlijk proces: het aantal gemeten ionisaties door een Geiger-Müller-teller.
