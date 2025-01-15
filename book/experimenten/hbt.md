@@ -379,8 +379,8 @@ resultaten) en het doel van de proef. Kun je antwoord geven op de volgende vrage
 - Wat gebeurt er als je veel langer meet?
 
 - Wat kun je zeggen over de nauwkeurigheid van de opstelling en dus de gevonden resultaten?
-    * Zijn 4 coïncidenties ook echt 4 coïncidenties of is dit een meetfout, omdat geldt $t=/0$ ?
-    * 
+    * Zijn 4 coïncidenties ook echt 4 coïncidenties of is dit een meetfout, omdat geldt *t≠0* ?
+    
 
 
 ## Ideeën en bronnen:
