@@ -333,26 +333,30 @@ je berekening en vergelijk je uitkomst.
 3. Bereken het aantal fotonen dat een 1 mW laser in 5ns uitzendt. 
 4. Vergelijk bovenstaande antwoorden. 
 5. Het laserlicht wordt ook nog voor 10<sup>7</sup> gefilterd. Bereken het aantal fotonen in 5 ns. 
-6. Een typische meting geeft voor de frequentie waarmee de fotonen worden geteld een Rate (voor sensor A en B gecombineerd) van 5 kHz. (Zie ook screenshot hierboven). 
+6. Een typische meting geeft voor de frequentie waarmee de fotonen worden geteld een Rate van 2,5 kHz. (Zie ook screenshot hierboven). 
   - Bereken de *gemiddelde* tijdsduur tussen de fotonen. 
   - Bereken de kans om een foton aan te treffen in 5 ns.
-7. De kans om 2 fotonen te meten in $\Delta t = 5 \: ns$ met een Rate van 5000 fotonen per seconde kun je berekenen met een Poisson-verdeling: 
-```{math}
-P(k) = \frac{\lambda^k e^{-\lambda}}{k!}
-``` 
-waarbij geldt:
-<br>
-$k =$  aantal gelijktijdige fotonen,
-<br>
-$\lambda = Rate \cdot \Delta t =$ verwachte aantal gebeurtenissen in dat tijdsinterval.
+7. De kans om een coïncidentie te meten, dus dat beide detectoren tegelijk een foton meten in hetzelfde tijdsinterval $\Delta t = 5 \: ns$, terwijl elke detector meet met Rate van 2500 fotonen per seconde kun je als volgt berekenen:<br>
+Bereken eerst de kans per detector: <br>
 
-* Bereken deze kans.
-8. Het aantal keer dat deze kans voorkomt kun je berekenen door het aantal tijdsintervallen dat past in de meettijd te vermenigvuldigen met de kans. Het aantal tijdsintervallen in de screenshot hierboven (meettijd = 180 s) is 
+```{math}
+\lambda = Rate \cdot \Delta t = \text{gemiddeld aantal fotonen per detector in het tijdsinterval}
+```
+
+Vervolgens bereken we de kans op coïncidenties:
+```{math}
+P_coïncidentie=\lambda_A \cdot \lambda_B
+```
+Het aantal keer dat deze kans voorkomt kun je berekenen door het aantal tijdsintervallen dat past in de meettijd te vermenigvuldigen met de kans. Het aantal tijdsintervallen in de screenshot hierboven (meettijd = 180 s) is:
 ```{math}
 \text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3,6 \times 10^{10}~\text{intervallen}.
 ```
-Voor elk interval is is de kans $3,25 \times  10^{-10}$
-* Bereken het totaal verwacht aantal intervallen met 2 fotonen.
+
+Tenslotte kan het verwachte aantal coïncidenties $N_coïncidentie$ worden als volhgt worden berekend:
+```{math}
+N_coïncidentie = P_coïncidentie \cdot \text{Aantal intervallen}
+
+* Bereken dit aantal.
 
 ## Conclusie & Evaluatie
 
