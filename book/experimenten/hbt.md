@@ -312,7 +312,7 @@ houden met de standaard afspraken wanneer je werkt met laserlicht:
     absorberen. 
     Meet bijvoorbeeld met filter 6 eerst voor 1 minuut, en vervolgens voor 5 minuten, etc.
     
-13. Voer dit meetplan uit. Terwijl je wacht op de meting, kan je wel alvast een aantal opdrachten hieronder uitrekenen (2 t/m 7).
+13. Voer dit meetplan uit. Terwijl je wacht op de meting, kan je wel alvast een aantal opdrachten hieronder uitrekenen (2 t/m 8).
 
 ***Opmerkingen: Zet voor het openen de sensoren en laser uit met de knop van het stekkerblok. De sensoren zijn zeer gevoelig voor te veel licht. Het
 filter moet dan ook ten-allen-tijde voor de laser blijven staan als deze aanstaat, anders gaan de heel dure sensors kapot...***
@@ -347,7 +347,12 @@ $k =$  aantal gelijktijdige fotonen,
 $\lambda = Rate \cdot \Delta t =$ verwachte aantal gebeurtenissen in dat tijdsinterval.
 
 * Bereken deze kans.
-
+8. Het aantal keer dat deze kans voorkomt kun je berekenen door het aantal tijdsintervallen dat past in de meettijd te vermenigvuldigen met de kans. Het aantal tijdsintervallen in de screenshot hierboven (meettijd = 180 s) is 
+```{math}
+\text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3.6 \times 10^{10}~\text{intervallen}.
+```
+Voor elk interval is is de kans 0,000304. 
+* Bereken het totaal verwacht aantal intervallen met 2 fotonen.
 
 ## Conclusie & Evaluatie
 
@@ -430,3 +435,70 @@ de intensiteitsvariabelen uitgelegd (formule 1):
 <https://youtu.be/gE-gji46qEc?si=zOEEoTLkuUOsBFYm>
 
 Er zijn ook **documenten** beschikbaar met meer uitleg en achtergrond informatie.
+
+Als je apparatuur een resolutie heeft van \(5~\text{ns}\) en je meet \(180~\text{s}\), wordt de kans om **exact twee fotonen** te meten in een resolutietijd van \(5~\text{ns}\) berekend via de Poisson-verdeling. Echter, hierbij moeten we rekening houden met het feit dat de totale meettijd \(180~\text{s}\) niet rechtstreeks invloed heeft op de kans per resolutie-interval, maar op het **totaal aantal intervallen** waarin we dit zouden kunnen waarnemen.
+
+---
+
+### **Stap 1: Berekening van \(\lambda\)**
+De gemiddelde gebeurtenisrate \(\lambda\) in een resolutie-interval van \(5~\text{ns}\) is:
+
+\[
+\lambda = R \cdot \Delta t = (5 \times 10^6) \cdot (5 \times 10^{-9}) = 0.025.
+\]
+
+---
+
+### **Stap 2: Kans op 2 fotonen in een resolutie-interval**
+De Poisson-kans voor \(k = 2\) fotonen in een enkel interval (\(\Delta t = 5~\text{ns}\)) is:
+
+\[
+P(2) = \frac{\lambda^2 e^{-\lambda}}{2!}.
+\]
+
+Substitueer \(\lambda = 0.025\):
+
+\[
+P(2) = \frac{(0.025)^2 \cdot e^{-0.025}}{2}.
+\]
+
+Reken dit stap voor stap uit:
+1. \((0.025)^2 = 0.000625\),
+2. \(e^{-0.025} \approx 0.9753\),
+3. \(2! = 2\).
+
+Dus:
+
+\[
+P(2) = \frac{0.000625 \cdot 0.9753}{2} \approx \frac{0.000609}{2} = 0.000304.
+\]
+
+De kans op exact twee fotonen in een enkel \(5~\text{ns}\)-interval is \(P(2) = 0.000304\) (ofwel \(0.0304\%\)).
+
+---
+
+### **Stap 3: Totale meettijd en intervallen**
+Tijdens een totale meettijd van \(180~\text{s}\), zijn er:
+
+\[
+\text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3.6 \times 10^{10}~\text{intervallen}.
+\]
+
+Voor elk van deze intervallen is de kans op \(k = 2\) fotonen \(P(2) = 0.000304\). De totale **verwachte aantal intervallen met twee fotonen** is:
+
+\[
+N_{2} = (\text{aantal intervallen}) \cdot P(2) = (3.6 \times 10^{10}) \cdot 0.000304.
+\]
+
+Reken dit uit:
+
+\[
+N_{2} = 1.094 \times 10^7.
+\]
+
+---
+
+### **Resultaat**
+In een totale meettijd van \(180~\text{s}\) met een resolutie van \(5~\text{ns}\), verwacht je dat er ongeveer **\(1.09 \times 10^7\) intervallen zijn waarin exact twee fotonen worden gemeten.**
+
+De kans per resolutie-interval blijft echter \(P(2) = 0.0304\%\).
