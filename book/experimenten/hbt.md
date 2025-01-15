@@ -331,18 +331,21 @@ van *g<sup>2</sup>(0)* door deze waarde zelf uit te rekenen met formules
 De tijdsvertraging van deze meetapparatuur is 5 ns. Noteer
 je berekening en vergelijk je uitkomst.
 
-2. De tijdvertraging van de apparatuur is 5 ns. Bereken welke het aantal fotonen dat hierin past, als je van de golflengte van rood laserlicht $\lamda = 650nm$ uitgaat.
+2. De tijdvertraging van de apparatuur is 5 ns. Bereken welke het aantal fotonen dat hierin past, als je van de golflengte van rood laserlicht $\lambda = 650nm$ uitgaat.
 3. Bereken het aantal fotonen dat een 1 mW laser in 5ns uitzendt. 
 4. Vergelijk bovenstaande antwoorden. 
-5. Het laserlicht wordt ook nog voor (minimaal) 10<sup>5</sup> gefilterd. Bereken nu de *gemiddelde* tijdsduur die tussen de fotonen zit.
- 
+5. Het laserlicht wordt ook nog voor 10<sup>7</sup> gefilterd. Bereken het aantal fotonen in 5 ns. 
+6. Een typische meting geeft voor de frequentie waarmee de fotonen worden geteld een Rate (voor sensor A en B gecombineerd) van 5 kHz. (Zie ook screenshot hierboven). 
+  - Bereken de *gemiddelde* tijdsduur tussen de fotonen. \
+  - Bereken de kans om een foton aan te treffen in 5 ns.
+
 ## Conclusie & Evaluatie
 
 Geef hieronder je conclusies met betrekking tot de uitkomsten (de
 resultaten) en het doel van de proef. Kun je antwoord geven op de volgende vragen?
 
 - Wat kun je zeggen over de nauwkeurigheid van de opstelling en dus de gevonden resultaten?
-  * Leg uit of 4 coïncidenties ook echt 4 coïncidenties of dat dit een meetfout is, omdat geldt *t≠0* ?
+  * Leg uit of 4 coïncidenties ook echt 4 coïncidenties zijn of dat dit een meetfout is, omdat geldt *t≠0* ?
   * Geef verschillende manieren om de nauwkeurigheid van de proef te vergroten.
   * Wat gebeurt er als je veel langer meet?
 - Kun je nu de vorm van de grafieken van je screenshots verklaren? 
