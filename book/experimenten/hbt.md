@@ -309,12 +309,10 @@ houden met de standaard afspraken wanneer je werkt met laserlicht:
 12. Maak nu een meetplan naar gelang hoeveel tijd je hebt voor dit
     experiment. Met filter 6 en 1 heb je relatief snel data, bij de
     andere filters duurt het veel langer omdat deze veel meer
-    absorberen. Het doel kan zijn te onderzoeken of laserlicht uit
-    enkele, losse fotonen bestaat of niet. Je kunt ook het laserlicht
-    vergelijken met incoherent licht.
+    absorberen. 
     Meet bijvoorbeeld met filter 6 eerst voor 1 minuut, en vervolgens voor 5 minuten, etc.
-
-13. Voer dit meetplan uit.
+    
+13. Voer dit meetplan uit. Terwijl je wacht op de meting, kan je wel alvast een aantal opdrachten hieronder uitrekenen (2 t/m 7).
 
 ***Opmerkingen: Zet voor het openen de sensoren en laser uit met de knop van het stekkerblok. De sensoren zijn zeer gevoelig voor te veel licht. Het
 filter moet dan ook ten-allen-tijde voor de laser blijven staan als deze aanstaat, anders gaan de heel dure sensors kapot...***
