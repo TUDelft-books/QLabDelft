@@ -226,7 +226,7 @@ De Neon-curve
 1. Zet de power supply op Man. mode (manual), door de zwarte knop bij Acceleration in te drukken.
 2. Sluit de multimeter weer aan op de K en A, mocht je die losgemaakt hebben en zet deze aan met de knop achterop. Zie de foto hieronder.
 ```{figure} ./media/franck/frank9.jpg
-    :width: 100
+    :width: 50%
     :name: multimeter
     :align: center 
     :caption: De instellingen van de multimeter
