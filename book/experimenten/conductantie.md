@@ -36,11 +36,9 @@ Hieruit valt af te leiden dat:
 ```{math}
 R_{1} = \frac{R_{2}\left( U_{tot} - U_{meet} \right)}{U_{meet}}
 ```
- 
-```{exercise}
-    :label: afleiding
-    Laat deze afleiding zien.
-```
+> ### Opdracht 1
+> Laat deze afleiding zien.
+
 
 <img src="./media/cimage1.png" style="width:2.5in;height:2.70833in" />
 
@@ -73,10 +71,8 @@ maar bij onze keuze van R<sub>2</sub> zijn de eerste tien stapjes
 nagenoeg even groot. We kunnen zo een weerstand van ongeveer 13 kΩ
 meten.* 
 
-```{exercise}
-    :label: R1=
-    Schrijf deze formule als R<sub>1</sub> = ...  
-```
+># Opdracht 2
+> Schrijf deze formule als R<sub>1</sub> = ...  
 
 *De weerstand is ook uit te drukken in fundamentele natuurconstanten:*
 
