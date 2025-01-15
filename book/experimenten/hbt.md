@@ -352,11 +352,12 @@ Het aantal keer dat deze kans voorkomt kun je berekenen door het aantal tijdsint
 \text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3,6 \times 10^{10}~\text{intervallen}.
 ```
 
-Tenslotte kan het verwachte aantal coïncidenties $N_coïncidentie$ worden als volhgt worden berekend:
+Tenslotte kan het verwachte aantal coïncidenties $N_coïncidentie$ worden als volgt worden berekend:
 ```{math}
 N_coïncidentie = P_coïncidentie \cdot \text{Aantal intervallen}
 
 * Bereken dit aantal.
+* Komt dit aantal overeen met de berekening met formule {eq}`4`?
 
 ## Conclusie & Evaluatie
 
@@ -364,7 +365,7 @@ Geef hieronder je conclusies met betrekking tot de uitkomsten (de
 resultaten) en het doel van de proef. Kun je antwoord geven op de volgende vragen?
 
 - Wat kun je zeggen over de nauwkeurigheid van de opstelling en dus de gevonden resultaten?
-  * Leg uit of 4 coïncidenties ook echt 4 coïncidenties zijn of dat dit een meetfout is, omdat geldt *t≠0* ?
+  * Leg uit of 4 coïncidenties ook echt 4 coïncidenties zijn of dat dit een meetfout is, omdat geldt $\Delta t $ te groot is?
   * Geef verschillende manieren om de nauwkeurigheid van de proef te vergroten.
   * Wat gebeurt er als je veel langer meet?
 - Kun je nu de vorm van de grafieken van je screenshots verklaren? 
