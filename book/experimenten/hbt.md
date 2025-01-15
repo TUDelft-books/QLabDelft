@@ -336,11 +336,11 @@ je berekening en vergelijk je uitkomst.
 6. Een typische meting geeft voor de frequentie waarmee de fotonen worden geteld een Rate van 2,5 kHz. (Zie ook screenshot hierboven). 
   - Bereken de *gemiddelde* tijdsduur tussen de fotonen. 
   - Bereken de kans om een foton aan te treffen in 5 ns.
-7. De kans om een coïncidentie te meten, dus dat beide detectoren tegelijk een foton meten in hetzelfde tijdsinterval $\Delta t = 5 \: ns$, terwijl elke detector meet met Rate van 2500 fotonen per seconde kun je als volgt berekenen:<br>
+7. De kans om een coïncidentie te meten, dus dat beide detectoren tegelijk een foton meten in hetzelfde tijdsinterval $\Delta t = 5 \: ns$, terwijl elke detector meet met een Rate van 2500 fotonen per seconde kun je als volgt berekenen:<br>
 Bereken eerst de kans per detector: <br>
 
 ```{math}
-\lambda = Rate \cdot \Delta t = \text{gemiddeld aantal fotonen per detector in het tijdsinterval}
+\lambda = \text{Rate} \cdot \Delta t = \text{gemiddeld aantal fotonen per detector in het tijdsinterval}
 ```
 
 Vervolgens bereken we de kans op coïncidenties:
