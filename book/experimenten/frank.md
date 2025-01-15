@@ -1,6 +1,6 @@
 # Franck-Hertz experiment
 practicumhandleiding  
-*Deze handleiding is deels overgenomen van de [Universiteit van Utrecht](https://nspracticum.science.uu.nl/Outreach/UP/Franck-Hertz/handleiding_Franck-Hertz.pdf).*
+*Passages uit deze handleiding zijn overgenomen uit: [Universiteit van Utrecht](https://nspracticum.science.uu.nl/Outreach/UP/Franck-Hertz/handleiding_Franck-Hertz.pdf).*
 
 ```{figure} ./media/franck/frank1.jpg
     :name: opstelling Frank
@@ -50,13 +50,11 @@ Hierbij maken we gebruik van een kwikbuis, hieronder afgebeeld.
  De kwikbuis, de bolletjes kwik zijn zichtbaar ([bron](https://lampes-et-tubes.info/dt/dt029.php?l=) (copyleft))
 ```
 ## Kracht, energie en de kwikbuis
-
 ```{figure} ./media/franck/frank3-edit.png
     :name: schema
     :align: center 
  Het schakelschema (aangepast, van [bron](https://physics.unimelb.edu.au/lecture-demonstrations/modern-physics/na-19-franck-hertz-experiment))
 ```
-
 In de figuur staat het schakelschema van de Franck-Hertz opstelling getekend. In het filament (tussen $F$ en $K$), komen elektronen vrij door genoeg spanning $U_F$ op het filament te zetten. Het filament gaat dan gloeien, en elektronen uitzenden. G = Grid 1 fungeert hier als kathode $K$ ($U_K = 0 V$). Deze elektronen worden versneld met een versnelspanning $U_KA$ naar de anode $A$, die verbonden is met het het rooster (grid 2). Het elektrisch veld zorgt voor een elektrische kracht op elk elektron van: 
 
 ```{math}
@@ -104,7 +102,6 @@ De oven wordt straks heet en dan kun je deze lastiger verplaatsen. Zorg dus nu v
 
 ### Proefmeting 
 Wanneer de oven is opgewarmd kan je beginnen met meten. De warme oven zorgt ervoor dat een klein druppeltje kwik wat in de vacuum buis zit verdampt. 
-
 
 
 #### Opdracht 4: Proefmeting 
@@ -240,7 +237,7 @@ De Neon-curve
 
 
 
-## extra theoretische uitleg
+## Samenvatting
 bron: [UCSB Phyics Remote Labs](https://ilg.physics.ucsb.edu/Courses/RemoteLabs/?linkfile=FH_Remote#:~:text=Video%201-,Theory,the%20anode%20and%20the%20cathode). 
 
 ### Het Franck-Hertz-experiment: uitleg en interpretatie
