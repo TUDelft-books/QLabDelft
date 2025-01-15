@@ -345,16 +345,17 @@ Bereken eerst de kans per detector: <br>
 
 Vervolgens bereken we de kans op coïncidenties:
 ```{math}
-P_coïncidentie=\lambda_A \cdot \lambda_B
+P_\text{coïncidentie}=\lambda_A \cdot \lambda_B
 ```
 Het aantal keer dat deze kans voorkomt kun je berekenen door het aantal tijdsintervallen dat past in de meettijd te vermenigvuldigen met de kans. Het aantal tijdsintervallen in de screenshot hierboven (meettijd = 180 s) is:
 ```{math}
 \text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3,6 \times 10^{10}~\text{intervallen}.
 ```
 
-Tenslotte kan het verwachte aantal coïncidenties $N_coïncidentie$ worden als volgt worden berekend:
+Tenslotte kan het verwachte aantal coïncidenties $N_\text{coïncidentie}$ worden als volgt worden berekend:
 ```{math}
-N_coïncidentie = P_coïncidentie \cdot \text{Aantal intervallen}
+N_\text{coïncidentie} = P_\text{coïncidentie} \cdot \text{Aantal intervallen}
+``` 
 
 * Bereken dit aantal.
 * Komt dit aantal overeen met de berekening met formule {eq}`4`?
@@ -440,3 +441,4 @@ de intensiteitsvariabelen uitgelegd (formule 1):
 <https://youtu.be/gE-gji46qEc?si=zOEEoTLkuUOsBFYm>
 
 Er zijn ook **documenten** beschikbaar met meer uitleg en achtergrond informatie.
+
