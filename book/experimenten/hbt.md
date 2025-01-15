@@ -329,7 +329,7 @@ van *g<sup>2</sup>(0)* door deze waarde zelf uit te rekenen met formules
 De tijdsvertraging van deze meetapparatuur is 5 ns. Noteer
 je berekening en vergelijk je uitkomst.
 
-2. De tijdvertraging van de apparatuur is 5 ns. Bereken welke het aantal fotonen dat hierin past, als je van de golflengte van rood laserlicht $\lambda = 650nm$ uitgaat.
+2. De tijdvertraging van de apparatuur is 5 ns. Bereken welke het aantal fotonen dat hierin past, als je van de golflengte van rood laserlicht $\lambda = 650 \: nm$ uitgaat.
 3. Bereken het aantal fotonen dat een 1 mW laser in 5ns uitzendt. 
 4. Vergelijk bovenstaande antwoorden. 
 5. Het laserlicht wordt ook nog voor 10<sup>7</sup> gefilterd. Bereken het aantal fotonen in 5 ns. 
