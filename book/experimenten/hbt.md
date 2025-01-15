@@ -336,8 +336,18 @@ je berekening en vergelijk je uitkomst.
 4. Vergelijk bovenstaande antwoorden. 
 5. Het laserlicht wordt ook nog voor 10<sup>7</sup> gefilterd. Bereken het aantal fotonen in 5 ns. 
 6. Een typische meting geeft voor de frequentie waarmee de fotonen worden geteld een Rate (voor sensor A en B gecombineerd) van 5 kHz. (Zie ook screenshot hierboven). 
-  - Bereken de *gemiddelde* tijdsduur tussen de fotonen. \
+  - Bereken de *gemiddelde* tijdsduur tussen de fotonen. 
   - Bereken de kans om een foton aan te treffen in 5 ns.
+7. De kans om 2 fotonen te meten in $\Delta T = 5 ns$ met een Rate van 5000 fotonen per seconde kun je berekenen met een Poisson-verdeling: 
+```{math}
+P(k) = \frac{\lambda^k e^{-\lambda}}{k!}
+``` 
+waarbij 
+$k =$  aantal gelijktijdige fotonen,
+$\lambda = Rate * \Delta T =$ verwachte aantal gebeurtenissen in dat tijdsinterval.
+
+* Bereken deze kans.
+
 
 ## Conclusie & Evaluatie
 
@@ -381,6 +391,7 @@ $
 P(k; \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}
 $
 
+
 #### 3. Optionele uitbreiding: Tijdscorrelaties
 - Meet de tijd tussen opeenvolgende pulsen (de inter-arrivaltijden).
 - Maak een histogram van deze tijden en onderzoek of ze een exponentiële verdeling volgen, zoals verwacht voor een Poisson-proces.
@@ -418,4 +429,3 @@ de intensiteitsvariabelen uitgelegd (formule 1):
 <https://youtu.be/gE-gji46qEc?si=zOEEoTLkuUOsBFYm>
 
 Er zijn ook **documenten** beschikbaar met meer uitleg en achtergrond informatie.
-
