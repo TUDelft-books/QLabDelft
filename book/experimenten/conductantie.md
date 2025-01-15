@@ -36,11 +36,11 @@ Hieruit valt af te leiden dat:
 ```{math}
 R_{1} = \frac{R_{2}\left( U_{tot} - U_{meet} \right)}{U_{meet}}
 ```
-
-**Opdracht**
-
-Laat deze afleiding zien.
-
+ 
+```{exercise}
+    :label: omwerkopdracht
+    Laat deze afleiding zien.
+```
 
 <img src="./media/cimage1.png" style="width:2.5in;height:2.70833in" />
 
@@ -71,12 +71,12 @@ U_{meet} = \frac{R_{2}}{\frac{R_{1}}{n} + R_{2}} \cdot U_{tot}
 *Deze relatie tussen U<sub>meet</sub> en R<sub>1</sub> is niet lineair,
 maar bij onze keuze van R<sub>2</sub> zijn de eerste tien stapjes
 nagenoeg even groot. We kunnen zo een weerstand van ongeveer 13 kΩ
-meten. 
+meten.* 
 
-**Opdracht**
-
-Schrijf deze formule als R<sub>1</sub> = ...
-
+```{exercise}
+    :label: omwerkopdracht
+    Schrijf deze formule als R<sub>1</sub> = ...  
+```
 
 *De weerstand is uit te drukken in fundamentele natuurconstanten:*
 
