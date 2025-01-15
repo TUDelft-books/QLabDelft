@@ -8,7 +8,11 @@ Bepaal het verband waarmee de intensiteit van gepolariseerd licht door een polar
 
 ## Theorie
 De wet van Malus geeft aan wat de intensiteit is van het licht als licht een bepaalde hoek ten opzichte van een transmissie as van een polarisator maakt. Dit wordt weergegeven in de volgende formule:
-$$ I = I_0\cos^2(\theta)$$
+
+```{math}
+:label: 0
+I = I_0\cos^2(\theta)
+```
 ​waarbij $𝐼_0$ de maximale intensiteit is en 𝜃 de hoek tussen de transmissie-assen van de polarisatoren.
 
 ## Materiaal
@@ -28,19 +32,15 @@ $$ I = I_0\cos^2(\theta)$$
 
 ## Conclusie
 Toon aan dat hieruit volgt:
-$$ I = I_0\cos^2(\theta)$$
+$ I = I_0\cos^2(\theta)$
 
 # Experiment 2: Superpositie
-
-
-
-### **Beschrijving van het Experiment met Drie Lineaire Polarisatoren**
 
 ## Doel
 Demonstreer het kwantummechanische gedrag van licht, het concept van superpositie, door de interactie van licht met drie lineaire polarisatoren.
 
 ## Materiaal
-Voeg aan de opstelling van het eerste experiment één polarisator toe.
+Voeg aan de opstelling van het eerste experiment één extra polarisator toe.
 
 ## Uitvoering
 1. Opstelling van Polarisatoren:

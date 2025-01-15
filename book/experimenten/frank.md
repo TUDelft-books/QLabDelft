@@ -62,7 +62,7 @@ Bij een inelastische botsing wordt de kinetische energie van het elektron geabso
 In de figuur staat de stroomkring van de Franck-Hertz opstelling getekend. In het filament (tussen $F$ en $K$), komen elektronen vrij door genoeg spanning $U_F$ op het filament te zetten. Het filament gaat dan gloeien, en elektronen uitzenden. G = Grid 1 fungeert hier als kathode $K$ ($U_K = 0 V$). Deze elektronen worden versneld met een versnelspanning $U_KA$ naar de anode $A$, die verbonden is met het het rooster (grid 2). Het elektrisch veld zorgt voor een elektrische kracht op elk elektron van: 
 
 ```{math}
-:label: 1
+:label: 0
 F_{elek} = q \cdot E_{elek} = q \cdot \frac{U}{L}
 ```
 

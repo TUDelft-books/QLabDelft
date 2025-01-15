@@ -71,7 +71,7 @@ maar bij onze keuze van R<sub>2</sub> zijn de eerste tien stapjes
 nagenoeg even groot. We kunnen zo een weerstand van ongeveer 13 kΩ
 meten.* 
 
-># Opdracht 2
+>### Opdracht 2
 > Schrijf deze formule als R<sub>1</sub> = ...  
 
 *De weerstand is ook uit te drukken in fundamentele natuurconstanten:*
