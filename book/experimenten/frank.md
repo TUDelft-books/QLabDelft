@@ -114,6 +114,7 @@ Wanneer de oven is opgewarmd kan je beginnen met meten. De warme oven zorgt ervo
 Met deze reeks proefmetingen leer de de oscilloscoop en de spanningsbron bedienen. 
 1. Zet de filamentspanning op 6,0 V tot 6,5 V. Zie je het filament oplichten (oranje)? Het duurt tot 60 seconden voordat het filament stabiel op de gewenste spanning brandt. 
 ```{figure} ./media/franck/frank6.jpg
+    :width: 100
     :name: filament
     :align: right 
 Oranje gloeiend filament
