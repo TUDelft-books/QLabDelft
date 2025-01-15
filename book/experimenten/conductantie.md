@@ -75,10 +75,10 @@ meten.*
 
 ```{exercise}
     :label: R1=
-    Schrijf deze formule als $R_1 = \dots$  
+    Schrijf deze formule als R<sub>1</sub> = ...  
 ```
 
-*De weerstand is uit te drukken in fundamentele natuurconstanten:*
+*De weerstand is ook uit te drukken in fundamentele natuurconstanten:*
 
 ``` {math}
 R_{1} = \frac{h}{2e^{2}}

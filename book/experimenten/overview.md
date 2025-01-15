@@ -2,7 +2,7 @@
 
 De practicumhandleidingen van de experimenten van het QuantumLab Delft vind je hier.
  
-Een korte omschrijving van de experimenten (in willekeurige volgorde):
+Een korte omschrijving van de experimenten:
 
 **[Alice, Bob & Eve](crypto.md)** 
 <br>
