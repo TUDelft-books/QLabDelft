@@ -10,7 +10,7 @@ parts:
       - file: experimenten/mach.md
       - file: experimenten/nv.ipynb
       - file: experimenten/conductantie.md
-      - file: experimenten/dubbelspleetkoffer.md
+      - file: experimenten/dubbel.md
       - file: experimenten/frank.md
       - file: experimenten/hbt.md
       - file: experimenten/malus.md
