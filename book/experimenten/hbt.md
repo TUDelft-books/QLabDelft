@@ -122,25 +122,26 @@ Hiertoe moeten we de correlatiefunctie in termen van de intensiteiten (die foton
 
 Omdat geldt: $N=I\cdot t$ Kunnen we ook schrijven:
 
-$
-g^{(2)}(t) = \frac{\langle N_{\text{A&B}} \rangle}{\langle N_A \rangle \cdot \langle N_B \rangle}.
-$
+```{math}
+g^{(2)}(t) = \frac{\langle N_{\text{A&B}} \rangle}{\langle N_A \rangle \cdot \langle N_B \rangle}
+```
 
 waarbij $\langle N_A \rangle$ het gemiddeld aantal fotonen is dat detector A wordt gemeten en $\frac{\langle N_{\text{A&B}}$ het gemiddeld aantal coïncidenties: Dat een foton gelijktijdig wordt gemeten bij detector A en B. 
 
 Het gemiddelde aantal fotonen dat we vinden binnen tijdsinterval $\Delta t$, kunnen we berekenen met 
-$\langle N \rangle = \frac{N}{T} \cdot \Delta t$
-
+```{math}
+\langle N \rangle = \frac{N}{T} \cdot \Delta t
+```
 Als we dit substitueren, krijgen we:
 
-$
-g^{(2)}(t) = \frac{\frac{N_{\text{A&B}}}{T} \cdot \Delta t}{\left(\frac{N_A}{T}\right) \cdot \left(\frac{N_B}{T}\right) \cdot \Delta t}.
-$
+```{math}
+g^{(2)}(t) = \frac{\frac{N_{\text{A&B}}}{T} \cdot \Delta t}{\left(\frac{N_A}{T}\right) \cdot \left(\frac{N_B}{T}\right) \cdot \Delta t}
+```
 
 Na vereenvoudigen volgt: 
-$
-g^{(2)}(t) = \frac{N_{\text{A&B}}}{\frac{N_A \cdot N_B}{T} \cdot \Delta t}.
-$
+```{math}
+g^{(2)}(t) = \frac{N_{\text{A&B}}}{\frac{N_A \cdot N_B}{T} \cdot \Delta t}
+```
 
 Deze formule kun je opsplitsen in:  
 
