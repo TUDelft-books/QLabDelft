@@ -309,7 +309,8 @@ Afbeelding: Screenshot van een meting
 
 Controleer van minstens één meting de door de software berekende waarde
 van *g<sup>2</sup>(0)* door deze waarde zelf uit te rekenen met formules
-(3) en (4). De tijdsvertraging van deze meetapparatuur is 5 ns. Noteer
+{eq}`3` en {eq}`4`.
+De tijdsvertraging van deze meetapparatuur is 5 ns. Noteer
 je berekening en vergelijk je uitkomst.
 
  
