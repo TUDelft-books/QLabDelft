@@ -12,9 +12,9 @@ Met deze opstelling kan de werking van Quantum cryptografie (BB84-protocol) word
 <br>
 Met dit experiment wordt gebruik gemaakt van diamant poeder met NV-centers. Door deze in een hoger energieniveau te brengen met een groene laser en het geëmitteerde rode licht te meten, kan vervolgens met een magnetisch veld Zeeman splitsing worden aangetoond. 
 
-**[Dubbelspleet experiment en single foton interferentie](dubbel.md)**
+**[Dubbelspleet experiment](dubbel.md)**
 <br>   
-Met dit experiment wordt interferentie bij losse fotonen aangetoond. 
+Met dit experiment wordt interferentie bij losse fotonen in een dubbel spleet experiment aangetoond. 
 
 **[Franck en Hertz](frank.md)** 
 <br>
