@@ -135,6 +135,7 @@ De kenmerkende kwik curve
 Als het goed is zijn je instellingen de volgende: 
 
 ```{figure} ./media/franck/frank7.jpg
+    :width: 100
     :name: instellingen
     :align: center 
 De instellingen van de power supply
@@ -225,9 +226,10 @@ De Neon-curve
 1. Zet de power supply op Man. mode (manual), door de zwarte knop bij Acceleration in te drukken.
 2. Sluit de multimeter weer aan op de K en A, mocht je die losgemaakt hebben en zet deze aan met de knop achterop. Zie de foto hieronder.
 ```{figure} ./media/franck/frank9.jpg
+    :width: 100
     :name: multimeter
     :align: center 
-De instellingen van de multimeter
+    :caption: De instellingen van de multimeter
 ```
 3. Draai bij Acceleration de eindversnelspanning $U_Amax$ naar 0 V terug. 
 4. Draai deze spanning vervolgens langzaam op totdat je het eerste maximum hebt gevonden van de neon-curve ({numref}`Neon-curve`) hebt gevonden. Kijk hiervoor naar de $I_E$ in het blauwe display van de power supply.
