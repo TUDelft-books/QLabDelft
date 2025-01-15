@@ -18,7 +18,7 @@ Het mechanisme wat aan dit experiment ten grondslag ligt wordt nog steeds gebrui
 Om je goed voor te bereiden op het experiment wordt eerst de theorie bestudeerd. 
 
 ```{figure} ./media/franck/frank2.svg
-   :width:100
+   :width: 50%
    :name: bohrmodel
    :align: center
  Bohrmodel (bron: JabberWok uit en.wikipedia.org (CC))
@@ -114,7 +114,7 @@ Wanneer de oven is opgewarmd kan je beginnen met meten. De warme oven zorgt ervo
 Met deze reeks proefmetingen leer de de oscilloscoop en de spanningsbron bedienen. 
 1. Zet de filamentspanning op 6,0 V tot 6,5 V. Zie je het filament oplichten (oranje)? Het duurt tot 60 seconden voordat het filament stabiel op de gewenste spanning brandt. 
 ```{figure} ./media/franck/frank6.jpg
-    :width: 100
+    :width: 250
     :name: filament
     :align: right 
 Oranje gloeiend filament
@@ -135,7 +135,7 @@ De kenmerkende kwik curve
 Als het goed is zijn je instellingen de volgende: 
 
 ```{figure} ./media/franck/frank7.jpg
-    :width: 100
+    :width: 300
     :name: instellingen
     :align: center 
 De instellingen van de power supply
