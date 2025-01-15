@@ -118,80 +118,42 @@ de snelheid van de detector en de verwerking van de data.
   verschillende tijdstippen op de twee detectoren te detecteren.
 
 Omdat bovenstaande formule niet erg intuïtief en praktisch is, leiden we een praktischer verband af:
-Hiertoe moeten we de correlatiefunctie in termen van de intensiteiten (die fotonfluxen zijn) omzetten naar een praktische vorm waarin we het aantal coïncidenties meten. Dit vereist een aantal aannames over de relatie tussen de intensiteit en het aantal fotonen dat gedetecteerd wordt.
+Hiertoe moeten we de correlatiefunctie in termen van de intensiteiten (die fotonfluxen zijn) omzetten naar een praktische vorm waarin we het aantal coïncidenties meten. 
 
-Laten we de stappen doorlopen:
-
-In de formule hierboven is $I_1(t)$ de intensiteit van detector 1 op tijd $t$ en $I_2(t)$ de intensiteit van detector 2 op tijd $t + \Delta t$. De gemiddelde intensiteiten zijn de gemiddelde fotonfluxen van de detectoren:
-
-- $\langle I_1(t_0) \rangle$ is de gemiddelde fotonflux in detector 1.
-- $\langle I_2(t_0 + t) \rangle$ is de gemiddelde fotonflux in detector 2.
-
-De intensiteit $I(t)$ is in wezen het aantal fotonen per tijdseenheid, en het gemiddelde geeft het gemiddelde aantal fotonen per tijdseenheid over een langere periode.
-De intensiteit $I(t)$ is gerelateerd aan het aantal fotonen dat door de detector wordt gedetecteerd. Als we in plaats van de intensiteit het aantal gemeten fotonen willen gebruiken, moeten we de intensiteit $I(t)$ vermenigvuldigen met de meettijd $\Delta t$. Dit levert het aantal gemeten fotonen $N(t)$ over de tijdsperiode $\Delta t$:
-
-- Het aantal gemeten fotonen in detector 1 over de tijdsperiode $\Delta t$ is $N_1 = I_1(t_0) \cdot \Delta t$.
-- Het aantal gemeten fotonen in detector 2 over de tijdsperiode $\Delta t$ is $N_2 = I_2(t_0 + t) \cdot \Delta t$.
-
-We kunnen nu het aantal gemeten fotonen vergelijken in plaats van de intensiteiten.
-
-Nu, in plaats van de intensiteit te vergelijken, willen we het aantal coïncidenties meten. Een coïncidentie wordt gedefinieerd als een gebeurtenis waarbij beide detectoren een foton detecteren binnen een bepaalde tijdsvertraging $\Delta t$. Dus het aantal coïncidenties $N_{\text{coinc.}}$ is het aantal keren dat beide detectoren tegelijkertijd (binnen een tijdsvertraging) een foton detecteren.
-
-De verwachte waarde van het aantal coïncidenties wordt gegeven door:
+Omdat geldt: $N=I\cdot t$ Kunnen we ook schrijven:
 
 $
-N_{\text{coinc.}} = \left\langle I_1(t_0) \cdot I_2(t_0 + t) \right\rangle \cdot \Delta t
+g^{(2)}(t) = \frac{\langle N_{\text{A \& B}} \rangle}{\langle N_1 \rangle \cdot \langle N_2 \rangle}.
 $
 
-Als we dit nu combineren krijgen we: 
-$$
-g^{(2)}(t) = \frac{\left\langle I_1(t_0) I_2(t_0 + t) \right\rangle\cdot \Delta t}{\left\langle I_1(t_0)\cdot \Delta t \right\rangle \left\langle I_2(t_0 + t)\cdot \Delta t \right\rangle} = \frac{}
-$$
+Het gemiddelde aantal fotonen dat we vinden binnen tijdsinterval $\Delta t$, kunnen we berekenen met 
+$\langle N \rangle = \frac{N}{T} \cdot \Delta t$
 
+Als we dit substitueren, krijgen we:
 
+$
+g^{(2)}(t) = \frac{\frac{N_{\text{A \& B}}}{T} \cdot \Delta t}{\left(\frac{N_A}{T}\right) \cdot \left(\frac{N_B}{T}\right) \cdot \Delta t}.
+$
 
-Als we het aantal coïncidenties in termen van de verwachte intensiteit willen uitdrukken, gebruiken we de gemiddelde intensiteiten (fotonsnelheden) van de detectoren, wat het verwachte aantal coïncidenties oplevert:
+Na vereenvoudigen volgt: 
+$
+g^{(2)}(t) = \frac{N_{\text{A \& B}}}{\frac{N_A \cdot N_B}{T} \cdot \Delta t}.
+$
 
-$$
-N_{\text{verwacht}} = \frac{N_A \cdot N_B}{T} \cdot \Delta t
-$$
-
-Waarbij:
-- \(N_A\) het totale aantal fotonen gemeten door detector A is.
-- \(N_B\) het totale aantal fotonen gemeten door detector B is.
-- \(T\) de totale meettijd is.
-- \(\Delta t\) de tijdsvertraging is.
-
-De praktische correlatiefunctie is de ratio van het werkelijke aantal coïncidenties tot het verwachte aantal coïncidenties. Dit geeft ons de tweede formule:
-
-$$
-g^{(2)}(t) = \frac{N_{\text{coinc.}}}{N_{\text{verwacht}}} = \frac{N_{A \& B}}{\left( \frac{N_A \cdot N_B}{T} \right) \cdot \Delta t}
-$$
-
-
-
-
-
-
-
-gebruik van dit verband:
+Deze formule kun je opsplitsen in:  
 
 ```{math}
 :label: 3
-\mathbf{\,}\mathbf{g}^{\left( \mathbf{2} \right)}\left( \mathbf{t} \right)\mathbf{=}\frac{\mathbf{aantal\, coïncidenties}}{\mathbf{verwacht\, aantal\, coïncidenties\,}}\mathbf{=}\frac{\mathbf{N}_{\mathbf{A\& B}}}{\mathbf{N}_{\mathbf{verwacht}}}
-
+g^{(2)}(t) = \frac{N_{\text{A \& B}}}{N_{\text{verwacht}}}.
 ```
-
 Een coïncidentie is een gelijktijdige gebeurtenis of een gebeurtenis
 binnen de tijdsvertraging, in andere woorden: Dat een foton gelijktijdig
 wordt gemeten bij detector A en B.
-
-Het verwachte aantal coïncidenties kan als volgt worden berekend:
+Waarbij het verwachte aantal coïncidenties wordt gegeven door:
 
 ```{math}
 :label: 4
-\mathbf{N}_{\mathbf{verwacht}}\mathbf{=}\left( \frac{\mathbf{N}_{\mathbf{A\,}}\mathbf{\cdot}\mathbf{N}_{\mathbf{B}}\mathbf{\,}}{\mathbf{T}} \right)\mathbf{\cdot}\mathbf{\Delta}\mathbf{t}
-
+N_{\text{verwacht}} = \left(\frac{N_A \cdot N_B}{T}\right) \cdot \Delta t.
 ```
 Waarin $N_{A}$ en $N_{B}$ het totaal aantal gemeten fotonen is in
 detector A en B, $T$ de totale meettijd is, en $\Delta t$ de
