@@ -82,7 +82,7 @@ g^{(2)}(t) = \frac{\left\langle I\left( t_{0} \right)I\left( t_{0} + t \right) \
 
 ```
 waarbij $I(t)$ de intensiteit van het licht is op tijdstip $(t)$ en
-de hoekhaken $\left\langle \right\rangle\$ gemiddelde waarden
+de hoekhaken $\left\langle \right\rangle$ gemiddelde waarden
 aangeven.
 
 De intensiteiten $I\left( t_{0} \right)$ en
@@ -99,7 +99,6 @@ volgt kunnen worden uitgedrukt:
 ```{math}
 :label: 2
 g^{(2)}(t) = \frac{\left\langle I_{1}\left( t_{0} \right)I_{2}\left( t_{0} + t \right) \right\rangle\,}{\left\langle I_{1}\left( t_{0} \right) \right\rangle\left\langle I_{2}\left( t_{0} + t \right) \right\rangle}
-
 ```
 
 Hierbij worden de gemeten intensiteiten op twee verschillende momenten
@@ -123,15 +122,15 @@ Hiertoe moeten we de correlatiefunctie in termen van de intensiteiten (die foton
 
 Laten we de stappen doorlopen:
 
-In de fomrule hierboven is $I_1(t)$ de intensiteit van detector 1 op tijd $t$ en $I_2(t)$ de intensiteit van detector 2 op tijd $t + \Delta t$. De gemiddelde intensiteiten zijn de gemiddelde fotonfluxen van de detectoren:
+In de formule hierboven is $I_1(t)$ de intensiteit van detector 1 op tijd $t$ en $I_2(t)$ de intensiteit van detector 2 op tijd $t + \Delta t$. De gemiddelde intensiteiten zijn de gemiddelde fotonfluxen van de detectoren:
 
-- $\langle I_1(t_0) \rangle\$ is de gemiddelde fotonflux in detector 1.
+- $\langle I_1(t_0) \rangle$ is de gemiddelde fotonflux in detector 1.
 - $\langle I_2(t_0 + t) \rangle$ is de gemiddelde fotonflux in detector 2.
 
 De intensiteit $I(t)$ is in wezen het aantal fotonen per tijdseenheid, en het gemiddelde geeft het gemiddelde aantal fotonen per tijdseenheid over een langere periode.
 De intensiteit $I(t)$ is gerelateerd aan het aantal fotonen dat door de detector wordt gedetecteerd. Als we in plaats van de intensiteit het aantal gemeten fotonen willen gebruiken, moeten we de intensiteit $I(t)$ vermenigvuldigen met de meettijd $\Delta t$. Dit levert het aantal gemeten fotonen $N(t)$ over de tijdsperiode $\Delta t$:
 
-- Het aantal gemeten fotonen in detector 1 over de tijdsperiode $\Delta t\$ is $N_1 = I_1(t_0) \cdot \Delta t$.
+- Het aantal gemeten fotonen in detector 1 over de tijdsperiode $\Delta t$ is $N_1 = I_1(t_0) \cdot \Delta t$.
 - Het aantal gemeten fotonen in detector 2 over de tijdsperiode $\Delta t$ is $N_2 = I_2(t_0 + t) \cdot \Delta t$.
 
 We kunnen nu het aantal gemeten fotonen vergelijken in plaats van de intensiteiten.
@@ -356,8 +355,7 @@ houden met de standaard afspraken wanneer je werkt met laserlicht:
 ***Opmerkingen: Zet voor het openen de sensoren en laser uit met de knop van het stekkerblok. De sensoren zijn zeer gevoelig voor te veel licht. Het
 filter moet dan ook ten-allen-tijde voor de laser blijven staan als deze aanstaat, anders gaan de heel dure sensors kapot...***
 
-<img src="./media/himage7.jpg"
-style="width:4.70457in;height:2.64583in" />
+<img src="./media/himage7.jpg">
 
 Afbeelding: Screenshot van een meting
 
