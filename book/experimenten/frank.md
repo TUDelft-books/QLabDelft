@@ -96,14 +96,14 @@ De opstelling bestaat uit de oven, een power supply (spanningsbron) en een een o
 De Franck-Hertz opstelling (bron: 3Bscientific)
 ```
 
->#### Opdracht 3: Klaar zetten 
->De oven wordt straks heet en dan kun je deze lastiger verplaatsen. Zorg dus nu vast dat je goed naar binnen kunt kijken. 
->1. Zet de oven zo neer dat je de voorkant, waar de draden aangesloten zijn, en het raam om naar binnen kunt kijken goed kunt zien. 
->2. Zet de oven aan en stel te temperatuur in op 180 ◦C. Het duurt 5 tot 10 minuten voordat de temperatuur bereikt is. PAS OP: ook de buitenkant van de oven wordt heet! 
->3. Draai de volgende knopjes op de power supply helemaal naar links (naar 0): de filamentspanning, de spanning tot het eerste grid (deze wordt niet gebruikt), de start- en eind spanning voor de versnelspanning, en de tegenspanning. Het knopje rechtsonder is de sterkte van het totale signaal wat doorgestuurd wordt naar de oscilloscoop. Laat deze voor nu staan zoals die is (dus niet op 0!). 
->4. Zet de power supply (grijs-blauwe kast) met de knop achterop aan. Opstarten kan even duren.
->5. Zet de oscilloscoop aan. 
->6. Stel de oscilloscoop zo in dat signaal 1 op de x-as wordt weer gegeven en signaal 2 op de y-as (X-Y mode). Waarschijnlijk is dit al gebeurd. Eventueel doe je dit met het knopje Main en vervolgens op het scherm, selecteer met de knopjes net naast het scherm Time Base XY.
+#### Opdracht 3: Klaar zetten 
+De oven wordt straks heet en dan kun je deze lastiger verplaatsen. Zorg dus nu vast dat je goed naar binnen kunt kijken. 
+1. Zet de oven zo neer dat je de voorkant, waar de draden aangesloten zijn, en het raam om naar binnen kunt kijken goed kunt zien. 
+2. Zet de oven aan en stel te temperatuur in op 180 ◦C. Het duurt 5 tot 10 minuten voordat de temperatuur bereikt is. PAS OP: ook de buitenkant van de oven wordt heet! 
+3. Draai de volgende knopjes op de power supply helemaal naar links (naar 0): de filamentspanning, de spanning tot het eerste grid (deze wordt niet gebruikt), de start- en eind spanning voor de versnelspanning, en de tegenspanning. Het knopje rechtsonder is de sterkte van het totale signaal wat doorgestuurd wordt naar de oscilloscoop. Laat deze voor nu staan zoals die is (dus niet op 0!). 
+4. Zet de power supply (grijs-blauwe kast) met de knop achterop aan. Opstarten kan even duren.
+5. Zet de oscilloscoop aan. 
+6. Stel de oscilloscoop zo in dat signaal 1 op de x-as wordt weer gegeven en signaal 2 op de y-as (X-Y mode). Waarschijnlijk is dit al gebeurd. Eventueel doe je dit met het knopje Main en vervolgens op het scherm, selecteer met de knopjes net naast het scherm Time Base XY.
 
 ### Proefmeting 
 Wanneer de oven is opgewarmd kan je beginnen met meten. De warme oven zorgt ervoor dat een klein druppeltje kwik wat in de vacuum buis zit verdampt. 
@@ -170,7 +170,7 @@ De instellingen van de multimeter
 6. Met een spectroscoop kan het uitgezonden spectrum van de kwiklamp worden onderzocht. Hieruit blijkt dat er een golflengte van 254nm wordt uitgezonden. is dit in overeenstemming met je resultaten?
 7. Wat is nu de conclusie. 
 
-**Schakel tenslotte de oven (voorop) en de power supply (achterop) en de multimeter (achterop) uit. **
+**Schakel tenslotte de oven (voorop) en de power supply (achterop) en de multimeter (achterop) uit.**
 
 # Experiment 2: Franck en Hertz met Neon
 
@@ -198,6 +198,7 @@ De opstelling met de Neon-buis
 11. Zet het Grid G op 9 V.
 10. Draai de Filament spanning naar 8,4V en wacht 30 seconden om het filament de kans te geven om op te warmen. (Bij 9V heb je al een oranje gloed en dat wil je niet). 
 ```{figure} ./media/franck/frank13.jpg
+    :width: 25%
     :name: Oranje-gloed 
     :align: center 
 Onwenselijk oranje gloed zichtbaar tussen de grids
