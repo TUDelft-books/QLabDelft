@@ -38,7 +38,7 @@ R_{1} = \frac{R_{2}\left( U_{tot} - U_{meet} \right)}{U_{meet}}
 ```
  
 ```{exercise}
-    :label: omwerkopdracht
+    :label: afleiding
     Laat deze afleiding zien.
 ```
 
@@ -74,8 +74,8 @@ nagenoeg even groot. We kunnen zo een weerstand van ongeveer 13 kΩ
 meten.* 
 
 ```{exercise}
-    :label: omwerkopdracht
-    Schrijf deze formule als R<sub>1</sub> = ...  
+    :label: R1=
+    Schrijf deze formule als $R_1 = \dots$  
 ```
 
 *De weerstand is uit te drukken in fundamentele natuurconstanten:*

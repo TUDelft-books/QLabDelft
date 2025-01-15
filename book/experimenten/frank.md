@@ -66,7 +66,6 @@ In de figuur staat de stroomkring van de Franck-Hertz opstelling getekend. In he
 F_{elek} = q \cdot E_{elek} = q \cdot \frac{U}{L}
 ```
 
-
 met $F_{elek}$ de kracht op het elektron, $q$ de lading van het elektron, $E_{elek}$ de elektrische veldsterkte, $U$ de aangelegde spanning in Volt, en $L$ de afstand tussen $G$ en $A$. 
 Deze kracht zorgt ervoor dat het elektron versnelt volgens de tweede wet van Newton: $F = ma$. Vervolgens komen de versnelde elektronen aan bij de emitter $E$ en wordt er een stroom gemeten. De tegenspanning $U_AE$ helpt ervoor te zorgen dat er geen elektronen per ongeluk bij de anode terecht komen, maar dat dit alleen elektronen zijn met voldoende snelheid. 
 
