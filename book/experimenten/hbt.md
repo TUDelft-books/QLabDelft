@@ -313,18 +313,66 @@ van *g<sup>2</sup>(0)* door deze waarde zelf uit te rekenen met formules
 je berekening en vergelijk je uitkomst.
 
  
-## Conclusie
+## Conclusie & Evaluatie
 
 Geef hieronder je conclusies met betrekking tot de uitkomsten (de
-resultaten) en het doel van de proef.
+resultaten) en het doel van de proef. Kun je antwoord geven op de volgende vragen?
 
-Kun je nu de vorm van de grafieken van je screenshots verklaren?
+- Kun je nu de vorm van de grafieken van je screenshots verklaren? 
+    * Hoe kan *g<sup>2</sup>(0) = 4* zijn?
 
-Wat gebeurt er als je veel langer meet?
+- Wat gebeurt er als je veel langer meet?
+
+- Wat kun je zeggen over de nauwkeurigheid van de opstelling en dus de gevonden resultaten?
+    * Zijn 4 coïncidenties ook echt 4 coïncidenties of is dit een meetfout, omdat geldt $t=/0$ ?
+    * 
+
 
 ## Ideeën en bronnen:
 
-### Onderzoeksvragen PWS:
+### Experiment: Tellen van Geiger-Müller-pulsen als Poisson-proces
+
+### Doel
+1. Het aantonen van een Poisson-verdeling in een natuurlijk proces: het aantal gemeten ionisaties door een Geiger-Müller-teller.
+2. Een analogie leggen met het gedrag van fotonen in het HBT-experiment.
+
+### Benodigdheden
+1. Een Geiger-Müller-teller (bijvoorbeeld een betaalbare educatieve GM-teller).
+2. Een stabiele stralingsbron (bijvoorbeeld een zwak radioactief element zoals een americiumbron uit een rookmelder, indien toegestaan, of natuurlijke achtergrondstraling).
+3. Een computer met een timer en datalogging (bijvoorbeeld via een Arduino of rechtstreeks met de GM-teller als deze USB-output heeft).
+4. Software voor analyse (Excel of Python).
+
+### Werkwijze
+
+#### 1. Gegevens verzamelen
+1. Plaats de Geiger-Müller-teller in een omgeving met stabiele achtergrondstraling of nabij een bekende zwakke stralingsbron.
+2. Stel een vast tijdsinterval in, bijvoorbeeld 1 seconde.
+3. Tel het aantal pulsen (events) per tijdsinterval gedurende een langere meetperiode (bijvoorbeeld 10 minuten of langer).
+
+#### 2. Data analyseren
+1. Maak een histogram van het aantal gemeten pulsen per tijdsinterval.
+2. Bereken de gemiddelde waarde $\lambda$ en de standaardafwijking $\sqrt{\lambda}$.
+3. Vergelijk de gemeten verdeling met de theoretische Poisson-verdeling:
+$
+P(k; \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}
+$
+
+#### 3. Optionele uitbreiding: Tijdscorrelaties
+- Meet de tijd tussen opeenvolgende pulsen (de inter-arrivaltijden).
+- Maak een histogram van deze tijden en onderzoek of ze een exponentiële verdeling volgen, zoals verwacht voor een Poisson-proces.
+
+
+### Analogietrekking met het HBT-experiment
+1. Poissonverdeling van pulsen:
+   - Net zoals de GM-teller ionisaties willekeurig registreert, registreert een detector in het HBT-experiment fotonen. Als de lichtbron coherent is (zoals een laser), vertonen de fotonen een vergelijkbaar willekeurig patroon.
+   
+2. Correlaties:
+   - In het HBT-experiment worden gelijktijdige detecties (coïncidenties) onderzocht. Bij een coherente lichtbron zou je ongecorreleerde statistieken verwachten, terwijl bij quantumgecorreleerde of juist thermische lichtbronnen hiervan afwijken.
+
+### Conclusie
+Dit experiment toont aan dat het aantal ionisaties in een GM-teller een Poisson-verdeling volgt. De leerlingen kunnen deze resultaten relateren aan het HBT-experiment door te begrijpen hoe willekeurige en gecorreleerde gebeurtenissen fundamenteel verschillen. Dit biedt een toegankelijke manier om statistiek en natuurkundige principes te combineren!
+
+## Voorbeeld onderzoeksvragen PWS:
 
 Hoe werkt een laser?
 
@@ -346,3 +394,4 @@ de intensiteitsvariabelen uitgelegd (formule 1):
 <https://youtu.be/gE-gji46qEc?si=zOEEoTLkuUOsBFYm>
 
 Er zijn ook **documenten** beschikbaar met meer uitleg en achtergrond informatie.
+
