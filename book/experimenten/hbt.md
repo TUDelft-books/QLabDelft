@@ -120,7 +120,7 @@ de snelheid van de detector en de verwerking van de data.
 Omdat bovenstaande formule niet erg intuïtief en praktisch is, leiden we een praktischer verband af:
 Hiertoe moeten we de correlatiefunctie in termen van de intensiteiten (die fotonfluxen zijn) omzetten naar een praktische vorm waarin we het aantal coïncidenties meten. 
 
-Omdat geldt: $N=I\cdot t$ Kunnen we ook schrijven:
+Omdat geldt: $N=I\cdot t$ kunnen we ook schrijven:
 
 ```{math}
 g^{(2)}(t) = \frac{\langle N_{\text{A&B}} \rangle}{\langle N_A \rangle \cdot \langle N_B \rangle}
@@ -312,6 +312,7 @@ houden met de standaard afspraken wanneer je werkt met laserlicht:
     absorberen. Het doel kan zijn te onderzoeken of laserlicht uit
     enkele, losse fotonen bestaat of niet. Je kunt ook het laserlicht
     vergelijken met incoherent licht.
+    Meet bijvoorbeeld met filter 6 eerst voor 1 minuut, en vervolgens voor 5 minuten, etc.
 
 13. Voer dit meetplan uit.
 
@@ -322,29 +323,31 @@ filter moet dan ook ten-allen-tijde voor de laser blijven staan als deze aanstaa
 
 Afbeelding: Screenshot van een meting
 
-## Resultaten
+## Resultaten en opdrachten
 
-Controleer van minstens één meting de door de software berekende waarde
+1. Controleer van minstens één meting de door de software berekende waarde
 van *g<sup>2</sup>(0)* door deze waarde zelf uit te rekenen met formules
 {eq}`3` en {eq}`4`.
 De tijdsvertraging van deze meetapparatuur is 5 ns. Noteer
 je berekening en vergelijk je uitkomst.
 
+2. De tijdvertraging van de apparatuur is 5 ns. Bereken welke het aantal fotonen dat hierin past, als je van de golflengte van rood laserlicht $\lamda = 650nm$ uitgaat.
+3. Bereken het aantal fotonen dat een 1 mW laser in 5ns uitzendt. 
+4. Vergelijk bovenstaande antwoorden. 
+5. Het laserlicht wordt ook nog voor (minimaal) 10<sup>5</sup> gefilterd. Bereken nu de *gemiddelde* tijdsduur die tussen de fotonen zit.
  
 ## Conclusie & Evaluatie
 
 Geef hieronder je conclusies met betrekking tot de uitkomsten (de
 resultaten) en het doel van de proef. Kun je antwoord geven op de volgende vragen?
 
+- Wat kun je zeggen over de nauwkeurigheid van de opstelling en dus de gevonden resultaten?
+  * Leg uit of 4 coïncidenties ook echt 4 coïncidenties of dat dit een meetfout is, omdat geldt *t≠0* ?
+  * Geef verschillende manieren om de nauwkeurigheid van de proef te vergroten.
+  * Wat gebeurt er als je veel langer meet?
 - Kun je nu de vorm van de grafieken van je screenshots verklaren? 
     * Hoe kan *g<sup>2</sup>(0) = 4* zijn?
-
-- Wat gebeurt er als je veel langer meet?
-
-- Wat kun je zeggen over de nauwkeurigheid van de opstelling en dus de gevonden resultaten?
-    * Zijn 4 coïncidenties ook echt 4 coïncidenties of is dit een meetfout, omdat geldt *t≠0* ?
-    
-
+  
 
 ## Ideeën en bronnen:
 
