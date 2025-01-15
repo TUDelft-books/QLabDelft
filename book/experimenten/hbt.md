@@ -123,8 +123,10 @@ Hiertoe moeten we de correlatiefunctie in termen van de intensiteiten (die foton
 Omdat geldt: $N=I\cdot t$ Kunnen we ook schrijven:
 
 $
-g^{(2)}(t) = \frac{\langle N_{\text{A \& B}} \rangle}{\langle N_1 \rangle \cdot \langle N_2 \rangle}.
+g^{(2)}(t) = \frac{\langle N_{\text{A&B}} \rangle}{\langle N_A \rangle \cdot \langle N_B \rangle}.
 $
+
+waarbij $\langle N_A \rangle$ het gemiddeld aantal fotonen is dat detector A wordt gemeten en $\frac{\langle N_{\text{A&B}}$ het gemiddeld aantal coïncidenties: Dat een foton gelijktijdig wordt gemeten bij detector A en B. 
 
 Het gemiddelde aantal fotonen dat we vinden binnen tijdsinterval $\Delta t$, kunnen we berekenen met 
 $\langle N \rangle = \frac{N}{T} \cdot \Delta t$
@@ -132,23 +134,21 @@ $\langle N \rangle = \frac{N}{T} \cdot \Delta t$
 Als we dit substitueren, krijgen we:
 
 $
-g^{(2)}(t) = \frac{\frac{N_{\text{A \& B}}}{T} \cdot \Delta t}{\left(\frac{N_A}{T}\right) \cdot \left(\frac{N_B}{T}\right) \cdot \Delta t}.
+g^{(2)}(t) = \frac{\frac{N_{\text{A&B}}}{T} \cdot \Delta t}{\left(\frac{N_A}{T}\right) \cdot \left(\frac{N_B}{T}\right) \cdot \Delta t}.
 $
 
 Na vereenvoudigen volgt: 
 $
-g^{(2)}(t) = \frac{N_{\text{A \& B}}}{\frac{N_A \cdot N_B}{T} \cdot \Delta t}.
+g^{(2)}(t) = \frac{N_{\text{A&B}}}{\frac{N_A \cdot N_B}{T} \cdot \Delta t}.
 $
 
 Deze formule kun je opsplitsen in:  
 
 ```{math}
 :label: 3
-g^{(2)}(t) = \frac{N_{\text{A \& B}}}{N_{\text{verwacht}}}.
+g^{(2)}(t) = \frac{N_{\text{A&B}}}{N_{\text{verwacht}}}.
 ```
-Een coïncidentie is een gelijktijdige gebeurtenis of een gebeurtenis
-binnen de tijdsvertraging, in andere woorden: Dat een foton gelijktijdig
-wordt gemeten bij detector A en B.
+
 Waarbij het verwachte aantal coïncidenties wordt gegeven door:
 
 ```{math}
@@ -157,7 +157,7 @@ N_{\text{verwacht}} = \left(\frac{N_A \cdot N_B}{T}\right) \cdot \Delta t.
 ```
 Waarin $N_{A}$ en $N_{B}$ het totaal aantal gemeten fotonen is in
 detector A en B, $T$ de totale meettijd is, en $\Delta t$ de
-tijdsvertraging is.
+tijdsvertraging is (ook wel coïncidentie window genoemd).
 
 ### Betekenis van de waarde van $g^{(2)}(t)$
 
