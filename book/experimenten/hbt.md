@@ -360,6 +360,17 @@ N_\text{coïncidentie} = P_\text{coïncidentie} \cdot \text{Aantal intervallen}
 * Bereken dit aantal.
 * Komt dit aantal overeen met de berekening met formule {eq}`4`?
 
+8. Om een zinnig antwoord op de vorige vraag te kunnen geven moet je weten hoe groot de spreiding is in het gevonden getal. We kunnen de onzekerheid of standaarddeviatie berekenen met het gegeven dat het aantal coïncidenties een Poisson verdeling volgt. De standaarddeviatie van een Poisson-verdeeld proces is gelijk aan de wortel van het gemiddelde:
+```{math}
+\sigma=\sqrt{N_{coïncidenties}}
+```
+* Bereken $\sigma$
+
+$N_{coïncidenties}$ kan dus $\sqrt{N_{coïncidenties}}$ groter of kleiner zijn.
+
+De nauwkeurigheid van het experiment kan tenslotte worden berekend met de relatieve onzekerheid $frac{\sqrt{N}}{N}.
+* Bereken deze in procenten.
+
 ## Conclusie & Evaluatie
 
 Geef hieronder je conclusies met betrekking tot de uitkomsten (de
