@@ -368,7 +368,7 @@ N_\text{coïncidentie} = P_\text{coïncidentie} \cdot \text{Aantal intervallen}
 
 $N_{coïncidenties}$ kan dus $\sqrt{N_{coïncidenties}}$ groter of kleiner zijn.
 
-De nauwkeurigheid van het experiment kan tenslotte worden berekend met de relatieve onzekerheid $frac{\sqrt{N}}{N}$.
+De nauwkeurigheid van het experiment kan tenslotte worden berekend met de relatieve onzekerheid $\frac{\sqrt{N}}{N}$.
 * Bereken deze in procenten.
 
 ## Conclusie & Evaluatie
