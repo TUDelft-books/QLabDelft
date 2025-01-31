@@ -9,6 +9,7 @@ Alice (verzender), Bob (ontvanger) en Eve (evesdropper of afluisteraar).
 
 Alice gaat een versleutelt bericht sturen aan Bob, en Eve gaat dat
 proberen af te luisteren, zonder gesnapt te worden.
+*Deze handleiding is grotendeels gebaseerd op de Thorlabs handleiding.* {Download}`handleiding van Thorlabs<./media/QuantumCrypto-EDU-QCRY1-EnglishManual.pdf>`.
 
 ## Doel
 
@@ -200,13 +201,16 @@ te vinden.
 
 ### 3. Toevoegen van Eve en detectie van afluisteren 
 
-i.  Plaats Eve tussen Alice en Bob, en stel beide sensorelektronica's in op **afstelmodus (LED licht geel op)**. Stel de ontvanger van Eve zo
-    af dat alle 8 transmissiegevallen werken met Alice. Zie tabel:
+i.  Plaats Eve tussen Alice en Bob, en stel beide sensorelektronica's in op **afstelmodus (LED licht geel op)**. Stel de ontvanger van Eve zo af dat alle 8 transmissiegevallen werken met Alice. Zie tabel:
 
-> <img src="./media/abeimage2.png"
-> style="width:5.51042in;height:1.41667in" />Stel vervolgens de zender
+> <img src="./media/abeimage2.png" style="width:5.51042in;height:1.41667in" /><br>
+> Stel vervolgens de zender
 > van Eve zo af dat alle 8 transmissiegevallen werken met Bob. Zet beide
 > sensorelektronica’s terug in meetmodus (LED licht groen op).
+>
+> Volgens Thorlabs kan de afstand tussen Alice, Bob en Eve elk wel 50cm zijn. Soms is een goede uitlijning dan echter niet 
+> haalbaar en zijn de transmissiegevallen dan niet betrouwbaar. Het is dan beter om de drie onderdelen zo dicht mogelijk bij 
+> elkaar te zetten.
 >
 > *Het doel is om Eve uit te lijnen zonder de opstellingen van Alice en
 > Bob te verstoren, aangezien de afluisteraar geen invloed heeft op de
@@ -214,8 +218,7 @@ i.  Plaats Eve tussen Alice en Bob, en stel beide sensorelektronica's in op **af
 > meetmodus.*
 
 j.  Vul de tabel voor Eve in, die de willekeurige keuze van de + of x
-    basis bepaalt. Willekeurige basissen zijn ook nodig voor Alice en
-    Bob, en Alice moet willekeurige bits kiezen voor transmissie.
+    basis bepaalt. 
 
 > *Er zijn twee methoden om deze stap uit te voeren. In een ideale
 > situatie waarin de gebruikers geïsoleerd zijn, zou Eve gewoon een
@@ -224,17 +227,16 @@ j.  Vul de tabel voor Eve in, die de willekeurige keuze van de + of x
 > handeling van het veranderen van een basis tot een niet-willekeurige
 > bias voor de operator van Eve. Het kiezen van willekeurige basissen
 > aan het begin van de reeks voorkomt dat deze bias het experiment
-> verstoort. Een voorbeeldtabel van basissen die Eve kan gebruiken is te
-> vinden in de bijlage. Houd er rekening mee dat de operator van Eve
+> verstoort. Vul de tabel voor Eve daarom in de bijlage in. Houd er rekening mee dat de operator van Eve
 > geen gegevens hoeft vast te leggen.*
 
 k.  Zend het eerste bit van Alice met de basis gekozen in de vorige
-    oefening. Eve kiest haar eerste basis (willekeurig gekozen bij *h*).
+    oefening. Eve kiest haar eerste basis, zoals gekozen bij de vorige stap.
     Ze ontvangt een bit dat ze doorgeeft aan Bob met dezelfde basis. Bob
     noteert het bit dat hij ontvangt. Dit wordt uitgevoerd voor alle 52
     bits/basissen in de reeks.
 
-> *Alice en Bob gebruiken dezelfde procedure als bij c. Eve ontvangt het
+> *Alice en Bob gebruiken dezelfde procedure als in het vorige experiment. Eve ontvangt het
 > signaal van Alice met de willekeurig gekozen basis uit h. Vervolgens
 > zendt ze haar meting uit (met dezelfde basis).*
 
@@ -247,7 +249,7 @@ l.  Alice en Bob wisselen openbaar hun basissen uit voor elke meting. Ze
 > resterende vormt de bitreeks die wordt gebruikt om te testen op de
 > aanwezigheid van een afluisteraar.*
 
-m.  Vergelijk de resultaten van Alice en Bob uit *j*.
+m.  Vergelijk de resultaten van Alice en Bob uit de vorige stap.
 
 > *Door het afluisteren van Eve en het uitzenden van bits met een
 > willekeurige basis (niet noodzakelijkerwijs identiek aan die van
@@ -255,7 +257,7 @@ m.  Vergelijk de resultaten van Alice en Bob uit *j*.
 > fouten moeten bevatten (bits die niet overeenkomen). De aanwezigheid
 > van deze fouten stelt Alice en Bob in staat de aanwezigheid van een
 > afluisteraar te detecteren. Dit is anders dan het resultaat van
-> Oefening 4, waar Alice en Bob hetzelfde resultaat zouden moeten
+> Oefening d, waar Alice en Bob hetzelfde resultaat zouden moeten
 > behalen.*
 
 [^1]: Deze informatie (en alinea) is te vinden op Nederlandstalige
