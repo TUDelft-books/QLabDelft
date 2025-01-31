@@ -9,6 +9,7 @@ Alice (verzender), Bob (ontvanger) en Eve (evesdropper of afluisteraar).
 
 Alice gaat een versleutelt bericht sturen aan Bob, en Eve gaat dat
 proberen af te luisteren, zonder gesnapt te worden.
+<br>
 *Deze handleiding is grotendeels gebaseerd op de Thorlabs handleiding.* {Download}`handleiding van Thorlabs<./media/QuantumCrypto-EDU-QCRY1-EnglishManual.pdf>`.
 
 ## Doel
