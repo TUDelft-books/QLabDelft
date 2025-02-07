@@ -3,6 +3,8 @@ _AFM Practicum handleiding_
 
 _dit experiment is nog in ontwikkeling_
 
+<img src="./media/afm/afm5.jpg" style="width:2.90833in;height:1.76263in"/>
+
 ## Inleiding
 
 ## Uitvoering
@@ -20,9 +22,13 @@ _dit experiment is nog in ontwikkeling_
 1. Draai de webcam opzij 
 2. Leg het sample met de pincet op de scantafel, met de naald er midden boven
 3. Zet de webcam er vlak voor neer in het zelfde vlak, zodat je van opzij kan zien. 
+<img src="./media/afm/afm3.png" style="width:2.90833in;height:1.76263in"/>
 4. Laat de tip HEEL VOORZICHTIG zakken met de Z-as-grofafstelknop. Kijk terwijl je draait naar het beeld van de webcam. Zie ook foto. 
+<img src="./media/afm/afm2.png" style="width:2.90833in;height:1.76263in"/>
 5. Ga op tijd over op de Z-as-fijnafstelknop. 
-6. Herhaal 4 en 5, totdat de tip het sample raakt en 25V is dan de Z-voltage.
+6. Herhaal 4 en 5, totdat de tip het sample raakt. De Z-voltage zie je dan plots zakken. Stel deze in op 25V.
+<img src="./media/afm/afm1.png" style="width:2.90833in;height:1.76263in"/>
+<img src="./media/afm/afm4.png" style="width:2.90833in;height:1.76263in"/>
 7. Ga naar scannen.
 
 ### Scannen
