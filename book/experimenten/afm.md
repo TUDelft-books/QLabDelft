@@ -3,7 +3,7 @@ _AFM Practicum handleiding_
 
 _dit experiment is nog in ontwikkeling_
 
-<img src="./media/afm/afm5.jpg" style="width:2.90833in;height:1.76263in"/>
+<img src="./media/afm/afm5.jpg" style="width:400;height:300"/>
 
 ## Inleiding
 
@@ -19,7 +19,7 @@ _dit experiment is nog in ontwikkeling_
 2. Zorg voor een device met de volgende software geïnstalleerd:
 * AMCap
 * EDU-AFM software, download via Thorlabs.
-* NI-DAQmx
+* NI-DAQmx (deze heeft geen icoon)
 
 ### Opstarten
 1. Plug in de USB kabel van de USB-hub en zet de POWER on links onder op de AFM.
@@ -29,10 +29,10 @@ _dit experiment is nog in ontwikkeling_
 3. Zet de Windows zo neer dat beide tegelijk zichtbaar zijn op je scherm. 
 ### Controleren
 
-### Sample plaatsen  -- dit moet nog aangevuld/ checkt
+### Sample plaatsen
 1. Draai de webcam opzij, weg van de scantafel.
 2. Leg het sample met de pincet op de scantafel, met de naald er midden boven.
-3. Zet de laser aan door de sleutel een kwartslag te draaien en op enable te drukken. Draai de *power adjust* naar maximaal. 
+3. Zet de laser aan door de sleutel een kwartslag te draaien en op enable te drukken. Draai de *power adjust* naar maximaal. De laser moet even opwarmen.
 4. In de EDU-AFM software: Zorg dat het rondje net links naast de oorsprong staat. De *X-deflection* moet op *-0,1 V* staan. Dit krijg je voor elkaar door voorzichtig aan stelschroef E (horizontale instelling) en eventueel D (verticale instelling).
 5. In de EDU-AFM software: Zet de *Z-feedback* op *ON*. 
 6. Zet de webcam er vlak voor neer in het zelfde vlak, zodat je van opzij kan zien. 
