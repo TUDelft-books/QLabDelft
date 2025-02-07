@@ -7,29 +7,43 @@ _dit experiment is nog in ontwikkeling_
 
 ## Inleiding
 
+
+
+
+
 ## Uitvoering
+
+### Materiaal
+1. Verwijder de perspex kap van de opstelling alvorens te starten.
+
+2. Zorg voor een device met de volgende software geïnstalleerd:
+* AMCap
+* EDU-AFM software, download via Thorlabs.
+* NI-DAQmx
 
 ### Opstarten
 1. Plug in de USB kabel van de USB-hub en zet de POWER on links onder op de AFM.
 2. Start de software: 
-    * AMCap voor de webcam en selecteer als nodig de USB camera.
-    * EDUAFM en accepteer de hardware instellingen: Druk op OK.
+    * AMCap voor de webcam en selecteer als nodig bij het tabblad *devices* de USB camera.
+    * EDU-AFM en accepteer de hardware instellingen: Druk op OK.
 3. Zet de Windows zo neer dat beide tegelijk zichtbaar zijn op je scherm. 
-
 ### Controleren
 
 ### Sample plaatsen  -- dit moet nog aangevuld/ checkt
-1. Draai de webcam opzij 
-2. Leg het sample met de pincet op de scantafel, met de naald er midden boven
-3. Zet de webcam er vlak voor neer in het zelfde vlak, zodat je van opzij kan zien. 
+1. Draai de webcam opzij, weg van de scantafel.
+2. Leg het sample met de pincet op de scantafel, met de naald er midden boven.
+3. Zet de laser aan door de sleutel een kwartslag te draaien en op enable te drukken. Draai de *power adjust* naar maximaal. 
+4. In de EDU-AFM software: Zorg dat het rondje net links naast de oorsprong staat. De *X-deflection* moet op *-0,1 V* staan. Dit krijg je voor elkaar door voorzichtig aan stelschroef E (horizontale instelling) en eventueel D (verticale instelling).
+5. In de EDU-AFM software: Zet de *Z-feedback* op *ON*. 
+6. Zet de webcam er vlak voor neer in het zelfde vlak, zodat je van opzij kan zien. 
 <img src="./media/afm/afm3.png" style="width:2.90833in;height:1.76263in"/>
-4. Laat de tip HEEL VOORZICHTIG zakken met de Z-as-grofafstelknop. Kijk terwijl je draait naar het beeld van de webcam. Zie ook foto. 
+7. Laat de tip HEEL VOORZICHTIG zakken met de Z-as-grofafstelknop. Kijk terwijl je draait naar het beeld van de webcam. Zie ook foto. 
 <img src="./media/afm/afm2.png" style="width:2.90833in;height:1.76263in"/>
-5. Ga op tijd over op de Z-as-fijnafstelknop. 
-6. Herhaal 4 en 5, totdat de tip het sample raakt. De Z-voltage zie je dan plots zakken. Stel deze in op 25V.
-<img src="./media/afm/afm1.png" style="width:2.90833in;height:1.76263in"/>
+8. Ga op tijd over op de Z-as-fijnafstelknop. 
+9. Herhaal 4 en 5, totdat de tip het sample raakt. De Z-voltage zie je dan plots zakken. Stel deze in op 25V.
+<img src="./media/afm/afm1.png" style="width:2.90833in;height:1.76263in"/> <br>
 <img src="./media/afm/afm4.png" style="width:2.90833in;height:1.76263in"/>
-7. Ga naar scannen.
+10. Ga naar scannen.
 
 ### Scannen
 1. Ga naar het tabblad aan de linker kant: Constant Force Feedback. 
