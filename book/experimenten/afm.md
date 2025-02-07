@@ -19,9 +19,8 @@ In het kort:
 * Een computer zet deze data om in een gedetailleerde afbeelding van het oppervlak.
 Voor de uitgebreide werking: Kijk verder bij *Theorie*.
 
-### Aan de slag
-
-Tijdens dit experiment gaan jullie zelf een AFM gebruiken om een oppervlak op de micrometer nauwkeurig te scannen. Jullie zullen leren hoe je de AFM instelt, een scan uitvoert en de resultaten interpreteert. Misschien ontdekken jullie zelfs structuren die met het blote oog onzichtbaar zijn!
+### Zelf aan de slag
+Tijdens dit experiment gaan jullie zelf een AFM gebruiken om een oppervlak op de honderd nanometer nauwkeurig te scannen. Jullie zullen leren hoe je de AFM instelt, een scan uitvoert en de resultaten interpreteert. Misschien ontdekken jullie zelfs structuren die met het blote oog onzichtbaar zijn!
 De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen zien en begrijpen. Dit is een unieke kans om op een interactieve manier kennis te maken met nanotechnologie en quantumonderzoek.
 
 ## Uitvoering
