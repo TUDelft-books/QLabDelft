@@ -11,7 +11,7 @@ Een Atomic Force Microscope is een geavanceerd meetinstrument dat werkt met een 
 
 Met onze AFM is het mogelijk om bijvoorbeeld de grootte van de putjes in een cd, dvd en zelfs blue ray te meten en te vergelijken. Ook is het mogelijk om biologische droge samples te onderzoeken, zoals keratine van een haar of de facetten van een vliegenoog.
 
-### De AFM-meting 
+### De AFM-meting
 In het kort:
 * De tip van de AFM wordt voorzichtig naar het oppervlak gebracht.
 * Terwijl de tip het oppervlak scant, buigt de cantilever afhankelijk van de krachten die erop werken.
@@ -21,7 +21,7 @@ Voor de uitgebreide werking: Kijk verder bij *Theorie*.
 
 ### Aan de slag
 
-Tijdens dit experiment gaan jullie zelf een AFM gebruiken om een oppervlak op nanoschaal te scannen. Jullie zullen leren hoe je de AFM instelt, een scan uitvoert en de resultaten interpreteert. Misschien ontdekken jullie zelfs structuren die met het blote oog onzichtbaar zijn!
+Tijdens dit experiment gaan jullie zelf een AFM gebruiken om een oppervlak op de micrometer nauwkeurig te scannen. Jullie zullen leren hoe je de AFM instelt, een scan uitvoert en de resultaten interpreteert. Misschien ontdekken jullie zelfs structuren die met het blote oog onzichtbaar zijn!
 De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen zien en begrijpen. Dit is een unieke kans om op een interactieve manier kennis te maken met nanotechnologie en quantumonderzoek.
 
 ## Uitvoering
