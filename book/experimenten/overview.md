@@ -4,6 +4,12 @@ De practicumhandleidingen van de experimenten van het QuantumLab Delft vind je h
  
 Een korte omschrijving van de experimenten:
 
+
+
+**[Atomic Force Microscope](afm.md)** 
+<br>
+Met deze microscoop kunnen de kleinste structuren bekeken worden, door oppervlaktes af te scannen met een naald.
+
 **[Alice, Bob & Eve](crypto.md)** 
 <br>
 Met deze opstelling kan de werking van Quantum cryptografie (BB84-protocol) worden gedemonstreerd. Alice stuurt een boodschap naar Bob, die Eve probeert af te luisteren... (evesdropping).   
