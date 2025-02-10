@@ -103,7 +103,7 @@ Hier wat algemene tips:
 <img src="./media/afm/afm7.png"/>
 Zorg dat de instellingen passen bij het genomen sample.
 Druk vervolgens op *Execute*. Als het werkt dan zie je nu een preview en kun je op *OK* drukken.
-_(Mocht je een foutmelding krijgen in de trant van CSV bestand klopt niet, controleer dit bestand eerst in Excel op het juiste aantal kolommen en rijen. Soms valt er magisch genoeg ééntje weg)_
+_(Mocht je een foutmelding krijgen in de trant van CSV bestand klopt niet, controleer dit bestand eerst in Excel op het juiste aantal kolommen en rijen. Soms valt er magisch genoeg ééntje weg.)_
 3. Op deze wijze kan gemeten worden hoe groot details zijn: _volgt_
 4. Op de wijze kan een hoogteprofiel gemaakt worden: _volgt_
 
