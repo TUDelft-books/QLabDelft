@@ -20,18 +20,19 @@ In het kort:
 Voor de uitgebreide werking: Kijk verder bij *Theorie*.
 
 ### Zelf aan de slag
-Tijdens dit experiment gaan jullie zelf een AFM gebruiken om een oppervlak op de honderd nanometer nauwkeurig te scannen. Jullie zullen leren hoe je de AFM instelt, een scan uitvoert en de resultaten interpreteert. Misschien ontdekken jullie zelfs structuren die met het blote oog onzichtbaar zijn!
-De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen zien en begrijpen. Dit is een unieke kans om op een interactieve manier kennis te maken met nanotechnologie en quantumonderzoek.
+Tijdens dit experiment gaan jullie zelf een AFM gebruiken om een oppervlak op de honderd nanometer nauwkeurig te scannen. Jullie zullen leren hoe je de AFM instelt, een scan uitvoert en de resultaten interpreteert. 
+De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen zien en begrijpen. Dit is een unieke kans om op een interactieve manier kennis te maken met nanotechnologie en quantumonderzoek. 
 
 ## Uitvoering
 
 ### Materiaal
 1. Verwijder de perspex kap van de opstelling alvorens te starten.
-
 2. Zorg voor een device met de volgende software geïnstalleerd:
 * AMCap
 * EDU-AFM software, download via Thorlabs.
 * NI-DAQmx (deze heeft geen icoon)
+3. Zorg ervoor dat je de belangrijkste onderdelen van de AFM kent:<br>
+<img src="./media/afm/afm6.png" style="width:400;height:250"/>
 
 ### Opstarten
 1. Plug in de USB kabel van de USB-hub en zet de POWER on links onder op de AFM.
