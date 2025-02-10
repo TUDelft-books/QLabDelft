@@ -39,7 +39,6 @@ De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen 
     * AMCap voor de webcam en selecteer als nodig bij het tabblad *devices* de USB camera.
     * EDU-AFM en accepteer de hardware instellingen: Druk op OK.
 3. Zet de Windows zo neer dat beide tegelijk zichtbaar zijn op je scherm. 
-### Controleren
 
 ### Sample plaatsen
 1. Draai de webcam opzij, weg van de scantafel.
@@ -63,7 +62,7 @@ De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen 
 3. Pas eventueel de Scan Speed aan.
 4. Druk op het PLAY knopje.
 5. Ga even wat anders doen ;)
-
+6. Ga verder naar [Resultaten](my-label-resultaten).
 
 ### Afsluiten of sample wisselen 
 1. Stop een eventuele scan.
@@ -77,7 +76,11 @@ De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen 
 8. Power off Thorlabs power links onder op de opstelling.
 
 ### Sample preparatie
-
+Hier wat algemene tips:
+* Sample moet schoon en vlak zijn.
+* Spoel met IsoPropylAlcohol en eventueel gedestilleerd water en laat het goed drogen.
+* Breng sample aan op speciale sample disk van metaal, of op dekglaasje (minder vlak). 
+* Bevestig sample met dubbelzijdige tape of (seconde)lijm.
 
 ### Tip vervangen
 1. Software en hardware off. Dus ook de Laser!
@@ -90,4 +93,12 @@ De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen 
 8. Continueer op pagina 68 - 7.3 - place a sample
 9. Laser enable en draai naar maximum.
 10. Pagina 69, +/- 1,5 V Sum voltage.
+
+(my-label-resultaten)=
+## Resultaten en verwerking
+1. Sla je scan op. 
+2. Open de applicatie *Gwyddion* en op het .csv-bestand. 
+3. Gebruik de instellingen: _volgt_
+3. Op deze wijze kan gemeten worden hoe groot details zijn: _volgt_
+4. Op de wijze kan een hoogteprofiel gemaakt worden: _volgt_
 
