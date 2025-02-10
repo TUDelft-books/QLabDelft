@@ -100,10 +100,13 @@ Hier wat algemene tips:
 1. Sla je scan op. Gebruik als bestandsnaam: *ConstantForce-datum-tijd-naam-GROOTTE-XY-PIXELSZIZE-XY* , zodat de instellingen goed worden vastgelegd.
 2. Open de applicatie *Gwyddion* en kies: File - Open - selecteer het .csv-bestand. Klik linksonder op bestandstype: *Raw data files* en open het bestand.
 3. Gebruik de instellingen: <br>
-<img src="./media/afm/afm7.png"/>
+<img src="./media/afm/afm7.png"/><br>
 Zorg dat de instellingen passen bij het genomen sample.
 Druk vervolgens op *Execute*. Als het werkt dan zie je nu een preview en kun je op *OK* drukken.
 _(Mocht je een foutmelding krijgen in de trant van CSV bestand klopt niet, controleer dit bestand eerst in Excel op het juiste aantal kolommen en rijen. Soms valt er magisch genoeg ééntje weg.)_
-3. Op deze wijze kan gemeten worden hoe groot details zijn: _volgt_
-4. Op de wijze kan een hoogteprofiel gemaakt worden: _volgt_
-
+3. Op deze wijze kan gemeten worden hoe groot details zijn: *Tools* menu - tweede icoontje: *Measure Distances...*. Klik op een rand van een detail in je opname sleep naar een andere rand om zo de afstand ertussen te meten. Let op: Het window van afstand meten kan verdwijnen achter andere windows.<br>
+<img src="./media/afm/afm10.png"/><br>
+4. Op deze wijze kan een hoogteprofiel gemaakt worden: *Tools* menu - vierde icoontje: *Extract profiles...*. Klik van begin tot eind waar je een profiel van wilt. <br>
+<img src="./media/afm/afm9.png"/><br>
+5. Met het derde icoontje kan een profiel over een X- en Y-as tegelijk worden gemaakt.<br>
+<img src="./media/afm/afm8.png"/><br>
