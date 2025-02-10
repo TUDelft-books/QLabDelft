@@ -1,4 +1,4 @@
 # Changelog
 
-## `<date>` [`<release name>`](<`link to release on GitHub>`)
-- `<Added/modified/deleted>` [](`<relative link to changed file>`)
+## `10-2-2025` [`alfaboy`](<`https://github.com/TUDelft-books/QLabDelft`)
+- `modified 10-2-2025` [](`https://github.com/TUDelft-books/QLabDelft`)
