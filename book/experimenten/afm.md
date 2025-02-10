@@ -47,12 +47,12 @@ De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen 
 3. Zet de laser aan door de sleutel een kwartslag te draaien en op enable te drukken. Draai de *power adjust* naar maximaal. De laser moet even opwarmen.
 4. In de EDU-AFM software: Zorg dat het rondje net links naast de oorsprong staat. De *X-deflection* moet op *-0,1 V* staan. Dit krijg je voor elkaar door voorzichtig aan stelschroef E (horizontale instelling) en eventueel D (verticale instelling).
 5. In de EDU-AFM software: Zet de *Z-feedback* op *ON*. 
-6. Zet de webcam er vlak voor neer in het zelfde vlak, zodat je van opzij kan zien. 
+6. Zet de webcam er vlak voor neer in het zelfde vlak, zodat je van opzij kan zien.<br> 
 <img src="./media/afm/afm3.png" style="width:2.90833in;height:1.76263in"/>
-7. Laat de tip HEEL VOORZICHTIG zakken met de Z-as-grofafstelknop. Kijk terwijl je draait naar het beeld van de webcam. Zie ook foto. 
+7. Laat de tip HEEL VOORZICHTIG zakken met de Z-as-grofafstelknop. Kijk terwijl je draait naar het beeld van de webcam. Zie ook foto. <br>
 <img src="./media/afm/afm2.png" style="width:2.90833in;height:1.76263in"/>
 8. Ga op tijd over op de Z-as-fijnafstelknop. 
-9. Herhaal 4 en 5, totdat de tip het sample raakt. De Z-voltage zie je dan plots zakken. Stel deze in op 25V.
+9. Herhaal 4 en 5, totdat de tip het sample raakt. De Z-voltage zie je dan plots zakken. Stel deze in op 25V.<br>
 <img src="./media/afm/afm1.png" style="width:2.90833in;height:1.76263in"/> <br>
 <img src="./media/afm/afm4.png" style="width:2.90833in;height:1.76263in"/>
 10. Ga naar scannen.
