@@ -97,9 +97,13 @@ Hier wat algemene tips:
 
 (my-label-resultaten)=
 ## Resultaten en verwerking
-1. Sla je scan op. 
-2. Open de applicatie *Gwyddion* en op het .csv-bestand. 
-3. Gebruik de instellingen: _volgt_
+1. Sla je scan op. Gebruik als bestandsnaam: *ConstantForce-datum-tijd-naam-GROOTTE-XY-PIXELSZIZE-XY* , zodat de instellingen goed worden vastgelegd.
+2. Open de applicatie *Gwyddion* en kies: File - Open - selecteer het .csv-bestand. Klik linksonder op bestandstype: *Raw data files* en open het bestand.
+3. Gebruik de instellingen: <br>
+<img src="./media/afm/afm7.png"/>
+Zorg dat de instellingen passen bij het genomen sample.
+Druk vervolgens op *Execute*. Als het werkt dan zie je nu een preview en kun je op *OK* drukken.
+_(Mocht je een foutmelding krijgen in de trant van CSV bestand klopt niet, controleer dit bestand eerst in Excel op het juiste aantal kolommen en rijen. Soms valt er magisch genoeg ééntje weg)_
 3. Op deze wijze kan gemeten worden hoe groot details zijn: _volgt_
 4. Op de wijze kan een hoogteprofiel gemaakt worden: _volgt_
 
