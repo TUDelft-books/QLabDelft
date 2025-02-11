@@ -45,7 +45,7 @@ De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen 
 1. Draai de webcam opzij, weg van de scantafel.
 2. Leg het sample met de pincet op de scantafel, met de naald er midden boven.
 3. Zet de laser aan door de sleutel een kwartslag te draaien en op enable te drukken. Draai de *power adjust* naar maximaal. De laser moet even opwarmen.
-4. In de EDU-AFM software: Zorg dat het rondje net links naast de oorsprong staat. De *X-deflection* moet op *-0,1 V* staan. Dit krijg je voor elkaar door voorzichtig aan stelschroef E (horizontale instelling) en eventueel D (verticale instelling).
+4. In de EDU-AFM software: Zorg dat het rondje net links naast de oorsprong staat. De *X-deflection* moet op *-0,1 V* staan. Dit krijg je voor elkaar door voorzichtig aan stelschroef E (horizontale instelling) en eventueel D (verticale instelling) te draaien.
 5. In de EDU-AFM software: Zet de *Z-feedback* op *ON*. 
 6. Zet de webcam er vlak voor neer in het zelfde vlak, zodat je van opzij kan zien.<br> 
 <img src="./media/afm/afm3.png" style="width:2.90833in;height:1.76263in"/>
