@@ -52,18 +52,18 @@ De AFM opent een wereld waarin we letterlijk de bouwstenen van de natuur kunnen 
 7. Laat de tip HEEL VOORZICHTIG zakken met de Z-as-grofafstelknop. Kijk terwijl je draait naar het beeld van de webcam. Zie ook foto. <br>
 <img src="./media/afm/afm2.png" style="width:2.90833in;height:1.76263in"/>
 8. Ga op tijd over op de Z-as-fijnafstelknop. 
-9. Herhaal 4 en 5, totdat de tip het sample raakt. De Z-voltage zie je dan plots zakken. Stel deze in op 25V.<br>
+9. Draai de Z-as-fijnafstelknop totdat de tip het sample raakt. De Z-voltage zie je dan plots zakken. Stel deze in op 25V. 
+Wanneer de fijnafstelknop niet verder kan draaien en het sample niet bereikt wordt, draai hem dan helemaal terug en herhaal zo nodig stappen 7 en 8,<br>
 <img src="./media/afm/afm1.png" style="width:2.90833in;height:1.76263in"/> <br>
 <img src="./media/afm/afm4.png" style="width:2.90833in;height:1.76263in"/>
 10. Ga naar scannen.
 
 ### Scannen
 1. Ga naar het tabblad aan de linker kant: Constant Force Feedback. 
-2. Stel de grootte in van je scan bij Sampled Pixels (rechts).
+2. Stel eventueel de grootte in van je scan bij Sampled Pixels (rechts).
 3. Pas eventueel de Scan Speed aan.
 4. Druk op het PLAY knopje.
-5. Ga even wat anders doen ;)
-6. Ga verder naar [Resultaten](my-label-resultaten).
+5. Ga even wat anders doen ;). Een typische scan duurt 10 minuten. Deze tijdsduur is uiteraard afhankelijk van de gekozen grootte en scan snelheid.
 
 ### Afsluiten of sample wisselen 
 1. Stop een eventuele scan.
