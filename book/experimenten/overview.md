@@ -14,7 +14,7 @@ Met deze microscoop kunnen de kleinste structuren bekeken worden, door oppervlak
 <br>
 Met deze opstelling kan de werking van Quantum cryptografie (BB84-protocol) worden gedemonstreerd. Alice stuurt een boodschap naar Bob, die Eve probeert af te luisteren... (evesdropping).   
 
-**[Diamant NV sensor](nv.md)**
+**[Diamant NV sensor](nv.ipynb)**
 <br>
 Met dit experiment wordt gebruik gemaakt van diamant poeder met NV-centers. Door deze in een hoger energieniveau te brengen met een groene laser en het geëmitteerde rode licht te meten, kan vervolgens met een magnetisch veld Zeeman splitsing worden aangetoond. 
 
