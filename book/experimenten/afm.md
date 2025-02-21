@@ -110,3 +110,137 @@ _(Mocht je een foutmelding krijgen in de trant van CSV bestand klopt niet, contr
 <img src="./media/afm/afm9.png"/><br>
 5. Met het derde icoontje kan een profiel over een X- en Y-as tegelijk worden gemaakt.<br>
 <img src="./media/afm/afm8.png"/><br>
+
+## Theorie (_under construction_)
+### Introductie 
+De AFM (Atomic Force Microscope) behoort tot de klasse van de 'scanning probe microscopes'. Deze klasse is ontstaan in het begin van de jaren tachtig van de vorige eeuw toen Binning en Roher de Nobelprijs wonnen met hun scanning tunneling microscope. De AFM is later uitgevonden door Binning, Quate en Gerber. 
+<br>
+Een scanning probe microscoop maakt gebruik van een 'probe', of een sonde in het Nederlands. Op deze sonde zit een tip, waarmee de microscoop het oppervlak van het preparaat aftast. Door atomaire krachten wordt deze tip weggeduwd of aangetrokken, waardoor de microscoop heel nauwkeurig de pieken en dalen kan meten van het materiaal. 
+<>br
+Deze soort microscopen worden veel gebruikt in de industrie, met name voor kwaliteitscontrole van halfgeleiders en chips, en worden ook veel gebruikt in de biologie, omdat je er cellen mee kunt weergeven zonder ze te beschadigen. 
+
+### De 'sonde' of arm 
+We noemen de sonde met de tip ook wel de arm van de AFM. Deze arm is meestal gemaakt van silicium of silicium-nitride. Op de onderkant van de arm zit de tip; zie het plaatje hieronder. 
+
+
+Deze arm buigt door de atomaire krachten, waardoor er een oppervlaktegrafiek gemaakt kan worden. Deze arm moet aan meerdere voorwaarden voldoen, een daarvan is dat de veerconstante laag moet zijn omdat de atomaire krachten ook zwak zijn. Dit kan berekend worden met behulp van de wet van Hooke: 
+
+F = −k⋅z 
+F
+ 
+=
+ 
+−
+k
+⋅
+z
+ 
+ 
+ 
+
+Hierin staan de volgende grootheden: 
+
+F — De kracht op de arm 
+
+k — De veerconstante van de arm 
+
+z — De afwijking van de normale situatie 
+
+Op de datasheet staat dat de veerconstante 0.2 Nm is, als we aannemen dat de afwijking van de arm 1 µm is, dan is de kracht: 
+
+F = −k⋅z = 0.2μN 
+F
+ 
+=
+ 
+−
+k
+⋅
+z
+ 
+=
+ 
+0
+.
+2
+𝜇
+N
+ 
+ 
+ 
+
+Oftewel de krachten die uitgeoefend worden op de arm van de AFM zijn erg klein. 
+
+### De interactie tussen het preparaat en de tip 
+
+De interactie tussen het oppervlak en de tip wordt bepaald door twee soorten krachten, die van dichtbij (1 nm) en die van ver weg (1 nm – 100 nm). De krachten die op grotere afstand werken zijn de Van der Waalskracht, elektrostatische kracht en capillaire kracht. Verder speelt de atmosfeer rond het preparaat nog een rol net zoals het materiaal waarvan de arm en tip zijn gemaakt. Hieronder zijn de drie krachten die op lange afstand werken nog kort uitgelegd. 
+
+#### Elektrostatische kracht 
+
+Het kan gebeuren dat de arm van de AFM statisch geladen wordt, hierdoor kan de scan beïnvloed worden of in zijn geheel niet meer werken. 
+
+#### Capillaire krachten 
+
+Als je meet in een normale atmosfeer zit er op ieder materiaal een heel klein laagje water. De tip bereikt dit laagje water voordat het het sample bereikt waardoor er een microscopische druppel ontstaat aan de tip. Door deze druppel is er een extra aantrekkende kracht aan de arm wat de meting beïnvloedt. 
+
+#### Van der Waalskracht 
+
+De laatste kracht die de arm voelt is de Van der Waalskracht wanneer de tip dichtbij (~een paar nm) komt, deze kracht genereert een potentiaal die als volgt beschreven kan worden: 
+
+Uvdw=Cr6
+U
+v
+d
+w
+=
+C
+r
+6
+ 
+ 
+
+Hierin staan de volgende grootheden: 
+
+Uvdw
+U
+v
+d
+w
+ 
+— Het van der Waalspotentiaal 
+
+C — Een constante 
+
+r — Afstand 
+
+#### Afstotende kracht  
+
+Naast de drie bovengenoemde krachten ondervindt de arm op hele korte afstand (0.1 nm) ook een afstotende kracht. Deze kracht komt tot stand door de afstotende werking tussen atomen. 
+
+#### Totale kracht 
+
+Als je alle bovengenoemde krachten optelt krijg je het bekende Lennard-Jones potentiaal, deze is te zien in de figuur hieronder. Zoals je kunt zien is de potentiaal afstotend voor hele kleine afstanden (de afstoting tussen atomen) en een aantrekkende kracht op grote afstand (van der Waalskracht en capillaire werking). 
+
+ 
+
+ 
+
+### Scanning methodes 
+
+De AFM heeft twee hoofdmanieren van scannen, de contactmode en de dynamic mode. De AFM hier heeft alleen de zogenaamde contactmodes dus die zullen hier beschreven worden. Contact mode bestaat weer uit twee verschillende methodes, constant force (constante kracht) en constant height (constante hoogte). 
+
+#### Constant Height mode 
+
+Constant height mode is de simpelste methode aangezien de AFM niet hoeft te corrigeren. In deze methode wordt de arm van de AFM op dezelfde hoogte gehouden tijdens het gehele scanproces. Deze methode werkt alleen voor hele gladde preparaten want als het "dal" te diep is verliest de tip contact en is er niks meer te zien met de AFM. 
+
+ 
+
+ 
+
+#### Constant Force Mode 
+
+Constant force mode maakt gebruik van een feedbackmechanisme om de kracht op de arm constant te houden. Hierdoor is de AFM in deze mode beter in staat om het oppervlak te volgen en kan er een grover preparaat gemeten worden. 
+
+ 
+
+ 
