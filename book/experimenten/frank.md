@@ -9,12 +9,12 @@ practicumhandleiding
 Foto van de Franck-Hertz opstelling.
 ```
 
-## Inleiding
+### Inleiding
 Dit experiment werd voor het eerst gedaan in 1912 door James Franck en Gustav Hertz. Het is een sleutelexperiment van de quantummechanica, en Franck en Hertz kregen voor dit experiment de Nobelprijs voor Natuurkunde in 1925. 
 Het Franck-Hertz experiment laat zien dat de energie die elektronen hebben als ze uit een atoom worden vrij gemaakt gequantiseerd is. Dat betekent dat de bindingsenergie van elektronen niet continu kan zijn, maar alleen specifieke waardes kan hebben. Deze observatie kan goed verklaard worden met het Bohr-model van atomen. 
 Het mechanisme wat aan dit experiment ten grondslag ligt wordt nog steeds gebruikt in hoe TL-buizen werken. 
 
-## Theorie
+### Theorie
 Om je goed voor te bereiden op het experiment wordt eerst de theorie bestudeerd. 
 
 ```{figure} ./media/franck/frank2.svg
@@ -24,23 +24,23 @@ Om je goed voor te bereiden op het experiment wordt eerst de theorie bestudeerd.
  Bohrmodel (bron: JabberWok uit en.wikipedia.org (CC))
 ```
 
-### Bohrmodel 
+#### Bohrmodel 
 In het Bohrmodel van een atoom bestaat een atoom uit een positief geladen kern met eromheen de negatief geladen elektronen. De elektronen in het Bohrmodel kunnen alleen in specifieke banen bestaan. Deze banen verschillen in hoeveel energie er nodig is om het elektron er uit te halen. We noemen de banen daarom ook wel energieschillen. Zie figuur. De energieschillen hebben een quantumgetal n. De kern heeft een lading van +Ze met Z het aantal protonen in de kern en e de elementaire lading. 
 
->#### Opdracht 1: Energie en golflengte 
+>##### Opdracht 1: Energie en golflengte 
 >Als een elektron uit een hogere schil terug valt in een lagere schil verliest het elektron energie. 
 <br>
 >a) Welke golflengte (in nm) heeft licht met een energie van 4.9 eV? <br>
 >b) Verwacht je deze kleur te kunnen zien? Zo ja, welke kleur is het? 
 
-### Elektron-atoom botsingen
+#### Elektron-atoom botsingen
 In de klassieke mechanica van Newton geeft een botsend object (kinetische) energie door aan het gebotste object. Bijvoorbeeld: als de witte biljartbal tegen de rode stoot dan blijft na de elastische botsing de witte stil liggen op de plek van de botsing en beweegt de rode verder. Dit is een elastisch botsing. Kinetisch energie van de witte biljartbal wordt omgezet in kinetische energie van de rode biljartbal. 
 Een ander type botsing is een inelastische botsing. Dit is wanneer de kinetische energie wordt omgezet in een ander type energie, bijvoorbeeld warmte, of geluid, of het kreukelen van een auto. 
 Elektronen kunnen ook een elastische of inelastische botsingen met atomen hebben. Bijvoorbeeld wanneer een elektron beweegt in een elektrisch veld, en een atoom in de gasfase op het pad tegen komt. 
 Bij een elastische botsing veranderen de snelheden van het atoom en het elektron. Omdat het atoom zo veel zwaarder is dan een elektron zal het atoom nauwelijks van richting of snelheid veranderen na een elastische botsing. 
 Bij een inelastische botsing wordt de kinetische energie van het elektron geabsorbeerd door het atoom, waardoor het atoom in een aangeslagen toestand komt. De aangeslagen toestand betekent dat een elektron van het atoom zelf in een hogere baan terecht is gekomen. In dit experiment zul je zien dat alleen elektronen met een bepaalde energie een inelastische botsing kunnen hebben met kwikatomen. Dit is een gevolg van de elektron-schillen van atomen en is niet te verklaren met klassieke mechanica, maar wel met quantummechanica! 
 
-# Experiment 1: Franck en Hertz met kwik
+## Experiment 1: Franck en Hertz met kwik
 In dit experiment ga je bewijzen dat elektronen in kwikatomen alleen bij specifieke energie voorkomen. 
 Hierbij maken we gebruik van een kwikbuis, hieronder afgebeeld.
 
@@ -49,7 +49,7 @@ Hierbij maken we gebruik van een kwikbuis, hieronder afgebeeld.
     :align: center 
  De kwikbuis, de bolletjes kwik zijn zichtbaar ([bron](https://lampes-et-tubes.info/dt/dt029.php?l=) (copyleft))
 ```
-## Kracht, energie en de kwikbuis
+### Kracht, energie en de kwikbuis
 ```{figure} ./media/franck/frank3-edit.png
     :name: schema
     :align: center 
@@ -79,10 +79,10 @@ Deze kracht zorgt ervoor dat het elektron versnelt volgens de tweede wet van New
 > ```
 > met $E$ de energie van het elektron en $W = Fs$ de arbeid verricht door het elektrisch veld. 
 
-## Uitvoering 
+### Uitvoering 
 Je gaat nu aan de slag met de opstelling waarbij je eerst zal lezen over hoe de opstelling werkt en daarna een aantal proefmetingen zal uitvoeren. Op deze manier begrijp je goed hoe de opstelling werkt. Daarna ga je eigenlijke meting uitvoeren.
 
-### De opstelling 
+#### De opstelling 
 De opstelling bestaat uit de oven, een power supply (spanningsbron) en een een oscilloscoop, zie figuur 4. Bij de theorie heb je al een schematische tekening van de stroomkring in de opstelling gezien. Deze staat ook op de oven getekend. De draden zijn al goed aangesloten op de spanningsbron en de oscilloscoop. 
 
 ```{figure} ./media/franck/frank4.png
@@ -91,7 +91,7 @@ De opstelling bestaat uit de oven, een power supply (spanningsbron) en een een o
 De Franck-Hertz opstelling (bron: 3Bscientific)
 ```
 
-#### Opdracht 3: Klaar zetten 
+##### Opdracht 3: Klaar zetten 
 De oven wordt straks heet en dan kun je deze lastiger verplaatsen. Zorg dus nu vast dat je goed naar binnen kunt kijken. 
 1. Zet de oven zo neer dat je de voorkant, waar de draden aangesloten zijn, en het raam om naar binnen kunt kijken goed kunt zien. 
 2. Zet de oven aan en stel te temperatuur in op 180 ◦C. Het duurt 5 tot 10 minuten voordat de temperatuur bereikt is. PAS OP: ook de buitenkant van de oven wordt heet! 
@@ -100,11 +100,11 @@ De oven wordt straks heet en dan kun je deze lastiger verplaatsen. Zorg dus nu v
 5. Zet de oscilloscoop aan. 
 6. Stel de oscilloscoop zo in dat signaal 1 op de x-as wordt weer gegeven en signaal 2 op de y-as (X-Y mode). Waarschijnlijk is dit al gebeurd. Eventueel doe je dit met het knopje Main en vervolgens op het scherm, selecteer met de knopjes net naast het scherm Time Base XY.
 
-### Proefmeting 
+#### Proefmeting 
 Wanneer de oven is opgewarmd kan je beginnen met meten. De warme oven zorgt ervoor dat een klein druppeltje kwik wat in de vacuum buis zit verdampt. 
 
 
-#### Opdracht 4: Proefmeting 
+##### Opdracht 4: Proefmeting 
 Met deze reeks proefmetingen leer de de oscilloscoop en de spanningsbron bedienen. 
 1. Zet de filamentspanning op 6,0 V tot 6,5 V. Zie je het filament oplichten (oranje)? Het duurt tot 60 seconden voordat het filament stabiel op de gewenste spanning brandt. 
 ```{figure} ./media/franck/frank6.jpg
@@ -135,7 +135,7 @@ Als het goed is zijn je instellingen de volgende:
 De instellingen van de power supply
 ```
 
-#### Opdracht 5: Optimalisatie
+##### Opdracht 5: Optimalisatie
 Voor het meten straks is het handig om de curve optimaal in beeld te kunnen brengen. Als je curve er al mooi uit ziet dan kun je deze opdracht verder overslaan. 
 <br>
 Hieronder staan een aantal tips over het effect van bepaalde instellingen. Je bent vrij om hiermee te experimenteren en ook om nog andere instellingen te proberen. Let er wel op de je probeert om te voorkomen dat je een plasma krijgt. 
@@ -148,7 +148,7 @@ Hieronder staan een aantal tips over het effect van bepaalde instellingen. Je be
 
 Na de theoretische voorbereiding en het verkennen van de opstelling kun je nu starten met de daadwerkelijke meting. 
 
-#### Opdracht 6: Meting
+##### Opdracht 6: Meting
 1. Sluit de multimeter aan zoals op de foto hieronder: De zwarte draad van de GND van de multimeter sluit je aan op de K (kathode) van de power supply (gewoon er bovenin prikken). De rode draad van de V-aansluiting van de multimeter sluit je aan op de A (anode) van de power supply. <br>
 Zet de multimeter met de witte knopjes onderaan op **V** en op **200**.
 
@@ -166,11 +166,11 @@ De instellingen van de multimeter
 
 **Schakel tenslotte de oven (voorop) en de power supply (achterop) en de multimeter (achterop) uit.**
 
-# Experiment 2: Franck en Hertz met Neon
+## Experiment 2: Franck en Hertz met Neon
 
 In dit experiment wordt het experiment uitgevoerd met een Neon buis. 
-## Uitvoering
-### De opstelling
+### Uitvoering
+#### De opstelling
 In de opstelling wordt de oven met kwikbuis vervangen voor de opstelling met de Neon-buis. Zier hieronder de opstelling. De Neon-buis heeft dezelfde bouw en aansluitingen als de kwik-buis, maar bij deze buis gebruiken we het eerste grid wel.
 <br>Volg onderstaande stappen:
 ```{figure} ./media/franck/frank10.jpg
@@ -217,7 +217,7 @@ Bijna horizontale lijn
 De Neon-curve
 ```
 
-### Meting
+#### Meting
 1. Zet de power supply op Man. mode (manual), door de zwarte knop bij Acceleration in te drukken.
 2. Sluit de multimeter weer aan op de K en A, mocht je die losgemaakt hebben en zet deze aan met de knop achterop. Zie de foto hieronder.
 ```{figure} ./media/franck/frank9.jpg
@@ -237,23 +237,23 @@ De Neon-curve
 
 
 
-## Samenvatting
+### Samenvatting
 bron: [UCSB Phyics Remote Labs](https://ilg.physics.ucsb.edu/Courses/RemoteLabs/?linkfile=FH_Remote#:~:text=Video%201-,Theory,the%20anode%20and%20the%20cathode). 
 
-### Het Franck-Hertz-experiment: uitleg en interpretatie
+#### Het Franck-Hertz-experiment: uitleg en interpretatie
 
 Het Franck-Hertz-experiment genereert vrije elektronen door een kathode te verhitten in een vacuümbuis. Deze elektronen worden versneld richting een anode door een spanningsverschil $U_KA$ tussen de kathode en anode. Terwijl de elektronen bewegen, krijgen ze kinetische energie $eV_A$, tenzij ze onderweg botsen met een ander deeltje en een inelastische botsing ondergaan.
 
 Hoewel de buis luchtledig is, is deze niet volledig leeg. Er bevindt zich een kleine hoeveelheid kwikdamp in de buis. Kwik is vloeibaar bij kamertemperatuur, maar door de buis te verhitten wordt een lage druk gas van kwikatomen gevormd tussen de kathode en anode. Bewegende elektronen kunnen botsen met deze kwikatomen en kinetische energie verliezen.
 
-#### Elastische versus inelastische botsingen
+##### Elastische versus inelastische botsingen
 - **Elastische botsingen:** Hierbij verandert de kinetische energie van het elektron nauwelijks, omdat een kwikatoom veel zwaarder is dan een elektron.
 - **Inelastische botsingen:** Hierbij verliezen elektronen een specifiek hoeveelheid energie, gelijk aan het verschil tussen energieniveaus van het kwikatoom.
 
-#### Energieovergangen in kwik
+##### Energieovergangen in kwik
 Kwikatomen kunnen alleen discrete hoeveelheden energie absorberen, zoals de excitatie-energie van **4,9 eV** (het energieverschil tussen de grondtoestand en een aangeslagen toestand). Dit betekent dat elektronen alleen energie verliezen als hun kinetische energie groter is dan of gelijk is aan deze waarde. Dit discrete gedrag is een fundamenteel kenmerk van kwantummechanica.
 
-### Hoe werkt het experiment?
+#### Hoe werkt het experiment?
 Door de spanning geleidelijk te verhogen, meet je het aantal elektronen dat de anode bereikt. Zodra $eV_A = 4,9 eV$, hebben de elektronen voldoende energie om een kwikatoom te exciteren en verliezen ze kinetische energie. Hierdoor ontstaat een daling in de stroom naar de anode. Deze spanning $U_1$ wordt de eerste excitatiespanning genoemd.
 
 Bij hogere spanningen kunnen elektronen meerdere inelastische botsingen ondergaan:
@@ -262,10 +262,10 @@ Bij hogere spanningen kunnen elektronen meerdere inelastische botsingen ondergaa
 
 Dit leidt tot een patroon van opeenvolgende dalingen in de gemeten stroom bij spanningen van $U_1, 2U_1, 3U_1, \dots$.
 
-### Conclusie
+#### Conclusie
 Het Franck-Hertz-experiment laat zien dat kwikatomen energie absorberen in discrete stappen, wat een direct bewijs is van de kwantummechanische theorie. Dus ondersteunt het experiment duidelijk de kwantisatie van energieniveaus.
 
-### Video uitleg 
+#### Video uitleg 
 <div style="display: flex; justify-content: center;">
 <div style="position: relative; width: 70%; height: 0; padding-bottom: 56.25%;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Jckgt5X9p60?si=8oqSXR1DZ1IqeKvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
