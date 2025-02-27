@@ -9,6 +9,7 @@ parts:
       - file: experimenten/michelson.md
       - file: experimenten/mach.md
       - file: experimenten/nv.ipynb
+      - file: experimenten/nv2.md
       - file: experimenten/conductantie.md
       - file: experimenten/dubbel.md
       - file: experimenten/frank.md
