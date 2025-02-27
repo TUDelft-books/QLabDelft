@@ -1,6 +1,8 @@
 # Diamant NV center opstelling 2
 _work in progress_
+<br>
 Practicumhandleiding van het uitgebreide NV center experiment
+<br>
 Dit experiment is nog in de beta-fase, maar klaar om te testen.
 
 ## Inleiding
