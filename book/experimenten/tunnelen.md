@@ -176,6 +176,7 @@ vertonen bij bepaalde frequenties.
 
 ## Problemen
 
+Voor de begeleider: <br>
 Mocht het prisma verschoven of verdraaid zijn, dan is dit een stappenplan:
 1. Zet de micrometer in de beginstand, en orienteer de laser ook op de "gesloten" kant van het prisma.
 2. Draai het prisma dusdanig dat we precies de grenshoek gepasseerd zijn. De spanning is dan veel minder dan de maximale 410mV, namelijk tussen de 15mV en de 100mV. Zie ook de voorbeeld data. Dit is veel lastiger dan dat hier staat.
