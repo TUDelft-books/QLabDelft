@@ -232,8 +232,11 @@ De Neon-curve
 6. Draai op dezelfde manier verder naar het tweede en derde maximum en noteer ook deze spanningen.
 7. Bereken vervolgens telkens het potentiaalverschil (het spanningsverschil) tussen de maxima en noteer deze.
 8. Bereken de gemeten elektron energie in eV en wat valt je op aan deze resultaten? 
+<br><br>
+De resultaten zullen rond de 18,7 eV zitten. Dit is echter een enorm grote hoeveelheid energie en wanneer het elektron in één keer naar het laagste energieniveau zou vallen levert dat een enorm kleine golflengte op (eUV). Neon heeft echter een typerende oranje gloed en deze wordt mede veroorzaakt door het terugvallen van elektronen van 18,7 eV naar 16,6 eV. (18,7 eV is dus eigenlijk niet het laagste energieniveau, maar wel het laagste niveau met de grootste waarschijnlijkheid om te worden aangeslagen.)
+
 9. We kozen er hiervoor de spanning bij de maxima te meten ipv bij de minima omdat wat makkelijker te meten is. Terwijl juist bij de minima de meeste elektronen inelastisch botsen en de Neon atomen naar een aangeslagen toestand gaan. Is hier een verschil tussen?
-7. Wat is nu de conclusie?
+10. Wat is nu de conclusie?
 
 
 
