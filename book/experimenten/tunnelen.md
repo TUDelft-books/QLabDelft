@@ -86,13 +86,13 @@ barrière?
 
 Geef antwoord op de volgende vragen bij dit experiment:
 
-- Wat bepaald de energie van het foton?
+- Wat bepaalt de energie van het foton?
 
-- Wat bepaald de hoogte van de barrière?
+- Wat bepaalt de hoogte van de barrière?
 
-- Wat bepaalde de dikte?
+- Wat bepaalt de dikte?
 
-- Wat bepaald de tunnelkans?
+- Wat bepaalt de tunnelkans?
 
 ## Materiaal
 
