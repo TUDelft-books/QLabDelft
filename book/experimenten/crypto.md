@@ -75,7 +75,7 @@ dus alleen Alice en Bob:
     >b. Op de ontvanger van Bob moet het ledje aan de zijkant oranje
     >    branden. Druk daartoe zo nodig de groene knop één keer in.
     >
-    >c. Zorg dat de rotatie-polarizer ($\frac{\lambda}{2}$ -plaat) bij Alice op 45 graden staat en bij Bob op 0 graden. Hij ziet er zoals hieronder. Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. 
+    >c. Zorg dat de rotatie-polarizer ($\frac{\lambda}{2}$ -plaat) bij Alice op 45 graden staat en bij Bob op 0 graden. Hij ziet er uit zoals hieronder. Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. 
     ><img src="./media/abeimage4.jpg" style="width:1in;height:1in" />
     >
     >d.  De sensors van Bob moet nu even beide (even sterk) belicht
