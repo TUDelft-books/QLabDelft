@@ -135,21 +135,29 @@ De uitvoering in stappen:
     door de micrometer zodanig te verdraaien dat de laser op de plek
     valt waar de spleet tussen de prisma’s minimaal is. Dit is de kant
     die naar jou gericht is. Er zal hier voor bijna 100% transmissie
-    plaatsvinden. Dit is bijna de uiterste stand van de micrometer
-    draaiknop. Zorg dat deze op 0 staat. Noteer de spanning.
+    plaatsvinden. Dit is de stand waarbij de micrometer-draaiknop bijna helemaal is ingedraaid.
+    Zorg dat deze op 0 staat. Noteer de spanning.
 
 4.  Draai de micrometer draaiknop telkens één hele slag tegen de klok in
     (van 0 tot 0) en noteer de spanning die op de fotodiode staat.
 
 5.  En scan zo, als het ware, de spleetbreedte tussen de prisma’s.
 
+6.  Stop als de spanning 4x ongeveer hetzelfde blijft. Ga in ieder geval niet zover dat de laser op de behuizing van het prisma valt.
+
 ## Resultaten
 
-Maak een tabel en zet daarin voor elke slag met de draaiknop de gemeten
-spanning.
+Open een spreadsheet programma en maak hierin een tabel met daarin voor elke slag met de draaiknop de gemeten
+spanning (mV):
 
-Zet de gegevens uit de tabel uit in een grafiek: Horizontaal het aantal
-slagen, verticaal de transmissie of spanning in mV. Gebruik een spreidingdiagram of scattergraph.
+| Aantal Slagen |  Spanning (mV) |
+| :------------ | -------------: |
+|        0      |        ?       |
+|        1      |        ?       |
+
+Zet deze gegevens uit in een grafiek: Horizontaal het aantal slagen, verticaal de transmissie of spanning in mV. Gebruik een *spreidingdiagram* of *scattergraph*.
+
+Voeg een functiefit toe door een trendline toe te voegen: Klik op een meetpunt in de grafiek, vervolgens rechtermuisknop, trendline, en probeer *exponentieel* te kiezen. 
 
 ## Conclusie
 
@@ -159,12 +167,16 @@ Wat voor verband of functie kun je herkennen in je grafiek?
 
 Klopt dit met je verwachtingen? Waarom wel of niet?
 
-Voeg dit functieverband toe om zo een functiefit te krijgen (een
-vloeiende lijn door je meetgegevens).
-
 ## Ideeën:
 
 - Resonant optical tunneling effect: Twee barrière’s, die resonantie
 vertonen bij bepaalde frequenties.
 - Tunnelen met microgolven
 - Tunneldiode
+
+## Problemen
+
+Mocht het prisma verschoven of verdraaid zijn, dan is dit een stappenplan:
+1. Zet de micrometer in de beginstand, en orienteer de laser ook op de "gesloten" kant van het prisma.
+2. Draai het prisma dusdanig dat we precies de grenshoek gepasseerd zijn. De spanning is dan veel minder dan de maximale 410mV, namelijk tussen de 15mV en de 100mV. Zie ook de voorbeeld data. Dit is veel lastiger dan dat hier staat.
+3. Zet de boel vast en test.
