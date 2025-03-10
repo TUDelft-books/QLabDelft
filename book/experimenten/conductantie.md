@@ -158,21 +158,18 @@ worden. Wat is hier aan de hand?*
 Volg de handleiding in de software linksboven. Aanvullend
 stap-voor-stap:
 
-1.  Controleer Vin door het contact handmatig te sluiten (druk het
-    stukje metaal naar links zodat de twee gouden dopmoeren contact
+1.  Controleer Vin door het contact handmatig te sluiten (druk het omhoog uitstekende L vormige 
+    stukje naar links zodat de twee gouden dopmoeren contact
     blijven maken en lees de spanning met de scoop af. (De gele lijn).
     Hij moet ingesteld zijn op circa 200mV. Dit is te regelen met de
     draaiknop links aan de zijkant op het apparaat. Het is de knop die
-    het dichtstbij is.
+    het dichtstbij is (de rechtste, van de zijkant gezien).
 
-2.  De Vin moet je in de software laten inlezen.
+2.  De Vin moet je in de software laten inlezen (druk op Vin meten (knopje linksonder), in het pop-up window weer op meten drukken en sla de waarde op.).
 
-3.  Zet de functiegenerator aan met de software: Hij moet op 30Hz en
-    500mV staan (regel dit eventueel bij met de schuifjes in de
-    software, of eventueel op de scoop zelf). Het is de rode G
-    rechtsonder in het scherm op de scoop. Stel de verticale schaal op
-    de scoop in voor de blauwe lijn zodanig dat deze in beeld is zoals
-    hieronder.
+3.  Zet de functiegenerator aan met de software (knop: Start Func): Hij moet op 30Hz en circa 220mV
+    Met de rode G rechtsonder in het scherm op de scoop kan je de instellingen eventueel aanpassen. De instellingen zijn ook aan te passen met de schuifjes bij het oscilloscoopscherm in de software. Je kunt met het horizontale schuifje de frequentie bijvoorbeeld op 15Hz zetten. Met de verticale schuifjes kun je de amplitude en de offset instellen. 
+    De instelling zoals hieronder is prima, maar 15 Hz is wellicht nog beter.
 
 <img src="./media/cimage3.png"
 style="width:4.07283in;height:2.38542in" />
@@ -190,12 +187,12 @@ style="width:3.69934in;height:2.16667in" />
     <br>
     <img src="./media/cimage5.png" style="width:3.80605in;height:2.22917in" />
 
-6.  Het is de bedoeling dat we gaan inzoom op de rechterflank van de
+6.  Het is de bedoeling dat we gaan inzoomen op de rechterflank van de
     gele blokgolf. Hierbij is het belangrijk dat de Triggerfunctie goed
     staat ingesteld, anders verspringt het beeld de hele tijd:
 
-    1.  Verschuif eerst de oorsprong naar links door de rode T in het
-        midden bovenaan naar het op-één-na eerste hokje te verplaatsen
+    1.  Op het oscilloscoop scherm verschuif je eerst de oorsprong naar links door de rode T in het
+        midden bovenaan naar het op-één-na eerste hokje te slepen/ verplaatsen
         (het is een touchscreen).
 
 7.  De triggerfunctie (T) moet staan op:
@@ -212,7 +209,7 @@ style="width:3.69934in;height:2.16667in" />
 
     5.  Level: circa 20-50mV (een beetje beneden aan de flank)
 
-8.  Vervolgens kan er worden ingezoomed, zowel verticaal als horizontaal
+8.  Vervolgens kan er worden ingezoomed met de knoppen op oscilloscoop, zowel verticaal als horizontaal
     tot het onderste deel van de gele, rechterflank goed zichtbaar is en
     er ontvouwt zich dan, met enig geduld en tweaken het volgende beeld:
 
@@ -220,6 +217,8 @@ style="width:3.69934in;height:2.16667in" />
 
 Kijk vooral ook even naar de instellingen van bovenstaand beeld: Vooral
 de schaal langs de assen maakt duidelijk hoever er is ingezoomd.
+* Bij de gele 1 mag 5mV of 10mV staan (2mV is lastig goed te krijgen).
+* Bij de H linksboven mag 5 tot 20 us (microseconden) staan. 
 
 LET OP: Staat er **WAIT** linksboven in beeld op de scoop, dan kan de
 scoop geen nieuwe trigger op het signaal doen: Soms is een tikje genoeg
@@ -227,7 +226,7 @@ tegen de opstelling, andere keren moet je de scoop weer terug op auto
 zetten en het contact bijstellen met de stelschroef.
 
 9.  Dit beeld moet in de software worden vastgelegd door een single of
-    multi *Trace* op te nemen.
+    multi *Trace* op te nemen. Druk dus op de bijbehorende knop. Bij de multi trace moet je even wachten, dit duurt even.
 
 10. Met de run/stopknop rechtsboven op de scoop zelf kan het beeld
     worden stilgezet en kunnen de verschillende *traces* ook worden
@@ -238,6 +237,14 @@ zetten en het contact bijstellen met de stelschroef.
     niveau’s op te meten en uit te zetten in een grafiek. Met behulp van
     de richtingscoëfficiënt (helling) van deze grafiek kan tenslotte de
     Quantumweerstand worden bepaald.
+    <br>
+    Dit doe je als volgt:
+    1) Maak een goede multi trace.
+    2) Kies de beste trace uit waarbij een aantal trappetjes duidelijk zichtbaar zijn.
+    3) Klik met je muis op de vlakke niveau's van het trappetje in het grafiekscherm. Er verschijnen dan rode meetpunten. Maak je ene fout: Klik dan op *Clear points* en begin opnieuw.
+    4) Klik vervolgens op *Plot points*.
+    5) En het programma laat de grafiek zien van deze meetpunten en berekent de quantumweerstand voor je. Kun je dit narekenen?
+
 
 ## Conclusie en discussie
 
