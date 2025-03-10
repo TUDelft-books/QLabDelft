@@ -245,6 +245,7 @@ zetten en het contact bijstellen met de stelschroef.
     4) Klik vervolgens op *Plot points*.
     5) En het programma laat de grafiek zien van deze meetpunten en berekent de quantumweerstand voor je. Kun je dit narekenen?
 
+<img src="./media/cimage7.png" style="width:5.1933in;height:3.04167in" />
 
 ## Conclusie en discussie
 
