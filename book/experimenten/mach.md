@@ -30,6 +30,9 @@ Quantum eraser experiment
 
 Uitgestelde keuze experiment
 
+<img src="./media/mimage0.png"
+style="width:3in;height:3in" alt="figuur 0" />
+
 ## Materiaal
 
 Onderstaande opstelling, met daarin:
