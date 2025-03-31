@@ -24,12 +24,12 @@ De wet van Malus geeft aan wat de intensiteit is van het licht als licht een bep
 :label: 0
 I = I_0\cos^2(\theta)
 ```
-​waarbij $𝐼_0$ de maximale intensiteit is en 𝜃 de hoek tussen de transmissie-assen van de polarisators.
+​waarbij $𝐼_0$ de maximale intensiteit is en 𝜃 de hoek tussen de transmissie-assen van de polarisatoren.
 
 ## Materiaal
 1. Lichtbron met bundel die goed rechtdoor gaat (laser).
 2. Holle lens (-75dpt), om de lichtbundel een groteren diameter te geven.
-3. Drie polarisators met een instelbare rotatiehoek. Alle drie met een lineaire polarisator.
+3. Drie polarisatoren met een instelbare rotatiehoek. Alle drie met een lineaire polarisator.
 4. Scherm om het goed zichtbaar te maken.
 5. Optische detector: Voor het meten van de intensiteit van het doorgelaten licht.
 6. Multimeter om de spanning van de detector te meten
@@ -45,10 +45,10 @@ I = I_0\cos^2(\theta)
 >- Kijk ook uit met strooi- of gereflecteerd licht.
 >- De laser wordt dan ook niet gedemonteerd.
 
-### deel 1 
+### deel 1 met scherm
 1. Zorg dat het scherm en de lens in de bundel op hun plek staan (zie foto).
 2. Zet de laser aan. 
-3. Zorg dat alle polarisators op 0 graden staan: Dat betekent dat er alleen verticaal gepolariseerd licht wordt doorgelaten. Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. (alleen de tweede en derde polarisator zijn instelbaar)
+3. Zorg dat alle polarisatoren op 0 graden staan: Dat betekent dat er alleen verticaal gepolariseerd licht wordt doorgelaten. Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. (alleen de tweede en derde polarisator zijn instelbaar)
 4. Er zal een duidelijke lichtbundel zichtbaar zijn op het scherm.
 <img src="./media/malus/malus2.jpg" />
 5. Draai nu aan de derde polarisator, degene het dichtst bij het scherm, en zet deze op 90 graden (horizontaal gepolariseerd). Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. 
@@ -57,10 +57,10 @@ I = I_0\cos^2(\theta)
 8. Kijk naar het scherm, wat zie je gebeuren?
 9. Kun je dit verklaren? Aan het einde van dit experiment wordt duidelijker hoe dit kan.
 
-### deel 2
+### deel 2 met sensor
 1. Verwijder nu het scherm en de lens uit de opstelling, door deze weg te schuiven.
 <img src="./media/malus/malus3.jpg" />
-2. Zorg dat alle polarisators op 0 graden staan.
+2. Zorg dat alle polarisatoren op 0 graden staan.
 3. Maak een tabel met daarin een kolom voor de hoek in graden en een kolom voor de sensorspanning in mV.
 4. Meet nu, door de derde polarisator te verdraaien, in stapjes van 10 graden van 0 tot 180 graden de doorgelaten intensiteit met de optische detector (de sensorspanning). 
 
@@ -74,7 +74,7 @@ I = I_0\cos^2(\theta)
 Toon aan dat hieruit volgt:
 $ I = I_0\cos^2(\theta)$
 
-## Superpositie experiment
+##  deel 3: Superpositie experiment
 We keren terug naar de beginsituatie waarin de lens en het scherm in de opstelling staan. 
 1. Plaats deze dus terug.
 2. Draai nu aan de derde polarisator, degene het dichtst bij het scherm, en zet deze op 90 graden (horizontaal gepolariseerd). Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. 
@@ -94,7 +94,7 @@ Dit betekent: **geen licht komt erdoor**.
 Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedraaid onder een hoek van **45°**, gebeurt iets vreemds: **er komt weer licht door de laatste polarisator!**  
 
 #### **klassieke elektromagnetische golfbenadering (E-vector)**  
-<img src="./media/malus/Evectors-in-malus.jpg" />\
+<img src="./media/malus/Evectors-in-malus.jpg" />
 1. Elke lichtgolf heeft een Elektrische veld vector, die bestaat uit een horizontale en verticale component met een bepaalde grootte (afhankelijk van de oriëntatie t.o.v. de horizon).
 2. **Eerste polarisator (0°)**: Laat alleen licht door dat in de 0°-richting trilt.
 3. **Tweede polarisator (45°)**: Dit absorbeert een deel van het licht, maar het licht dat het wél doorlaat wordt opnieuw gepolariseerd in de 45°-richting.
@@ -102,36 +102,36 @@ Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedr
 
 #### **Wiskundige uitleg**  
 - **Eerste polarisator (0°)**  
-  - Alleen de horizontale component van het licht blijft over.
+  - Alleen de verticale component van het licht blijft over.
   - $ E_1 = E_0 \), \( I_1 = I_0 $.
 
 - **Tweede polarisator (45°)**  
-  - De horizontale golf wordt gedeeltelijk doorgelaten. De nieuwe $ \mathbf{E} $-vector maakt een hoek van 45°.
+  - De verticale golf wordt gedeeltelijk doorgelaten. De nieuwe $ \mathbf{E} $-vector maakt een hoek van 45°.
   - $ E_2 = E_1 \cos(45^\circ) = \frac{E_1}{\sqrt{2}} $.
   - $ I_2 = I_1 \cos^2(45^\circ) = \frac{I_1}{2} $.
 
 - **Derde polarisator (90°)**  
-  - Nu is het licht al in een 45°-superpositie. De polarisator selecteert de verticale component van deze golf.
+  - Nu is het licht al in een 45°-superpositie. De polarisator selecteert de horizontale component van deze golf.
   - $ E_3 = E_2 \cos(45^\circ) = \frac{E_2}{\sqrt{2}} $.
   - $ I_3 = I_2 \cos^2(45^\circ) = \frac{I_2}{2} = \frac{I_0}{4} $.
 
 Er blijft dus **25% van de oorspronkelijke intensiteit** over, terwijl je zonder de tweede polarisator **0%** had gehad!
 
-#### **Met de quantummechanische benadering: suPerpositie van fotonen**  
+#### **Met de quantummechanische benadering: Superpositie van fotonen**  
 
-Licht bestaat uit **fotonen**. Wanneer een foton een polarisator passeert, wordt het in een **kwantummechanische superpositie** van toestanden gezet.
+Licht bestaat uit **fotonen**. Wanneer een foton een polarisator passeert, wordt het in een **quantummechanische superpositie** van toestanden gezet.
 
 **Wat gebeurt er bij drie polarisatoren?**  
 
 - **Eerste polarisator (0°)**  
-  - Een inkomend foton wordt gemeten in de **horizontale** (H) basis.
+  - Een inkomend foton wordt gemeten in de **verticale** (V) basis.
   - Als het foton oorspronkelijk ongepolariseerd was, is er **50% kans** dat het wordt geabsorbeerd en **50% kans dat het doorgaat**. 
-  - De fotonen die doorgaan, zijn nu in de toestand $|H\rangle $.
+  - De fotonen die doorgaan, zijn nu in de toestand $|V\rangle $.
 
 - **Tweede polarisator (45°)**  
-  - Een foton in $|H\rangle $ kan in de **45° basis** als superpositie geschreven worden:  
+  - Een foton in $|V\rangle $ kan in de **45° basis** als superpositie geschreven worden:  
     $
-    |H\rangle = \frac{1}{\sqrt{2}}(|45^\circ\rangle + |-45^\circ\rangle)
+    |V\rangle = \frac{1}{\sqrt{2}}(|45^\circ\rangle + |-45^\circ\rangle)
     $
   - Wanneer het foton door de 45°-polarisator gaat, wordt het gemeten in de **45°-basis**, en blijft er een **50% kans** over dat het doorgaat.
   - De doorgelaten fotonen zitten nu in de toestand $ |45^\circ\rangle $.
@@ -141,18 +141,16 @@ Licht bestaat uit **fotonen**. Wanneer een foton een polarisator passeert, wordt
     $
     |45^\circ\rangle = \frac{1}{\sqrt{2}}(|V\rangle + |H\rangle)
     $
-  - De kans dat het foton nu wordt doorgelaten (als $ |V\rangle $) is opnieuw **50%**.
+  - De kans dat het foton nu wordt doorgelaten (als $ |H\rangle $) is opnieuw **50%**.
   - Dit betekent dat **25% van de oorspronkelijke fotonen doorgaat**.
 
-### **Samenvatting van beide benaderingen**
+#### **Samengevat**
 | Benadering   | Wat gebeurt er? |
 |-------------|----------------|
 | **Klassiek (E-vectoren)** | De tussenliggende polarisator draait de veldvector stapsgewijs, waardoor er een component in de eindrichting blijft. |
-| **Kwantummechanisch (fotonen)** | Het foton wordt bij elke polarisator in een nieuwe superpositie gezet. Hierdoor kan het foton doorgaan waar het normaal geblokkeerd zou worden. |
-
-**Belangrijk inzicht**: De **tussenliggende polarisator introduceert een nieuwe meetbasis** waardoor er licht kan passeren, terwijl zonder deze polarisator het licht volledig zou worden geabsorbeerd! 🚀
+| **Kwantummechanisch (fotonen)** | Het foton wordt bij elke polarisator in een nieuwe superpositie gezet. Hierdoor kan het foton doorgaan waar het normaal geblokkeerd zou worden. De tussenliggende polarisator introduceert een nieuwe meetbasis waardoor er licht kan passeren, terwijl zonder deze polarisator het licht volledig zou worden geabsorbeerd. |
 
 ## Conclusie
-Dit experiment toont aan dat het invoegen van een derde polarisator onder een hoek een niet-intuïtieve invloed kan hebben op de doorgelaten intensiteit, wat verklaard kan worden door het quantummechanische principe van superpositie.
+Dit experiment toont aan dat het invoegen van een derde polarisator onder een hoek een niet-intuïtieve invloed kan hebben op de doorgelaten intensiteit, wat verklaard kan worden zowel klassiek door golfoptica als door het quantummechanische principe van superpositie.
 
 
