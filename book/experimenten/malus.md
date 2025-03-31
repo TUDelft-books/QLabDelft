@@ -70,7 +70,7 @@ I = I_0\cos^2(\theta)
 3. Voeg een extra grafiek van $I$ uitgezet tegen $\cos^2(\theta)$ (door middel van een coördinaten transformatie).
 4. Wat is hier de betekenis van de helling (richtingscoëfficiënt)?
 
-## Conclusie
+## Conclusie deel 2
 Toon aan dat hieruit volgt:
 $ I = I_0\cos^2(\theta)$
 
@@ -83,24 +83,26 @@ We keren terug naar de beginsituatie waarin de lens en het scherm in de opstelli
 5. Nu is er wel licht zichtbaar op het scherm.
 
 ## Uitleg
-### **1. Wat gebeurt er normaal met twee polarisatoren?**
+### 1. Wat gebeurt er normaal met twee polarisatoren?
 Als je twee polarisatiefilters achter elkaar zet met een hoek van **90°** tussen hun polarisatierichtingen, dan blokkeert de tweede (analyzer) al het licht. Dit komt omdat:
 - De eerste polarisator laat alleen licht door in zijn polarisatierichting.
 - De tweede polarisator is 90° gedraaid, waardoor het geen component van het al gepolariseerde licht doorlaat.
 
 Dit betekent: **geen licht komt erdoor**.
 
-### **2. Wat gebeurt er met drie polarisatoren?**
+### 2. Wat gebeurt er met drie polarisatoren?
 Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedraaid onder een hoek van **45°**, gebeurt iets vreemds: **er komt weer licht door de laatste polarisator!**  
 
-#### **klassieke elektromagnetische golfbenadering (E-vector)**  
+#### klassieke elektromagnetische golfbenadering (E-vector)
 <img src="./media/malus/Evectors-in-malus.jpg" />
-1. Elke lichtgolf heeft een Elektrische veld vector, die bestaat uit een horizontale en verticale component met een bepaalde grootte (afhankelijk van de oriëntatie t.o.v. de horizon).
-2. **Eerste polarisator (0°)**: Laat alleen licht door dat in de 0°-richting trilt.
-3. **Tweede polarisator (45°)**: Dit absorbeert een deel van het licht, maar het licht dat het wél doorlaat wordt opnieuw gepolariseerd in de 45°-richting.
-4. **Derde polarisator (90°)**: Normaal zou deze geen licht doorlaten (zoals bij twee polarisatoren), maar nu wél! Dit komt doordat het licht van de tussenliggende polarisator een component heeft in de 90°-richting.
+<br>
 
-#### **Wiskundige uitleg**  
+1. Elke lichtgolf heeft een Elektrische veld vector, die bestaat uit een horizontale en verticale component met een bepaalde grootte (afhankelijk van de oriëntatie t.o.v. de horizon).
+2. Eerste polarisator (0°): Laat alleen licht door dat in de 0°-richting trilt.
+3. Tweede polarisator (45°): Dit absorbeert een deel van het licht, maar het licht dat het wél doorlaat wordt opnieuw gepolariseerd in de 45°-richting.
+4. Derde polarisator (90°): Normaal zou deze geen licht doorlaten (zoals bij twee polarisatoren), maar nu wél! Dit komt doordat het licht van de tussenliggende polarisator een component heeft in de 90°-richting.
+
+#### Wiskundige uitleg
 - **Eerste polarisator (0°)**  
   - Alleen de verticale component van het licht blijft over.
   - $ E_1 = E_0 \), \( I_1 = I_0 $.
@@ -150,7 +152,7 @@ Licht bestaat uit **fotonen**. Wanneer een foton een polarisator passeert, wordt
 | **Klassiek (E-vectoren)** | De tussenliggende polarisator draait de veldvector stapsgewijs, waardoor er een component in de eindrichting blijft. |
 | **Kwantummechanisch (fotonen)** | Het foton wordt bij elke polarisator in een nieuwe superpositie gezet. Hierdoor kan het foton doorgaan waar het normaal geblokkeerd zou worden. De tussenliggende polarisator introduceert een nieuwe meetbasis waardoor er licht kan passeren, terwijl zonder deze polarisator het licht volledig zou worden geabsorbeerd. |
 
-## Conclusie
+## Conclusie deel 3
 Dit experiment toont aan dat het invoegen van een derde polarisator onder een hoek een niet-intuïtieve invloed kan hebben op de doorgelaten intensiteit, wat verklaard kan worden zowel klassiek door golfoptica als door het quantummechanische principe van superpositie.
 
 
