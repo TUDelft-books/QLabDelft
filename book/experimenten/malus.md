@@ -86,9 +86,8 @@ We keren terug naar de beginsituatie waarin de lens en het scherm in de opstelli
 ### 1. Wat gebeurt er normaal met twee polarisatoren?
 Als je twee polarisatiefilters achter elkaar zet met een hoek van **90°** tussen hun polarisatierichtingen, dan blokkeert de tweede (analyzer) al het licht. Dit komt omdat:
 - De eerste polarisator laat alleen licht door in zijn polarisatierichting.
-- De tweede polarisator is 90° gedraaid, waardoor het geen component van het al gepolariseerde licht doorlaat.
-
-Dit betekent: **geen licht komt erdoor**.
+- De tweede polarisator is 90° gedraaid, waardoor het geen component van het reeds gepolariseerde licht doorlaat.
+Dit betekent dat er geen licht wordt doorgelaten. 
 
 ### 2. Wat gebeurt er met drie polarisatoren?
 Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedraaid onder een hoek van **45°**, gebeurt iets vreemds: **er komt weer licht door de laatste polarisator!**  
