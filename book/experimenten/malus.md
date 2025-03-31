@@ -26,12 +26,12 @@ De wet van Malus geeft aan wat de intensiteit is van het licht als licht een bep
 :label: 0
 I = I_0\cos^2(\theta)
 ```
-​waarbij $𝐼_0$ de maximale intensiteit is en 𝜃 de hoek tussen de transmissie-assen van de polarisatoren.
+​waarbij $𝐼_0$ de maximale intensiteit is en 𝜃 de hoek tussen de transmissie-assen van de polarisators.
 
 ## Materiaal
 1. Lichtbron met bundel die goed rechtdoor gaat (laser).
 2. Holle lens (-75dpt), om de lichtbundel een groteren diameter te geven.
-3. Drie polarisatoren met een instelbare rotatiehoek. Alle drie met een lineaire polarisator.
+3. Drie polarisators met een instelbare rotatiehoek. Alle drie met een lineaire polarisator.
 4. Scherm om het goed zichtbaar te maken.
 5. Optische detector: Voor het meten van de intensiteit van het doorgelaten licht.
 6. Multimeter om de spanning van de detector te meten
@@ -47,24 +47,30 @@ I = I_0\cos^2(\theta)
 >- Kijk ook uit met strooi- of gereflecteerd licht.
 >- De laser wordt dan ook niet gedemonteerd.
 
+### deel 1 
 1. Zorg dat het scherm en de lens in de bundel op hun plek staan (zie foto).
 2. Zet de laser aan. 
-3. Zorg dat alle polarizatoren op 0 graden staan: Dat betekent dat er alleen verticaal gepolariseerd licht wordt doorgelaten. Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. 
+3. Zorg dat alle polarisators op 0 graden staan: Dat betekent dat er alleen verticaal gepolariseerd licht wordt doorgelaten. Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. (alleen de tweede en derde polarisator zijn instelbaar)
 4. Er zal een duidelijke lichtbundel zichtbaar zijn op het scherm.
+<img src="./media/malus/malus2.jpg" />
 5. Draai nu aan de derde polarisator, degene het dichtst bij het scherm, en zet deze op 90 graden (horizontaal gepolariseerd). Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. 
 6. Er is nu als het goed is geen licht zichtbaar op het scherm. 
 7. Draai nu de middelste polarizer naar 45 graden. 
 8. Kijk naar het scherm, wat zie je gebeuren?
 9. Kun je dit verklaren? Het wordt gedurende dit experiment duidelijker hoe dit kan.
-10. 
 
-Plaats de laserbron zodanig dat de bundel door de twee polarisatoren kan passeren.
-2. Zet de eerste polarisator in een vaste positie, zodat het licht lineair gepolariseerd is.
-3. Laat het licht door de tweede polarisator gaan, waarvan de hoek instelbaar is.
-4. Meet de doorgelaten intensiteit met de optische detector terwijl je de hoek van de tweede polarisator varieert met stapjes van 5 graden.
+### deel 2
+1. Verwijder nu het scherm en de lens uit de opstelling, door deze weg te schuiven.
+<img src="./media/malus/malus3.jpg" />
+2. Zorg dat alle polarisators op 0 graden staan.
+3. Maak een tabel met daarin een kolom voor de hoek in graden en een kolom voor de sensorspanning in mV.
+4. Meet nu, door de derde polarisator te verdraaien, in stapjes van 10 graden van 0 tot 180 graden de doorgelaten intensiteit met de optische detector (de sensorspanning). 
 
 ## Resultaten
-1. Plot de intensiteit als functie van de hoek.
+1. Breid de tabel uit met een kolom voor de theoretische waarde met behulp van de formule uit de theorie. 
+2. Maak een grafiek van je data en van de theoretische waarde. Let op: de functie $=\cos()$ is in radialen in een spreadsheet.
+3. Voeg een extra grafiek van $I$ uitgezet tegen $\cos^2(\theta)$ (door middel van een coördinaten transformatie).
+4. Wat is hier de betekenis van de helling (richtingscoëfficiënt)?
 
 ## Conclusie
 Toon aan dat hieruit volgt:
