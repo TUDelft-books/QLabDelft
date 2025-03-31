@@ -94,8 +94,8 @@ Dit betekent: **geen licht komt erdoor**.
 Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedraaid onder een hoek van **45°**, gebeurt iets vreemds: **er komt weer licht door de laatste polarisator!**  
 
 #### klassieke elektromagnetische golfbenadering (E-vector)
-<img src="./media/malus/Evectors-in-malus.jpg" />
-<br>
+<img src="./media/malus/Evectors-in-malus-v2.jpg" />
+
 
 1. Elke lichtgolf heeft een Elektrische veld vector, die bestaat uit een horizontale en verticale component met een bepaalde grootte (afhankelijk van de oriëntatie t.o.v. de horizon).
 2. Eerste polarisator (0°): Laat alleen licht door dat in de 0°-richting trilt.
