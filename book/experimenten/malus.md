@@ -108,7 +108,7 @@ Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedr
 
 - **Tweede polarisator (45°)**  
   - De verticale golf wordt gedeeltelijk doorgelaten. De nieuwe $ \mathbf{E} $-vector maakt een hoek van 45°.
-  - $ E_2 = E_1 \cos(45^\circ) = \frac{E_1}{\sqrt{2}} $.
+  - $ E_2 = E_1 \cos(45^\circ) = \frac{E_1}{\sqrt{2}} $. En omdat geldt: $I \propto E^2$, is:
   - $ I_2 = I_1 \cos^2(45^\circ) = \frac{I_1}{2} $.
 
 - **Derde polarisator (90°)**  
@@ -155,3 +155,45 @@ Licht bestaat uit **fotonen**. Wanneer een foton een polarisator passeert, wordt
 Dit experiment toont aan dat het invoegen van een derde polarisator onder een hoek een niet-intuïtieve invloed kan hebben op de doorgelaten intensiteit, wat verklaard kan worden zowel klassiek door golfoptica als door het quantummechanische principe van superpositie.
 
 
+De **wet van Malus** stelt dat de intensiteit \( I \) van gepolariseerd licht dat door een polarisator met hoek \( \theta \) passeert, gegeven wordt door:  
+
+\[
+I = I_0 \cos^2(\theta)
+\]
+
+waarbij:
+- \( I_0 \) de intensiteit van het invallende licht is,
+- \( \theta \) de hoek tussen de oorspronkelijke polarisatierichting en de as van de polarisator.
+
+Laten we deze formule afleiden uit de trilling van de **elektrische veldvector** \( E \), die als een cosinusfunctie varieert.
+
+---
+
+### **Afleiding uit \( E \cos(\theta) \)**
+We weten dat licht als een **elektromagnetische golf** kan worden beschreven, waarbij de elektrische veldcomponent \( E \) in een bepaalde richting trilt.
+
+1. **Polarisator effect op de E-vector**  
+   - Stel dat het invallende licht een elektrische veldvector \( E_0 \) heeft, gepolariseerd onder een hoek \( \theta \) ten opzichte van de as van de polarisator.
+   - De polarisator laat alleen de component van \( E_0 \) door die evenwijdig is aan zijn as, gegeven door:  
+     
+     \[
+     E = E_0 \cos(\theta)
+     \]
+
+2. **Intensiteit en het kwadraat van de amplitude**  
+   - De intensiteit \( I \) van een golf is **evenredig met het kwadraat van de elektrische veldsterkte**:
+     
+     \[
+     
+     \]
+
+   - Invullen van \( E = E_0 \cos(\theta) \) in deze relatie:
+
+     \[
+     I = I_0 \cos^2(\theta)
+     \]
+
+   waarbij \( I_0 \) de oorspronkelijke intensiteit is vóór de polarisator.
+
+**Conclusie:**  
+De intensiteit na een polarisator volgt direct uit de relatie tussen de elektrische veldvector en de projectie ervan op de polarisatierichting. Dit verklaart waarom de wet van Malus volgt uit de \( E \cos(\theta) \)-relatie!
