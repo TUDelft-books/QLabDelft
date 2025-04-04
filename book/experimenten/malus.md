@@ -69,9 +69,9 @@ I = I_0\cos^2(\theta)
 
 |hoek (graden) | cos^2 (doe de hoek in radialen) |	gemeten spanning (mV)	| theoretisch waarde |
 |-------------|----------------|-------------|----------------|
-|0|1|data|berekent|
+|0|1|jouw data|berekend|
 2. Maak een grafiek (spreidingsdiagram) van je data en van de theoretische waarde. Let op: de functie $=\cos()$ is in radialen in een spreadsheet. Zet de hoek in graden langs de horizontale as.
-3. Voeg een extra grafiek toe van $I$ uitgezet tegen $\cos^2(\theta)$. 
+3. Voeg een extra grafiek toe van $I$ uitgezet tegen $\cos^2(\theta)$. $I$ dus verticaal.
 4. Wat is hier de betekenis van de helling (richtingscoëfficiënt)? Je kunt een (lineaire) trendlijn maken van de helling door op een meetpunt te klikken. Zorg ervoor dat de vergelijking of functie in beeld komt. Wat is het hellingsgetal?
 
 ## Conclusie deel 2
