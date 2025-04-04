@@ -58,7 +58,7 @@ I = I_0\cos^2(\theta)
 9. Kun je dit verklaren? Aan het einde van dit experiment wordt duidelijker hoe dit kan.
 
 ### deel 2 met sensor
-1. Verwijder nu het scherm en de lens uit de opstelling, door deze weg te schuiven.
+1. Verwijder nu het scherm uit de opstelling, door deze weg te schuiven. Laat de lens staan (in tegenstelling tot de foto).
 <img src="./media/malus/malus3.jpg" />
 2. Zorg dat alle polarisatoren op 0 graden staan.
 3. Maak een tabel met daarin een kolom voor de hoek in graden en een kolom voor de sensorspanning in mV.
@@ -66,9 +66,13 @@ I = I_0\cos^2(\theta)
 
 ## Resultaten
 1. Breid de tabel uit met een kolom voor de theoretische waarde met behulp van de formule uit de theorie. 
-2. Maak een grafiek van je data en van de theoretische waarde. Let op: de functie $=\cos()$ is in radialen in een spreadsheet.
-3. Voeg een extra grafiek van $I$ uitgezet tegen $\cos^2(\theta)$ (door middel van een coördinaten transformatie).
-4. Wat is hier de betekenis van de helling (richtingscoëfficiënt)?
+
+|hoek (graden) | cos^2 (doe de hoek in radialen) |	gemeten spanning (mV)	| theoretisch waarde |
+|-------------|----------------|-------------|----------------|
+|0|1|data|berekent|
+2. Maak een grafiek (spreidingsdiagram) van je data en van de theoretische waarde. Let op: de functie $=\cos()$ is in radialen in een spreadsheet. Zet de hoek in graden langs de horizontale as.
+3. Voeg een extra grafiek toe van $I$ uitgezet tegen $\cos^2(\theta)$. 
+4. Wat is hier de betekenis van de helling (richtingscoëfficiënt)? Je kunt een (lineaire) trendlijn maken van de helling door op een meetpunt te klikken. Zorg ervoor dat de vergelijking of functie in beeld komt. Wat is het hellingsgetal?
 
 ## Conclusie deel 2
 Toon aan dat hieruit volgt:
