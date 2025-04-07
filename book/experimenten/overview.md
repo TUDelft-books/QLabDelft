@@ -31,11 +31,11 @@ Met dit experiment kan worden onderzocht in hoeverre enkele, losse fotonen besta
 
 **[Mach Zehnder Interferometer](mach.md)** 
 <br>
-Met deze opstelling kan worden geëxperimenteerd met het quantum begrip pad-informatie en de zo genaamde Quantum Eraser. 
+Met deze opstelling kan worden geëxperimenteerd met het quantum begrip pad-informatie en de zo genaamde *Quantum Eraser*. 
 
 **[Michelson Interferometer](michelson.md)** 
 <br>
-Met deze opstelling kunnen diverse experimenten worden uitgevoerd, waaronder de zo genaamde Bombtester. 
+Met deze opstelling kunnen diverse experimenten worden uitgevoerd, waaronder de zo genaamde *Bombtester*. 
 
 **[Quantum Conductantie](conductantie.md)**
 <br>

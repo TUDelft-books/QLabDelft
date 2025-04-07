@@ -4,8 +4,8 @@ practicumhandleiding
 ## Inleiding
 
 Dit is de handleiding van zowel het experiment met de gewone
-spectrometer (11a) en van de Czerny-Turner spectrometer met motor
-gestuurde tralie (11b).
+spectrometer en van de Czerny-Turner spectrometer met motor
+gestuurde tralie.
 
 Met een spectrometer kan de golflengte worden gevonden die wordt
 uitgezonden bij het terugvallen van een elektron naar lager

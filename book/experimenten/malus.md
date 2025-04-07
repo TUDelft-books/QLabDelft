@@ -1,5 +1,4 @@
 # Wet van Malus
-_dit experiment is nog in ontwikkeling_
 In dit experiment wordt de wet van Malus met behulp van polarisatoren experimenteel bepaald.
 Tevens wordt het begrip superpositie aan de hand van polarisatie onderzocht.
 
