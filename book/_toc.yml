@@ -18,6 +18,7 @@ parts:
       - file: experimenten/tunnelen.md
       - file: experimenten/crypto.md
       - file: experimenten/spectro.md
+      - file: experimenten/spectro-pi.md
       - file: experimenten/afm.md
     - file: references.md
     - file: changelog.md
