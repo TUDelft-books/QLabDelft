@@ -1,5 +1,5 @@
 # Spectrometer met Camera
-_deze handleiding is nog *under construction*_
+_deze handleiding is nog **under construction**_
 practicumhandleiding
 
 ## Inleiding
@@ -28,7 +28,7 @@ De camera is via een lintkabel aangesloten op een Raspberry Pi. Deze mini comput
 Qua software wordt gebruik gemaakt van een camera script (Pycam) om de beelden op te slaan. 
 Vervolgens worden de beelden met ImageJ geanalyseerd. 
 Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet met een Spreadsheets programma (Excel). Hierin wordt de data verder verwerkt. 
-> *Materiaalijst:*
+> **Materiaalijst:**
 > * hand-spectroscoop
 > * Raspberry Pi Camera 3 NoIR (Bij andere camera's kan het handmatig scherpstellen met een (zoom)lens nodig zijn) 
 > * Lintkabel (lang)
@@ -37,6 +37,6 @@ Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet
 > * ImageJ software
 > * Excel software
 
-<img src="./media/spectro-pi/spectroscoop.jpeg"
+<img src="./media/spectro-pi/spectroscoop.jpeg"/> 
 
 ## Uitvoering
