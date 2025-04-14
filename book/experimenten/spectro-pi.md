@@ -1,9 +1,9 @@
-# Camera-Spectrometer met behulp van een Raspberry Pi
+# Spectrometer met Camera
 _deze handleiding is nog *under construction*_
 practicumhandleiding
 
 ## Inleiding
-Dit is de handleiding om een camera in te zetten om een spectrum te analyseren. Het spectrum wordt verkregen door middel van een standaard handspectroscoop, met daarin een spleet en tralie verwerkt. Eerst wordt de camera output gekalibreerd van pixels naar golflengte met een bekend sample, vervolgens kunnen allerlei spectra onderzocht worden. 
+Dit is de handleiding om een camera in te zetten om een spectrum te analyseren. Het spectrum wordt verkregen door middel van een standaard hand-spectroscoop, met daarin een spleet en tralie verwerkt. Eerst wordt de camera output gekalibreerd van pixels naar golflengte met een bekend sample, vervolgens kunnen allerlei spectra onderzocht worden. 
 
 ## Doel
 Het zelf kalibreren en gebruiken van een op een camera gebaseerde spectrometer, om zodoende:
