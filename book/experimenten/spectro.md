@@ -13,7 +13,7 @@ energieniveau.
 
 Hiermee kan het emissiespectrum van gassen of het absorptiespectrum van
 vloeistoffen worden geanalyseerd. Ook kan hier bijvoorbeeld het
-noorderlicht mee kunnen worden onderzocht.
+noorderlicht mee worden onderzocht.
 
 ## Doel
 
@@ -131,13 +131,13 @@ https://commons.wikimedia.org/w/index.php?curid=19051904*
 
 <span id="_Toc340567598" class="anchor"></span>Materiaal
 
-### Experiment 11a:
+### Experiment 1:
 
 <img src="./media/simage4.png" style="width:6.26042in;height:3.1875in" />
 
 *Figuur van Thorlabs*
 
-Bij experiment 11a is de *reflective grating (spiegel tralie)* in het
+Bij experiment 1 is de *reflective grating (spiegel tralie)* in het
 plaatje hierboven inwisselbaar voor één met 1200 lijnen/mm, 600
 lijnen/mm of een prisma.
 
@@ -148,7 +148,7 @@ LED heeft het volgende spectrum:
 <img src="./media/simage5.png"
 style="width:6.26042in;height:3.32292in" />
 
-### Experiment 11b:
+### Experiment 2:
 
 Hier wordt gebruik gemaakt van een Czerny-Turner spectrometer. Hieronder
 zie je de opstelling.
@@ -158,14 +158,14 @@ style="width:6.26042in;height:3.92708in" />
 
 *Figuur van Thorlabs*
 
-Bij experiment 11b is de spiegel tralie gemonteerd op een gemotoriseerd
+Bij experiment 2 is de spiegel tralie gemonteerd op een gemotoriseerd
 platform. Dit platform wordt met de Thorlabs software *Kinesis*
 aangestuurd.
 
-## Uitvoering - Experiment 11a
+## Uitvoering - Experiment 1
 
 <img src="./media/simage7.jpeg"
-style="width:2.68056in;height:2.02083in" />Experiment 11a
+style="width:2.68056in;height:2.02083in" />Experiment 1
 
 ### Proef 1:
 
@@ -292,7 +292,7 @@ n = \frac{1}{\sin\gamma}
 
 6.  Zit je er heel erg naast? Meet dan eens opnieuw.
 
-## Uitvoering - Experiment 11b
+## Uitvoering - Experiment 2
 
 Bij het uitvoeren van dit experiment zijn een aantal zaken belangrijk:
 
@@ -323,11 +323,11 @@ Bij het uitvoeren van dit experiment zijn een aantal zaken belangrijk:
   detector is in de huidige opstelling NIET nodig.
 
 Hieronder volgen de werkelijke stappen van de proeven die horen bij
-experiment 11b.
+experiment 2.
 
 ### Proef 5:
 
-1.  Plaats het witte scherm van experiment 11a voor de tweede spleet (de
+1.  Plaats het witte scherm van experiment 1 voor de tweede spleet (de
     exit spleet, degene het dichtst bij je).
 
 2.  Zoek met de software (zie stappen hierboven) de hoek waarbij het
