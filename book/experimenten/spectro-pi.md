@@ -40,3 +40,18 @@ Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet
 <img src="./media/spectro-pi/spectroscoop.jpeg"/> 
 
 ## Uitvoering
+1) Schakel de lamphouder met daarin de He buis in en laat deze even opwarmen.
+2) Schakel de Raspberry Pi aan door de stekker van 5V voeding in het stopcontact te steken.
+3) Open een **Terminal** door bovenaan op het zwarte vlakje te drukken.
+4) Er opent een window met daarin een prompt. 
+5) Type: .. (of druk op pijltje omhoog en zoek dit commando), druk nog niet op *Enter*.
+6) Houd de spectroscoop met camera stil voor het gat van de lamphouder met daarin de He buis. 
+7) Druk op *Enter* in het het terminal window. Er wordt nu een foto gemaakt, er zijn een paar previews, dus houd 'm even stil.
+8) Bekijk de foto met de *Imageviewer*, als deze niet goed is kun je een nieuwe foto maken (ga dan terug naar 5, je kunt de naam van het bestand aanpassen).
+9) Open de foto met **ImageJ**.
+10) Klik op de rechthoek *(Rectangle)*
+11) Sleep van helemaal links naar helemaal rechts een dunne balk over het scherm, over het spectrum heen. 
+12) Klik vervolgens op *Analyze* en daarna op *Plot Profile*.
+13) Er opent zich een nieuw window met daarin de Grey Values uitgezet tegen de pixels. Hier kun je het spectrum in zien.
+14) Save data as ...CSV
+15) 
