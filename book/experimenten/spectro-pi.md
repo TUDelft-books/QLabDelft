@@ -65,6 +65,7 @@ Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet
 22) Door op een top van een piek te klikken en de muis er vanaf en er naar toe te bewegen kun je de precieze coördinaten aflezen. Het pixelnummer willen we namelijk weten. Je kunt controleren of je echt de top hebt door in de data te kijken of dit punt echt het plaatselijke maximum is.
 23) Koppel het pixelnummer en de bijbehorende golflengte aan elkaar in een tabelletje in hetzelfde werkblad. Zoiets:
 |pixel|wavelength (nm)|
+|-------------|----------------|
 |2457|	588|
 24) Doe dit voor alle 4 de genoemde golflengtes hierboven.
 25) Selecteer deze tabel, klik op invoegen, grafiek, spreiding. 
