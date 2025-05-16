@@ -458,27 +458,15 @@ Er zijn ook **documenten** beschikbaar met meer uitleg en achtergrond informatie
 
 Antwoorden op de vragen vind je hieronder:
 
-# Resultaten en opdrachten – Uitwerkingen
+### Resultaten en opdrachten – Uitwerkingen
 
-## 1. Controle van $g^{(2)}(0)$
+#### 1. Controle van $g^{(2)}(0)$
 
-Gegeven:
-- $ N_{AB} = 14 $
-- $ N_A = 1{,}820{,}092 $
-- $ N_B = 2{,}987{,}122 $
-- $ N_{\text{tot}} = \frac{1800}{5 \times 10^{-9}} = 3.6 \times 10^{11} $
-
-Berekening:
-
-$
-g^{(2)}(0) = \frac{N_{AB} \cdot N_{\text{tot}}}{N_A \cdot N_B} = \frac{14 \cdot 3.6 \times 10^{11}}{1{,}820{,}092 \cdot 2{,}987{,}122} \approx 0.927
-$
-
-**Conclusie**: Komt goed overeen met softwarewaarde als die bijv. 0.93 was.
+Zelf doen.
 
 ---
 
-## 2. Aantal fotonen in 5 ns bij $ \lambda = 650 \: 	ext{nm} $
+#### 2. Aantal fotonen in 5 ns bij $ \lambda = 650 \ext{nm} $
 
 $
 \text{Afstand in 5 ns} = c \cdot t = 3 \times 10^8 \cdot 5 \times 10^{-9} = 1.5 \, \text{m}
@@ -492,7 +480,7 @@ $
 
 ---
 
-## 3. Aantal fotonen uitgezonden door 1 mW laser in 5 ns
+#### 3. Aantal fotonen uitgezonden door 1 mW laser in 5 ns
 
 Energie per foton:
 
@@ -514,7 +502,7 @@ $
 
 ---
 
-## 4. Vergelijking
+#### 4. Vergelijking
 
 - Vraag 2: 2.31 miljoen fotonen **passen** in 5 ns
 - Vraag 3: 16.3 miljoen fotonen worden **uitgezonden**
@@ -523,7 +511,7 @@ $
 
 ---
 
-## 5. Verzwakt laserlicht met factor $ 10^7 $
+#### 5. Verzwakt laserlicht met factor $ 10^7 $
 
 $
 N = \frac{1.63 \times 10^7}{10^7} = 1.63
@@ -533,15 +521,15 @@ $
 
 ---
 
-## 6. Rate = 2.5 kHz
+#### 6. Rate = 2.5 kHz
 
-### a. Gemiddelde tijd tussen fotonen:
+##### a. Gemiddelde tijd tussen fotonen:
 
 $
 T = \frac{1}{2500} = 0.0004 \, \text{s} = 400 \, \mu s
 $
 
-### b. Kans op foton in 5 ns:
+##### b. Kans op foton in 5 ns:
 
 $
 P = \frac{5 \times 10^{-9}}{400 \times 10^{-6}} = 1.25 \times 10^{-5}
@@ -549,7 +537,7 @@ $
 
 ---
 
-## 7. Kans op coïncidentie
+#### 7. Kans op coïncidentie
 
 $
 \lambda = 2500 \cdot 5 \times 10^{-9} = 1.25 \times 10^{-5}
@@ -571,7 +559,7 @@ $
 
 ---
 
-## 8. Onzekerheid en relatieve fout
+#### 8. Onzekerheid en relatieve fout
 
 Standaarddeviatie bij 14 coïncidenties:
 
