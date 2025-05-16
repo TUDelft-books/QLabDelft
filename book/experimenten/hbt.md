@@ -382,6 +382,7 @@ resultaten) en het doel van de proef. Kun je antwoord geven op de volgende vrage
   * Wat gebeurt er als je veel langer meet?
 - Kun je nu de vorm van de grafieken van je screenshots verklaren? 
     * Hoe kan *g<sup>2</sup>(0) = 4* zijn?
+- Kun je uit het experiment concluderen dat **single photons** (enkele, losse fotonen) bestaan?  
   
 
 ## Ideeën en bronnen:
@@ -466,7 +467,7 @@ Zelf doen.
 
 ---
 
-#### 2. Aantal fotonen in 5 ns bij $ \lambda = 650 \ext{nm} $
+#### 2. Aantal fotonen in 5 ns bij $ \lambda = 650 \text{nm} $
 
 $
 \text{Afstand in 5 ns} = c \cdot t = 3 \times 10^8 \cdot 5 \times 10^{-9} = 1.5 \, \text{m}
