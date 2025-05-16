@@ -453,3 +453,6 @@ de intensiteitsvariabelen uitgelegd (formule 1):
 
 Er zijn ook **documenten** beschikbaar met meer uitleg en achtergrond informatie.
 
+Antwoorden op de vragen vind je <a href="./media/antwoorden_HBT.md" target="_blank">hier</a>.
+<br><br>
+
