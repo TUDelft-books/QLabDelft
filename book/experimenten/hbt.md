@@ -467,7 +467,7 @@ Zelf doen.
 
 ---
 
-#### 2. Aantal fotonen in 5 ns bij $ \lambda = 650 \text{nm} $
+#### 2. Aantal fotonen in 5 ns bij $\lambda = 650nm $
 
 $
 \text{Afstand in 5 ns} = c \cdot t = 3 \times 10^8 \cdot 5 \times 10^{-9} = 1.5 \, \text{m}
