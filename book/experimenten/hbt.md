@@ -34,7 +34,7 @@ Het experiment bestaat uit:
 
 Zie hieronder voor een schematische tekening van het experiment.
 
-<img src="./media/himage1.png" style="width:2.90833in;height:1.76263in"
+<img src="./media/hbt/himage1.png" style="width:2.90833in;height:1.76263in"
 alt="Afbeelding met schermopname, lijn, diagram, Graphics Automatisch gegenereerde beschrijving" />
 
 Bron:
@@ -208,7 +208,7 @@ dat de kans om twee fotonen tegelijkertijd te detecteren exact nul is.
 Met klassieke golfoptica is dit verschijnsel niet te verklaren, hiervoor
 werkt alleen een quantumverklaring.
 
-<img src="./media/himage2.png" style="width:6.26042in;height:1.8125in" />
+<img src="./media/hbt/himage2.png" style="width:6.26042in;height:1.8125in" />
 
 In de afbeelding is het verschil te zien tussen *g<sup>2</sup>(t) \< 1*
 (groen), *g<sup>2</sup>(t) = 1 (rood), g<sup>2</sup>(t) \> 1 (blauw),
@@ -235,15 +235,15 @@ Ons experiment bestaat uit:
 
 - Software om de Time-tagger uit te lezen.
 
-<img src="./media/himage3.jpg" style="width:5.7875in;height:4.34306in"
+<img src="./media/hbt/himage3.jpg" style="width:5.7875in;height:4.34306in"
 alt="Afbeelding met elektronica, machine, Elektronische engineering, overdekt Automatisch gegenereerde beschrijving" />Foto’s
 opstelling:
 
-<img src="./media/himage4.jpeg" style="width:5.55208in;height:4.18472in"
+<img src="./media/hbt/himage4.jpeg" style="width:5.55208in;height:4.18472in"
 alt="Afbeelding met elektronica, Elektrische bedrading, Elektronische engineering, kabel Automatisch gegenereerde beschrijving" />
 
-<img src="./media/himage5.jpeg"
-style="width:2.78125in;height:3.68991in" /><img src="./media/himage6.jpeg"
+<img src="./media/hbt/himage5.jpeg"
+style="width:2.78125in;height:3.68991in" /><img src="./media/hbt/himage6.jpeg"
 style="width:4.65731in;height:3.51042in" />
 
 In bovenstaande foto’s is te zien:
@@ -317,7 +317,7 @@ houden met de standaard afspraken wanneer je werkt met laserlicht:
 ***Opmerkingen: Zet voor het openen de sensoren en laser uit met de knop van het stekkerblok. De sensoren zijn zeer gevoelig voor te veel licht. Het
 filter moet dan ook ten-allen-tijde voor de laser blijven staan als deze aanstaat, anders gaan de heel dure sensors kapot...***
 
-<img src="./media/himage7.jpg">
+<img src="./media/hbt/himage7.jpg">
 
 Afbeelding: Screenshot van een meting
 
