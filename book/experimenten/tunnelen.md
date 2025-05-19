@@ -17,7 +17,7 @@ We doen dit door de positie van de prisma’s en dus de luchtspleet ten
 opzichte van de laser te verplaatsen en daarbij telkens de transmissie
 te meten.
 
-<img src="./media/timage1.jpg"
+<img src="./media/tunnel/timage1.jpg"
 style="width:3.97305in;height:3.05167in" />
 
 ## Hypothese
@@ -26,7 +26,7 @@ Wat zijn je verwachtingen met betrekking tot de resultaten?
 
 ## Theorie
 
-<img src="./media/timage2.png"
+<img src="./media/tunnel/timage2.png"
 style="width:4.5625in;height:2.46875in" />
 
 Figuur geeft de golffunctie weer van een deeltje dat door een barrière
@@ -96,7 +96,7 @@ Geef antwoord op de volgende vragen bij dit experiment:
 
 ## Materiaal
 
-<img src="./media/timage3.jpg"
+<img src="./media/tunnel/timage3.jpg"
 style="width:4.64583in;height:3.50177in" />
 
 - Groene 532 nm laser

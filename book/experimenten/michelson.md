@@ -1,6 +1,6 @@
 # Michelson Interferometer 
 (de bom-tester) - practicumhandleiding  
-```{figure} ./media/image1.jpeg
+```{figure} ./media/michelson/image1.jpeg
     ---
     width:5
     name: opstelling Michelson
@@ -50,7 +50,7 @@ een ringvormig interferentie patroon.
 
 ## Materiaal
 
-```{figure} ./media/image2.jpeg
+```{figure} ./media/michelson/image2.jpeg
     ---
     width:5
     name: opstelling Michelson
@@ -273,7 +273,7 @@ Dus zodra er *pad informatie* bestaat stort de golffunctie van de twee
 paden in.
 
 # Experiment 5: De bomtester
-```{figure} ./media/image3.png
+```{figure} ./media/michelson/image3.png
     ---
     width:10
     name: paden

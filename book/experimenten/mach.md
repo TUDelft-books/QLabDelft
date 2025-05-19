@@ -1,7 +1,7 @@
 # Mach Zehnder interferometer 
 (Quantum Eraser) - practicumhandleiding
 
-<img src="./media/mimage1.jpg"
+<img src="./media/mach/mimage1.jpg"
 style="width:4.25653in;height:3.20833in" alt="figuur 1" />
 
 ## Inleiding
@@ -30,7 +30,7 @@ Quantum eraser experiment
 
 Uitgestelde keuze experiment
 
-<img src="./media/mimage0.png"
+<img src="./media/mach/mimage0.png"
 style="width:3in;height:3in" alt="figuur 0" />
 
 ## Materiaal
@@ -52,7 +52,7 @@ Onderstaande opstelling, met daarin:
 - Uitlijntool (1x)
 
 Figuur 1: De Mach Zehnder
-opstelling<img src="./media/mimage1.jpg"
+opstelling<img src="./media/mach/mimage1.jpg"
 style="width:6.26042in;height:4.71875in" alt="figuur 1" />
 
 ## Uitvoering
@@ -80,7 +80,7 @@ elementen betekent dat de interferometer opnieuw moet worden uitgelijnd.
 Als de interferometer is uitgelijnd, dan zie je bij het aanzetten een
 (bij voorkeur ringvormig) interferentiepatroon:
 
-<img src="./media/mimage2.jpg"
+<img src="./media/mach/mimage2.jpg"
 style="width:2.625in;height:3.48261in" />
 
 Figuur 2: Polarisator met daarachter op het scherm een ringvormig
@@ -144,7 +144,7 @@ is de opbouw van een lichtgolf te zien. Alleen lichtgolven met een
 $\overrightarrow{E}$*-component* in dezelfde richting als de polarisator worden doorgelaten.
 Kun je nu uitleggen waarom er dus maar 50% wordt doorgelaten?
 
-<img src="./media/mimage3.png"
+<img src="./media/mach/mimage3.png"
 style="width:6.26042in;height:2.13542in" />
 
 Figuur 3: Elektromagnetische (licht)golf. Afbeelding
