@@ -36,10 +36,12 @@ Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet
 > * Pycam camera software
 > * ImageJ software
 > * Excel software
+> * Spectraallamp om te kalibreren: Helium wordt hier gebruikt.
 
 <img src="./media/spectro-pi/spectroscoop.jpeg"/> 
 
 ## Uitvoering
+### Kalibreren
 1) Schakel de lamphouder met daarin de He buis in en laat deze even opwarmen.
 2) Schakel de Raspberry Pi aan door de stekker van 5V voeding in het stopcontact te steken.
 3) Open een **Terminal** door bovenaan op het zwarte vlakje te drukken.
@@ -62,7 +64,7 @@ Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet
 18) Selecteer de twee kolommen en kies voor *Invoegen*, *Grafieken*, *Spreiding* (de eerste keuze).
 19) In de grafiek die je nu hebt gemaakt staat verticaal de Grey Value uitgezet tegen horizontaal het pixelnummer.
 20) De linker piek is onzin, dat is ook zichtbaar in de hand-spectroscoop, wanneer je deze zelf bekijkt met je ook. De andere pieken zijn de spectraallijnen van Helium met de grootste intensiteit.
-21) Vergelijk het spectrum met dat van Helium in BiNaS, Tabel 20 (Spectraalplaat). De lijn/ piek met de grootste intensiteit heeft een golflengte van 588 nm (oranje-achtig). Andere goed zichtbare (de hoogste) pieken zouden moeten zijn: 501 nm, 668 nm, 706 nm.
+21) Vergelijk het spectrum met dat van Helium in BiNaS, Tabel 20 (Spectraalplaat). De lijn/ piek met de grootste intensiteit heeft een golflengte van **588 nm**  (oranje-achtig). Andere goed zichtbare (de hoogste) pieken zouden moeten zijn: **501 nm, 668 nm, 706 nm**.
 22) Door op een top van een piek te klikken en de muis er vanaf en er naar toe te bewegen kun je de precieze coördinaten aflezen. Het pixelnummer willen we namelijk weten. Je kunt controleren of je echt de top hebt door in de data te kijken of dit punt echt het plaatselijke maximum is.
 23) Koppel het pixelnummer en de bijbehorende golflengte aan elkaar in een tabelletje in hetzelfde werkblad. Zoiets:
 
@@ -81,5 +83,12 @@ Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet
 30) Verander de kop van deze kolom in *Golflengte (nm)* en voeg in cel B2 de functie van de trendlijn toe, waarbij $x$ veranderd wordt in $*A2$. 
 31) Laat de kolom automatisch vullen tot het einde.
 32) Maak nu een nieuwe spreiding grafiek van kolom B en kolom C: Je hebt nu de gekalibreerde gegevens!
+
+### Meten
+Je kunt nu het emissiespectrum van andere gassen meten of het absorptiespectrum van bepaalde stoffen. 
+De volgende gassen zijn beschikbaar, vraag welke je mag gebruiken:
+*H20, Ne, H2, O2 (IR), He, N2, CO2* in de ene houder en in de andere houder *Na*.
+Pas op deze worden heel heet en werken op hoog-spanning.
+
 
 
