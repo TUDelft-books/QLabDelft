@@ -50,7 +50,7 @@ bijvoorbeeld op een scherm of op een sensor.
 In de figuur hieronder is de
 werking van een tralie uitgebeeld. 
 <br>
-<img src="./media/simage1.png"
+<img src="./media/spectro/simage1.png"
 style="width:3.98958in;height:4.88332in" />
 <br>
 Hierin is:
@@ -105,7 +105,7 @@ brekingsindex van het materiaal. Aangezien de brekingsindex voor elke
 golflengte (en elk materiaal) anders is, zal bijvoorbeeld witlicht
 breken in zijn spectrum. Zie de figuur hieronder.
 
-<img src="./media/simage2.png"
+<img src="./media/spectro/simage2.png"
 style="width:2.18822in;height:1.70721in" />
 
 *CC BY-SA 2.0 at,
@@ -124,7 +124,7 @@ n = \frac{1}{\sin\gamma}
 In de figuur hieronder zie je het verschil in resultaat tussen buiging
 (1) en breking (2).
 
-<img src="./media/simage3.png" style="width:2.20833in;height:3.3125in" />
+<img src="./media/spectro/simage3.png" style="width:2.20833in;height:3.3125in" />
 
 *By Cmglee - Own work, CC BY-SA 3.0,
 https://commons.wikimedia.org/w/index.php?curid=19051904*
@@ -133,7 +133,7 @@ https://commons.wikimedia.org/w/index.php?curid=19051904*
 
 ### Experiment 1:
 
-<img src="./media/simage4.png" style="width:6.26042in;height:3.1875in" />
+<img src="./media/spectro/simage4.png" style="width:6.26042in;height:3.1875in" />
 
 *Figuur van Thorlabs*
 
@@ -145,7 +145,7 @@ Als lichtbron wordt gebruik gemaakt van een witte LED. Het is mogelijk
 deze LED te voorzien van een groen bandpass filter van 532nm. De witte
 LED heeft het volgende spectrum:
 
-<img src="./media/simage5.png"
+<img src="./media/spectro/simage5.png"
 style="width:6.26042in;height:3.32292in" />
 
 ### Experiment 2:
@@ -153,7 +153,7 @@ style="width:6.26042in;height:3.32292in" />
 Hier wordt gebruik gemaakt van een Czerny-Turner spectrometer. Hieronder
 zie je de opstelling.
 
-<img src="./media/simage6.png"
+<img src="./media/spectro/simage6.png"
 style="width:6.26042in;height:3.92708in" />
 
 *Figuur van Thorlabs*
@@ -164,7 +164,7 @@ aangestuurd.
 
 ## Uitvoering - Experiment 1
 
-<img src="./media/simage7.jpeg"
+<img src="./media/spectro/simage7.jpeg"
 style="width:2.68056in;height:2.02083in" />Experiment 1
 
 ### Proef 1:
@@ -178,7 +178,7 @@ style="width:2.68056in;height:2.02083in" />Experiment 1
     strak, dan gaat het kapot). Als de spleetbreedte kleiner wordt,
     wordt de afbeelding donkerder. Probeer een optimum te vinden.
 
-```{figure} ./media/simage8.png
+```{figure} ./media/spectro/simage8.png
     ---
     width: 50%
     name: meten
@@ -213,7 +213,7 @@ ZOZ
 - Schroef vervolgens het groene bandpass filter voor op de witte LED.
   Zie hieronder.
 
-<img src="./media/simage9.jpeg"
+<img src="./media/spectro/simage9.jpeg"
 style="width:3.62081in;height:2.72917in" />
 
 - Herhaal vervolgens de stappen van proef 1 voor dit filter.
@@ -244,7 +244,7 @@ gemaakt is van kroonglas.
     foto is niet waarneembaar. (Op de foto is wel mooi zichtbaar dat de
     kleuren andersom zijn ten opzichte van proef 1).
 
-```{figure} ./media/simage10.jpeg
+```{figure} ./media/spectro/simage10.jpeg
 ---
 width: 60%
 name: prisma
@@ -268,7 +268,7 @@ prisma
     dat je x en y meet met een rechte hoek (90° ) ertussen. En bereken
     vervolgens hoek $\gamma$ gamma. 
 
-```{figure} ./media/simage11.png
+```{figure} ./media/spectro/simage11.png
 ---
 width: 100%
 name: grenshoek
@@ -309,7 +309,7 @@ Bij het uitvoeren van dit experiment zijn een aantal zaken belangrijk:
   om desychronisatie te voorkomen).
 
 - Gebruik enkel de Move functie in de software:
-  <img src="./media/simage12.png" style="width:6.26806in;height:2.58472in"
+  <img src="./media/spectro/simage12.png" style="width:6.26806in;height:2.58472in"
   alt="Afbeelding met tekst, schermopname, Lettertype, nummer Automatisch gegenereerde beschrijving" />
 
 - De kleinste stapgrootte is 0.02<sup>°</sup>, maar een kleinste

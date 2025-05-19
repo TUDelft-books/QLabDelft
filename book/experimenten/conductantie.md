@@ -40,7 +40,7 @@ R_{1} = \frac{R_{2}\left( U_{tot} - U_{meet} \right)}{U_{meet}}
 > Laat deze afleiding zien.
 
 
-<img src="./media/cimage1.png" style="width:2.5in;height:2.70833in" />
+<img src="./media/conductantie/cimage1.png" style="width:2.5in;height:2.70833in" />
 
 *Wanneer wordt ingezoomd op het verbrekende contact kom je uiteindelijk
 in de wereld van atomen. De contacten zijn van goud. Goud oxideert niet
@@ -171,21 +171,21 @@ stap-voor-stap:
     Met de rode G rechtsonder in het scherm op de scoop kan je de instellingen eventueel aanpassen. De instellingen zijn ook aan te passen met de schuifjes bij het oscilloscoopscherm in de software. Je kunt met het horizontale schuifje de frequentie bijvoorbeeld op 15Hz zetten. Met de verticale schuifjes kun je de amplitude en de offset instellen. 
     De instelling zoals hieronder is prima, maar 15 Hz is wellicht nog beter.
 
-<img src="./media/cimage3.png"
+<img src="./media/conductantie/cimage3.png"
 style="width:4.07283in;height:2.38542in" />
 
 4.  Stel de stelschroef zodanig dat het contact de hele tijd wordt
     gemaakt en weer verbreekt. Zoals hieronder. Dit vereist heel wat
     "pielen” en een gevoelige hand.
 
-<img src="./media/cimage4.png"
+<img src="./media/conductantie/cimage4.png"
 style="width:3.69934in;height:2.16667in" />
 
 5.  Of zo: Hier zie je met een klein beetje andere instellingen al wat
     trapjes ontstaan in de zijkanten (flanken) van de gele
     blokgolf.
     <br>
-    <img src="./media/cimage5.png" style="width:3.80605in;height:2.22917in" />
+    <img src="./media/conductantie/cimage5.png" style="width:3.80605in;height:2.22917in" />
 
 6.  Het is de bedoeling dat we gaan inzoomen op de rechterflank van de
     gele blokgolf. Hierbij is het belangrijk dat de Triggerfunctie goed
@@ -213,7 +213,7 @@ style="width:3.69934in;height:2.16667in" />
     tot het onderste deel van de gele, rechterflank goed zichtbaar is en
     er ontvouwt zich dan, met enig geduld en tweaken het volgende beeld:
 
-<img src="./media/cimage6.png" style="width:5.1933in;height:3.04167in" />
+<img src="./media/conductantie/cimage6.png" style="width:5.1933in;height:3.04167in" />
 
 Kijk vooral ook even naar de instellingen van bovenstaand beeld: Vooral
 de schaal langs de assen maakt duidelijk hoever er is ingezoomd.
@@ -245,7 +245,7 @@ zetten en het contact bijstellen met de stelschroef.
     4) Klik vervolgens op *Plot points*.
     5) En het programma laat de grafiek zien van deze meetpunten en berekent de quantumweerstand voor je. Kun je dit narekenen?
 
-<img src="./media/cimage7.png" style="width:5.1933in;height:3.04167in" />
+<img src="./media/conductantie/cimage7.png" style="width:5.1933in;height:3.04167in" />
 
 ## Conclusie en discussie
 
@@ -259,3 +259,20 @@ Zelf doen.
 *En*
 
 [*https://www.lorentz.leidenuniv.nl/beenakkr/mesoscopics/topics/chaos/frontiers/node4.html*](https://www.lorentz.leidenuniv.nl/beenakkr/mesoscopics/topics/chaos/frontiers/node4.html)
+
+
+## Installatie handleiding
+
+1) Download de software: {Download}`software<./media/conductantie/qcgui-main.zip>`
+2) Pak de software uit op een gunstige plek.
+3) Open de anaconda powershell (die installeer je met conda of anaconda oid).
+4) Daal af naar de software map, met cd etc.
+5) conda -v
+6) conda update conda
+7) conda search ^python$
+8) conda create -n envname python=x.x anaconda (waarbij envname=Conductantie en x.x=3.12 )
+9) conda activate envname (ja weer envname=Conductantie)
+10) pip install -r requirements.txt
+11) python .\QcGui_pyqt6.py om het programma te starten.
+<br><br>
+12) Als alternatief kan in VScode --> view p--> command palette --> python: create environment ... en vervolgens kan de applicatie in VScode worden gestart.
