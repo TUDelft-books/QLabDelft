@@ -10,7 +10,7 @@ Alice (verzender), Bob (ontvanger) en Eve (evesdropper of afluisteraar).
 Alice gaat een versleutelt bericht sturen aan Bob, en Eve gaat dat
 proberen af te luisteren, zonder gesnapt te worden.
 <br>
-*Deze handleiding is grotendeels gebaseerd op de Thorlabs handleiding.* {Download}`handleiding van Thorlabs<./media/QuantumCrypto-EDU-QCRY1-EnglishManual.pdf>`.
+*Deze handleiding is grotendeels gebaseerd op de Thorlabs handleiding.* {Download}`handleiding van Thorlabs<./media/abe/QuantumCrypto-EDU-QCRY1-EnglishManual.pdf>`.
 
 ## Doel
 
@@ -47,10 +47,10 @@ eerst geheel te doorgronden.
 Opstelling met links verzender Alice, in het midden afluisteraar Eve en
 rechts ontvanger Bob.
 
-<img src="./media/abeimage1.jpg"
+<img src="./media/abe/abeimage1.jpg"
 style="width:6.26042in;height:2.81257in" />
 
-Hier is een link naar de **bijlages** om zo nodig te printen voor dit experiment: {Download}`bijlages<./media/experiment-bijlages-to-print.pdf>`.
+Hier is een link naar de **bijlages** om zo nodig te printen voor dit experiment: {Download}`bijlages<./media/abe/experiment-bijlages-to-print.pdf>`.
 
 ## Uitvoering
 
@@ -76,7 +76,7 @@ dus alleen Alice en Bob:
     >    branden. Druk daartoe zo nodig de groene knop één keer in.
     >
     >c. Zorg dat de rotatie-polarizer ($\frac{\lambda}{2}$ -plaat) bij Alice op 45 graden staat en bij Bob op 0 graden. Hij ziet er uit zoals hieronder. Je kunt aan de ribbeltjes met duim en wijsvinger, met je hand erboven, draaien. 
-    ><img src="./media/abeimage4.jpg" style="width:1in;height:1in" />
+    ><img src="./media/abe/abeimage4.jpg" style="width:1in;height:1in" />
     >
     >d.  De sensors van Bob moet nu even beide (even sterk) belicht
     >    worden. Komt het laserlicht niet precies in de sensors? Dan is
@@ -99,7 +99,7 @@ dus alleen Alice en Bob:
     >    onderstaande tabel en de andere 7 uitkomsten hiermee in
     >    overeenstemming zijn. Let vooral op de gevallen waarin beide
     >    led’s moeten oplichten.
-    >    <img src="./media/abeimage2.png"
+    >    <img src="./media/abe/abeimage2.png"
     >    style="width:5.51042in;height:1.41667in" />
     >
     >h. Het testen is nu klaar, druk eenmaal kort op de groene knop van
@@ -132,7 +132,7 @@ b.  Alice en Bob kiezen willekeurig hun basissen en Alice kiest ook
     zal gebruiken voor detectie. Zie ook hieronder voor een
     voorbeeld.
     <br>
-    <img src="./media/abeimage3.png"
+    <img src="./media/abe/abeimage3.png"
     style="width:5.51042in;height:1.96875in" />
 
 c.  Zend de bits van Alice in de basissen gekozen bij *b*. Bob noteert
@@ -205,7 +205,7 @@ te vinden.
 
 i.  Plaats Eve tussen Alice en Bob, en stel beide sensorelektronica's in op **afstelmodus (LED licht geel op)**. Stel de ontvanger van Eve zo af dat alle 8 transmissiegevallen werken met Alice. Zie tabel:
 
-> <img src="./media/abeimage2.png" style="width:5.51042in;height:1.41667in" /><br>
+> <img src="./media/abe/abeimage2.png" style="width:5.51042in;height:1.41667in" /><br>
 > Stel vervolgens de zender
 > van Eve zo af dat alle 8 transmissiegevallen werken met Bob. Zet beide
 > sensorelektronica’s terug in meetmodus (LED licht groen op).
