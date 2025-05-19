@@ -58,15 +58,20 @@ Het data (.csv) bestand wordt met behulp van een USB stick op een computer gezet
 16) Open Excel op deze computer (Open het bestand niet, want dat gaat fout). Open een lege werkmap.
 17) Kies voor *Gegevens* en *Gegevens ophalen*, *Uit bestand*, *Uit tekstbestand/CSV* en open je bestand.
 <img src="./media/spectro-pi/excel-keuze.png"/> 
+
 18) Selecteer de twee kolommen en kies voor *Invoegen*, *Grafieken*, *Spreiding* (de eerste keuze).
 19) In de grafiek die je nu hebt gemaakt staat verticaal de Grey Value uitgezet tegen horizontaal het pixelnummer.
 20) De linker piek is onzin, dat is ook zichtbaar in de hand-spectroscoop, wanneer je deze zelf bekijkt met je ook. De andere pieken zijn de spectraallijnen van Helium met de grootste intensiteit.
 21) Vergelijk het spectrum met dat van Helium in BiNaS, Tabel 20 (Spectraalplaat). De lijn/ piek met de grootste intensiteit heeft een golflengte van 588 nm (oranje-achtig). Andere goed zichtbare (de hoogste) pieken zouden moeten zijn: 501 nm, 668 nm, 706 nm.
 22) Door op een top van een piek te klikken en de muis er vanaf en er naar toe te bewegen kun je de precieze coördinaten aflezen. Het pixelnummer willen we namelijk weten. Je kunt controleren of je echt de top hebt door in de data te kijken of dit punt echt het plaatselijke maximum is.
 23) Koppel het pixelnummer en de bijbehorende golflengte aan elkaar in een tabelletje in hetzelfde werkblad. Zoiets:
+
+<br><br>
 |pixel|wavelength (nm)|
-|-------------|----------------|
+|---|---|
 |2457|	588|
+<br><br>
+
 24) Doe dit voor alle 4 de genoemde golflengtes hierboven.
 25) Selecteer deze tabel, klik op invoegen, grafiek, spreiding. 
 26) Selecteer een meetpunt in de grafiek, rechtermuisknop, trendlijn toevoegen. 
