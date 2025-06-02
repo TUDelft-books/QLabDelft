@@ -45,6 +45,10 @@ Met dit experiment kan met goudcontacten worden gedemonstreerd dat als een elekt
 <br>
 Met dit experiment kunnen spectra worden onderzocht en wordt de werking van een spectrometer duidelijk.
  
+**[Spectrometer met Raspberry Pi](spectro-pi.md)**
+<br>
+Met dit experiment wordt een spectrometer op basis van een camera gekalibreerd en kunnen vervolgens spectra worden onderzocht.
+
 **[Tunnelexperiment](tunnelen.md)**
 <br>
 Met dit experiment wordt het tunneleffect met licht “zichtbaar” gemaakt. 

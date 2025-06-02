@@ -13,6 +13,7 @@ parts:
       - file: experimenten/conductantie.md
       - file: experimenten/dubbel.md
       - file: experimenten/frank.md
+      - file: experimenten/fluorescentie.md
       - file: experimenten/hbt.md
       - file: experimenten/malus.md
       - file: experimenten/tunnelen.md
