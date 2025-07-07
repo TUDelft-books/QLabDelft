@@ -585,17 +585,18 @@ $
 
 #### 8. Onzekerheid en relatieve fout
 
-Standaarddeviatie bij 4 coïncidenties:
+Standaarddeviatie bij 5.6 coïncidenties:
 
 $
-\sigma = \sqrt{4} = 2
+\sigma = \sqrt{5.6} \approx 2.4
 $
-
+Dus $N_{\text{coïncidentie}} = 5.6 \pm 2.4$
+<br>
 Relatieve onzekerheid:
 
 $
-\frac{2}{4} = 0.5 = 50\%
+\frac{2.4}{5.6} = 0.42 = 42\%
 $
 
 **Conclusie**: 
-Het gemeten aantal coïncidenties (4) komt binnen de nauwkeurigheid overeen met het berekende aantal coïncidenties (5.6).
+Het gemeten aantal coïncidenties $4$ komt binnen de nauwkeurigheid overeen met het berekende aantal coïncidenties $5.6 \pm 2.4$.
