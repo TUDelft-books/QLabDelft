@@ -156,11 +156,11 @@ Als je meet in een normale atmosfeer zit er op ieder materiaal een heel klein la
 
 De laatste kracht die de arm voelt is de Van der Waalskracht wanneer de tip dichtbij (~een paar nm) komt, deze kracht genereert een potentiaal die als volgt beschreven kan worden: 
 
-$U_vdw=\frac{C}{r^6}$
+$U_\text{vdw}=\frac{C}{r^6}$
 
 Hierin staan de volgende grootheden: 
 
-$U_vdw$ — Het van der Waals potentiaal <br>
+$U_\text{vdw}$ — Het van der Waals potentiaal <br>
 $C$ — Een constante <br>
 $r$ — Afstand <br>
 
