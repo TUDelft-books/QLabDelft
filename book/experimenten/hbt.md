@@ -358,7 +358,7 @@ $P_1 = \langle{N}\rangle
 >Voor $k=1$: <br>
 >$P(1) = \langle{N}\rangle e^{-\langle{N}\rangle}$
 >
->Als $\langle{N}\rangle \ll 1$, kunnen we de exponent benaderen met een Taylorreeks:
+>Als $\langle{N}\rangle \ll 1$, kunnen we de exponent benaderen met een **Taylorreeks**:
 >$e^{-\langle{N}\rangle} \approx 1 - \langle{N}\rangle + \frac{\langle{N}\rangle^2}{2} - \dots$
 >
 >Omdat $\langle{N}\rangle$ heel klein is, zijn de hogere machten $\langle{N}\rangle^2$, $\langle{N}\rangle^3$, etc. verwaarloosbaar en kunnen de hogere termen in de tailorreeks worden verwaarloosd:
