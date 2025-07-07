@@ -279,7 +279,7 @@ paden in.
     name: paden
     align: center 
     ---
-Figuur van de Thorlabs usermanual
+Figuur van <a href="https://commons.wikimedia.org/wiki/File:E-V_bomb-testing_2.svg">Gizm0steve</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
 ```
 
 
