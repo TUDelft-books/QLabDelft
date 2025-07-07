@@ -458,11 +458,9 @@ Dit experiment toont aan dat het aantal ionisaties in een GM-teller een Poisson-
 
 ## Voorbeeld onderzoeksvragen PWS:
 
-Hoe werkt een laser?
-
-Wat is een Poissonverdeling en gedraagt laserlicht zo?
-
-Is laserlicht een quantumlichtbron? En bestaat licht uit losse fotonen?
+* Hoe werkt een laser?
+* Wat is een Poissonverdeling en gedraagt laserlicht zo?
+* Is laserlicht een quantumlichtbron? En bestaat licht uit losse fotonen?
 
 Gebruik hierbij de volgende video:
 
