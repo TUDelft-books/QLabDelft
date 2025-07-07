@@ -116,58 +116,26 @@ _(Mocht je een foutmelding krijgen in de trant van CSV bestand klopt niet, contr
 De AFM (Atomic Force Microscope) behoort tot de klasse van de 'scanning probe microscopes'. Deze klasse is ontstaan in het begin van de jaren tachtig van de vorige eeuw toen Binning en Roher de Nobelprijs wonnen met hun scanning tunneling microscope. De AFM is later uitgevonden door Binning, Quate en Gerber. 
 <br>
 Een scanning probe microscoop maakt gebruik van een 'probe', of een sonde in het Nederlands. Op deze sonde zit een tip, waarmee de microscoop het oppervlak van het preparaat aftast. Door atomaire krachten wordt deze tip weggeduwd of aangetrokken, waardoor de microscoop heel nauwkeurig de pieken en dalen kan meten van het materiaal. 
-<>br
+<br>
 Deze soort microscopen worden veel gebruikt in de industrie, met name voor kwaliteitscontrole van halfgeleiders en chips, en worden ook veel gebruikt in de biologie, omdat je er cellen mee kunt weergeven zonder ze te beschadigen. 
 
 ### De 'sonde' of arm 
-We noemen de sonde met de tip ook wel de arm van de AFM. Deze arm is meestal gemaakt van silicium of silicium-nitride. Op de onderkant van de arm zit de tip; zie het plaatje hieronder. 
-
-
+We noemen de sonde met de tip ook wel de arm van de AFM. Deze arm is meestal gemaakt van silicium of silicium-nitride. Op de onderkant van de arm zit de tip; zie het plaatje hieronder (gemaakt met een electron microscope). 
+<img src="./media/afm/afm11.png"/><br>
+(Figuur van BudgetSensors.com: https://www.budgetsensors.com/contact-mode-afm-probe-aluminum-contal)<br>
 Deze arm buigt door de atomaire krachten, waardoor er een oppervlaktegrafiek gemaakt kan worden. Deze arm moet aan meerdere voorwaarden voldoen, een daarvan is dat de veerconstante laag moet zijn omdat de atomaire krachten ook zwak zijn. Dit kan berekend worden met behulp van de wet van Hooke: 
 
-F = −k⋅z 
-F
- 
-=
- 
-−
-k
-⋅
-z
- 
- 
- 
+$F = −k \cdot z $ 
 
 Hierin staan de volgende grootheden: 
 
-F — De kracht op de arm 
-
-k — De veerconstante van de arm 
-
-z — De afwijking van de normale situatie 
+$F$ — De kracht op de arm 
+$k$ — De veerconstante van de arm 
+$z$ — De afwijking van de normale situatie 
 
 Op de datasheet staat dat de veerconstante 0.2 Nm is, als we aannemen dat de afwijking van de arm 1 µm is, dan is de kracht: 
 
-F = −k⋅z = 0.2μN 
-F
- 
-=
- 
-−
-k
-⋅
-z
- 
-=
- 
-0
-.
-2
-𝜇
-N
- 
- 
- 
+$F = −k\cdot = 0.2μN $
 
 Oftewel de krachten die uitgeoefend worden op de arm van de AFM zijn erg klein. 
 
@@ -187,31 +155,13 @@ Als je meet in een normale atmosfeer zit er op ieder materiaal een heel klein la
 
 De laatste kracht die de arm voelt is de Van der Waalskracht wanneer de tip dichtbij (~een paar nm) komt, deze kracht genereert een potentiaal die als volgt beschreven kan worden: 
 
-Uvdw=Cr6
-U
-v
-d
-w
-=
-C
-r
-6
- 
- 
+$U_vdw=\frac{C}{r^6}
 
 Hierin staan de volgende grootheden: 
 
-Uvdw
-U
-v
-d
-w
- 
-— Het van der Waalspotentiaal 
-
-C — Een constante 
-
-r — Afstand 
+$U_vdw$ — Het van der Waals potentiaal 
+$C$ — Een constante 
+$r$ — Afstand 
 
 #### Afstotende kracht  
 
@@ -221,9 +171,9 @@ Naast de drie bovengenoemde krachten ondervindt de arm op hele korte afstand (0.
 
 Als je alle bovengenoemde krachten optelt krijg je het bekende Lennard-Jones potentiaal, deze is te zien in de figuur hieronder. Zoals je kunt zien is de potentiaal afstotend voor hele kleine afstanden (de afstoting tussen atomen) en een aantrekkende kracht op grote afstand (van der Waalskracht en capillaire werking). 
 
- 
-
- 
+<img src="./media/afm/afm12.png"/><br>
+ (figuur van Feigl, D.: Das Rasterkraftmikroskop im Praktikum, Karlsruher Institut für Technologie,
+ state examination paper, 201 en uit Thorlabs manual)
 
 ### Scanning methodes 
 
@@ -233,14 +183,13 @@ De AFM heeft twee hoofdmanieren van scannen, de contactmode en de dynamic mode. 
 
 Constant height mode is de simpelste methode aangezien de AFM niet hoeft te corrigeren. In deze methode wordt de arm van de AFM op dezelfde hoogte gehouden tijdens het gehele scanproces. Deze methode werkt alleen voor hele gladde preparaten want als het "dal" te diep is verliest de tip contact en is er niks meer te zien met de AFM. 
 
- 
-
- 
+<img src="./media/afm/afm13.png"/><br>
+(figuur van Thorlabs manual)
 
 #### Constant Force Mode 
 
 Constant force mode maakt gebruik van een feedbackmechanisme om de kracht op de arm constant te houden. Hierdoor is de AFM in deze mode beter in staat om het oppervlak te volgen en kan er een grover preparaat gemeten worden. 
 
- 
+<img src="./media/afm/afm14.png"/><br>
+(figuur van Thorlabs manual)
 
- 
