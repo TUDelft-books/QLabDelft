@@ -281,8 +281,8 @@ paden in.
     ---
 Figuur van <a href="https://commons.wikimedia.org/wiki/File:E-V_bomb-testing_2.svg">Gizm0steve</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
 ```
-
-
+(Figuur van <a href="https://commons.wikimedia.org/wiki/File:E-V_bomb-testing_2.svg">Gizm0steve</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.)
+<br>
 We kunnen een bom (of nepbom) plaatsen in één van de paden/armen. Met
 behulp van dit experiment is het mogelijk om in een aantal gevallen deze
 te detecteren zonder dat de bom afgaat.
