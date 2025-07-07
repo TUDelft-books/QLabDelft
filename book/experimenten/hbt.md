@@ -339,32 +339,34 @@ je berekening en vergelijk je uitkomst.
 7. De kans om een coïncidentie te meten, dus dat beide detectoren tegelijk een foton meten in hetzelfde tijdsinterval $\Delta t = 5 \: ns$, terwijl elke detector meet met een Rate van 2500 fotonen per seconde kun je als volgt berekenen:<br>
 Bereken eerst de kans per detector: <br>
 
-```{math}
-\langle{N}\rangle = \text{Rate} \cdot \Delta t = \text{gemiddeld aantal fotonen per detector in het tijdsinterval}
-```
+$\langle{N}\rangle = \text{Rate} \cdot \Delta t = \text{gemiddeld aantal fotonen per detector in het tijdsinterval}$
 
-Voor N << 1 geldt: De kans $P_1$ dat er precies één foton wordt gemeten is gelijk aan $\langle{N}\rangle$, het gemiddeld aantal fotonen per detector in het tijdsinterval.
+Voor N << 1 geldt: De kans $P_1$ dat er precies één foton wordt gemeten is gelijk aan $\langle{N}\rangle$, het gemiddeld aantal fotonen per detector in het tijdsinterval. Dus:
+
+$P_1 = \langle{N}\rangle
 
 > ### Poisson-verdeling 
+>(De extra uitleg in dit kader kun je ook even overslaan.)
 >Dit geldt omdat de kans om precies $k$ fotonen te detecteren in een tijdsinterval wordt gegeven door de Poisson-verdeling:
 >
 >$P(k) = \frac{\langle{N}\rangle^k e^{-\langle{N}\rangle}}{k!}$,
 >
 >waarbij geldt:
->P(k): kans om precies $k$ fotonen te meten,
->\langle{N}\rangle het gemiddelde aantal fotonen in het interval is, en k 
+>$P(k)$: kans om precies $k$ fotonen te meten,
+>$\langle{N}\rangle$ het gemiddelde aantal fotonen in het interval is.
 >
->Voor $k=1$:
+>Voor $k=1$: <br>
 >$P(1) = \langle{N}\rangle e^{-\langle{N}\rangle}$
 >
 >Als $\langle{N}\rangle \ll 1$, kunnen we de exponent benaderen met een Taylorreeks:
 >$e^{-\langle{N}\rangle} \approx 1 - \langle{N}\rangle + \frac{\langle{N}\rangle^2}{2} - \dots$
 >
->Omdat \langle{N}\rangle heel klein is, zijn de hogere machten $\langle{N}\rangle^2$, $\langle{N}\rangle^3$, etc. verwaarloosbaar en kunnen de hogere termen >in de tailorreeks worden verwaarloosd:
+>Omdat $\langle{N}\rangle$ heel klein is, zijn de hogere machten $\langle{N}\rangle^2$, $\langle{N}\rangle^3$, etc. verwaarloosbaar en kunnen de hogere termen in de tailorreeks worden verwaarloosd:
 >$e^{-\langle{N}\rangle} \approx 1 - \langle{N}\rangle$
 >
 >Invullen geeft:
->$P(1) \approx \langle{N}\rangle (1 - \langle{N}\rangle) \approx \langle{N}\rangle$ ($(\langle{N}\rangle)^2$ is verwaarloosbaar).
+>$P(1) \approx \langle{N}\rangle (1 - \langle{N}\rangle) \approx \langle{N}\rangle$, want ($\langle{N}\rangle^2$ is verwaarloosbaar). <br>
+>Dus geldt hier: $P(1) = \langle{N}\rangle$
 
 Vervolgens bereken we de kans op coïncidenties:
 ```{math}
