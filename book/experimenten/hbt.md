@@ -126,7 +126,7 @@ Omdat geldt: $N=I\cdot t$ kunnen we ook schrijven:
 g^{(2)}(t) = \frac{\langle N_{\text{A&B}} \rangle}{\langle N_A \rangle \cdot \langle N_B \rangle}
 ```
 
-waarbij $\langle N_A \rangle$ het gemiddeld aantal fotonen is dat detector A wordt gemeten en $\frac{\langle N_{\text{A&B}}$ het gemiddeld aantal coïncidenties: Dat een foton gelijktijdig wordt gemeten bij detector A en B. 
+waarbij $\langle N_A \rangle$ het gemiddeld aantal fotonen is dat detector A wordt gemeten en $\langle N_{\text{A&B}} \rangle$ het gemiddeld aantal coïncidenties: Dat een foton gelijktijdig wordt gemeten bij detector A en B. 
 
 Het gemiddelde aantal fotonen dat we vinden binnen tijdsinterval $\Delta t$, kunnen we berekenen met 
 ```{math}
@@ -340,19 +340,19 @@ je berekening en vergelijk je uitkomst.
 Bereken eerst de kans per detector: <br>
 
 ```{math}
-\lambda = \text{Rate} \cdot \Delta t = \text{gemiddeld aantal fotonen per detector in het tijdsinterval}
+\langle{N}\rangle = \text{Rate} \cdot \Delta t = \text{gemiddeld aantal fotonen per detector in het tijdsinterval}
 ```
 
 Vervolgens bereken we de kans op coïncidenties:
 ```{math}
-P_\text{coïncidentie}=\lambda_A \cdot \lambda_B
+P_\text{coïncidentie}=\langle{N_A}\rangle \cdot \langle{N_B}\rangle
 ```
 Het aantal keer dat deze kans voorkomt kun je berekenen door het aantal tijdsintervallen dat past in de meettijd te vermenigvuldigen met de kans. Het aantal tijdsintervallen in de screenshot hierboven (meettijd = 180 s) is:
 ```{math}
 \text{Aantal intervallen} = \frac{\text{totale tijd}}{\text{resolutietijd}} = \frac{180}{5 \times 10^{-9}} = 3,6 \times 10^{10}~\text{intervallen}.
 ```
 
-Tenslotte kan het verwachte aantal coïncidenties $N_\text{coïncidentie}$ worden als volgt worden berekend:
+Tenslotte kan het verwachte aantal coïncidenties $N_\text{coïncidentie}$ als volgt worden berekend:
 ```{math}
 N_\text{coïncidentie} = P_\text{coïncidentie} \cdot \text{Aantal intervallen}
 ``` 
@@ -541,7 +541,7 @@ $
 #### 7. Kans op coïncidentie
 
 $
-\lambda = 2500 \cdot 5 \times 10^{-9} = 1.25 \times 10^{-5}
+\langle{N}\rangle = 2500 \cdot 5 \times 10^{-9} = 1.25 \times 10^{-5}
 $
 
 $
