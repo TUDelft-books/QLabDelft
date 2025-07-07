@@ -343,11 +343,11 @@ $\langle{N}\rangle = \text{Rate} \cdot \Delta t = \text{gemiddeld aantal fotonen
 
 Voor N << 1 geldt: De kans $P_1$ dat er precies één foton wordt gemeten is gelijk aan $\langle{N}\rangle$, het gemiddeld aantal fotonen per detector in het tijdsinterval. Dus:
 
-$P_1 = \langle{N}\rangle
+$P_1 = \langle{N}\rangle$
 
 > ### Poisson-verdeling 
->(De extra uitleg in dit kader kun je ook even overslaan.)
->Dit geldt omdat de kans om precies $k$ fotonen te detecteren in een tijdsinterval wordt gegeven door de Poisson-verdeling:
+>_(De extra uitleg in dit kader kun je ook even overslaan.)_<br>
+>$P_1 = \langle{N}\rangle$ geldt omdat de kans om precies $k$ fotonen te detecteren in een tijdsinterval wordt gegeven door de Poisson-verdeling:
 >
 >$P(k) = \frac{\langle{N}\rangle^k e^{-\langle{N}\rangle}}{k!}$,
 >
@@ -585,16 +585,17 @@ $
 
 #### 8. Onzekerheid en relatieve fout
 
-Standaarddeviatie bij 14 coïncidenties:
+Standaarddeviatie bij 4 coïncidenties:
 
 $
-\sigma = \sqrt{14} \approx 3.74
+\sigma = \sqrt{4} = 2
 $
 
 Relatieve onzekerheid:
 
 $
-\frac{3.74}{14} \approx 0.267 = 26.7\%
+\frac{2}{4} = 0.5 = 50\%
 $
 
-**Conclusie**: Meetfout is ±3.74, relatieve fout is 26.7%.
+**Conclusie**: 
+Het gemeten aantal coïncidenties (4) komt binnen de nauwkeurigheid overeen met het berekende aantal coïncidenties (5.6).
