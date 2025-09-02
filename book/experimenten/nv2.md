@@ -27,7 +27,14 @@ Door microgolven met oplopende frequentie achter elkaar te verzenden naar de dia
 1) Controleer de positie van de magneten.
 2) Sluit de donkere doos goed.
 3) Sluit de 3 USB connectors aan op de laptop
-4) Open de websoftware NV_Center_applet.html en geef eventueel de USBcamera toestemming.
+4) Met de link hieronder wordt via javascript code de lichtsterkte gemeten door de camera weergegeven. 
+* Open onderstaande link met een **Chrome** of Edge browser en 
+* Geef de (juiste) webcam toestemming.  
+
+<a href="./media/nv2/nv2-scan-versie-02-09-25.html" target="_blank">Open NV2 Live Applet</a>
+<br><br>
+Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
+{Download}`software<./media/nv2/nv2-scan-versie-02-09-25.html>`
 ```{figure} ./media/nv2/nv3.png
     ---
     width:
@@ -36,24 +43,9 @@ Door microgolven met oplopende frequentie achter elkaar te verzenden naar de dia
     ---
 Weergave van het beeld van de USBcamera in de html applet.
 ```
-
-5) Open de microgolfsoftware SynthNV. 
-6) Stel de microgolf in op de volgende instellingen:
-```{figure} ./media/nv2/SynthNV.png
-    ---
-    width:
-    name: SynthNV microgolf software
-    align: center 
-    ---
-SynthNV microgolf software.
-```
-* High power en RF ON (rechts), schuifje helemaal omhoog
-* Start frequentie 2000 MHz en stop frequentie 3500 MHz
-* Step time 100 ms en step size 1 MHz
-
-7) Druk op *Start* in de web applet NV_Center_applet.html en laat deze circa 20 seconden lopen. SCroll eventueel iets naar beneden.
-8) Druk op *Sweep Once* in de SynthNV software. 
-9) Wacht tot de meting klaar is. 
+5) Start de meting met de standaard instellingen door op "Start Sweep" te drukken.
+6) Wacht tot de meting klaar is. 
+7) Interpreteer je meting: Het is nu mogelijk om met andere instellingen de meting te herhalen.
 
 ## Resultaten en Conclusie
 Een mogelijk resultaat is hieronder weergegeven.

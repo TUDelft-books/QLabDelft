@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Sweep Averaging</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        #controls {
+            margin-bottom: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        #plot {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            height: 400px;
+        }
+        #camera {
+            margin-top: 20px;
+        }
+        video {
+            border: 1px solid black;
+            max-width: 100%;
+        }
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frequency Sweep Averaging</h1>
+
+    <div id="controls">
+        <label for="lowFreq">Low Frequency (MHz):</label>
+        <input type="number" id="lowFreq" value="2300" step="0.1">
+
+        <label for="highFreq">High Frequency (MHz):</label>
+        <input type="number" id="highFreq" value="3400" step="0.1">
+
+        <label for="step">Step Size (MHz):</label>
+        <input type="number" id="step" value="1" step="0.1" min="0.1">
+
+        <label for="loops">Number of Loops:</label>
+        <input type="number" id="loops" value="3">
+	
+	<label for="PowerLevel">RF power level (from 0 to 63):</label>
+	<input type="number" id="PowerLevel" value="63" step="1">
+        
+	<button onclick="startSweep()">Start Sweep</button>
+    </div>
+
+    <div id="camera">
+        <h2>Camera Feed</h2>
+        <video id="video" autoplay></video>
+        <p id="cameraStatus">Initializing camera...</p>
+    </div>
+
+    <div id="plot"></div>
+    <canvas id="canvas"></canvas>
+
+    <div id="intensityDisplay">
+        <h2>Normalized Intensities</h2>
+        <pre id="intensitiesOutput">Waiting for data...</pre>
+    </div>
+
+    <script>
+        const video = document.getElementById("video");
+        const cameraStatus = document.getElementById("cameraStatus");
+        const plotDiv = document.getElementById("plot");
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        let frequencies = [];
+        let intensities = [];
+        let totalIntensities = [];
+        let counts = [];
+        let port;
+        let writer;
+
+        function loadPlotly(callback) {
+            const script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/npm/plotly.js-dist-min";
+            script.onload = callback;
+            script.onerror = () => {
+                console.error("Failed to load Plotly library.");
+                alert("Could not load Plotly library. Check your network connection.");
+            };
+            document.head.appendChild(script);
+        }
+
+        async function connectToDevice() {
+            try {
+                port = await navigator.serial.requestPort();
+                await port.open({ baudRate: 19200 });
+                writer = port.writable.getWriter();
+                console.log("Connected to RF generator.");
+            } catch (error) {
+                console.error("Error connecting to RF generator:", error);
+                alert("Could not connect to RF generator. Please ensure it is connected.");
+            }
+        }
+
+        async function sendCommand(command) {
+            if (!writer) {
+                console.error("No writer available to send commands.");
+                return;
+            }
+            const data = new TextEncoder().encode(command + "\n");
+            await writer.write(data);
+        }
+
+        async function setFrequency(frequency) {
+            const command = `f${frequency.toFixed(1)}`;
+            await sendCommand(command);
+        }
+
+        async function turnOn() {
+            await sendCommand("h1");
+            await sendCommand("o1");
+        }
+
+        async function turnOff() {
+            await sendCommand("h0");
+            await sendCommand("o0");
+            await sendCommand("a0");
+        }
+	
+	async function setDBm(power) {
+	    const decibel = `a${power}`;
+	    await sendCommand(decibel);
+	}
+
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                cameraStatus.textContent = 'Camera active';
+            } catch (error) {
+                cameraStatus.textContent = 'Error accessing camera: ' + error.message;
+            }
+        }
+
+        function captureRedChannelIntensity() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            let redSum = 0;
+            let pixelCount = 0;
+
+            for (let i = 0; i < data.length; i += 4) {
+                redSum += data[i];
+                pixelCount++;
+            }
+
+            return redSum / pixelCount;
+        }
+
+        function withTimeout(promise, ms) {
+            const timeout = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Operation timed out')), ms)
+            );
+            return Promise.race([promise, timeout]);
+        }
+
+        function initializePlot(lowFreq, highFreq, step) {
+            frequencies = Array.from({ length: Math.ceil((highFreq - lowFreq) / step) + 1 }, (_, i) => lowFreq + i * step);
+            intensities = Array(frequencies.length).fill(null);
+            totalIntensities = Array(frequencies.length).fill(0);
+            counts = Array(frequencies.length).fill(0);
+
+            Plotly.newPlot(plotDiv, [{
+                x: frequencies,
+                y: Array(frequencies.length).fill(null),
+                mode: "lines",
+                type: "scatter",
+                name: "Intensity"
+            }], {
+                title: "Frequency Sweep Averaging",
+                xaxis: { title: "Frequency (MHz)" },
+                yaxis: { title: "Normalized Intensity" },
+                autosize: true
+            });
+        }
+
+        function createTestPlot() {
+            Plotly.newPlot(plotDiv, [{
+                x: [1, 2, 3],
+                y: [0.98, 1.02, 1.01],
+                mode: "lines",
+                type: "scatter",
+                name: "Test Data"
+            }], {
+                title: "Initial Test Plot",
+                xaxis: { title: "X Axis" },
+                yaxis: { title: "Y Axis" },
+                autosize: true
+            });
+        }
+
+        loadPlotly(() => {
+            startCamera();
+            createTestPlot();
+        });
+
+        async function startSweep() {
+            const lowFreq = parseFloat(document.getElementById("lowFreq").value);
+            const highFreq = parseFloat(document.getElementById("highFreq").value);
+            const step = parseFloat(document.getElementById("step").value);
+            const numLoops = parseInt(document.getElementById("loops").value);
+	    const power = parseInt(document.getElementById("PowerLevel").value);
+            await connectToDevice();
+            initializePlot(lowFreq, highFreq, step);
+
+            let maxIntensity = 0;
+            const intensitiesOutput = document.getElementById("intensitiesOutput");
+            for (let loop = 1; loop <= numLoops; loop++) {
+                console.log(`Starting loop ${loop} of ${numLoops}`);
+                for (let i = 0; i < frequencies.length; i++) {
+                    try {
+                        await setFrequency(frequencies[i]);
+                        await turnOn();
+			await setDBm(power);
+                        await new Promise(resolve => setTimeout(resolve, 1));
+
+                        const capturedIntensity = await withTimeout(
+                            Promise.resolve(captureRedChannelIntensity()), // Simulate timeout handling
+                            500
+                        );
+
+                        if (isNaN(capturedIntensity) || capturedIntensity <= 0) {
+                            console.warn(`Invalid intensity at ${frequencies[i]} MHz, skipping.`);
+                            continue; // Skip invalid measurements
+                        }
+
+                        totalIntensities[i] += capturedIntensity;
+                        counts[i] += 1;
+                        intensities[i] = totalIntensities[i] / counts[i];
+
+                        maxIntensity = Math.max(...intensities.filter(value => value !== null));
+
+                        const normalizedValue = intensities[i] / maxIntensity;
+
+                        intensitiesOutput.textContent += `Freq: ${frequencies[i]} MHz, Intensity: ${normalizedValue.toFixed(4)}\n`;
+
+                        Plotly.update(plotDiv, {
+                            y: [intensities.map(value => value !== null ? value / maxIntensity : null)]
+                        }, {
+                            x: [frequencies]
+                        });
+
+                    } catch (error) {
+                        console.error(`Error during measurement at ${frequencies[i]} MHz:`, error);
+                    } finally {
+                        await turnOff();
+                    }
+                }
+            }
+
+            console.log("Sweep complete");
+        }
+    </script>
+</body>
+</html>
