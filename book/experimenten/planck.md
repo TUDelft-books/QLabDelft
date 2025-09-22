@@ -78,7 +78,7 @@ Of doe dit heel slim meteen in een spreadsheet.
 ## Opdrachten
 1) Leg uit waarom de golflengte van een LED bepalend is voor de drempelspanning.
 2) Leid de volgende formule af uit onder andere de formule voor foton-energie: 
-$h = \frac{q\cdot U\cdot{\lamda}}{c}$
+$h = \frac{q\cdot U\cdot{\lambda}}{c}$ 
 En hieruit volgt dan dat voor de drempelspanning van een led dan moet volgen dat : $U = $
 3) Bereken voor een led met een golflengte van 700nm de drempelspanning.
 4) Leg uit waarom de drempelspanning van de led te vinden is als de spanning over de weerstand 0,00 V is.
