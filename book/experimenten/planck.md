@@ -1,6 +1,5 @@
 # Planck
 practicumhandleiding om de constante van Planck te bepalen. 
-*__work in progress__*
 
 ```{figure} ./media/planck/planck.jpg
     :name: Max Planck

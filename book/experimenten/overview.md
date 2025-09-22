@@ -19,7 +19,12 @@ Met deze opstelling kan de werking van Quantum cryptografie (BB84-protocol) word
 Met dit experiment wordt gebruik gemaakt van diamant poeder met NV-centers. Door deze in een hoger energieniveau te brengen met een groene laser en het geëmitteerde rode licht te meten, kan vervolgens met een magnetisch veld Zeeman splitsing worden aangetoond. 
 
 **[Dubbelspleet experiment](dubbel.md)**
+<br>
 Met dit experiment wordt interferentie bij losse fotonen in een dubbel spleet experiment aangetoond. 
+
+**[Fluorescentie experiment](fluorescentie.md)**
+<br>
+Met dit experiment wordt fluorescentie onderzocht en de halfwaardetijd bepaald van een aantal stoffen.
 
 **[Franck en Hertz](frank.md)** 
 <br>
@@ -36,6 +41,10 @@ Met deze opstelling kan worden geëxperimenteerd met het quantum begrip pad-info
 **[Michelson Interferometer](michelson.md)** 
 <br>
 Met deze opstelling kunnen diverse experimenten worden uitgevoerd, waaronder de zo genaamde *Bombtester*. 
+
+**[Constante van Planck](planck.md)** 
+<br>
+Met dit experiment wordt de constante van Planck bepaald met behulp van LEDs. 
 
 **[Quantum Conductantie](conductantie.md)**
 <br>

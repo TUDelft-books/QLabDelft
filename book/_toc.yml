@@ -6,22 +6,25 @@ parts:
     chapters:
     - file: experimenten/overview.md
       sections: 
-      - file: experimenten/michelson.md
-      - file: experimenten/mach.md
-      - file: experimenten/nv.ipynb
-      - file: experimenten/nv2.md
+      - file: experimenten/afm.md
       - file: experimenten/conductantie.md
+      - file: experimenten/crypto.md
       - file: experimenten/diffractie.md
       - file: experimenten/dubbel.md
       - file: experimenten/fluorescentie.md
-      - file: experimenten/planck.md
+      - file: experimenten/frank.md
       - file: experimenten/hbt.md
+      - file: experimenten/mach.md
       - file: experimenten/malus.md
-      - file: experimenten/tunnelen.md
-      - file: experimenten/crypto.md
+      - file: experimenten/michelson.md
+      - file: experimenten/nv.ipynb
+      - file: experimenten/nv2.md
+      - file: experimenten/planck.md
       - file: experimenten/spectro.md
       - file: experimenten/spectro-pi.md
-      - file: experimenten/afm.md
+      - file: experimenten/tunnelen.md
+          
+      
     - file: references.md
     - file: changelog.md
     - file: credits.md
