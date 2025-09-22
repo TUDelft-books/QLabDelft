@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seriële poort uitlezen van een Arduino</title>
+  <style>
+    body { font-family: Inter, Roboto, Arial, sans-serif; padding:18px; max-width:900px; }
+    .controls { margin-bottom: 12px; }
+    button, input { margin-right:8px; padding:8px 12px; }
+    #status { margin-left:8px; font-weight:600; }
+    #liveValues { margin-top:18px; background:#f7f7f7; padding:12px; border-radius:8px; width:320px; }
+    #liveValues p { margin:6px 0; font-size:16px; }
+    .small { font-size:13px; color:#444; }
+    pre { background:#222; color:#0f0; padding:8px; border-radius:6px; max-height:200px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h2>Seriële poort uitlezen van een Arduino</h2>
+
+  <div class="controls">
+    <button id="connectButton">Verbinden</button>
+    <button id="resetButton">Reset</button>
+    <button id="stopButton">Stop</button>
+    <label class="small">Baudrate: <input id="baudRate" type="number" value="9600" min="300" step="100" style="width:100px"></label>
+    <span id="status">Niet verbonden</span>
+  </div>
+
+  <div id="liveValues">
+    <h3>Live Waarden</h3>
+    <p>Voltage A0: <strong><span id="voltage1">--</span></strong> V</p>
+    <p>Voltage A5: <strong><span id="voltage2">--</span></strong> V</p>
+    <p class="small">Laatste ruwe regels (debug):</p>
+    <pre id="lastLines">(geen)</pre>
+  </div>
+
+  <script>
+    let port = null;
+    let reader = null;
+    let keepReading = false;
+    let paused = false;
+    let readBuffer = '';
+    let valueBuffer = [];
+
+    const connectButton = document.getElementById('connectButton');
+    const resetButton = document.getElementById('resetButton');
+    const stopButton = document.getElementById('stopButton');
+    const statusEl = document.getElementById('status');
+    const lastLinesEl = document.getElementById('lastLines');
+
+    function setStatus(s) { statusEl.textContent = s; }
+
+    function pushTokensFromLine(line) {
+      const tokens = line.split(/[,;\s]+/).filter(t => t !== '');
+      for (const t of tokens) {
+        valueBuffer.push(t);
+        if (valueBuffer.length >= 2) {
+          const v1 = parseFloat(valueBuffer[0]);
+          const v2 = parseFloat(valueBuffer[1]);
+          document.getElementById('voltage1').textContent = Number.isFinite(v1) ? v1.toFixed(3) : valueBuffer[0];
+          document.getElementById('voltage2').textContent = Number.isFinite(v2) ? v2.toFixed(3) : valueBuffer[1];
+          valueBuffer = [];
+        }
+      }
+    }
+
+    async function startReading() {
+      if (!port || !port.readable) {
+        setStatus('Geen geldige poort om te lezen.');
+        return;
+      }
+      if (reader) return;
+
+      try {
+        reader = port.readable.getReader();
+        keepReading = true;
+        paused = false;
+        setStatus('Verbonden — lezen...');
+        const textDecoder = new TextDecoder();
+
+        while (keepReading) {
+          if (paused) {
+            await new Promise(r => setTimeout(r, 200));
+            continue;
+          }
+          const { value, done } = await reader.read();
+          if (done) break;
+          if (value) {
+            readBuffer += textDecoder.decode(value, { stream: true });
+            const lines = readBuffer.split(/\r?\n/);
+            readBuffer = lines.pop();
+
+            for (let raw of lines) {
+              const line = raw.trim();
+              if (line === '') continue;
+              lastLinesEl.textContent = (line + '\n') + lastLinesEl.textContent;
+              if (lastLinesEl.textContent.split('\n').length > 30) {
+                lastLinesEl.textContent = lastLinesEl.textContent.split('\n').slice(0,30).join('\n');
+              }
+              pushTokensFromLine(line);
+            }
+          }
+        }
+      } catch (err) {
+        console.error('Leesfout:', err);
+        setStatus('Leesfout: ' + (err && err.message ? err.message : err));
+      } finally {
+        try { if (reader) { await reader.releaseLock(); } } catch(e){}
+        reader = null;
+        keepReading = false;
+      }
+    }
+
+    async function connectSerial() {
+      try {
+        const baudRate = parseInt(document.getElementById('baudRate').value) || 9600;
+
+        if (!port) {
+          port = await navigator.serial.requestPort();
+        }
+
+        if (!port.opened && !port.readable) {
+          await port.open({ baudRate });
+        } else if (!port.readable) {
+          try { await port.open({ baudRate }); } catch(e){}
+        }
+
+        await startReading();
+        connectButton.textContent = 'Ontkoppel';
+      } catch (err) {
+        console.error('Fout bij verbinden:', err);
+        setStatus('Verbindingsfout: ' + (err && err.message ? err.message : err));
+      }
+    }
+
+    async function disconnectSerial() {
+      setStatus('Ontkoppelen...');
+      try {
+        if (reader) {
+          try { await reader.cancel(); } catch(e){}
+          try { await reader.releaseLock(); } catch(e){}
+          reader = null;
+        }
+        if (port) {
+          try { await port.close(); } catch (e) {}
+          port = null;
+        }
+        setStatus('Niet verbonden');
+        connectButton.textContent = 'Verbinden';
+        stopButton.textContent = 'Stop';
+        paused = false;
+      } catch (err) {
+        console.error('Fout bij ontkoppelen:', err);
+        setStatus('Fout bij ontkoppelen');
+      }
+    }
+
+    connectButton.addEventListener('click', async () => {
+      if (!port) {
+        await connectSerial();
+      } else {
+        await disconnectSerial();
+      }
+    });
+
+    resetButton.addEventListener('click', async () => {
+      setStatus('Reset...');
+      document.getElementById('voltage1').textContent = '--';
+      document.getElementById('voltage2').textContent = '--';
+      readBuffer = '';
+      valueBuffer = [];
+      lastLinesEl.textContent = '(geen)';
+      paused = false;
+      stopButton.textContent = 'Stop';
+
+      if (reader) {
+        try { await reader.cancel(); } catch(e){}
+        try { await reader.releaseLock(); } catch(e){}
+        reader = null;
+      }
+
+      if (port && port.readable) {
+        setTimeout(() => {
+          startReading();
+          setStatus('Verbonden — lezen (na reset)');
+        }, 150);
+      } else {
+        setStatus('Niet verbonden');
+      }
+    });
+
+    stopButton.addEventListener('click', () => {
+      if (port && reader) {
+        paused = !paused;
+        if (paused) {
+          setStatus('Lezen gepauzeerd (stop)');
+          stopButton.textContent = 'Doorgaan';
+        } else {
+          setStatus('Verbonden — lezen...');
+          stopButton.textContent = 'Stop';
+        }
+      }
+    });
+
+    (function checkSupport(){
+      if (!('serial' in navigator)) {
+        setStatus('Web Serial API niet beschikbaar in deze browser. Gebruik Chrome/Edge op HTTPS of localhost.');
+        connectButton.disabled = true;
+        resetButton.disabled = true;
+        stopButton.disabled = true;
+      }
+    })();
+  </script>
+</body>
+</html>

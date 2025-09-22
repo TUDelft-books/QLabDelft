@@ -1,0 +1,64 @@
+# Bepaling van de constante van Planck
+practicumhandleiding  
+*__work in progress__*
+
+```{figure} ./media/planck/planck.jpg
+    :name: Max Planck
+    :align: right 
+
+Foto van de Max Planck.([bron](By Hugo Erfurth - This file was derived from: Max Planck by Hugo Erfurth 1938cr.jpg Original source: https://www.dhm.de/lemo/bestand/objekt/max-planck, Public Domain, https://commons.wikimedia.org/w/index.php?curid=153625300) (public domain))
+``` 
+
+## Inleiding
+Het doel van dit practicum is het bepalen van de constante van Planck. In dit experiment meten we de drempelspanning van verschillende leds met een bekende golflengte. Dit doen we mbv een Arduino. Daarmee bepalen we een waarde voor de constante van Planck.
+
+## Theorie
+
+## Experimentele gedeelte
+### Materiaal
+Laptop, USB-kabel, Arduino, breadboard, 5 jumper-kabels, drukknop, weerstand 220 ohm (met rood-rood-(zwart)-bruin ringen), condensator (470 μF), 6 verschillende leds: 
+* led IR 940nm, 
+* led rood (zelf bepaalde golflengte of 630nm), 
+* led geel (zelf bepaalde golflengte of 590nm) , 
+* led groen (zelf bepaalde golflengte of 580nm), 
+* led blauw (zelf bepaalde golflengte of 458nm), 
+* led UV 368nm.
+
+### Opstelling 
+Bouw onderstaande schematische tekening na. <br>
+```{figure} ./media/planck/opstelling.png
+    :name: opstelling
+    :align: center 
+``` 
+### Uitvoering
+1. De Arduino is, als het goed is, reeds voorzien van de juiste software. Mocht dit toch niet het geval zijn, download dan hieronder het bestand voor de Arduino.
+{Download}`software<./media/planck/ReadLedVoltage.ino>` Na het downloaden kan dit bestand geopend worden in de Arduino software en vervolgens geüpload worden naar de Arduino. 
+2. Sluit de Arduino met de USB kabel aan op de laptop.
+3. Met de link hieronder wordt via javascript code de uitvoer van de seriële poort van de Arduino weergegeven.
+* Open onderstaande link met een **Chrome** of Edge browser en 
+* Druk op verbinden om de juiste USB poort te koppelen.
+<a href="./media/planck/serial_data_applet.html" target="_blank">Open Serial Data Applet</a>
+<br><br>
+Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
+{Download}`software<./media/planck/serial_data_applet.html>`
+4.  De led gaat branden als je op het knopje drukt. De spanning over de led en de weerstand samen is dan 5,00 V. Wanneer je het knopje loslaat gaat het ledje langzaam uit. Door het knopje (weer) in te drukken en ingedrukt te houden veranderd een van de getallen in 5,00 V. Wanneer je het knopje nu los laat, gaat de led langzaam uit en zoekt het programma zelf het getal waarbij er geen stroom meer loopt, en de spanning over de weerstand 0,00 V is geworden. Dan staat er over de led de drempelspanning. Je kunt ook zelf op *stop* drukken als 0,00V is bereikt, mochten de getallen blijven veranderen. Doe deze meting 3x voor elke led en noteer telkens de gemiddelde drempelspanning.
+5. Vervang de led voor een andere, let op de oriëntatie van de lange poot van de LED (bovenaan).
+
+## Resultaten
+Vul de volgende tabel in. Maak vervolgens van de laatste twee kolommen een grafiek. Zet hierbij qU uit tegen de frequentie. Teken hierin de trendlijn.
+Of doe dit heel slim meteen in een spreadsheet.
+
+<br><br>
+|kleur|golflengte (nm)|drempelspanning (V)|frequentie (Hz)|qU (J)|
+|---|---|---|---|---|
+|IR|940|
+|Rood|630|
+|Geel|590|
+|Groen|580|
+|Blauw|458|
+|UV|368|
+<br><br>
+
+
+
+## Conclusie & discussie
