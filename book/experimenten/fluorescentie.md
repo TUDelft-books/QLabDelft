@@ -18,6 +18,13 @@ In dit experiment wordt onderzocht hoe fluorescentie werkt en de halfwaardetijd 
 * UV lamp
 * Verduisterende behuizing
 
+## Opstelling
+```{figure} ./media/fluorescentie/schema-meetopstelling.jpg
+    :name: meetopstelling
+    :align: center 
+``` 
+
+
 
 ## Uitvoering
 
