@@ -59,6 +59,4 @@ Of doe dit heel slim meteen in een spreadsheet.
 |UV|368|
 <br><br>
 
-
-
 ## Conclusie & discussie
