@@ -1,10 +1,11 @@
-# Bepaling van de constante van Planck
-practicumhandleiding  
+# Planck
+practicumhandleiding om de constante van Planck te bepalen 
 *__work in progress__*
 
 ```{figure} ./media/planck/planck.jpg
     :name: Max Planck
     :align: right 
+    :height: 150px
 
 Foto van de Max Planck.([bron](By Hugo Erfurth - This file was derived from: Max Planck by Hugo Erfurth 1938cr.jpg Original source: https://www.dhm.de/lemo/bestand/objekt/max-planck, Public Domain, https://commons.wikimedia.org/w/index.php?curid=153625300) (public domain))
 ``` 
