@@ -22,6 +22,7 @@ Een LED is een halfgeleider die licht kan geven. In de LED zorgen elektronen erv
 Als een elektron elektrische energie absorbeert, kan dit elektron van een laag energieniveau (de valentieband) naar een hoger energieniveau (de geleidingsband) springen. De spanning die nodig is om een elektron voldoende elektrische energie te geven om de sprong te maken heet de drempelspanning. De elektrische energie van het elektron is dan gelijk aan $E=qU$. Na korte tijd valt het elektron weer terug naar de valentieband en daarbij komt een foton vrij met een energie die gelijk is aan $Ef=h\cdot f=\frac{hc}{\lambda}$.
 
 Het energieverschil tussen geleidings- en valentieband wordt ook wel de *bandgap* genoemd. Bij een grotere bandgap kost het meer energie om een elektron van de valantieband naar geleidingsband te brengen. Dit geeft dan weer fotonen met een hogere energie, oftewel een kleine golflengte, dus blauwer licht.
+Een rode led is gemaakt van Galliumaluminiumarsenide of AlGaAs. Dit materiaal zorgt voor een typische bandgap van 1,7 - 1,9 eV. Andere kleuren leds zijn gemaakt van andere materialen en hebben een grotere bandgap.
 
 In dit experiment meten we de drempelspanning en de golflengte van het licht van een aantal LEDs en bepalen daarmee een waarde voor de constante van Planck.
 
