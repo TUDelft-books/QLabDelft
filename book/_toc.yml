@@ -11,8 +11,8 @@ parts:
       - file: experimenten/nv.ipynb
       - file: experimenten/nv2.md
       - file: experimenten/conductantie.md
+      - file: experimenten/diffractie.md
       - file: experimenten/dubbel.md
-      - file: experimenten/frank.md
       - file: experimenten/fluorescentie.md
       - file: experimenten/planck.md
       - file: experimenten/hbt.md
