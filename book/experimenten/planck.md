@@ -13,6 +13,10 @@ Foto van de Max Planck.([bron](By Hugo Erfurth - This file was derived from: Max
 Het doel van dit practicum is het bepalen van de constante van Planck. In dit experiment meten we de drempelspanning van verschillende leds met een bekende golflengte. Dit doen we mbv een Arduino. Daarmee bepalen we een waarde voor de constante van Planck.
 
 ## Theorie
+$Ef=h\cdot f=\frac{hc}{\lambda}$
+$E=qU$
+
+
 
 ## Experimentele gedeelte
 ### Materiaal
@@ -41,8 +45,12 @@ Bouw onderstaande schematische tekening na. <br>
 <br><br>
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/planck/serial_data_applet.html>`
-4.  De led gaat branden als je op het knopje drukt. De spanning over de led en de weerstand samen is dan 5,00 V. Wanneer je het knopje loslaat gaat het ledje langzaam uit. Door het knopje (weer) in te drukken en ingedrukt te houden veranderd een van de getallen in 5,00 V. Wanneer je het knopje nu los laat, gaat de led langzaam uit en zoekt het programma zelf het getal waarbij er geen stroom meer loopt, en de spanning over de weerstand 0,00 V is geworden. Dan staat er over de led de drempelspanning. Je kunt ook zelf op *stop* drukken als 0,00V is bereikt, mochten de getallen blijven veranderen. Doe deze meting 3x voor elke led en noteer telkens de gemiddelde drempelspanning.
-5. Vervang de led voor een andere, let op de oriëntatie van de lange poot van de LED (bovenaan).
+4.  De led gaat branden als je op het knopje drukt. De spanning over de led en de weerstand samen is dan 5,00 V. Wanneer je het knopje loslaat gaat het ledje langzaam uit. 
+5. Door het knopje (weer) in te drukken en ingedrukt te houden veranderd een van de getallen in 5,00 V. Wanneer je het knopje nu los laat, gaat de led langzaam uit en zoekt het programma zelf het getal waarbij er geen stroom meer loopt, en de spanning over de weerstand 0,00 V is geworden. Dan staat er over de led de drempelspanning. Druk zelf op *stop* als 0,00V is bereikt maar de getallen blijven veranderen. Doe deze meting 3x voor elke led en noteer telkens de gemiddelde drempelspanning.
+5. Vervang de led voor een andere, let op de oriëntatie van de lange poot van de LED (bovenaan). En ga verder bij punt 4.  
+<br>
+*NB:* Bij de IR led zie je niets. En pas op als je UV-leds gebruikt, kijk hier nooit rechtstreeks naar als ze ‘branden’. Dit is net zo slecht voor je ogen als rechtstreeks naar de zon kijken! Zet ze direct weer uit als je ze niet meer gebruikt!
+
 
 ## Resultaten
 Vul de volgende tabel in. Maak vervolgens van de laatste twee kolommen een grafiek. Zet hierbij qU uit tegen de frequentie. Teken hierin de trendlijn.
@@ -59,4 +67,18 @@ Of doe dit heel slim meteen in een spreadsheet.
 |UV|368|
 <br><br>
 
+## Opdrachten
+1) Leg uit waarom de golflengte van een LED bepalend is voor de drempelspanning.
+2) Leid de volgende formule af uit onder andere de formule voor foton-energie: 
+$h = \frac{q\cdot U\cdot \lamda}{c}$
+En hieruit volgt dan dat voor de drempelspanning van een led dan moet volgen dat : $U = $
+3) Bereken voor een led met een golflengte van 700nm de drempelspanning.
+4) Leg uit waarom de drempelspanning van de led te vinden is als de spanning over de weerstand 0,00 V is.
+5) Stel de vergelijking van de trendlijn op, zoals deze volgt uit de resultaten en grafiek.
+6) Bereken met behulp van je antwoord op de vorige vraag de constante van Planck.
+7) Bereken het procentuele verschil van je gevonden waarde met de theoretische (Binas).
+8) Leg uit welke zaken de grootste invloed hebben op de nauwkeurigheid van de proef.
+
 ## Conclusie & discussie
+Deze volgen vanzelf uit de opdrachten hierboven.
+
