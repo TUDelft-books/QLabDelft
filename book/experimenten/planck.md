@@ -74,6 +74,10 @@ Of doe dit heel slim meteen in een spreadsheet.
 |UV|368|
 <br><br>
 
+Lukt het niet? Gebruik dan stiekem deze tool: 
+<a href="./media/planck/plancks-grafiek.html" target="_blank">Open Grafiek</a>
+
+
 ## Opdrachten
 1) Leg uit waarom de golflengte van een LED bepalend is voor de drempelspanning.
 2) Leid de volgende formule af uit onder andere de formule voor foton-energie: 

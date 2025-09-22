@@ -27,6 +27,11 @@ In dit experiment wordt onderzocht hoe fluorescentie werkt en de halfwaardetijd 
 
 
 ## Uitvoering
+terminal: 
+python pulse_dashboard.py
+sudo pulse_nog iets blaa
+
+
 
 ## Resultaten
 
