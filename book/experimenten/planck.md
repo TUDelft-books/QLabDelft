@@ -23,8 +23,6 @@ Als een elektron elektrische energie absorbeert, kan dit elektron van een laag e
 
 In dit experiment meten we de drempelspanning en de golflengte van het licht van de LED en bepalen daarmee een waarde voor de constante van Planck.
 
-
-
 ## Experimentele gedeelte
 ### Materiaal
 Laptop, USB-kabel, Arduino, breadboard, 5 jumper-kabels, drukknop, weerstand 220 ohm (met rood-rood-(zwart)-bruin ringen), condensator (470 μF), 6 verschillende leds: 
@@ -77,7 +75,7 @@ Of doe dit heel slim meteen in een spreadsheet.
 ## Opdrachten
 1) Leg uit waarom de golflengte van een LED bepalend is voor de drempelspanning.
 2) Leid de volgende formule af uit onder andere de formule voor foton-energie: 
-$h = \frac{q\cdot U\cdot \lamda}{c}$
+$h = \frac{q\cdot U\cdot{\lamda}}{c}$
 En hieruit volgt dan dat voor de drempelspanning van een led dan moet volgen dat : $U = $
 3) Bereken voor een led met een golflengte van 700nm de drempelspanning.
 4) Leg uit waarom de drempelspanning van de led te vinden is als de spanning over de weerstand 0,00 V is.
