@@ -14,8 +14,14 @@ Foto van de Max Planck.([bron](By Hugo Erfurth - This file was derived from: Max
 Het doel van dit practicum is het bepalen van de constante van Planck. In dit experiment meten we de drempelspanning van verschillende leds met een bekende golflengte. Dit doen we mbv een Arduino. Daarmee bepalen we een waarde voor de constante van Planck.
 
 ## Theorie
-$Ef=h\cdot f=\frac{hc}{\lambda}$
-$E=qU$
+Een LED is een halfgeleider die licht kan geven. In de LED zorgen elektronen ervoor dat er fotonen ontstaan die licht uitzenden. In een model ziet dit er als volgt uit:
+```{figure} ./media/planck/bandgapLED.png
+    :name: Bandgap
+    :align: center 
+``` 
+Als een elektron elektrische energie absorbeert, kan dit elektron van een laag energieniveau (de valentieband) naar een hoger energieniveau (de geleidingsband) springen. De spanning die nodig is om een elektron voldoende elektrische energie te geven om de sprong te maken heet de drempelspanning. De elektrische energie van het elektron is dan gelijk aan $E=qU$. Na korte tijd valt het elektron weer terug naar de valentieband en daarbij komt een foton vrij met een energie die gelijk is aan $Ef=h\cdot f=\frac{hc}{\lambda}$.
+
+In dit experiment meten we de drempelspanning en de golflengte van het licht van de LED en bepalen daarmee een waarde voor de constante van Planck.
 
 
 
