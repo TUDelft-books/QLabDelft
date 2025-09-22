@@ -1,5 +1,5 @@
 # Planck
-practicumhandleiding om de constante van Planck te bepalen 
+practicumhandleiding om de constante van Planck te bepalen. 
 *__work in progress__*
 
 ```{figure} ./media/planck/planck.jpg
@@ -11,7 +11,7 @@ Foto van de Max Planck.([bron](By Hugo Erfurth - This file was derived from: Max
 ``` 
 
 ## Inleiding
-Het doel van dit practicum is het bepalen van de constante van Planck. In dit experiment meten we de drempelspanning van verschillende leds met een bekende golflengte. Dit doen we mbv een Arduino. Daarmee bepalen we een waarde voor de constante van Planck.
+Het doel van dit practicum is het bepalen van de constante van Planck. In dit experiment meten we de drempelspanning van verschillende leds met een bekende golflengte. Dit doen we m.b.v. een Arduino. Daarmee bepalen we een waarde voor de constante van Planck.
 
 ## Theorie
 Een LED is een halfgeleider die licht kan geven. In de LED zorgen elektronen ervoor dat er fotonen ontstaan die licht uitzenden. In een model ziet dit er als volgt uit:
