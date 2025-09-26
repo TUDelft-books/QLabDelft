@@ -1,6 +1,5 @@
 # Fluorescentie
-_work in progress: Dit experiment wordt momenteel opgezet._
-practicumhandleiding 
+Deze practicumhandleiding is _work in progress_
 
 ## Inleiding
 In dit experiment wordt onderzocht hoe fluorescentie werkt en de halfwaardetijd van diverse fluorescerende stoffen bepaald. Eigenlijk gaat het hier om **fosforescentie**, omdat het effect langer duurt. 
@@ -55,7 +54,6 @@ Er schiet data over het scherm.
 ```bash
 cp pulse_times.csv ster_1_min_belicht_4_min_gemeten.csv
 ```
-
 * Nu gaan we de data verwerken. Type in de terminal
 ```bash
 python pulse_dashboard.py 
@@ -67,8 +65,8 @@ Klik op de URL die daar verschijnt. Er wordt een webpagina geopend (heel even ge
 * Rechts kan je de halfwaarde tijd aflezen zoals deze berekend is uit de curve-fit.
 
 
-## Resultaten
 
+## Resultaten
 
 
 ## Conclusie en discussie
