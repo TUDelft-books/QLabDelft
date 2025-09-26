@@ -24,6 +24,18 @@ In dit experiment wordt onderzocht hoe fluorescentie werkt en de halfwaardetijd 
     :align: center 
 ``` 
 
+```{figure} ./media/fluorescentie/voeding.jpg
+    :name: PSU
+    :align: center 
+``` 
+```{figure} ./media/fluorescentie/scoop.jpg
+    :name: scoop
+    :align: center 
+``` 
+```{figure} ./media/fluorescentie/inside.jpg
+    :name: inside
+    :align: center 
+``` 
 
 
 ## Uitvoering
@@ -34,5 +46,7 @@ sudo pulse_nog iets blaa
 
 
 ## Resultaten
+
+
 
 ## Conclusie en discussie
