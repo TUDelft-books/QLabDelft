@@ -79,3 +79,10 @@ python pulse_dashboard.py
 * Wat kun je zeggen over een andere hoeveelheid van dezelfde stof qua halfwaardetijd.
 * Wat kun je zeggen over de halfwaardetijd van verschillende stoffen?
 * ??
+
+## Software Downloads
+{Download}`software<./media/fluorescentie/pulse_dashboard.py>`
+{Download}`software<./media/fluorescentie/pulse_logger.zip>`
+{Download}`software<./media/fluorescentie/xtdc_babel.zip>`
+{Download}`software<./media/fluorescentie/cronologic_linux_kernel-1.4.0.tar.gz>`
+
