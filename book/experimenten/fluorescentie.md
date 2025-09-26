@@ -50,7 +50,8 @@ sudo pulse_logger 1
 
  
 (de pulsen worden 1 minuut lang opgeslagen - kies 4 voor 4 minuten lang).
-* de data wordt opgeslagen in de csv file: pulse_times.csv. Kopieer deze zelf naar een bestand met een passende naam: 
+Er schiet data over het scherm. 
+* De data wordt opgeslagen in de csv file: pulse_times.csv. Kopieer deze zelf naar een bestand met een passende naam: 
 ```bash
 cp pulse_times.csv ster_1_min_belicht_4_min_gemeten.csv
 ```
