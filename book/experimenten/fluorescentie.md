@@ -46,8 +46,6 @@ In dit experiment wordt onderzocht hoe fluorescentie werkt en de halfwaardetijd 
 ```bash
 sudo pulse_logger 1
 ```
-
- 
 (de pulsen worden 1 minuut lang opgeslagen - kies 4 voor 4 minuten lang).
 Er schiet data over het scherm. 
 * De data wordt opgeslagen in de csv file: pulse_times.csv. Kopieer deze zelf naar een bestand met een passende naam: 
@@ -64,7 +62,10 @@ Klik op de URL die daar verschijnt. Er wordt een webpagina geopend (heel even ge
 * De breedte van de 'bins' ( de verticale balken) kun je instellen.= met de schuifbalk. Probeer maar eens.
 * Rechts kan je de halfwaarde tijd aflezen zoals deze berekend is uit de curve-fit.
 
-
+```{figure} ./media/fluorescentie/histogram.png
+    :name: histogram
+    :align: center 
+``` 
 
 ## Resultaten
 
