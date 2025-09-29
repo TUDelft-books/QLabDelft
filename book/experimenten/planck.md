@@ -27,13 +27,13 @@ In dit experiment meten we de drempelspanning en de golflengte van het licht van
 
 ## Experimentele gedeelte
 ### Materiaal
-Laptop, USB-kabel, Arduino, breadboard, 5 jumper-kabels, drukknop, weerstand 220 ohm (met rood-rood-(zwart)-bruin ringen), condensator (470 μF), 6 verschillende leds: 
+Laptop, USB-kabel, Arduino, breadboard, 5 jumper-kabels, drukknop, weerstand 220 ohm (met rood-rood-bruin-goud of rood-rood-zwart-zwart-goud ringen), condensator (470 μF), 6 verschillende leds: 
 * led IR 940nm, 
 * led rood (zelf bepaalde golflengte of 630nm), 
 * led geel (zelf bepaalde golflengte of 590nm) , 
 * led groen (zelf bepaalde golflengte of 580nm), 
 * led blauw (zelf bepaalde golflengte of 458nm), 
-* led UV 368nm.
+* led UV 365nm.
 
 ### Opstelling 
 Bouw onderstaande schematische tekening na. <br>
@@ -93,3 +93,8 @@ En hieruit volgt dan dat voor de drempelspanning van een led dan moet volgen dat
 ## Conclusie & discussie
 Deze volgen vanzelf uit de opdrachten hierboven.
 
+## Uitbreiding
+Gebruik zelf een spectroscoop of tralie om de golflengte te bepalen van de leds, zodat je resultaten nauwkeuriger worden.
+
+## Bronnen
+*Pols, F en Nelk, J. (2016), Een leerlingpracticum quantummechanica voor minder dan € 30,-, NVOX 2016, nummer 3, bladzijde 132-133*
