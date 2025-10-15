@@ -20,11 +20,11 @@ parts:
       - file: experimenten/nv.ipynb
       - file: experimenten/nv2.md
       - file: experimenten/planck.md
+      - file: experimenten/planck2.md
       - file: experimenten/spectro.md
       - file: experimenten/spectro-pi.md
       - file: experimenten/tunnelen.md
-          
-      
+                
     - file: references.md
     - file: changelog.md
     - file: credits.md
