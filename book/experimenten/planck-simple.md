@@ -28,7 +28,7 @@ Download de juiste code voor de Arduino hier:
 {Download}`software<./media/planck/ReadLedVoltage.ino>`
 
 Download hier de webpagina:
-{Download}`software<./media/planck-simple/planck_meting_en_analyse.html`
+{Download}`software<./media/planck-simple/planck_meting_en_analyse.html>`
 
 
 ## Uitvoering
