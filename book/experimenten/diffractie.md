@@ -198,3 +198,5 @@ stralen meten groter dan 2,5 cm vanwege te lage intensiteit. De hoek 2θ is dan 
 Hierbij komt nog dat een tweede effect dat we niet meenemen, dat de straal wordt afgelezen op het gekromde oppervlak van de bol en niet op een vlak scherm, een systematische
 afwijking geeft tegenovergesteld aan de afwijking van de kleine-hoekbenadering compenseert. Ter indicatie: bij een straal van 2,5 cm wordt de correctiefactor 1,024.
 
+## Bronvermelding
+https://up.sites.uu.nl/wp-content/uploads/sites/336/2019/12/handleiding_Elektronendiffractie.pdf
