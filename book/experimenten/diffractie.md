@@ -158,29 +158,13 @@ Zijn de uitkomsten van het experiment in overeenstemming met de gevonden golflen
 
 ## Appendix
 ### Speciale relativiteitstheorie, energie en impuls
-Einstein leidde uit de speciale relativiteitstheorie af dat de relativistische energie van een
-object gegeven wordt door
-E =
-q
-(m2
-0c4 + p2c2.
+Einstein leidde uit de speciale relativiteitstheorie af dat de relativistische energie van een object gegeven wordt door E = q(m20c4 + p2c2.
 Hier is p de impuls van het object, c de lichtsnelheid en m0 de zogenaamde rustmassa
-(de massa die het object heeft als het in rust is). Controleer zelf dat de energie van een
-object in rust gelijk is aan de rustenergie E = m0c2, een uitdrukking die je ongetwijfeld
-zult kennen. Een object in beweging heeft ook nog een kinetische bijdrage aan de energie.
-Je kunt laten zien dat bij lage snelheden die kinetische energie gelijk is aan de klassieke
-kinetische energie 1/2m0v2.
-Een foton heeft geen massa, maar blijkens bovenstaande uitdrukking wel kinetische ener-
-gie, en daarom ook een impuls. Verifieer zelf dat E = hc
-λ = pc, waarmee de uitdrukking
-voor de impuls uit Sectie 1 wordt gevonden.
+(de massa die het object heeft als het in rust is). Controleer zelf dat de energie van een object in rust gelijk is aan de rustenergie E = m0c2, een uitdrukking die je ongetwijfeld zult kennen. Een object in beweging heeft ook nog een kinetische bijdrage aan de energie. Je kunt laten zien dat bij lage snelheden die kinetische energie gelijk is aan de klassieke kinetische energie 1/2m0v2.
+Een foton heeft geen massa, maar blijkens bovenstaande uitdrukking wel kinetische energie, en daarom ook een impuls. Verifieer zelf dat E = hc volgt dat λ = pc, waarmee de uitdrukking voor de impuls uit Sectie 1 wordt gevonden.
 
 Benadering van sin(θ) en tan(2θ) voor kleine hoeken θ.
-In de afleiding van Vgl. (4) hebben we gebruik gemaakt van de z.g. kleine-hoekbenadering
-voor sin θ in Vgl. (2) en tan(2θ) in Vgl. (3). In deze paragraaf rekenen we kort uit wat
-de systematische afwijking is die op deze manier gemaakt wordt. Herinner je eerst dat
-tan(2θ) = sin(2θ)/ cos(2θ) en verder dat sin(2θ) = 2 sin(θ) cos(θ). De exacte versie van
-Vgl. (4) is dus
+In de afleiding van Vgl. (4) hebben we gebruik gemaakt van de zogenaamde kleine-hoekbenadering voor sin θ in Vgl. (2) en tan(2θ) in Vgl. (3). In deze paragraaf rekenen we kort uit wat de systematische afwijking is die op deze manier gemaakt wordt. Herinner je eerst dat tan(2θ) = sin(2θ)/ cos(2θ) en verder dat sin(2θ) = 2 sin(θ) cos(θ). De exacte versie van Vgl. (4) is dus
 λ = dr
 l
 cos 2θ
@@ -189,14 +173,8 @@ cos θ
 oftewel
 cos 2θ
 cos θ ≈1.
-Bij θ = 0 graden is deze relatie exact, en hoe groter de hoek, hoe sterker de waarde van
-de breuk van 1 gaat afwijken. De afstand van het grafietfolie tot het fluorescerend scherm
-is (maximaal) 13,5 cm. Bij de straal van het fluorescerend scherm van 4,35 cm is de hoek
-2θ 17,9 graden en de waarde van de breuk ongeveer 0,963. In de praktijk zul je geen
-stralen meten groter dan 2,5 cm vanwege te lage intensiteit. De hoek 2θ is dan ongeveer
-10 graden en de waarde van de breuk 0,985.
-Hierbij komt nog dat een tweede effect dat we niet meenemen, dat de straal wordt afgelezen op het gekromde oppervlak van de bol en niet op een vlak scherm, een systematische
-afwijking geeft tegenovergesteld aan de afwijking van de kleine-hoekbenadering compenseert. Ter indicatie: bij een straal van 2,5 cm wordt de correctiefactor 1,024.
+Bij θ = 0 graden is deze relatie exact, en hoe groter de hoek, hoe sterker de waarde van de breuk van 1 gaat afwijken. De afstand van het grafietfolie tot het fluorescerend scherm is (maximaal) 13,5 cm. Bij de straal van het fluorescerend scherm van 4,35 cm is de hoek 2θ 17,9 graden en de waarde van de breuk ongeveer 0,963. In de praktijk zul je geen stralen meten groter dan 2,5 cm vanwege te lage intensiteit. De hoek 2θ is dan ongeveer 10 graden en de waarde van de breuk 0,985.
+Hierbij komt nog dat een tweede effect dat we niet meenemen, dat de straal wordt afgelezen op het gekromde oppervlak van de bol en niet op een vlak scherm, een systematische afwijking geeft tegenovergesteld aan de afwijking van de kleine-hoekbenadering compenseert. Ter indicatie: bij een straal van 2,5 cm wordt de correctiefactor 1,024.
 
 ## Bronvermelding
 https://up.sites.uu.nl/wp-content/uploads/sites/336/2019/12/handleiding_Elektronendiffractie.pdf
