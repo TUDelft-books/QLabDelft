@@ -18,7 +18,7 @@ Broglie werd geleverd door elektronen sterk te versnellen en daarna op een krist
 Impuls is een belangrijk begrip in de natuurkunde omdat het de grootheid is die verandert als er op een object een kracht wordt uitgeoefend. Voor een object met massa $m$ en snelheid $v$ wordt de impuls $p$ gegeven door $p = mv$.
 De Broglie liet op basis van de speciale relativiteitstheorie zien dat de impuls van een foton gegeven wordt door 
 <br>
-$p = frac{h}{\lambda}$ (1)
+$p = \frac{h}{lambda}$ (1)
 <br>
 Hier is $h$ de constante van Planck, en $λ$ de golflengte van het foton (licht). In de Appendix kun je nalezen hoe een massaloos object als het foton toch een impuls kan hebben. De Broglie liet vervolgens zien dat voor objecten met massa de klassieke uitdrukking voor de impuls gebruikt kan worden om een zogenaamde materie-golflengte te berekenen (mits de snelheid van het object niet te dicht bij de lichtsnelheid ligt).
 
@@ -32,10 +32,8 @@ spanningsverschil V ondergaat is eV.
 >Opdracht 1: Impuls en materiegolflengte
 >1. Geef allereerst een voorbeeld van een fysische situatie waarin een elektron zich manifesteert als deeltje.
 >2. Geef een uitdrukking voor de materiegolflengte van een deeltje met massa $m$ op basis van de klassieke uitdrukking voor de impuls.
->3. Geef een uitdrukking voor de (niet direct meetbare) snelheid $v$ van een elektron dat versneld wordt door een spanningsverschil V. Stel hiertoe $E_{elek}=qU=eV$ gelijk aan $E_{k}=\frac{1}/{2}mv^2$. Substitueer dit resultaat in de uitdrukking bij de vorige vraag om de uitdrukking $$\lambda = frac{h}{\sqrt{2meV}}$$.
->4. Bereken ter illustratie de snelheid v van een elektron dat versneld wordt met
-een spanning V= 3 kV, en de impuls p en de golﬂengte λ van het elektron in
-dat geval.
+>3. Geef een uitdrukking voor de (niet direct meetbare) snelheid $v$ van een elektron dat versneld wordt door een spanningsverschil U. Stel hiertoe $E_{elek}=qU=eU$ gelijk aan $E_{k}=\frac{1}{2}mv^2$. Substitueer dit resultaat in de uitdrukking bij de vorige vraag om de uitdrukking $\lambda = \frac{h}{\sqrt{2meU}}$.
+>4. Bereken ter illustratie de snelheid v van een elektron dat versneld wordt met een spanning $U=3 kV$, en de impuls $p$ en de golﬂengte $λ$ van het elektron in dat geval.
 
 ### Meetprincipe
 #### Diffractie
