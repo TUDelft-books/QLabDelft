@@ -113,3 +113,42 @@ waargenomen.
 >2. Een rekenvoorbeeld voor 3kV , waarvoor je bij opgave 1 al de golflengte hebt bepaald. De afstand tussen het kristal en het waarneemvlak (fluorescerend scherm) is gelijk aan $l = 13.5 cm$. Gegeven de afstanden d1, d2 en d3 tussen de verschillende vlakken, bij welke stralen r1, r2 en r3 verwacht je een orde n = 1 diffractiemaximum te zien?
 
 ## Opstelling
+De opstelling bestaat uit een elektronendiffractiebuis in een statief en een hoogspanningsvoeding met gloeispanning en een aantal aansluitsnoeren.
+In de foto hieronder zie je deze afgebeeld. 
+<img src="./media/diffractie/figuur7.jpeg" />
+Daarnaast is een liniaal nodig om de afstanden op te meten.
+<br>
+De buis is aangesloten volgens de schematische figuur hieronder (bron: 3BScientific).
+<img src="./media/diffractie/figuur8.png" />
+<br>
+
+De elektronendiffractiebuis is een bolvormige vacuümbuis en werkt als volgt:
+Er wordt een variabele hoogspanning gezet over de kathode en anode. Een bundel elektronen valt op een klein metalen draadrooster waarop een dunne laag grafietfolie zit. Het mat-witte vlak dat op de voorzijde van de elektronendiffractiebuis is een fluorescerend materiaal. Wanneer het geraakt wordt door elektronen, dan zal het groen oplichten. Zie ook de foto's. Met een liniaal kunnen de stralen van de diffractieringen worden bepaald.
+In het experiment zijn alleen de n = 1 diffractiemaxima te zien; de intensiteiten van de hogere orde maxima zijn veel lager. Verder is de binnenste diffractiering over het algemeen het lastigst te meten. De diffractieringen zijn redelijk breed, wat ook het meten lastig maakt. 
+**De elektronendiffractiebuis is een vrij kwetsbaar en relatief duur onderdeel van de meetopstelling. Probeer deze niet nodeloos aan te stoten!**
+
+
+## Uitvoering en verwerking
+
+>**Hoogspanning en veiligheid**
+>De mogelijk grote stromen die met een hoogspanning gepaard gaan, zijn potentieel gevaarlijk. Omdat in het lichaam de aansturing van spieren met behulp van elektrische stroompjes gebeurt, kunnen de effecten van minimale stromen al gevaarlijk zijn. Het is dus belangrijk om veilig met de hoogspanning om te gaan. 
+> * Maak de versnelspanning U over het elektronenkanon niet groter dan 5 kV.
+> * Controleer voor het aan aanzetten van de hoogspanningsvoeding altijd op kortsluiting met het statief of op losgeraakte draden.
+> * Het duurt ongeveer een minuut voordat het filament op temperatuur is gebracht d.m.v. de gloeispanning. 
+> * Draai de hoogspanning altijd rustig omhoog en omlaag, en wacht tot eventuele insteleffecten voorbij zijn.
+> * Draai de hoogspanning altijd terug naar 0 voordat je de opstelling uitzet en/of verlaat.
+> * En het belangrijkste: gebruik van vloeistoffen (drinken) bij de opstelling is ten strengste verboden!
+
+1) Stel de spanning in op **4,0 kV**.
+2) Meet de stralen $r_1$, $r_2$ en $r_3$ op. 
+3) Bereken voor elke straal, met behulp van de juiste roosterafstand $d$ en formule (4) de bepaalde golflengte.
+4) Bereken de golflengte bij deze spanning tevens met behulp van formule (2).
+5) Vergelijk je uitkomsten bij (3) en (4).
+
+<img src="./media/diffractie/figuur5.jpeg" />
+
+## Conclusie
+Uit dit experiment volgt de materie-golflengte van elektronen met een bepaalde impuls. 
+Zijn de uitkomsten van het experiment in overeenstemming met de gevonden golflengte via de theorie van de Broglie-golflengte?
+
+
