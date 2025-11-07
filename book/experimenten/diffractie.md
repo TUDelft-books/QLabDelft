@@ -74,14 +74,15 @@ De relevante kristalvlakken liggen onder een hoek $θ$ ten opzichte van de inval
 de verstrooide elektronen (die voor de duidelijkheid dus door de zeer dunne folie heen
 gaan) maken dus een hoek $2θ$ met de invallende bundel. We weten dat
 <br>
-$tan(2θ) = /frac{r}{l}$  (3)
+$tan(2θ) = \frac{r}{l}$  (3)
 <br>
 zoals weergegeven in figuur 1.
 We maken nu gebruik van het gegeven dat $2sin(θ) ≈ tan(2θ)$ 
 (zie de Appendix voor een korte bespreking van de effecten van deze benadering)
 en vergelijking 2 om af te leiden dat
+<br>
 $d\frac{r}{l} = nλ$  (4)
-
+<br>
 ```{figure} ./media/diffractie/figuur2.png
     :name: figuur2
     :align: center
@@ -158,23 +159,24 @@ Zijn de uitkomsten van het experiment in overeenstemming met de gevonden golflen
 
 ## Appendix
 ### Speciale relativiteitstheorie, energie en impuls
-Einstein leidde uit de speciale relativiteitstheorie af dat de relativistische energie van een object gegeven wordt door E = q(m20c4 + p2c2.
-Hier is p de impuls van het object, c de lichtsnelheid en m0 de zogenaamde rustmassa
-(de massa die het object heeft als het in rust is). Controleer zelf dat de energie van een object in rust gelijk is aan de rustenergie E = m0c2, een uitdrukking die je ongetwijfeld zult kennen. Een object in beweging heeft ook nog een kinetische bijdrage aan de energie. Je kunt laten zien dat bij lage snelheden die kinetische energie gelijk is aan de klassieke kinetische energie 1/2m0v2.
-Een foton heeft geen massa, maar blijkens bovenstaande uitdrukking wel kinetische energie, en daarom ook een impuls. Verifieer zelf dat E = hc volgt dat λ = pc, waarmee de uitdrukking voor de impuls uit Sectie 1 wordt gevonden.
+Einstein leidde uit de speciale relativiteitstheorie af dat de relativistische energie van een object gegeven wordt door 
+$E = \sqrt{m_0^2c^4 + p^2c^2}$
+Hier is $p$ de impuls van het object, $c$ de lichtsnelheid en $m_0$ de zogenaamde rustmassa (de massa die het object heeft als het in rust is). Controleer zelf dat de energie van een object in rust gelijk is aan de rustenergie $E = m_0c^2$, een uitdrukking die je ongetwijfeld zult kennen. Een object in beweging heeft ook nog een kinetische bijdrage aan de energie. Je kunt laten zien dat bij lage snelheden die kinetische energie gelijk is aan de klassieke kinetische energie $\frac{1}{2}m_0v^2$.
+Een foton heeft geen massa, maar blijkens bovenstaande uitdrukking wel kinetische energie, en daarom ook een impuls. Verifieer zelf dat $E=\frac{hc}{\lamda}=pc$, waarmee de uitdrukking voor de impuls uit Sectie 1 wordt gevonden.
 
-Benadering van sin(θ) en tan(2θ) voor kleine hoeken θ.
-In de afleiding van Vgl. (4) hebben we gebruik gemaakt van de zogenaamde kleine-hoekbenadering voor sin θ in Vgl. (2) en tan(2θ) in Vgl. (3). In deze paragraaf rekenen we kort uit wat de systematische afwijking is die op deze manier gemaakt wordt. Herinner je eerst dat tan(2θ) = sin(2θ)/ cos(2θ) en verder dat sin(2θ) = 2 sin(θ) cos(θ). De exacte versie van Vgl. (4) is dus
-λ = dr
-l
-cos 2θ
-cos θ
-(5)
-oftewel
-cos 2θ
-cos θ ≈1.
-Bij θ = 0 graden is deze relatie exact, en hoe groter de hoek, hoe sterker de waarde van de breuk van 1 gaat afwijken. De afstand van het grafietfolie tot het fluorescerend scherm is (maximaal) 13,5 cm. Bij de straal van het fluorescerend scherm van 4,35 cm is de hoek 2θ 17,9 graden en de waarde van de breuk ongeveer 0,963. In de praktijk zul je geen stralen meten groter dan 2,5 cm vanwege te lage intensiteit. De hoek 2θ is dan ongeveer 10 graden en de waarde van de breuk 0,985.
-Hierbij komt nog dat een tweede effect dat we niet meenemen, dat de straal wordt afgelezen op het gekromde oppervlak van de bol en niet op een vlak scherm, een systematische afwijking geeft tegenovergesteld aan de afwijking van de kleine-hoekbenadering compenseert. Ter indicatie: bij een straal van 2,5 cm wordt de correctiefactor 1,024.
+### Benadering van sin(θ) en tan(2θ) voor kleine hoeken θ.
+In de afleiding van Vgl. (4) hebben we gebruik gemaakt van de zogenaamde kleine-hoekbenadering voor $sinθ$ in Vgl. (2) en 
+$tan(2θ)$ in Vgl. (3). In deze paragraaf rekenen we kort uit wat de systematische afwijking is die op deze manier gemaakt wordt. Herinner je eerst dat $tan(2θ) = sin(2θ)/ cos(2θ)$ en verder dat $sin(2θ) = 2sin(θ)cos(θ)$. De exacte versie van Vgl. (4) is dus
+<br>
+$λ = d\frac{rcos2θ}{lcosθ}  (5)
+<br>
+oftewel$
+<br>
+$\frac{cos2θ}{cosθ} ≈ 1
+<br>
+Bij $θ = 0$ graden is deze relatie exact, en hoe groter de hoek, hoe sterker de waarde van de breuk van 1 gaat afwijken. De afstand van het grafietfolie tot het fluorescerend scherm is (maximaal) 13,5 cm. Bij de straal van het fluorescerend scherm van 4,35 cm is de hoek $2θ$ 17,9 graden en de waarde van de breuk ongeveer 0,963. In de praktijk zul je geen stralen meten groter dan 2,5 cm vanwege te lage intensiteit. De hoek $2θ$ is dan ongeveer 10 graden en de waarde van de breuk 0,985.
+Hierbij komt nog dat een tweede effect dat we niet meenemen, dat de straal wordt afgelezen op het gekromde oppervlak van de bol en niet op een vlak scherm, een systematische afwijking geeft tegenovergesteld aan de afwijking van de kleine-hoekbenadering en deze dus compenseert. Ter indicatie: bij een straal van 2,5 cm wordt de correctiefactor 1,024.
 
 ## Bronvermelding
+Deze handleiding is grotendeels overgenomen van de Universiteit Utrecht:
 https://up.sites.uu.nl/wp-content/uploads/sites/336/2019/12/handleiding_Elektronendiffractie.pdf
