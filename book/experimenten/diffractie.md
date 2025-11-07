@@ -1,5 +1,4 @@
-# Electronen diffractie
-__in progress__
+# Elektronen diffractie
 
 ## Inleiding
 In de klassieke natuurkunde bestaat een hard onderscheid tussen materie (deeltjes) als atomen en elektronen, en golven als licht. De quantummechanica dwingt ons dit onderscheid los te laten en te accepteren dat van een object onder bepaalde omstandigheden het golfkarakter en onder andere omstandigheden juist het deeltjeskarakter op de voorgrond treden.
@@ -166,7 +165,7 @@ Een foton heeft geen massa, maar blijkens bovenstaande uitdrukking wel kinetisch
 
 ### Benadering van sin(θ) en tan(2θ) voor kleine hoeken θ.
 In de afleiding van Vgl. (4) hebben we gebruik gemaakt van de zogenaamde kleine-hoekbenadering voor $sinθ$ in Vgl. (2) en 
-$tan(2θ)$ in Vgl. (3). In deze paragraaf rekenen we kort uit wat de systematische afwijking is die op deze manier gemaakt wordt. Herinner je eerst dat $tan(2θ) = sin(2θ)/ cos(2θ)$ en verder dat $sin(2θ) = 2sin(θ)cos(θ)$. De exacte versie van Vgl. (4) is dus
+$tan(2θ)$ in Vgl. (3). In deze paragraaf rekenen we kort uit wat de systematische afwijking is die op deze manier gemaakt wordt. Herinner je eerst dat $tan(2θ) = \frac{sin(2θ)}{cos(2θ)}$ en verder dat $sin(2θ) = 2sin(θ)cos(θ)$. De exacte versie van Vgl. (4) is dus
 <br>
 $λ = d\frac{rcos2θ}{lcosθ}$  (5)
 <br>
