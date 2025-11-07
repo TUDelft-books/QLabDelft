@@ -64,7 +64,7 @@ van het diffractiemaximum genoemd. Leg uit wat het verschil is tussen een diffra
 
 #### Bragg-verstrooiing aan grafiet
 In dit experiment wordt grafiet gebruikt om aan te verstrooien, dit is een hexagonale structuur van koolstofatomen. Figuur 2a) toont een deel van het kristal. Het “wondermateriaal” grafeen dat recent veel in het nieuws was, is één laagje van dit grafiet. 
-De afstand tussen twee vlakken is $d3 = 3,354 · 10^−10 m$. De kristalvlakken in het hexagonale vlak waarvan in dit experiment een zichtbare diffractie afkomstig is, zijn met stippellijnen aangegeven in Figuur 2b. Het is een aardige oefening in meetkunde om te laten zien dat de afstanden tussen de vlakken gelijk zijn aan $d1 = 1,231·10^−10 m$ en $d2 = 2,132·10^−10 m$.
+De afstand tussen twee vlakken is $d3 = 3,354 · 10^{−10} m$. De kristalvlakken in het hexagonale vlak waarvan in dit experiment een zichtbare diffractie afkomstig is, zijn met stippellijnen aangegeven in Figuur 2b. Het is een aardige oefening in meetkunde om te laten zien dat de afstanden tussen de vlakken gelijk zijn aan $d1 = 1,231·10^{−10} m$ en $d2 = 2,132·10^{−10} m$.
 Het dunne grafietfolie waaraan verstrooiing plaatsvindt, is niet één (perfect) kristalrooster. Het is een verzameling hele kleine kristalletjes, die ten opzichte van elkaar willekeurig georiënteerd liggen. 
 Het grote voordeel hiervan is dat het eenvoudiger wordt om een diffractiepatroon waar te nemen.
 In Figuur 3 is de geometrie van het experiment weergegeven. De elektronen naderen het
@@ -87,11 +87,11 @@ $d\frac{r}{l} = nλ$  (4)
     :name: figuur2
     :align: center
 Figuur 2: a) Kristalrooster van grafiet. Elk zwart bolletje is een koolstofatoom. In de
-(horizontale) vlakken liggen de atomen op een relatief kleine afstand van 1.421 · 10−10m;
-de afstand tussen de vlakken is met d3 = 3, 354 · 10−10m relatief groot. b) Hexagonaal
+(horizontale) vlakken liggen de atomen op een relatief kleine afstand van $1,421 · 10^{−10}m$;
+de afstand tussen de vlakken is met $d3 = 3,354 · 10^{−10}m$ relatief groot. b) Hexagonaal
 rooster van ´e´en laagje grafiet. Met rode en zwarte stippellijnen zijn de kristalvlakken
 waaraan meetbare Bragg-verstrooiing plaatsvindt weergegeven. De afstanden tussen die
-d1 = 1, 231 · 10−10m en d2 = 2, 132 · 10−10m.
+$d1 = 1,231 · 10^{−10}m$ en $d2 = 2,132 · 10^{−10}m$.
 ```
 
 ```{figure} ./media/diffractie/figuur3.png
