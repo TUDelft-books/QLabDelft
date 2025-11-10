@@ -87,10 +87,11 @@ $d\frac{r}{l} = nλ$  (4)
     :align: center
 Figuur 2: a) Kristalrooster van grafiet. Elk zwart bolletje is een koolstofatoom. In de
 (horizontale) vlakken liggen de atomen op een relatief kleine afstand van $1,421 · 10^{−10}m$;
-de afstand tussen de vlakken is met $d3 = 3,354 · 10^{−10}m$ relatief groot. b) Hexagonaal
+de afstand tussen de vlakken is met $d_3 = 3,354 · 10^{−10}m$ relatief groot. 
+<br> b) Hexagonaal
 rooster van ´e´en laagje grafiet. Met rode en zwarte stippellijnen zijn de kristalvlakken
 waaraan meetbare Bragg-verstrooiing plaatsvindt weergegeven. De afstanden tussen die
-$d1 = 1,231 · 10^{−10}m$ en $d2 = 2,132 · 10^{−10}m$.
+$d_1 = 1,231 · 10^{−10}m$ en $d_2 = 2,132 · 10^{−10}m$.
 ```
 
 ```{figure} ./media/diffractie/figuur3.png
@@ -150,7 +151,7 @@ In het experiment zijn alleen de n = 1 diffractiemaxima te zien; de intensiteite
 4) Bereken de golflengte bij deze spanning tevens met behulp van formule (2).
 5) Vergelijk je uitkomsten bij (3) en (4).
 
-<img src="./media/diffractie/figuur5.jpeg" />
+<img src="./media/diffractie/figuur5.jpeg" style="width:250" />
 
 ## Conclusie
 Uit dit experiment volgt de materie-golflengte van elektronen met een bepaalde impuls. 
