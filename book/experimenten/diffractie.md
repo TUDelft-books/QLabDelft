@@ -32,7 +32,7 @@ spanningsverschil V ondergaat is eV.
 >1. Geef allereerst een voorbeeld van een fysische situatie waarin een elektron zich manifesteert als deeltje.
 >2. Geef een uitdrukking voor de materiegolflengte van een deeltje met massa $m$ op basis van de klassieke uitdrukking voor de impuls.
 >3. Geef een uitdrukking voor de (niet direct meetbare) snelheid $v$ van een elektron dat versneld wordt door een spanningsverschil U. Stel hiertoe $E_{elek}=qU=eU$ gelijk aan $E_{k}=\frac{1}{2}mv^2$. Substitueer dit resultaat in de uitdrukking bij de vorige vraag om de uitdrukking $\lambda = \frac{h}{\sqrt{2meU}}$.
->4. Bereken ter illustratie de snelheid v van een elektron dat versneld wordt met een spanning $U=3 kV$, en de impuls $p$ en de golﬂengte $λ$ van het elektron in dat geval.
+>4. Bereken ter illustratie de snelheid v van een elektron dat versneld wordt met een spanning $U=3,0 kV$, en de impuls $p$ en de golﬂengte $λ$ van het elektron in dat geval.
 
 ### Meetprincipe
 #### Diffractie
@@ -63,7 +63,7 @@ van het diffractiemaximum genoemd. Leg uit wat het verschil is tussen een diffra
 
 #### Bragg-verstrooiing aan grafiet
 In dit experiment wordt grafiet gebruikt om aan te verstrooien, dit is een hexagonale structuur van koolstofatomen. Figuur 2a) toont een deel van het kristal. Het “wondermateriaal” grafeen dat recent veel in het nieuws was, is één laagje van dit grafiet. 
-De afstand tussen twee vlakken is $d3 = 3,354 · 10^{−10} m$. De kristalvlakken in het hexagonale vlak waarvan in dit experiment een zichtbare diffractie afkomstig is, zijn met stippellijnen aangegeven in Figuur 2b. Het is een aardige oefening in meetkunde om te laten zien dat de afstanden tussen de vlakken gelijk zijn aan $d1 = 1,231·10^{−10} m$ en $d2 = 2,132·10^{−10} m$.
+De afstand tussen twee vlakken is $d_3 = 3,354 · 10^{−10} m$. De kristalvlakken in het hexagonale vlak waarvan in dit experiment een zichtbare diffractie afkomstig is, zijn met stippellijnen aangegeven in Figuur 2b. Het is een aardige oefening in meetkunde om te laten zien dat de afstanden tussen de vlakken gelijk zijn aan $d_1 = 1,231·10^{−10} m$ en $d_2 = 2,132·10^{−10} m$.
 Het dunne grafietfolie waaraan verstrooiing plaatsvindt, is niet één (perfect) kristalrooster. Het is een verzameling hele kleine kristalletjes, die ten opzichte van elkaar willekeurig georiënteerd liggen. 
 Het grote voordeel hiervan is dat het eenvoudiger wordt om een diffractiepatroon waar te nemen.
 In Figuur 3 is de geometrie van het experiment weergegeven. De elektronen naderen het
