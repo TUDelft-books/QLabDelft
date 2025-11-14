@@ -187,4 +187,4 @@ Deze handleiding is grotendeels overgenomen van de Universiteit Utrecht:
 https://up.sites.uu.nl/wp-content/uploads/sites/336/2019/12/handleiding_Elektronendiffractie.pdf
 
 ## Antwoorden
-De gevonden golflengte is ongeveer $1,9 \cdot 10^{-11}$ 
+De gevonden golflengte is ongeveer $1,9 \cdot 10^{-11}$ .
