@@ -152,7 +152,7 @@ In het experiment zijn alleen de n = 1 diffractiemaxima te zien; de intensiteite
 5) Vergelijk je uitkomsten bij (3) en (4).
 
 ```{figure} ./media/diffractie/figuur5.jpeg
-    :width: 100
+    :width: 250
     :name: foto diffractie
     :align: center
 Foto diffractie
