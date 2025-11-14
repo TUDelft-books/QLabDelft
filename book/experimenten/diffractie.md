@@ -151,7 +151,12 @@ In het experiment zijn alleen de n = 1 diffractiemaxima te zien; de intensiteite
 4) Bereken de golflengte bij deze spanning tevens met behulp van formule (2).
 5) Vergelijk je uitkomsten bij (3) en (4).
 
-<img src="./media/diffractie/figuur5.jpeg" style="width:250" />
+```{figure} ./media/diffractie/figuur5.jpeg
+    :width: 100
+    :name: foto diffractie
+    :align: center
+Foto diffractie
+```
 
 ## Conclusie
 Uit dit experiment volgt de materie-golflengte van elektronen met een bepaalde impuls. 
