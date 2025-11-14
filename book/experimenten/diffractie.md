@@ -31,8 +31,8 @@ spanningsverschil V ondergaat is eV.
 >Opdracht 1: Impuls en materiegolflengte
 >1. Geef allereerst een voorbeeld van een fysische situatie waarin een elektron zich manifesteert als deeltje.
 >2. Geef een uitdrukking voor de materiegolflengte van een deeltje met massa $m$ op basis van de klassieke uitdrukking voor de impuls.
->3. Geef een uitdrukking voor de (niet direct meetbare) snelheid $v$ van een elektron dat versneld wordt door een spanningsverschil U. Stel hiertoe $E_{elek}=qU=eU$ gelijk aan $E_{k}=\frac{1}{2}mv^2$. Substitueer dit resultaat in de uitdrukking bij de vorige vraag om de uitdrukking $\lambda = \frac{h}{\sqrt{2meU}}$.
->4. Bereken ter illustratie de snelheid v van een elektron dat versneld wordt met een spanning $U=3,0 kV$, en de impuls $p$ en de golﬂengte $λ$ van het elektron in dat geval.
+>3. Geef een uitdrukking voor de (niet direct meetbare) snelheid $v$ van een elektron dat versneld wordt door een spanningsverschil U. Stel hiertoe $E_{elek}=qU=eU$ gelijk aan $E_{k}=\frac{1}{2}mv^2$. Substitueer dit resultaat in de uitdrukking bij de vorige vraag om de volgende uitdrukking te verkrijgen: $\lambda = \frac{h}{\sqrt{2meU}}$ (1).
+>4. Bereken ter illustratie de snelheid $v$ van een elektron dat versneld wordt met een spanning $U=3,0 kV$, en de impuls $p$ en de golﬂengte $λ$ van het elektron in dat geval.
 
 ### Meetprincipe
 #### Diffractie
@@ -148,7 +148,7 @@ In het experiment zijn alleen de n = 1 diffractiemaxima te zien; de intensiteite
 1) Stel de spanning in op **4,0 kV**.
 2) Meet de stralen $r_1$, $r_2$ en $r_3$ op. 
 3) Bereken voor elke straal, met behulp van de juiste roosterafstand $d$ en formule (4) de bepaalde golflengte.
-4) Bereken de golflengte bij deze spanning tevens met behulp van formule (2).
+4) Bereken de golflengte bij deze spanning tevens met behulp van formule (1).
 5) Vergelijk je uitkomsten bij (3) en (4).
 
 ```{figure} ./media/diffractie/figuur5.jpeg
@@ -185,3 +185,6 @@ Hierbij komt nog dat een tweede effect dat we niet meenemen, dat de straal wordt
 ## Bronvermelding
 Deze handleiding is grotendeels overgenomen van de Universiteit Utrecht:
 https://up.sites.uu.nl/wp-content/uploads/sites/336/2019/12/handleiding_Elektronendiffractie.pdf
+
+## Antwoorden
+De gevonden golflengte is ongeveer $1,9 \cdot 10^{-11}$ 
