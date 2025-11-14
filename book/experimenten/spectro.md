@@ -354,7 +354,7 @@ experiment 2.
 
 4.  Bereken nu de golflengte van het licht met behulp van
     $\alpha_{cal} = -25{^\circ}$ (eerder al bepaald),
-    $N = 1200 lines/mm$ (reken eerst om naar *lines/m*), 
+    $N = 1200 \; lines/mm$ (reken eerst om naar *lines/m*), 
     En de formules:
 
     ```{math}
