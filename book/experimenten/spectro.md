@@ -338,7 +338,7 @@ experiment 2.
 4.  Zoek de hoek waarbij de grootste spanning wordt weergegeven op de
     voltmeter. Bij welke kleur is dat?
 
-####  Proef 6:
+###  Proef 6:
 
 1.  Schroef het groene bandpass filter op de witte LED.
 
