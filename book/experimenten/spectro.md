@@ -344,25 +344,26 @@ experiment 2.
 
 2.  Begin bij 0 graden, hierbij zou het nulde orde maximum in de exit
     spleet zichtbaar moeten zijn en hierbij moet dus een (kleine)
-    spanning worden gemeten.
+    spanning worden gemeten. Het is niet erg als je niks meet.
 
 3.  Zoek nu het 1<sup>e</sup> orde maximum door met de software de
     traliespiegel te draaien. Als hulp kun je naar de achterkant van de
     exit spleet kijken, desnoods met behulp van het witte scherm. Als de
     het maximum precies in de spleet valt heb je de juiste hoek
-    $\alpha$ gevonden en meet je een spanning.
+    $\alpha$ gevonden en meet je een spanning. (De hoek zal in de buurt van de 355 graden liggen). 
 
 4.  Bereken nu de golflengte van het licht met behulp van
-    $alpha_{cal} = 25{^\circ}$ (eerder al bepaald)
-
+    $\alpha_{cal} = -25{^\circ}$ (eerder al bepaald),
+    $N = 1200 lines/mm$ (reken eerst om naar *lines/m*), 
     En de formules:
 
     ```{math}
-    \Theta = - 2\alpha_{cal}
+    \Theta = - 2\alpha_{cal} 
     ```
+    ($\Theta$ is dus positief)
 
     ```{math}
-    \lambda = \frac{sin(\Theta + \alpha)}{N}
+    \lambda = \frac{sin(\Theta + \alpha) + sin(\alpha)}{N}
     ```
 
 5.  Vergelijk je gevonden waarde met de theoretische golflengte 532nm
@@ -371,7 +372,7 @@ experiment 2.
 6.  Extra: Zoek het tweede orde maximum en voer hiervoor ook de
     berekening uit. Klopt dit?
 
-- Klaar? **Zet de software op 0 graden** en verifieer dat het platform
+- Klaar? **Zet de software op 0 graden** -- **(druk op HOME)** en verifieer dat het platform
   op 0 graden staat voordat je de software afsluit. Zet tenslotte met het kleine oranje schakelaartje op de motorsturingkubus de motor uit.
 
 ## Resultaten
@@ -386,7 +387,7 @@ Welke spectrometer werkt het nauwkeurigst? Waarom?
 
 ## Ideeën:
 
-- Gebruik als lichtbron een Natriumlamp (Dit is niet te realiseren met
+- Gebruik als lichtbron een Natriumlamp (Dit is nog niet te realiseren met
   de huidige opstelling).
 
 - Meet het absorbtiespectrum van een vloeistof (bijvoorbeeld
