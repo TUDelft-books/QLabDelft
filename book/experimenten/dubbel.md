@@ -194,7 +194,7 @@ Gebruik de volgende gegevens.
 
 ## Conclusie en discussie
 1) Vergelijk je gevonden waarden voor $d$ en $a$ tussen twee kleuren laserlicht.
-2) Vergelijk je gevonden waarden met de theoretische waarden, zoals de leverancier deze heeft opgegeven (de spleetbreedte $a = 100 \mu meter$ en de afstand tussen de spleten $d = 600 \mu meter$).
+2) Vergelijk je gevonden waarden met de theoretische waarden, zoals de leverancier deze heeft opgegeven (de spleetbreedte $a = 100 \mu m$ en de afstand tussen de spleten $d = 600 \mu m$).
 3) Welk patroon van het dubbelspleet diffractiepatroon kun je nu matchen aan welke eigenschap van de dubbelspleet? 
 4) Wat gebeurt er als de afstand tussen spleten groter wordt gemaakt?
 5) Wat voor conclusie kan je trekken als je Experiment 1 en 2 vergelijkt?
