@@ -82,7 +82,7 @@ etc.
 
 En kan ook worden geschreven als:
 ```{math}
-:label: 1
+:label: 2
 \sin\theta = n\cdot\lambda\cdot N
 ```
 
