@@ -201,4 +201,5 @@ Gebruik de volgende gegevens.
 
 ## Bronnen
 Handleiding van de koffer: {Download}`pdf<./media/Handleiding-dubbelspleetexperiment-v0.9.pdf>`
-Leuke animatie: <a>https://lampz.tugraz.at/~hadley/physikm/script/waves/double_slit.en.php</a>
+<br>
+Leuke animatie: [https://lampz.tugraz.at/~hadley/physikm/script/waves/double_slit.en.php](https://lampz.tugraz.at/~hadley/physikm/script/waves/double_slit.en.php)
