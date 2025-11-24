@@ -7,6 +7,7 @@ In dit experiment kijken we eerst naar het (klassieke) golfgedrag van licht bij 
 
 ## Doel
 Doel van dit experiment is om een verklaring te vinden voor de de eigenschappen van het dubbelspleetpatroon. Daarnaast wordt het dualiteitsprincipe gedemonstreerd.
+In experiment 1 wordt de spleetbreedte en afstand bepaald, in experiment 2 het dubbelspleetpatroon met enkele, losse fotonen.
 
 ## Theorie
 ### Enkele spleet diffractie
@@ -19,7 +20,7 @@ Wanneer licht door een enkele spleet valt, treedt er diffractie op. Doordat de s
 By DL6ER - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=34610901
 ```
 
-Bij een enkele spleet met spleetbreedte $a$, zal elk licht-front in de spleet *destructief* interfereren met een licht-front dat een halve spleetbreedte verder is: Een licht-front dat bij 0 (midden) is in de figuur hieronder, zal destructief interfereren met een licht-front bovenaan de spleet, op afstand $\frac{a}{2}$ (en op afstand $\frac{-a}{2}$).
+Bij een enkele spleet met spleetbreedte $a$ (in de figuur hierboven $d$), zal elk licht-front in de spleet *destructief* interfereren met een licht-front dat een halve spleetbreedte verder is: Een licht-front dat bij 0 (midden) is in de figuur hieronder, zal destructief interfereren met een licht-front bovenaan de spleet, op afstand $\frac{a}{2}$ (en op afstand $\frac{-a}{2}$).
 Er zullen dan dus **minima** ontstaan als geldt:
 
 
@@ -82,29 +83,73 @@ In onze opstelling maken we gebruik van onderstaande dubbelspleet:
     :align: center
 ```
 
-Op de dubbelspleet staat: $100/600 \micro meter$
+Op de dubbelspleet staat: $100/600 \mu meter$
 <br>
-Oftewel: de spleetbreedte $a = 100 \micro meter$ en de afstand tussen de spleten $d = 600 \micro meter$.
+Oftewel: de spleetbreedte $a = 100 \mu meter$ en de afstand tussen de spleten $d = 600 \mu meter$.
 <br>
-In deze opstelling maken we daarnaast gebruik van een rode en een groene laser.
+In deze opstelling maken we daarnaast gebruik van een rode (635 nm) en een groene laser (520 nm).
 
 ### Experiment 2: Dubbelspleetexperiment met enkele, losse fotonen
-We maken gebruik van de dubbelspleetkoffer.
-
-
-
+We maken gebruik van de dubbelspleetkoffer, ontwikkelt aan de Universiteit van Twente door A. van Rossum.
+Bij deze een beschrijving middels deze screenshot uit de handleiding.
+```{figure} ./media/dubbel/koffer.png
+    :width: 500
+    :name: koffer
+    :align: center
+```
+De gebruikte dubbelspleet (blauw gemarkeerd) heeft spleetafstand/spleetbreedte 0,4/0,1 mm.
 
 ## Uitvoering
-### Experiment 1: Dubbelspleet experiment met gewoon licht
-laserveiligheid
+> ### Veiligheid
+>
+>Let bij de uitvoering op de veiligheid: Van laserlicht kun je blijvend
+>blind raken. Ondanks dat deze laser is geselecteerd om mee te werken
+>zonder extra veiligheidsmaatregelen wordt er toch geacht rekening te
+>houden met de standaard afspraken wanneer je werkt met laserlicht:
+>
+>- Zorg dat je nooit rechtstreeks in de laser kijkt of anderen in het
+>  gezicht schijnt.
+>
+>- Kijk ook uit met strooi- of gereflecteerd licht.
+>- Zet de laser uit als deze niet wordt gebruikt.
 
-1) Plaats de groene laser in de houder en controleer de uitlijning van de laser op de dubbelspleet. Zorg dat de laser bundel precies op de dubbelspleet valt (zie foto bij opstelling.). 
-2) 
+### Experiment 1: Dubbelspleet experiment met gewoon licht
+
+1) Plaats de groene laser in de houder en controleer de uitlijning van de laser op de dubbelspleet. Zorg dat de laserbundel precies op de dubbelspleet valt (zie foto bij opstelling.). Let hierbij goed de **veiligheid!** De laser is ten alle tijden richting de muur gericht.
+2) Meet met de rolmaat de afstand van dubbelspleet tot de muur op. Noem deze $L$, van lengte.
+3) Meet met de liniaal of geodriehoek de afstand tussen de minima van het enkelspleetpatroon op (zie figuur 6 of 8). Noem deze $y_1$.
+4) Meet met de liniaal of geodriehoek de afstand van maximum tot maximum van het regelmatige, kleine patroon binnen het enkelspleetpatroon op (zie figuur 8). Noem deze $y_2$.
+
+5) Plaats nu de rode laser in de houder en controleer de uitlijning van de laser op de dubbelspleet. Zorg dat de laserbundel precies op de dubbelspleet valt (zie foto bij opstelling.). Let hierbij goed de **veiligheid!** De laser is ten alle tijden richting de muur gericht.
+6) Meet met de rolmaat de afstand van dubbelspleet tot de muur op. Noem deze $L$, van lengte.
+7) Meet met de liniaal of geodriehoek de afstand tussen de minima van het enkelspleetpatroon op (zie figuur 6 of 8). Noem deze $y_1$.
+8) Meet met de liniaal of geodriehoek de afstand van maximum tot maximum van het regelmatige, kleine patroon binnen het enkelspleetpatroon op (zie figuur 8). Noem deze $y_2$.
+
+### Experiment 2: Dubbelspleetexperiment met enkele, losse fotonen
+Let op: Deze koffer kost meer dan 10.000€. De sensor (SPC) die hier in zit kost alleen al los 6000€. Doe dus voorzichtig en bij twijfel vragen.
+1) Open de dubbelspleet software op de laptop.
+2) Sluit de voedingskabel aan op de koffer en stop de twee stekkers in het stopcontact.
+3) Sluit de twee usb kabels aan op de koffer en laptop.
+4) Sluit de mini luidspreker aan op de koffer met de 3,5mm plug en schakel de luidspreker in. Als de luidspreker leeg is, sluit deze dan tevens aan met de oplaadkabel.
+5) Verwijder voorzichtig de stofkap van de SPC door te draaien.
+6) Zorg dat de dubbelspleet zo geplaatst is in de opstelling dat het stickertje richting de laser wijst.
+7) Zorg dat er geen lossen onderdelen meer in de koffer liggen en sluit de koffer.
+8) Wacht even tot de koffer verbinding heeft gemaakt met de laptop via de USB.
+7) Selecteer de juiste communicatie (COM) poort in de software (de juiste is degene die werkt met de Thorlabs SPCM20).
+8) Druk op start meting.
+9) Tijdens het scanner hoor je een scan geluid van de railmotor en ontstaat het beeld en zijn gelijktijdig de fotonen-clicks hoorbaar. Hoor je geen clicks dan is de batterij leeg van de luidspreker: Laat deze op.
+10) Voor een tweede meting uit met plot2 (ander kleurtje).
 
 
 ## Verwerking
+Bereken voor beide metingen, met de groene en de rode laser, voor beide patronen ($y_1$ en $y_2$) de hoek $\Theta$ m.b.v. je meetgegevens. Dit geeft als het goed is 4 verschillende waarden.
+Bereken met behulp van deze hoeken en de bekende golflengte van de groene (520 nm) en de rode laser (635 nm) de breedte van de gebruikte spleet $a$ en de afstand tussen de spleten $d$. Je krijgt dus twee waarden voor $d$ (rood en groen) en twee voor $a$.
 
 ## Conclusie en discussie
+* Vergelijk je gevonden waarden voor $d$ en $a$ tussen twee kleuren laserlicht.
+* Vergelijk je gevonden waarden met de theoretische waarden, zoals de leverancier deze heeft opgegeven (de spleetbreedte $a = 100 \mu meter$ en de afstand tussen de spleten $d = 600 \mu meter$).
+* Welk patroon van het dubbelspleet diffractiepatroon kun je nu matchen aan welke eigenschap van de dubbelspleet? 
+* Wat gebeurt er als de afstand tussen spleten groter wordt gemaakt?
 
 ## Bronnen
 Handleiding van de koffer: {Download}`pdf<./media/Handleiding-dubbelspleetexperiment-v0.9.pdf>`
