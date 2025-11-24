@@ -182,7 +182,7 @@ De volgende stappen moeten gedaan worden om de koffer af te sluiten:
     a) Eerst de energie van één foton en 
     b) Daarna het aantal fotonen per seconde (circa 100miljoen/s). 
     c) Vervolgens de tijdsduur van 1 foton. 
-    d) Tenslotte de afstand van 1 foton tot de volgende (circa 3 meter).
+    d) Tenslotte de afstand van 1 foton tot de volgende (circa 3 meter):Interferentie met een ander foton is onmogelijk. Het foton interfereert met zichzelf.
 Gebruik de volgende gegevens. 
 * $\lamda = 635 nm$ 
 * $P_laser = 5 mW$
