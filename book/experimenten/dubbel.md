@@ -186,7 +186,7 @@ Gebruik de volgende gegevens.
 * $\lambda = 635 nm$ 
 * $P_{laser} = 5 mW$
 * verzwakkingsfilter $N=7$, oftewel $10^7$. 
-* $10%$ wordt doorgelaten door de spleet (want de oppervlakte van de spleet is $10%$ van het laserbundeloppervlak)
+* 10% wordt doorgelaten door de spleet (want de oppervlakte van de spleet is 10% van het laserbundeloppervlak)
 
 2) Vergelijk het gevonden patroon met het dubbelspleetpatroon dat je eerder zelf hebt gemaakt met de lasers. In hoeverre komt dit overeen?
 3) Wat zou er gebeuren als je een detector bij de spleet plaatst om te kijken of het foton door een bepaalde spleet gaat?
