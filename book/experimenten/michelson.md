@@ -273,16 +273,15 @@ Dus zodra er *pad informatie* bestaat stort de golffunctie van de twee
 paden in.
 
 # Experiment 5: De bomtester
-```{figure} ./media/michelson/image3.png
+```{figure} ./media/michelson/EDU-BT1M_Diagram.gif
     ---
-    width:10
-    name: paden
+    width:250
+    name: bom
     align: center 
     ---
-Figuur van <a href="https://commons.wikimedia.org/wiki/File:E-V_bomb-testing_2.svg">Gizm0steve</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+Figuur van Thorlabs, Bomb Tester Demonstration Kit, https://www.thorlabs.com/NewGroupPage9_PF.cfm?ObjectGroup_ID=6635
 ```
-(Figuur van <a href="https://commons.wikimedia.org/wiki/File:E-V_bomb-testing_2.svg">Gizm0steve</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.)
-<br>
+
 We kunnen een bom (of nepbom) plaatsen in één van de paden/armen. Met
 behulp van dit experiment is het mogelijk om in een aantal gevallen deze
 te detecteren zonder dat de bom afgaat.
