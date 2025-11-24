@@ -1,5 +1,4 @@
 # Dubbelspeet Experiment
-_de handleiding is in progress_
 
 ## Inleiding
 Het dubbelspleet experiment is één van de fundamentele experimenten van Quantum Mechanica. Het demonstreert de *dualiteit* van fotonen: Fotonen (licht) kunnen zich gedragen als een golf, maar ook als een deeltje.
@@ -202,4 +201,4 @@ Gebruik de volgende gegevens.
 
 ## Bronnen
 Handleiding van de koffer: {Download}`pdf<./media/Handleiding-dubbelspleetexperiment-v0.9.pdf>`
-<a>https://lampz.tugraz.at/~hadley/physikm/script/waves/double_slit.en.php</a>
+Leuke animatie: <a>https://lampz.tugraz.at/~hadley/physikm/script/waves/double_slit.en.php</a>
