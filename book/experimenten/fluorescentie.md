@@ -8,12 +8,12 @@ Het bepalen van de halfwaardetijd van diverse fosforescerende stoffen en materia
 
 ## Theorie
 De halfwaardetijd van een fosforescerend materiaal wordt als volgt bepaald: 
-Elk sample geeft, mits geactiveerd, licht af. De individuele fotonen waaruit dit ligt bestaat kunnen we meten. De fotonen die gedetecteerd worden door een Photomultiplier tube (PMT), een hele gevoelige fotonen sensor, worden elk voorzien van een tijdstempel door de Time-tagger. Dus aan elk gemeten foton wordt een tijdstempel gehangen. Door de nu het aantal fotonen in korte periodes op te tellen krijg je een *bin*, een kolom met alle gemeten fotonen in dat tijdbestek. Alle *bins* naast elkaar geven een histogram, een grafiek van de afname het aantal gemeten fotonen, weergegeven in bins. Uit de functiefit hiervan kan de halfwaardetijd van het sample worden bepaald.
+Elk sample geeft, mits geactiveerd, licht af. De individuele fotonen waaruit dit licht bestaat kunnen we meten. De fotonen die gedetecteerd worden door een Photomultiplier tube (PMT), een hele gevoelige fotonen sensor, worden elk voorzien van een tijdstempel door de Time-tagger. Dus aan elk gemeten foton wordt een tijdstempel gekoppeld. Door nu het aantal fotonen in korte periodes op te tellen krijg je een *bin*, een kolom met alle gemeten fotonen in dat tijdbestek. Alle *bins* naast elkaar geven een histogram, een grafiek van de afname het aantal gemeten fotonen. Uit de functiefit hiervan kan de halfwaardetijd van het sample worden bepaald.
 
 Een energiediagram voor fosforescentie, een zogenaamd Jablonski-diagram (zie hieronder), toont dat een molecuul licht absorbeert en naar een hoogenergetische singlettoestand $S_1$ springt. Na een proces dat intersysteemcrossing (ISC) heet, verandert het elektron van spin (spinflip) en belandt het in een lagere-energie triplettoestand $T_1$. Dit spin‑up‑elektron kan niet terugvallen naar de grondtoestand, omdat dat zou resulteren in twee spin‑up‑elektronen in de grondtoestand, wat in strijd is met het Pauli‑uitsluitingsprincipe. Dit is dus een verboden overgang. Het elektron moet daarom wachten tot de spin veranderd naar spin‑down. Dit duurt lang (op atomaire tijdschalen), waardoor de toestand meta-stabiel wordt genoemd. Vervolgens kan het elektron wel terugvallen in de spin‑down‑plaats van het grondniveau, waar het weer gepaard is met het spin‑up‑elektron in de grondtoestand, hierbij komt een foton vrij. Dit proces kan van milliseconden tot seconden duren en noemen we fosforescentie.
 
 ```{figure} ./media/fluorescentie/Jablonski.png
-    :width: 300
+    :width: 400
     :name: Jablonski
     :align: center 
 By Curtis Mobley, from: https://www.oceanopticsbook.info/view/scattering/level-2/theory-fluorescence-and-phosphorescence
@@ -41,7 +41,7 @@ By Curtis Mobley, from: https://www.oceanopticsbook.info/view/scattering/level-2
     :align: center 
 ``` 
 ```{figure} ./media/fluorescentie/scoop.jpg
-    :width: 250
+    :width: 400
     :name: scoop
     :align: center 
 ``` 
@@ -97,9 +97,9 @@ python pulse_dashboard.py
 * Noteer telkens je resultaten.
 
 ## Conclusie en discussie
-* Wat kun je zeggen over een andere hoeveelheid van dezelfde stof qua halfwaardetijd.
+* Wat kun je zeggen over een andere hoeveelheid van dezelfde stof qua halfwaardetijd?
 * Wat kun je zeggen over de halfwaardetijd van verschillende stoffen?
-* Wat kun je zeggen over de temperatuurafhankelijkheid? En als je dit vergelijkt met radioactieve stoffen?? Zijn deze temperatuurafhankelijk? Waarom?
+* Wat kun je zeggen over de temperatuurafhankelijkheid? En als je dit vergelijkt met radioactieve stoffen? Zijn deze temperatuurafhankelijk? Waarom?
 
 ## Software Downloads
 {Download}`software<./media/fluorescentie/pulse_dashboard.py>`
