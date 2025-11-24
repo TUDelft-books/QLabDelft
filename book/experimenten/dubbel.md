@@ -13,7 +13,7 @@ Doel van dit experiment is om een verklaring te vinden voor de de eigenschappen 
 Wanneer licht door een enkele spleet valt, treedt er diffractie op. Doordat de spleetbreedte niet oneindig smal is, zal er een patroon van minima en maxima ontstaan. Dit diffractie patroon is hieronder zichtbaar. Dit wordt ook wel een Fraunhofer diffractiepatroon genoemd.
 
 ```{figure} ./media/dubbel/single-slit.svg
-    :width: 250
+    :width: 350
     :name: single slit diffraction
     :align: center
 By DL6ER - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=34610901
@@ -53,16 +53,17 @@ Wanneer licht door een dubbelspleet valt, treedt er ook diffractie op. Dit diffr
 By a-levelphysicstutor.com 2024, Creative Commons License, https://www.a-levelphysicstutor.com/wav-light-inter.php
 ```
 
-Bij een dubbelspleet met met afstand $a$ tussen de spleten, zal een licht-front in elke spleet *constructief* interfereren als het weglengte verschil tot het scherm precies een veelvoud van een golflengte $\lambda$ is geldt:
+Bij een dubbelspleet met met afstand $d$ tussen de spleten, zal een licht-front in elke spleet *constructief* interfereren als het weglengte verschil tot het scherm precies een veelvoud van een golflengte $\lambda$ is geldt:
 
-$n \cdot \lambda = a \cdot sin(\Theta)$ 
+$n \cdot \lambda = d \cdot sin(\Theta)$ 
 
 Hier is:
 * n een geheel getal dat de orde van de maxima aangeeft,
 * $\lambda$ de golflengte,
-* $a$ de afstand tussen de spleten (vaak gebruiken we hiervoor $d$),
+* $d$ de afstand tussen de spleten,
 * $\Theta$ de hoek waaronder constructieve interferentie plaatsvindt.
 
+In de figuur hieronder wordt i.p.v. $d$ $a$ gebruikt.
 
 ```{figure} ./media/dubbel/TwoSlitInterference.svg
     :width: 250
@@ -72,9 +73,34 @@ By I, Dirk Hünniger, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?cu
 ```
 
 ## Opstelling
+### Experiment 1: Dubbelspleet experiment met gewoon licht
+In onze opstelling maken we gebruik van onderstaande dubbelspleet:
+
+```{figure} ./media/dubbel/dubbelspleet.jpeg
+    :width: 200
+    :name: two slit description
+    :align: center
+```
+
+Op de dubbelspleet staat: $100/600 \micro meter$
+<br>
+Oftewel: de spleetbreedte $a = 100 \micro meter$ en de afstand tussen de spleten $d = 600 \micro meter$.
+<br>
+In deze opstelling maken we daarnaast gebruik van een rode en een groene laser.
+
+### Experiment 2: Dubbelspleetexperiment met enkele, losse fotonen
+We maken gebruik van de dubbelspleetkoffer.
+
+
 
 
 ## Uitvoering
+### Experiment 1: Dubbelspleet experiment met gewoon licht
+laserveiligheid
+
+1) Plaats de groene laser in de houder en controleer de uitlijning van de laser op de dubbelspleet. Zorg dat de laser bundel precies op de dubbelspleet valt (zie foto bij opstelling.). 
+2) 
+
 
 ## Verwerking
 
