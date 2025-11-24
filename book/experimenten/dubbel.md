@@ -75,14 +75,27 @@ By I, Dirk Hünniger, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?cu
 
 ### Dualiteit
 Wanneer licht door een grote spleet valt zien we een afbeelding van de spleet op een scherm.
-```{figure} ./media/dubbel/grote-spleten.jpg
+```{figure} ./media/dubbel/grote-spleten.png
     :width: 250
     :name: grote spleten
     :align: center
 By Ed van den Berg, Jeroen Grijsen, Aernout van Rossum, Timo Bomhof, from lesopzetdualiteit.pdf
 ```
 
-Maken we de spleten echter zeer klein, dan treedt interferentie op. 
+Maken we de spleten echter zeer klein, dan treedt interferentie van licht op. De golflengte van fotonen is echter nog een stuk kleiner dan de spleetbreedte. 
+<br>
+Wat gebeurt er nu als we fotonen één voor één, dus als miniscule deeltjes, door de spleten schieten? We krijgen dan geen afbeelding, maar ook een interferentiepatroon. De fotonen interfereren dan met zichzelf! Je kunt ook zeggen dat de golffunctie van één foton door beide spleten gaat en op deze manier interfereert met zichzelf en een interferentiepatroon veroorzaakt. De afstand tussen de individuele fotonen is zeer groot: meer dan 10cm per foton, veel meer dan de golflengte van de fotonen.
+<br>
+Elektronen kunnen we ook één voor één door een dubbelspleet schieten en deze vertonen precies hetzelfde gedrag: Ook hier ontstaat een interferentiepatroon (i.v.m. veiligheid (betastraling) doen we dit niet zelf). Hieronder is wel een filmpje hiervan te zien:
+<br>
+Toont het zich opbouwende elektronenpatroon, één elektron per keer. De detectiesnelheid van elektronen was ongeveer 1 Hz. De eerste 22 seconden worden weergegeven op de detectiesnelheid, de volgende 30 seconden zijn versneld met een factor 72, daarna 20 seconden met factor 210. De laatste 20 seconden worden weer vertraagd naar de detectiesnelheid. De intensiteit wordt geregeld door een tijdsafhankelijke functie om de zichtbaarheid van de individuele "vlekjes" aan het begin te vergroten.
+```{figure} ./media/dubbel/electron.gif
+    :width: 250
+    :name: electrons doubleslit
+    :align: center
+By Roger Bach, Damian Pope, Sy-Hwang Liou and Herman Batelaan See Roger Bach et al 2013 New J. Phys. 15 033018DOI 10.1088/1367-2630/15/3/033018 - https://iopscience.iop.org/article/10.1088/1367-2630/15/3/033018/data, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=132124128
+```
+Een elektron kan zich, net als een foton, zowel als een deeltje als als een golf gedragen: *Dualiteit*.
 
 ## Opstelling
 ### Experiment 1: Dubbelspleet experiment met gewoon licht
@@ -94,9 +107,9 @@ In onze opstelling maken we gebruik van onderstaande dubbelspleet:
     :align: center
 ```
 
-Op de dubbelspleet staat: $100/600 \mu meter$
+Op de dubbelspleet staat: $100/600 \mu m$
 <br>
-Oftewel: de spleetbreedte $a = 100 \mu meter$ en de afstand tussen de spleten $d = 600 \mu meter$.
+Oftewel: de spleetbreedte $a = 100 \mu m$ en de afstand tussen de spleten $d = 600 \mu m$.
 <br>
 In deze opstelling maken we daarnaast gebruik van een rode (635 nm) en een groene laser (520 nm).
 
@@ -161,17 +174,31 @@ De volgende stappen moeten gedaan worden om de koffer af te sluiten:
 
 ## Verwerking
 ### Experiment 1: Dubbelspleet experiment met gewoon licht
-Bereken voor beide metingen, met de groene en de rode laser, voor beide patronen ($y_1$ en $y_2$) de hoek $\Theta$ m.b.v. je meetgegevens. Dit geeft als het goed is 4 verschillende waarden.
-Bereken met behulp van deze hoeken en de bekende golflengte van de groene (520 nm) en de rode laser (635 nm) de breedte van de gebruikte spleet $a$ en de afstand tussen de spleten $d$. Je krijgt dus twee waarden voor $d$ (rood en groen) en twee voor $a$.
+* Bereken voor beide metingen, met de groene en de rode laser, voor beide patronen ($y_1$ en $y_2$) de hoek $\Theta$ m.b.v. je meetgegevens. Dit geeft als het goed is 4 verschillende waarden.
+* Bereken met behulp van deze hoeken en de bekende golflengte van de groene (520 nm) en de rode laser (635 nm) de breedte van de gebruikte spleet $a$ en de afstand tussen de spleten $d$. Je krijgt dus twee waarden voor $d$ (rood en groen) en twee voor $a$.
 
 ### Experiment 2: Dubbelspleetexperiment met enkele, losse fotonen
+1) Bereken de afstand tussen de enkele, losse fotonen. Bereken hiertoe:
+    a) Eerst de energie van één foton en 
+    b) Daarna het aantal fotonen per seconde (circa 100miljoen/s). 
+    c) Vervolgens de tijdsduur van 1 foton. 
+    d) Tenslotte de afstand van 1 foton tot de volgende (circa 3 meter).
+Gebruik de volgende gegevens. 
+* $\lamda = 635 nm$ 
+* $P_laser = 5 mW$
+* verzwakkingsfilter $N=7$, oftewel $10^7$. 
+* 10% wordt doorgelaten door de spleet (want de oppervlakte van de spleet is 10% van het laserbundeloppervlak)
+
+2) Vergelijk het gevonden patroon met het dubbelspleetpatroon dat je eerder zelf hebt gemaakt met de lasers. In hoeverre komt dit overeen?
+3) Wat zou er gebeuren als je een detector bij de spleet plaatst om te kijken of het foton door een bepaalde spleet gaat?
 
 
 ## Conclusie en discussie
-* Vergelijk je gevonden waarden voor $d$ en $a$ tussen twee kleuren laserlicht.
-* Vergelijk je gevonden waarden met de theoretische waarden, zoals de leverancier deze heeft opgegeven (de spleetbreedte $a = 100 \mu meter$ en de afstand tussen de spleten $d = 600 \mu meter$).
-* Welk patroon van het dubbelspleet diffractiepatroon kun je nu matchen aan welke eigenschap van de dubbelspleet? 
-* Wat gebeurt er als de afstand tussen spleten groter wordt gemaakt?
+1) Vergelijk je gevonden waarden voor $d$ en $a$ tussen twee kleuren laserlicht.
+2) Vergelijk je gevonden waarden met de theoretische waarden, zoals de leverancier deze heeft opgegeven (de spleetbreedte $a = 100 \mu meter$ en de afstand tussen de spleten $d = 600 \mu meter$).
+3) Welk patroon van het dubbelspleet diffractiepatroon kun je nu matchen aan welke eigenschap van de dubbelspleet? 
+4) Wat gebeurt er als de afstand tussen spleten groter wordt gemaakt?
+5) Wat voor conclusie kan je trekken als je Experiment 1 en 2 vergelijkt?
 
 ## Bronnen
 Handleiding van de koffer: {Download}`pdf<./media/Handleiding-dubbelspleetexperiment-v0.9.pdf>`
