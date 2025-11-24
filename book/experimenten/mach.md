@@ -33,6 +33,15 @@ Uitgestelde keuze experiment
 <img src="./media/mach/mimage0.png"
 style="width:3in;height:3in" alt="figuur 0" />
 
+<br>
+
+```{figure} ./media/mach/Mach–Zehnder_interferometer.gif
+    :width: 400
+    :name: mach gifje
+    :align: center
+By L3erdnik - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=155028116
+```
+
 ## Materiaal
 
 Onderstaande opstelling, met daarin:
