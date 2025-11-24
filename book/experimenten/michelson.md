@@ -363,7 +363,7 @@ met 100.
 
 **Opdracht**
 
-Probeer nu zelf de oplossing te vinden van de formule [](#1) hierboven. Misschien klopt 't nummer niet. 
+Probeer nu zelf de oplossing te vinden van de formule {eq}`1` hierboven.  
 <br>
 <br>
 <br>
