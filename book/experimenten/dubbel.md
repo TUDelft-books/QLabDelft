@@ -73,6 +73,17 @@ In de figuur hieronder wordt i.p.v. $d$ $a$ gebruikt.
 By I, Dirk Hünniger, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2474697
 ```
 
+### Dualiteit
+Wanneer licht door een grote spleet valt zien we een afbeelding van de spleet op een scherm.
+```{figure} ./media/dubbel/grote-spleten.jpg
+    :width: 250
+    :name: grote spleten
+    :align: center
+By Ed van den Berg, Jeroen Grijsen, Aernout van Rossum, Timo Bomhof, from lesopzetdualiteit.pdf
+```
+
+Maken we de spleten echter zeer klein, dan treedt interferentie op. 
+
 ## Opstelling
 ### Experiment 1: Dubbelspleet experiment met gewoon licht
 In onze opstelling maken we gebruik van onderstaande dubbelspleet:
@@ -139,11 +150,22 @@ Let op: Deze koffer kost meer dan 10.000€. De sensor (SPC) die hier in zit kos
 8) Druk op start meting.
 9) Tijdens het scanner hoor je een scan geluid van de railmotor en ontstaat het beeld en zijn gelijktijdig de fotonen-clicks hoorbaar. Hoor je geen clicks dan is de batterij leeg van de luidspreker: Laat deze op.
 10) Voor een tweede meting uit met plot2 (ander kleurtje).
+11) Sla de plots van je metingen op. 
 
+De volgende stappen moeten gedaan worden om de koffer af te sluiten:
+1. Stofkapje op de fotonendetector draaien
+2. Luidspreker uitzetten
+3. Voedingskabel in het etui met de luidspreker
+4. USB Kabels los in de koffer
+5. Koffer afsluiten
 
 ## Verwerking
+### Experiment 1: Dubbelspleet experiment met gewoon licht
 Bereken voor beide metingen, met de groene en de rode laser, voor beide patronen ($y_1$ en $y_2$) de hoek $\Theta$ m.b.v. je meetgegevens. Dit geeft als het goed is 4 verschillende waarden.
 Bereken met behulp van deze hoeken en de bekende golflengte van de groene (520 nm) en de rode laser (635 nm) de breedte van de gebruikte spleet $a$ en de afstand tussen de spleten $d$. Je krijgt dus twee waarden voor $d$ (rood en groen) en twee voor $a$.
+
+### Experiment 2: Dubbelspleetexperiment met enkele, losse fotonen
+
 
 ## Conclusie en discussie
 * Vergelijk je gevonden waarden voor $d$ en $a$ tussen twee kleuren laserlicht.
