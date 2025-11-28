@@ -25,7 +25,7 @@ Elk sample geeft, mits geactiveerd, licht af. De individuele fotonen waaruit dit
     :align: center 
 ``` 
 ### Halfwaardetijd
-De lijn langs de bins is de functiefit. Deze ziet er precies uit als een vervalkromme. Van het hoofdstuk over straling (of radioactiviteit) kennen jullie de formule:
+De lijn langs de *bins* is de functiefit. Deze ziet er precies uit als een vervalkromme. Van het hoofdstuk over straling (of radioactiviteit) kennen jullie de formule:
 $ N = N_0 \cdot (\frac{1}{2})^{\frac{t}{t_{\frac{1}{2}}}}$
 
 In de natuurkunde wordt echter vaak net een andere formule gebruikt, die precies hetzelfde oplevert. 
@@ -33,14 +33,14 @@ In de natuurkunde wordt echter vaak net een andere formule gebruikt, die precies
 $ N = N_0 \cdot e^{-\frac{t}{\tau}} + A$
 
 Hier is:<br>
-$N$ aantal gemeten fotonen in een bin
-$N_0$ aantal fotonen in het begin
-$t$ tijd
-$\tau$ vervalconstante
-$A$ achtergrondruis van de PMT (dark current)
+* $N$ aantal gemeten fotonen in een *bin*,
+* $N_0$ aantal fotonen in het begin,
+* $t$ tijd,
+* $\tau$ vervalconstante,
+* $A$ achtergrondruis van de PMT (dark current).
 <br>
 De halfwaardetijd kan nu door middel van de vervalconstante berekend worden.
-* Hoe doe je dat? (hint: iets met ln)
+* Hoe doe je dat? (alleen voor de wiskunde B leerling - hint: iets met ln)
 
 ## Materiaal
 * 3 voedingen
