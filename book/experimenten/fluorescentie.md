@@ -38,9 +38,9 @@ Hier is:<br>
 * $t$ tijd,
 * $\tau$ vervalconstante,
 * $A$ achtergrondruis van de PMT (dark current).
-<br>
+<br><br>
 De halfwaardetijd kan nu door middel van de vervalconstante berekend worden.
-* Hoe doe je dat? (alleen voor de wiskunde B leerling - hint: iets met ln)
+* **Hoe doe je dat?** (alleen voor de wiskunde B leerling - hint: iets met ln)
 
 ## Materiaal
 * 3 voedingen
