@@ -52,15 +52,13 @@ De halfwaardetijd kan nu door middel van de vervalconstante berekend worden.
 * Verduisterende behuizing
 
 ## Opstelling
-* In de figuren hieronder zie je dat de PMT 3 voedingen nodig heeft: 
-*)  -10V en +10V voor de hoogspanningsvoeding. De ingebouwde hoogspanningsvoeding versterkt dit met eeb factor 100 tot maximaal +/-1,0 kV.
-*)  circa 2V (Er staat 5V) voor de stuurspannning. Deze stuurt de hoogspanning, in dit geval tot circa 400V. Tevens stuurt deze electronica aan die het signaal versterkt.
+* In de figuren hieronder zie je dat de PMT 3 voedingen nodig heeft: -10V en +10V voor de hoogspanningsvoeding. De ingebouwde hoogspanningsvoeding versterkt dit met eeb factor 100 tot maximaal +/-1,0 kV. Circa 2V (Er staat 5V) voor de stuurspannning. Deze stuurt de hoogspanning, in dit geval tot circa 400V. Tevens stuurt deze electronica aan die het signaal versterkt.
 * Het signaal van de PMT wordt via een coax kabel zichtbaar gemaakt op de oscilloscoop.
 * Ook het stuursignaal is hierop zichtbaar.
 * Het signaal van PMT wordt bij de oscilloscoop gesplitst door middel van een T stuk. Deze gaat naar Pulse Time Tagger.
 * De Pulse Time Tagger is met een Thunderbolt4 aansluiting aangesloten op een computer. 
 * De stuurspanning is relais geschakeld: De stuurspanning schakelt uit als het reed-magneet contact van de deurtjes wordt verbroken, dus als deze open gaan.
-* In de verduiderende behuizing bevindt zich de PMT en daarvoor een tafeltje op hoogte van de "pupil" van de PMT, een klein gaatje in een aluminium plaatje.
+* In de verduisterende behuizing bevindt zich de PMT en daarvoor een tafeltje op hoogte van de "pupil" van de PMT, een klein gaatje in een aluminium plaatje.
 
 ```{figure} ./media/fluorescentie/schema-meetopstelling.jpg
     :name: meetopstelling
