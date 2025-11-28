@@ -7,9 +7,7 @@ In dit experiment wordt onderzocht hoe fluorescentie werkt en de halfwaardetijd 
 Het bepalen van de halfwaardetijd van diverse fosforescerende stoffen en materialen. 
 
 ## Theorie
-De halfwaardetijd van een fosforescerend materiaal wordt als volgt bepaald: 
-Elk sample geeft, mits geactiveerd, licht af. De individuele fotonen waaruit dit licht bestaat kunnen we meten. De fotonen die gedetecteerd worden door een Photomultiplier tube (PMT), een hele gevoelige fotonen sensor, worden elk voorzien van een tijdstempel door de Time-tagger. Dus aan elk gemeten foton wordt een tijdstempel gekoppeld. Door nu het aantal fotonen in korte periodes op te tellen krijg je een *bin*, een kolom met alle gemeten fotonen in dat tijdbestek. Alle *bins* naast elkaar geven een histogram, een grafiek van de afname het aantal gemeten fotonen. Uit de functiefit hiervan kan de halfwaardetijd van het sample worden bepaald.
-
+### Fosforescentie
 Een energiediagram voor fosforescentie, een zogenaamd Jablonski-diagram (zie hieronder), toont dat een molecuul licht absorbeert en naar een hoogenergetische singlettoestand $S_1$ springt. Na een proces dat intersysteemcrossing (ISC) heet, verandert het elektron van spin (spinflip) en belandt het in een lagere-energie triplettoestand $T_1$. Dit spin‑up‑elektron kan niet terugvallen naar de grondtoestand, omdat dat zou resulteren in twee spin‑up‑elektronen in de grondtoestand, wat in strijd is met het Pauli‑uitsluitingsprincipe. Dit is dus een verboden overgang. Het elektron moet daarom wachten tot de spin veranderd naar spin‑down. Dit duurt lang (op atomaire tijdschalen), waardoor de toestand meta-stabiel wordt genoemd. Vervolgens kan het elektron wel terugvallen in de spin‑down‑plaats van het grondniveau, waar het weer gepaard is met het spin‑up‑elektron in de grondtoestand, hierbij komt een foton vrij. Dit proces kan van milliseconden tot seconden duren en noemen we fosforescentie.
 
 ```{figure} ./media/fluorescentie/Jablonski.png
@@ -18,7 +16,31 @@ Een energiediagram voor fosforescentie, een zogenaamd Jablonski-diagram (zie hie
     :align: center 
 By Curtis Mobley, from: https://www.oceanopticsbook.info/view/scattering/level-2/theory-fluorescence-and-phosphorescence
 ``` 
+### Fotonen meten
+De halfwaardetijd van een fosforescerend materiaal wordt als volgt bepaald: 
+Elk sample geeft, mits geactiveerd, licht af. De individuele fotonen waaruit dit licht bestaat kunnen we meten. De fotonen die gedetecteerd worden door een Photomultiplier tube (PMT), een hele gevoelige fotonen sensor, worden elk voorzien van een tijdstempel door de Time-tagger. Dus aan elk gemeten foton wordt een tijdstempel gekoppeld. Door nu het aantal fotonen in korte periodes op te tellen krijg je een *bin*, een kolom met alle gemeten fotonen in dat tijdbestek. Alle *bins* naast elkaar geven een histogram, een grafiek van de afname het aantal gemeten fotonen. Uit de functiefit hiervan kan de halfwaardetijd van het sample worden bepaald. Zie hieronder voor een voorbeeld.
 
+```{figure} ./media/fluorescentie/histogram.png
+    :name: histogram
+    :align: center 
+``` 
+### Halfwaardetijd
+De lijn langs de bins is de functiefit. Deze ziet er precies uit als een vervalkromme. Van het hoofdstuk over straling (of radioactiviteit) kennen jullie de formule:
+$ N = N_0 \cdot (\frac{1}{2})^{\frac{t}{t_{\frac{1}{2}}}}$
+
+In de natuurkunde wordt echter vaak net een andere formule gebruikt, die precies hetzelfde oplevert. 
+
+$ N = N_0 \cdot e^{-\frac{t}{\tau}} + A$
+
+Hier is:<br>
+$N$ aantal gemeten fotonen in een bin
+$N_0$ aantal fotonen in het begin
+$t$ tijd
+$\tau$ vervalconstante
+$A$ achtergrondruis van de PMT (dark current)
+<br>
+De halfwaardetijd kan nu door middel van de vervalconstante berekend worden.
+* Hoe doe je dat? (hint: iets met ln)
 
 ## Materiaal
 * 3 voedingen
