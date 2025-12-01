@@ -22,12 +22,12 @@ Door microgolven met oplopende frequentie achter elkaar te verzenden naar de dia
     :align: center
 Diagram door BonPhire, BY-SA 4.0, https://en.wikipedia.org/wiki/File:NV-energy-levels.svg
 ```
-check $r_1$, $r_2$ en $r_3$
-In het diagram hierboven is te zien dat de $$m_s=+-1$$ grondtoestand te bereiken vanuit de onderste grondtoestand $$m_s=0$$ door de elektronen energie te geven met een microgolf frequentie van 2,87 GHz. 
+check r_1, $r_2$ en $r_3$
+In het diagram hierboven is te zien dat de $m_s=+-1$ grondtoestand te bereiken vanuit de onderste grondtoestand $m_s=0$ door de elektronen energie te geven met een microgolf frequentie van 2,87 GHz. 
 Wanneer meer elektronen in de $m_s = +-1$ toestand zijn, zal de kans dat aangeslagen elektronen, (in de *excited* state), terugvallen via de *intern* route ($^1A_1$ en $^1E$ singlet state) groter worden. De hoeveelheid waargenomen fluorescentie zal dan afnemen. <br>
-Door het aanbrengen van een extern magnetisch veld zullen de $m_s = +-1$ toestanden splitsen: Dit wordt zeemansplitsing genoemd (naar Pieter Zeeman). De mate van opsplitsing hangt af van de sterkte van het magneetveld in de richting van het NV-centrum (zie ook het andere NV experiment). Doordat dat de $m_s =-1$ en de $m_s=+1$ nu twee (gesplitste) verschillende toestanden zijn, zal het bereiken vanuit de $m_s=0$ toestand van de $m_s=+1$ toestand iets meer energie kosten en de $m_s=-1$ iets minder energie kosten. Dus de microgolf zal in het ene geval moeten zorgen voor iets meer energie door een hogere frequentie en in het andere juist een lagere frequentie. Zie hieronder de afbeelding met magneet $B=0$ en met extern magneetveld $B=/0$. De $\nabla$ is een symbool voor frequentie (wij gebruiken meestal $f$).
+Door het aanbrengen van een extern magnetisch veld zullen de $m_s = +-1$ toestanden splitsen: Dit wordt zeemansplitsing genoemd (naar Pieter Zeeman). De mate van opsplitsing hangt af van de sterkte van het magneetveld in de richting van het NV-centrum (zie ook het andere NV experiment). Doordat dat de $m_s =-1$ en de $m_s=+1$ nu twee (gesplitste) verschillende toestanden zijn, zal het bereiken vanuit de $m_s=0$ toestand van de $m_s=+1$ toestand iets meer energie kosten en de $m_s=-1$ iets minder energie kosten. Dus de microgolf zal in het ene geval moeten zorgen voor iets meer energie door een hogere frequentie en in het andere juist een lagere frequentie. Zie hieronder de afbeelding met magneet $B=0$ en met extern magneetveld $B\neq0$. De $\nabla$ is een symbool voor frequentie (wij gebruiken meestal $f$).
 
-```{figure} ./media/nv2/mw1.png
+```{figure} ./media/nv2/mw1.
     :width: 250
     :name: mw1
     :align: center
@@ -64,10 +64,11 @@ From: Magaletti, S., Mayer, L., Le, X.P. et al. Magnetic sensitivity enhancement
 <br><br>
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/nv2/nv2-scan-versie-02-09-25.html>`
+
 ```{figure} ./media/nv2/nv3.png
-    width: 250
-    name: USBcamera beeld
-    align: center  
+    :width: 250
+    :name: USBcamera beeld
+    :align: center  
 Een oudere weergave van het beeld van de USBcamera in de html applet.
 ```
 5) Start de meting met de standaard instellingen door op "Start Sweep" te drukken.
@@ -80,9 +81,9 @@ Een oudere weergave van het beeld van de USBcamera in de html applet.
 Een mogelijk resultaat van een oude meting is hieronder weergegeven.
 
 ```{figure} ./media/nv2/nv5.png
-    width: 250
-    name: resultaten
-    align: center 
+    :width: 250
+    :name: resultaten
+    :align: center 
 Mogelijk resultaat van de meting
 ```
 Opvallend is de symmetrie in de dipjes. 
