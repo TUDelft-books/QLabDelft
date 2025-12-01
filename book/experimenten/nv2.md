@@ -76,6 +76,8 @@ Een oudere weergave van het beeld van de USBcamera in de html applet.
 5) Start de meting met de standaard instellingen door op "Start Sweep" te drukken.
 6) Wacht tot de meting klaar is. 
 7) Interpreteer je meting: Het is nu mogelijk om met andere instellingen de meting te herhalen.
+8) Probeer vervolgens de hyperfine-splitting van het Zeeman effect te ontdekken. Gebruik hiervoor de volgende instellingen:
+*10 loops, power 10, stepsize 0.1 MHz, magneetvoeding op 0.8 A en range 2800 tot 2940 MHz*.
 
 ## Resultaten en Conclusie
 Een mogelijk resultaat van een oude meting is hieronder weergegeven.
