@@ -23,7 +23,7 @@ Diagram door BonPhire, BY-SA 4.0, https://en.wikipedia.org/wiki/File:NV-energy-l
 
 In het diagram hierboven is te zien dat de $m_s=\pm1$ grondtoestand te bereiken vanuit de onderste grondtoestand $m_s=0$ door de elektronen energie te geven met een microgolf frequentie van 2,87 GHz. 
 Wanneer meer elektronen in de $m_s = \pm1$ toestand zijn, zal de kans dat aangeslagen elektronen, (in de *excited* state), terugvallen via de *intern* route ($^1A_1$ en $^1E$ singlet state) groter worden. De hoeveelheid waargenomen fluorescentie zal dan afnemen. <br>
-Door het aanbrengen van een extern magnetisch veld zullen de $m_s = \pm1$ toestanden splitsen: Dit wordt zeemansplitsing genoemd (naar Pieter Zeeman). De mate van opsplitsing hangt af van de sterkte van het magneetveld in de richting van het NV-centrum (zie ook het andere NV experiment). Doordat dat de $m_s =-1$ en de $m_s=+1$ nu twee (gesplitste) verschillende toestanden zijn, zal het bereiken vanuit de $m_s=0$ toestand van de $m_s=+1$ toestand iets meer energie kosten en de $m_s=-1$ iets minder energie kosten. Dus de microgolf zal in het ene geval moeten zorgen voor iets meer energie door een hogere frequentie en in het andere juist een lagere frequentie. Zie hieronder de afbeelding met magneet $B=0$ en met extern magneetveld $B\neq0$. De $\nu$ is een symbool voor frequentie (wij gebruiken meestal $f$).
+Door het aanbrengen van een extern magnetisch veld zullen de $m_s = \pm1$ toestanden splitsen: Dit wordt zeemansplitsing genoemd (naar Pieter Zeeman). De mate van opsplitsing hangt af van de sterkte van het magneetveld in de richting van het NV-centrum (zie ook het andere NV experiment). Doordat dat de $m_s =-1$ en de $m_s=+1$ nu twee (gesplitste) verschillende toestanden zijn, zal het bereiken vanuit de $m_s=0$ toestand van de $m_s=+1$ toestand iets meer energie kosten en de $m_s=-1$ iets minder energie kosten. Dus de microgolf zal in het ene geval moeten zorgen voor iets meer energie door een hogere frequentie en in het andere juist een lagere frequentie. Zie hieronder de afbeelding met extern magneetveld $B=0$ en met extern magneetveld $B\neq0$. De $\nu$ is een symbool voor frequentie (wij gebruiken meestal $f$).
 
 ```{figure} ./media/nv2/mw1.png
     :width: 250
@@ -51,7 +51,7 @@ From: Magaletti, S., Mayer, L., Le, X.P. et al. Magnetic sensitivity enhancement
 * Digitale camera waar het rode licht opvalt.
 
 ## Uitvoering
-1) Controleer de positie van de magneten.
+1) Controleer de positie van de elektromagneet.
 2) Sluit de donkere doos goed.
 3) Sluit de 3 USB connectors aan op de laptop
 4) Met de link hieronder wordt via javascript code de lichtsterkte gemeten door de camera weergegeven. 
