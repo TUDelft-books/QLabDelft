@@ -44,11 +44,11 @@ sphinx:
     - sphinx_image_inverter
     - sphinx_exercise
 
-parse:
-  myst_enable_extensions:
-    - amsmath
-    - colon_fence
-    - dollarmath
+#parse:
+#  myst_enable_extensions:
+#    - amsmath
+#    - colon_fence
+#    - dollarmath
 
 bibtex_bibfiles: 
   - references.bib
