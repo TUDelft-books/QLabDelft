@@ -67,22 +67,22 @@ Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en ve
 {Download}`software<./media/nv2/nv2-scan-versie-02-09-25.html>`
 ```{figure} ./media/nv2/nv3.png
     ---
-    width:
+    width: 250
     name: USBcamera beeld
     align: center 
     ---
-Weergave van het beeld van de USBcamera in de html applet.
+Een oudere weergave van het beeld van de USBcamera in de html applet.
 ```
 5) Start de meting met de standaard instellingen door op "Start Sweep" te drukken.
 6) Wacht tot de meting klaar is. 
 7) Interpreteer je meting: Het is nu mogelijk om met andere instellingen de meting te herhalen.
 
 ## Resultaten en Conclusie
-Een mogelijk resultaat is hieronder weergegeven.
+Een mogelijk resultaat van een oude meting is hieronder weergegeven.
 
 ```{figure} ./media/nv2/nv5.png
     ---
-    width:
+    width: 250
     name: resultaten
     align: center 
     ---
@@ -91,5 +91,5 @@ Mogelijk resultaat van de meting
 Opvallend is de symmetrie in de dipjes. 
 
 ## Discussie
-Door het externe van richting te veranderen en dit te kalibreren is het mogelijk om hiermee een gevoelig kompas te maken.
+Door het externe magneetveld van richting te veranderen en dit te kalibreren is het mogelijk om hiermee een gevoelig kompas te maken.
 Andere mogelijkheden zijn een zeer gevoelige magneetsensor of Qubits.
