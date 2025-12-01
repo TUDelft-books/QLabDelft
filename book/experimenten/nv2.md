@@ -26,7 +26,7 @@ Wanneer meer elektronen in de $m_s = +/-1$ toestand zijn, zal de kans dat aanges
 <br>
 Door het aanbrengen van een extern magnetisch veld zullen de $m_s = +/-1$ toestanden splitsen: Dit wordt zeemansplitsing genoemd (naar Pieter Zeeman). De mate van opsplitsing hangt af van de sterkte van het magneetveld in de richting van het NV-centrum (zie ook het andere NV experiment). Doordat dat de $m_s =-1$ en de $m_s=+1$ nu twee (gesplitste) verschillende toestanden zijn, zal het bereiken vanuit de $m_s=0$ toestand van de $m_s=+1$ toestand iets meer energie kosten en de $m_s=-1$ iets minder energie kosten. Dus de microgolf zal in het ene geval moeten zorgen voor iets meer energie door een hogere frequentie en in het andere juist een lagere frequentie. Zie hieronder de afbeelding met magneet $B=0$ en met extern magneetveld $B=/0$.
 
-```{figure} ./media/mw1.png
+```{figure} ./media/nv2/mw1.png
     :width: 250
     :name: mw1
     :align: center
@@ -35,7 +35,7 @@ From: Magaletti, S., Mayer, L., Le, X.P. et al. Magnetic sensitivity enhancement
 
 Als we nu een sample hebben met vele NV centers in verschillende richtingen in het kristalrooster, dan zal elke oriëntatie een ander magneetveld voelen en andere splitsing hebben. Dit zorgt dan voor 4 keer 2 piekjes (of dipjes) in de waargenomen intensiteit van het licht. Zie ook hieronder.
 
-```{figure} ./media/mw2.png
+```{figure} ./media/nv2/mw2.png
     :width: 250
     :name: mw2
     :align: center
