@@ -16,10 +16,13 @@ Elk van de vier oriëntaties is gevoelig voor een andere microgolf frequentie, w
 Door microgolven met oplopende frequentie achter elkaar te verzenden naar de diamant (een zogenaamde sweep), zal er op 8 punten verandering in gemeten intensiteit van de fluorescentie mogelijk zijn. Dit principe heet Optically Detected Magnetic Resonance of kortweg ODMR.
 
 ### Toestanden, microgolf en magneetveld
-<div>
-<img src="./media/nv/NV-energy-levels.svg" width="350"/>
-</div>
-<center>(Diagram door BonPhire, BY-SA 4.0, https://en.wikipedia.org/wiki/File:NV-energy-levels.svg)</center>
+
+```{figure} ./media/nv/NV-energy-levels.svg
+    :width: 250
+    :name: NV-energy-levels-1
+    :align: center
+Diagram door BonPhire, BY-SA 4.0, https://en.wikipedia.org/wiki/File:NV-energy-levels.svg
+```
 <br>
 In het diagram hierboven is te zien dat de $m_s=+/-1$ grondtoestand te bereiken vanuit de onderste grondtoestand $m_s=0$ door de elektronen energie te geven met een microgolf frequentie van 2,87 GHz. 
 Wanneer meer elektronen in de $m_s = +/-1$ toestand zijn, zal de kans dat aangeslagen elektronen, (in de *excited* state), terugvallen via de *intern* route (^1A_1 en ^1E en singlet state) groter worden. De hoeveelheid waargenomen fluorescentie zal dan afnemen. 
