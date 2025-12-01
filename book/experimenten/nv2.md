@@ -6,13 +6,23 @@ Practicumhandleiding van het uitgebreide NV center experiment
 Dit experiment is nog in de beta-fase, maar klaar om te testen.
 
 ## Inleiding
-In het eerste NV center experiment heb je de basis geleerd van de NV center. In dit experiment wordt die basis uitgebreid met spin resonantie door middel van een microgolf.
+In het eerste NV center experiment heb je de basis geleerd van de NV center. Dit is het vervolg op het eerste experiment. In dit experiment wordt de basis uitgebreid met spin resonantie door middel van een microgolf.
 
 ## Theorie _work in progress_
 Bij een MRI worden de spins van waterstofkernen beïnvloed door een microgolf. Bij dit experiment gebeurt iets soortgelijks. In het kristalrooster van het diamant zijn 4 mogelijke oriëntaties van het stikstof-gat-paar (N-V), ten opzichte van de C-atomen. 
 Wanneer er een extern magneet veld wordt aangebracht, treedt er Zeeman-splitsing op en ontstaan er twee energieniveau mogelijkheden per oriëntatie. 
 Elk van de vier oriëntaties is gevoelig voor een andere microgolf frequentie, waarbij de precieze frequentie afhangt van het magneetveld. In elke configuratie zijn er dus twee energie-mogelijkheden. Dat maakt dat er in totaal 8 mogelijkheden zijn, of 8 verschillende spin-toestanden van de twee vrije elektronen. Het zijn de spins van de elektronen die gaan resoneren door een bepaalde microgolf frequentie: Ze krijgen door de microgolf energie om van spin-toestand te veranderen.
 Door microgolven met oplopende frequentie achter elkaar te verzenden naar de diamant (een zogenaamde sweep), zal er op 8 punten verandering in gemeten intensiteit van de fluorescentie mogelijk zijn. Dit principe heet Optically Detected Magnetic Resonance of kortweg ODMR.
+<div>
+<img src="./media/nv/NV-energy-levels.svg" width="350"/>
+</div>
+<center>(Diagram door BonPhire, BY-SA 4.0, https://en.wikipedia.org/wiki/File:NV-energy-levels.svg)</center>
+<br>
+In het diagram hierboven is te zien dat de $m_s = +/-1$ grondtoestand te bereiken vanuit de onderste grondtoestand $m_s=0$ door de elektronen energie te geven met een microgolf frequentie van 2,87 GHz. 
+Wanneer meer elektronen in de $m_s = +/-1$ toestand zijn, zal de kans dat aangeslagen elektronen, (in de *excited* state), terugvallen via *intern* route (^1A_1 en ^1E en singlet state) groter worden. De hoeveelheid waargenomen fluorescentie zal dan afnemen. 
+<br>
+
+
 
 ## Materiaal
 * Opstelling in donkere doos, bestaande uit:
