@@ -121,7 +121,7 @@ python pulse_dashboard.py
 ### Verder uitvoeren
 14) Herhaal de meting nogmaals om de meting te controleren.
 15) Neem een andere hoeveelheid van dezelfde stof/ het zelfde materiaal: Gebruik het grote stervormige, fosforescentie sample als tweede sample. Belicht deze even lang. Herhaal deze meting ook.
-16) Neem een andere stof in twee hoeveelheden en meet deze ook elk 2x. (Het gel sample).
+16) Neem een andere stof in twee hoeveelheden en meet deze ook elk 2x. (Het gel sample op het microscoop glaasje: sample 1 (0,024 gram) en sample 2 (0,173 gram)).
 17) De halfwaardetijd van fosforescerende stoffen is temperatuur afhankelijk. Onderzoek of de halfwaardetijd veranderd van het kleine sterretje als je de ster eerst warm maakt.
 
 ## Resultaten
@@ -141,3 +141,14 @@ python pulse_dashboard.py
 
 ## Bronnen
 - [Ocean Optics Book — Theorie: Fluorescentie en fosforescentie](https://www.oceanopticsbook.info/view/scattering/level-2/theory-fluorescence-and-phosphorescence)
+
+## Andere samples
+1) sample 1: gel 0,024 gram
+2) sample 2: gel 0,173 gram
+3) sample 3: gel 0,76 gram
+4) sample 4: oranje fluo poeder op lijm 0,031 gram
+5) sample 5: oranje fluo poeder op lijm 0,17 gram
+6) sample 6: geel fluo poeder op lijm 0,033 gram
+7) sample 7: geel fluo poeder op lijm 0,093 gram
+
+
