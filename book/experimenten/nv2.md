@@ -41,11 +41,11 @@ Als we nu een sample hebben met vele NV centers in verschillende richtingen in h
 From: Magaletti, S., Mayer, L., Le, X.P. et al. Magnetic sensitivity enhancement via polarimetric excitation and detection of an ensemble of NV centers. Sci Rep 14, 11793 (2024). https://doi-org.tudelft.idm.oclc.org/10.1038/s41598-024-60199-z, Creative Commons License http://creativecommons.org/licenses/by/4.0/
 ```
 
-In de figuur hieronder bij *(a)* de vier oriëntaties van de Nitrogen-Vacancy in het diamant kristalrooster. Bij *(b)* nogmaals het energiediagram. Bij *(c)* de 4 keer 2 dipjes in de waargenomen intensiteit die bij elkaar horen.
+In de figuur hieronder bij *(a)* de vier oriëntaties van de Nitrogen-Vacancy in het diamant kristalrooster. Bij *(b)* nogmaals het energiediagram. Bij *(c)* de 4 keer 2 dipjes in de waargenomen intensiteit die bij elkaar horen, waarbij $\gamma$ de gyromagnetische verhouding is en $B$ de magnetische veldsterkte. 
 
 ```{figure} ./media/nv2/mw3.png
     :width: 500
-    :name: mw2
+    :name: mw3
     :align: center
 From: Jonas Homrighausen, Ludwig Horsthemke, Jens Pogorzelski, Sarah Trinschek, Peter Glösekötter and Markus Gregor, Edge-Machine-Learning-Assisted Robust Magnetometer Based on Randomly Oriented NV-Ensembles in Diamond, 2023, Creative Commons Attribution (CC BY) license (https://creativecommons.org/licenses/by/4.0/).
 ```
