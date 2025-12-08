@@ -89,8 +89,8 @@ De halfwaardetijd kan nu door middel van de vervalconstante berekend worden.
     c) Voeding stuurspanning PMT circa 2V (staat reeds ingesteld), (onder circa 1V en boven 2,5V doet 'ie het niet).
     d) Relaissysteem voor het reed-deurcontact.
     e) Computer om de data te ontvangen.
-2) Open het linker deurtje.
-3) Leg een (kort) belicht sample op de sample tafel voor de PMT (gebruik het kleine stervormige, fosforescentie sample als eerste sample, belicht deze gewoon met het licht van het lab).
+2) Open het rechter deurtje en pak het sample.
+3) Leg een (kort) belicht sample op de sample tafel voor de PMT (gebruik het kleine stervormige, fosforescentie sample als eerste sample, belicht deze gewoon 10 seconden met het licht van het lab).
 4) Sluit de deur goed.
 5) Check de scoop of er data binnenkomt.
 6) Nu gaan we de data binnen halen: Type in de **terminal** en druk op enter: 
@@ -134,6 +134,7 @@ python pulse_dashboard.py
 * Wat kun je zeggen over de temperatuurafhankelijkheid? En als je dit vergelijkt met radioactieve stoffen? Zijn deze temperatuurafhankelijk? Waarom?
 
 ## Software Downloads
+Dit is reeds geïnstalleerd.
 {Download}`software<./media/fluorescentie/pulse_dashboard.py>`
 {Download}`software<./media/fluorescentie/pulse_logger.zip>`
 {Download}`software<./media/fluorescentie/xtdc_babel.zip>`

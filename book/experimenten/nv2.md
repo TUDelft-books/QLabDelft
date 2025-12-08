@@ -55,14 +55,32 @@ From: Jonas Homrighausen, Ludwig Horsthemke, Jens Pogorzelski, Sarah Trinschek, 
 * Diamant sample met NV centers.
 * Omringt door microgolf antenne, aangestuurd door externe microgolf generator.
 * In de focus van een groene laser. 
-* Met rood filter (om het groen weg te filteren).
+* Elektromagneet met externe stroombron (voeding).
 * Met halfdoorlatende, dichroïsche spiegel. (spiegelt groen licht, laat rood door.)
 * Digitale camera waar het rode licht opvalt.
 
+## Opstelling
+Hieronder is de opstelling zichtbaar. Deze bevindt zich in een doos om te verduisteren.
+```{figure} ./media/nv2/opstelling-top-parts.JPG
+    :width: 500
+    :name: opstelling-top
+    :align: center
+```
+## Opstelling
+```{figure} ./media/nv2/opstelling-side.jpeg
+    :width: 500
+    :name: opstelling-side
+    :align: center
+```
+
 ## Uitvoering
-1) Controleer de positie van de elektromagneet.
+Hieronder worden 3 experimenten uitgevoerd:
+* Meting zonder extern magneet veld, met alleen de microgolf maximaal.
+* Meting met extern magneetveld en microgolf maximaal.
+* Meting met speciale instellingen om hyperfine splitting te vinden.
+1) Controleer de positie van de elektromagneet en sluit de geel (-) en rode (+) kabels hiervan aan op de voeding, maar zet de voeding de eerste keer nog **niet aan**.
 2) Sluit de donkere doos goed.
-3) Sluit de 3 USB connectors aan op de laptop
+3) Sluit de 3 USB connectors aan op de laptop.
 4) Met de link hieronder wordt via javascript code de lichtsterkte gemeten door de camera weergegeven. 
 * Open onderstaande link met een **Chrome** of Edge browser en 
 * Geef de (juiste) webcam toestemming.  
@@ -78,11 +96,14 @@ Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en ve
     :align: center  
 Een oudere weergave van het beeld van de USBcamera in de html applet.
 ```
-5) Start de meting met de standaard instellingen door op "Start Sweep" te drukken.
-6) Wacht tot de meting klaar is. 
-7) Interpreteer je meting: Het is nu mogelijk om met andere instellingen de meting te herhalen.
-8) Probeer vervolgens de hyperfine-splitting van het Zeeman effect te ontdekken. Gebruik hiervoor de volgende instellingen:
-*10 loops, power 10, stepsize 0.1 MHz, magneetvoeding op 0.8 A en range 2800 tot 2940 MHz*.
+5) Is jouw beeld nog zwart? Dan is de laser nog uit. Zet deze aan door op het knopje te drukken bij de USB-connector.
+6) Start de meting met de standaard instellingen door op "Start Sweep" te drukken. Maak verbinding met de seriële poort: Kies de juiste USB verbinding (meestal bovenste) en maak verbinding.
+7) Zorg dat tijdens de meting de tafel compleet trillingsvrij is: **Raak de tafel niet aan!**.
+8) Scroll iets naar beneden om de plot te kunnen zien: Deze staat onder de camera-feed en wacht tot de meting klaar is. Bij standaard instellingen doet hij de meting **3x** achterelkaar en interpoleert. 
+9) Interpreteer je meting: Het is nu mogelijk om met andere instellingen de meting te herhalen.
+10) Zet voor de volgende meting de voeding van elektromagneet wel aan, bij maximaal vermogen (spanning en stroom maximaal). **Zet de voeding meteen uit als de meting klaar is.** Klik de melding "could not connect" weg als je de microgolf sweep start (negeer).
+11) Probeer vervolgens de hyperfine-splitting van het Zeeman effect te ontdekken. Gebruik hiervoor de volgende instellingen:
+*10 loops, power 10, stepsize 0.1 MHz, magneetvoeding op 0.8 A (rechter LCD scherm van de voeding) en range 2800 tot 2940 MHz*. **Zet de voeding meteen uit als de meting klaar is.**
 
 ## Resultaten en Conclusie
 Een mogelijk resultaat van een oude meting is hieronder weergegeven.
@@ -93,7 +114,16 @@ Een mogelijk resultaat van een oude meting is hieronder weergegeven.
     :align: center 
 Mogelijk resultaat van de meting
 ```
-Opvallend is de symmetrie in de dipjes. 
+
+Hieronder een ander mogelijk resultaat, met daarbij de frequenties vermeld.
+```{figure} ./media/nv2/plot.png
+    :width: 250
+    :name: resultaten
+    :align: center 
+Mogelijk resultaat van de meting met frequenties
+```
+
+Opvallend is de symmetrie in de 8 dipjes. 
 
 ## Discussie
 Door het externe magneetveld van richting te veranderen en dit te kalibreren is het mogelijk om hiermee een gevoelig kompas te maken.
