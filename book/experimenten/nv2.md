@@ -74,10 +74,12 @@ Hieronder is de opstelling zichtbaar. Deze bevindt zich in een doos om te verdui
 ```
 
 ## Uitvoering
-Hieronder worden 3 experimenten uitgevoerd:
+Je gaat nu 3 experimenten uitvoeren:
 * Meting zonder extern magneet veld, met alleen de microgolf maximaal.
 * Meting met extern magneetveld en microgolf maximaal.
 * Meting met speciale instellingen om hyperfine splitting te vinden.
+Succes!
+<br><br>
 1) Controleer de positie van de elektromagneet en sluit de geel (-) en rode (+) kabels hiervan aan op de voeding, maar zet de voeding de eerste keer nog **niet aan**.
 2) Sluit de donkere doos goed.
 3) Sluit de 3 USB connectors aan op de laptop.
