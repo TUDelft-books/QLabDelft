@@ -18,7 +18,7 @@ Met deze opstelling kan de werking van Quantum cryptografie (BB84-protocol) word
 <br>
 Met dit experiment wordt gebruik gemaakt van diamant poeder met NV-centers. Door deze in een hoger energieniveau te brengen met een groene laser en het geëmitteerde rode licht te meten, kan vervolgens met een magnetisch veld Zeeman splitsing worden aangetoond. 
 
-**[Diamant NV sensor 2](nv2.ipynb)**
+**[Diamant NV sensor 2](nv2.md)**
 <br>
 Met dit experiment wordt gebruik gemaakt van diamant poeder met NV-centers. Door deze in een hoger energieniveau te brengen met een groene laser en het geëmitteerde rode licht te meten, kan vervolgens met een magnetisch veld Zeeman splitsing worden aangetoond. Met een microgolf kan de Zeeman splitsing verder worden onderzocht. 
 
@@ -26,7 +26,7 @@ Met dit experiment wordt gebruik gemaakt van diamant poeder met NV-centers. Door
 <br>
 Met dit experiment wordt interferentie bij losse fotonen in een dubbel spleet experiment aangetoond. 
 
-**[Elektronen diffractie](diffractie.ipynb)**
+**[Elektronen diffractie](diffractie.md)**
 <br>
 Met dit experiment worden elektronen door grafiet geschoten. Hierbij treedt diffractie op en ontstaat een ringvormig interferentiepatroon.
 
