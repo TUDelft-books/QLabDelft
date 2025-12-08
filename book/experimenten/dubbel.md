@@ -173,7 +173,7 @@ De volgende stappen moeten gedaan worden om de koffer af te sluiten:
 
 ## Verwerking
 ### Experiment 1: Dubbelspleet experiment met gewoon licht
-* Bereken voor beide metingen, met de groene en de rode laser, voor beide patronen ($y_1$ en $y_2$) de hoek $\Theta$ m.b.v. je meetgegevens. Dit geeft als het goed is 4 verschillende waarden.
+* Bereken voor beide metingen, met de groene en de rode laser, voor beide patronen ($y_1$ en $y_2$) de hoek $\Theta$ m.b.v. je meetgegevens ($\frac{y}{L}=tan\Theta$). Dit geeft als het goed is 4 verschillende waarden.
 * Bereken met behulp van deze hoeken en de bekende golflengte van de groene (520 nm) en de rode laser (635 nm) de breedte van de gebruikte spleet $a$ en de afstand tussen de spleten $d$. Je krijgt dus twee waarden voor $d$ (rood en groen) en twee voor $a$.
 
 ### Experiment 2: Dubbelspleetexperiment met enkele, losse fotonen
