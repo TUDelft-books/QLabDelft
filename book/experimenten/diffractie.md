@@ -131,8 +131,13 @@ In het experiment zijn alleen de n = 1 diffractiemaxima te zien; de intensiteite
 >Opdracht 4: Verkennende vragen opstelling
 >Beantwoord de volgende vragen:
 >1. Is de anode of de kathode de positieve elektrode? Waarom?
->2. Met A, B en C zijn in de foto in Figuur 4 drie diffractieringen aangeduid. Deze ringen zijn afkomstig van de kristalvlakken met afstanden d1 t/m d3 die in Figuur 3 zijn aangegeven en eerder zijn besproken. Welke ring correspondeert met welk vlak?
+>2. Met A, B en C zijn in de foto in de foto hieronder drie diffractieringen aangeduid. Deze ringen zijn afkomstig van de kristalvlakken met afstanden d1 t/m d3 die in Figuur 3 zijn aangegeven en eerder zijn besproken. Welke ring correspondeert met welk vlak?
 >3. Wat is de lichte stip in het centrum van de diffractieringen?
+
+```{figure} ./media/diffractie/abc.png
+    :name: abc
+    :align: center
+```
 
 ## Uitvoering en verwerking
 
