@@ -1,6 +1,5 @@
 format: jb-book
-root: index.html
-#root: intro.md
+root: intro.md
 
 parts:
   - caption: QlabDelft Experimenten
