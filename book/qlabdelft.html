@@ -144,6 +144,65 @@
       text-align: center;
       opacity: 0.9;
     }
+
+    /* --- PWS tabel --- */
+.pws-section {
+  margin-top: clamp(18px, 3vw, 28px);
+}
+
+.pws-title {
+  font-size: clamp(18px, 2.4vw, 24px);
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.pws-table {
+  display: grid;
+  grid-template-columns: 220px 1fr;   /* vaste labelkolom + flex inhoud */
+  gap: 10px;
+}
+
+/* elke rij is zelf een grid met 2 cellen */
+.pws-row {
+  display: contents; /* laat .pws-row de gridcellen doorgeven */
+}
+
+.pws-label, .pws-content {
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* kleuren kun je naar wens aanpassen */
+.pws-label {
+  background: #14a3d2;        /* blauw (Natuurkunde in je voorbeeld) */
+  color: #fff;
+  font-weight: 700;
+}
+
+.pws-content {
+  background: #dbdde2;        /* lichtgrijs */
+  color: #0b132b;
+}
+
+/* lijststijl in de content */
+.pws-content ul {
+  margin: 0;
+  padding-left: 20px;         /* ruimte voor bullets */
+}
+.pws-content li {
+  margin: 4px 0;
+}
+
+/* responsief: onder 640px vallen label en content onder elkaar */
+@media (max-width: 640px) {
+  .pws-table {
+    grid-template-columns: 1fr;  /* één kolom */
+  }
+  .pws-label, .pws-content {
+    border-radius: 8px;
+  }
+}
   </style>
 </head>
 <body>
