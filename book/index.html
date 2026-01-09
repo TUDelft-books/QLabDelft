@@ -1,0 +1,166 @@
+
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qlab Delft – Profielwerkstuk & Workshops</title>
+
+  <!-- Basis typografie en kleuren -->
+  <style>
+    :root{
+      --bg: #0b132b;          /* donkere achtergrond voor contrast */
+      --bg-alt: #1c2541;
+      --accent: #3a86ff;      /* knopaccent */
+      --accent-2: #ff6b6b;    /* tweede knopaccent */
+      --text: #ffffff;        /* hoofdtekst */
+      --muted: #c9d6ff;       /* subtitel/kadertonen */
+      --maxw: 1000px;         /* leesbreedte ~ goed voor 24" en tablet */
+      --radius: 14px;         /* afgeronde hoeken */
+      --shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    /* Reset en basis */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Noto Color Emoji", sans-serif;
+      line-height: 1.5;
+    }
+
+    /* Container die de leesbreedte bewaakt */
+    .page {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: clamp(16px, 3vw, 32px);
+    }
+
+    /* Hero-sectie */
+    .hero {
+      background: linear-gradient(135deg, var(--bg-alt), #3c3f58 60%);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 48px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decoratieve, subtiele gradient-blob */
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+      width: 280px; height: 280px;
+      background: radial-gradient(closest-side, rgba(58,134,255,0.35), transparent 70%);
+      filter: blur(4px);
+      transform: rotate(8deg);
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 48px);
+      letter-spacing: 0.2px;
+    }
+
+    .hero p.lead {
+      margin: 0 0 20px;
+      font-size: clamp(16px, 2.2vw, 22px);
+      color: var(--muted);
+    }
+
+    .hero .tag {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: #eaf2ff;
+      backdrop-filter: blur(3px);
+    }
+
+    /* Knoppenrij onderaan, netjes verdeeld over de breedte */
+    .actions {
+      margin-top: clamp(20px, 3vw, 32px);
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* twee gelijke kolommen */
+      gap: clamp(10px, 2vw, 16px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: clamp(12px, 1.8vw, 16px) clamp(16px, 2.2vw, 22px);
+      border-radius: calc(var(--radius) - 6px);
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      box-shadow: var(--shadow);
+      transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+      will-change: transform;
+    }
+
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .btn:active { transform: translateY(0); filter: brightness(0.98); }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #6ea8ff);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn.secondary {
+      background: linear-gradient(135deg, var(--accent-2), #ffa39a);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Responsiviteit voor hele kleine schermen: knoppen onder elkaar */
+    @media (max-width: 560px) {
+      .actions { grid-template-columns: 1fr; }
+    }
+
+    /* Toegankelijkheid: focusstijl */
+    .btn:focus-visible {
+      outline: 3px solid #ffd166;
+      outline-offset: 3px;
+    }
+
+    /* Footer (optioneel) */
+    footer {
+      margin-top: 22px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Introductie">
+      <h1>Experimenteren met Quantum technologie? Bezoek het Qlab Delft!</h1>
+      <p class="lead">Het Quantum Educatie Lab van de TU Delft. Voor je profielwerkstuk of een workshop voor de klas. Voor VWO &amp; HAVO</p>
+      <center>
+      <a class="btn" href="mailto:qlab@tudelft.nl">Voor vragen of een afspraak maken: qlab@tudelft.nl</a>
+      </center>
+      
+      <div class="actions" aria-label="Directe opties">
+        <a class="btn primary" href="https://oit.tudelft.nl/QLabDelft" target="_blank" rel="noopener">
+          Experimenten &amp; Handleidingen
+        </a>
+        <a class="btn secondary" href="https://pwstudelft.nl/workshops/kwantum" target="_blank" rel="noopener">
+          PWS ideeën
+        </a>
+      </div>
+    </section>
+
+    <footer>
+    <a href="https://www.quantumeducation.nl/" style="color: inherit; text-decoration: none;">Quantum Education</a> | <a href="https://share.google/7e0WbSUiXrzqvBImI" style="color: inherit; text-decoration: none;">TU Delft Qlab, Science Centre TU Delft</a>
+    </footer>
+  </main>
+</body>
+</html>
+``
