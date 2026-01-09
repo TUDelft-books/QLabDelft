@@ -26,20 +26,9 @@
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Noto Color Emoji", sans-serif;
       line-height: 1.5;
+    }
       
-      /* ▼ Achtergrondafbeelding */
-      background-image: url("achtergrond.jpg") /* pad naar jouw JPG */
-      background-position: center;     /* centreer het beeld */
-      background-size: cover;          /* vul het scherm, snijdt bij waar nodig */
-      background-repeat: no-repeat;    /* voorkom herhaling */
-      background-attachment: fixed;    /* optioneel: parallax-achtig effect op desktop */
-      }
-      
-    .page {
-      /*added overlay to improve text visibility*/
-      min-height: 100dvh;
-      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
-      
+    .page {      
       max-width: var(--maxw);
       margin: 0 auto;
       padding: clamp(16px, 3vw, 32px);
