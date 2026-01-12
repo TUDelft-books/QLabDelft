@@ -147,7 +147,21 @@
 
     /* --- PWS tabel --- */
 .pws-section {
-  margin-top: clamp(18px, 3vw, 28px);
+  /*margin-top: clamp(18px, 3vw, 28px);*/
+  background: linear-gradient(135deg, var(--bg-alt), #3c3f58 60%); 
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 48px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      
+      /* ▼ Achtergrondfoto met overlay gecombineerd */
+      /*background:
+      linear-gradient(135deg, rgba(12, 18, 43, 0.55), rgba(60, 63, 88, 0.55)),
+      url("achtergrond.jpg"); 
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;*/
 }
 
 .pws-title {
@@ -225,7 +239,7 @@
       </div>
     </section>
     
-    <section class="hero" aria-labelledby="pws-heading">
+    <section class="pws-section" aria-labelledby="pws-heading">
       <div style="text-align: center;">
       <h2 id="pws-heading" class="pws-title">Profielwerkstuk (PWS) voor:</h2>
       </div>
