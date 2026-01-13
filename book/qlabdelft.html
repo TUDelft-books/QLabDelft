@@ -9,14 +9,14 @@
   <!-- Basis typografie en kleuren -->
   <style>
     :root{
-      --bg: #0b132b;          /* donkere achtergrond voor contrast */
+      --bg: #0b132b;
       --bg-alt: #1c2541;
-      --accent: #3a86ff;      /* knopaccent */
-      --accent-2: #ff6b6b;    /* tweede knopaccent */
-      --text: #ffffff;        /* hoofdtekst */
-      --muted: #c9d6ff;       /* subtitel/kadertonen */
-      --maxw: 1000px;         /* leesbreedte ~ goed voor 24" en tablet */
-      --radius: 14px;         /* afgeronde hoeken */
+      --accent: #3a86ff;
+      --accent-2: #ff6b6b;
+      --text: #ffffff;
+      --muted: #c9d6ff;
+      --maxw: 1000px;
+      --radius: 14px;
       --shadow: 0 8px 24px rgba(0,0,0,0.25);
     }
 
@@ -27,34 +27,36 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Noto Color Emoji", sans-serif;
       line-height: 1.5;
     }
-      
-    .page {      
+
+    .page {
       max-width: var(--maxw);
       margin: 0 auto;
       padding: clamp(16px, 3vw, 32px);
     }
 
-    /* Hero-sectie */
-    .hero {
-      /*background: linear-gradient(135deg, var(--bg-alt), #3c3f58 60%);  */
+    /* --------- Secties --------- */
+    .section {
       border-radius: var(--radius);
       padding: clamp(24px, 4vw, 48px);
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
-      
-      /* ▼ Achtergrondfoto met overlay gecombineerd */
+      margin-top: clamp(18px, 3vw, 28px);
+    }
+
+    /* Hero met achtergrondafbeelding + overlay */
+    .section--hero {
+      margin-top: 0;
       background:
-      linear-gradient(135deg, rgba(12, 18, 43, 0.55), rgba(60, 63, 88, 0.55)),
-      url("achtergrond.jpg");
+        linear-gradient(135deg, rgba(12, 18, 43, 0.55), rgba(60, 63, 88, 0.55)),
+        url("achtergrond.jpg");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      
-    } 
+    }
 
-    /* Decoratieve, subtiele gradient-blob */
-    .hero::after {
+    /* Decoratief blob in hero */
+    .section--hero::after {
       content: "";
       position: absolute;
       right: -80px;
@@ -65,20 +67,20 @@
       transform: rotate(8deg);
     }
 
-    .hero h1 {
+    .hero__title {
       margin: 0 0 8px;
       font-size: clamp(28px, 4vw, 48px);
       letter-spacing: 0.2px;
     }
 
-    .hero p.lead {
+    .lead {
       margin: 0 0 20px;
       font-size: clamp(16px, 2.2vw, 22px);
       color: var(--muted);
       font-weight: 700;
     }
 
-    .hero .tag {
+    .tag {
       display: inline-block;
       margin-top: 6px;
       padding: 6px 12px;
@@ -89,14 +91,16 @@
       backdrop-filter: blur(3px);
     }
 
-    /* Knoppenrij onderaan, netjes verdeeld over de breedte */
+    /* Knoppenrij */
     .actions {
       margin-top: clamp(20px, 3vw, 32px);
       display: grid;
-      grid-template-columns: 1fr 1fr; /* twee gelijke kolommen */
+      grid-template-columns: 1fr 1fr;
       gap: clamp(10px, 2vw, 16px);
+      justify-items: stretch;
     }
 
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -111,33 +115,125 @@
       box-shadow: var(--shadow);
       transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
       will-change: transform;
+      border: 1px solid rgba(255,255,255,0.2);
     }
-
     .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
     .btn:active { transform: translateY(0); filter: brightness(0.98); }
-
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), #6ea8ff);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .btn.secondary {
-      background: linear-gradient(135deg, var(--accent-2), #ffa39a);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    /* Responsiviteit voor hele kleine schermen: knoppen onder elkaar */
-    @media (max-width: 560px) {
-      .actions { grid-template-columns: 1fr; }
-    }
-
-    /* Toegankelijkheid: focusstijl */
     .btn:focus-visible {
       outline: 3px solid #ffd166;
       outline-offset: 3px;
     }
+    .btn--primary {
+      background: linear-gradient(135deg, var(--accent), #6ea8ff);
+    }
+    .btn--secondary {
+      background: linear-gradient(135deg, var(--accent-2), #ffa39a);
+    }
+    .actions--stack {
+      display: flex;
+      justify-content: center;
+    }
 
-    /* Footer (optioneel) */
+    /* Responsiviteit: kleine schermen -> knoppen onder elkaar */
+    @media (max-width: 560px) {
+      .actions { grid-template-columns: 1fr; }
+    }
+
+    /* --------- PWS-sectie --------- */
+    .section--pws {
+      background: linear-gradient(135deg, var(--bg-alt), #3c3f58 60%);
+    }
+
+    .section__title {
+      font-size: clamp(18px, 2.4vw, 24px);
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .pws-table {
+      display: grid;
+      grid-template-columns: 220px 1fr; /* vaste labelkolom + flex inhoud */
+      gap: 10px;
+    }
+
+    /* elke rij is zelf een grid met 2 cellen via display: contents */
+    .pws-row { display: contents; }
+
+    .pws-label, .pws-content {
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .pws-label {
+      background: #14a3d2; /* default blauw */
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* per-vak varianten */
+    .pws-label--math { background: #1f7ae0; }
+    .pws-label--cs   { background: #0db59b; }
+    .pws-label--chem { background: #f28b1f; }
+    .pws-label--bio  { background: #2bbf6b; }
+
+    .pws-content {
+      background: #dbdde2;
+      color: #0b132b;
+    }
+    .pws-content ul { margin: 0; padding-left: 20px; }
+    .pws-content li { margin: 4px 0; }
+
+    /* responsief: onder 640px vallen label en content onder elkaar */
+    @media (max-width: 640px) {
+      .pws-table { grid-template-columns: 1fr; }
+      .pws-label, .pws-content { border-radius: 8px; }
+    }
+
+    /* --------- Workshop-sectie --------- */
+    .section--workshop {
+      background: linear-gradient(135deg, var(--bg-alt), #3c3f58 60%);
+    }
+
+    .workshop-intro {
+      background: #3c3f58;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: clamp(16px, 2vw, 20px);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 0 auto clamp(16px, 2vw, 24px);
+      max-width: 900px;
+    }
+
+    .workshop-intro .lead {
+      color: #0066ff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    /* Programma / schedule */
+    .schedule {
+      display: flex;
+      justify-content: center;
+      font-weight: 400;
+    }
+    .schedule__card {
+      text-align: left;
+      list-style: none;
+      font-size: clamp(10px, 1.6vw, 12px);
+      padding-left: 0;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.007);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 12px 16px;
+      max-width: 520px;
+    }
+    .schedule__item { margin: 6px 0; }
+
+    /* Footer */
     footer {
       margin-top: 22px;
       color: #cbd5e1;
@@ -145,224 +241,154 @@
       text-align: center;
       opacity: 0.9;
     }
-
-    /* --- PWS tabel --- */
-.pws-section {
-  /*margin-top: clamp(18px, 3vw, 28px);*/
-  background: linear-gradient(135deg, var(--bg-alt), #3c3f58 60%); 
-      border-radius: var(--radius);
-      padding: clamp(24px, 4vw, 48px);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      
-      /* ▼ Achtergrondfoto met overlay gecombineerd */
-      /*background:
-      linear-gradient(135deg, rgba(12, 18, 43, 0.55), rgba(60, 63, 88, 0.55)),
-      url("achtergrond.jpg"); 
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;*/
-}
-
-.pws-section p.lead {
-      margin: 0 0 20px;
-      font-size: clamp(16px, 2.2vw, 22px);
-      color: var(--muted);
-      font-weight: 700;
+    .footer__link {
+      color: inherit;
+      text-decoration: none;
+      margin: 0 6px;
     }
-
-.pws-title {
-  font-size: clamp(18px, 2.4vw, 24px);
-  margin: 0 0 10px 0;
-  font-weight: 700;
-}
-
-.pws-table {
-  display: grid;
-  grid-template-columns: 220px 1fr;   /* vaste labelkolom + flex inhoud */
-  gap: 10px;
-}
-
-/* elke rij is zelf een grid met 2 cellen */
-.pws-row {
-  display: contents; /* laat .pws-row de gridcellen doorgeven */
-}
-
-.pws-label, .pws-content {
-  border-radius: 8px;
-  padding: 14px 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-/* kleuren kun je naar wens aanpassen */
-.pws-label {
-  background: #14a3d2;        /* blauw (Natuurkunde in je voorbeeld) */
-  color: #fff;
-  font-weight: 700;
-}
-
-.pws-content {
-  background: #dbdde2;        /* lichtgrijs */
-  color: #0b132b;
-}
-
-/* lijststijl in de content */
-.pws-content ul {
-  margin: 0;
-  padding-left: 20px;         /* ruimte voor bullets */
-}
-.pws-content li {
-  margin: 4px 0;
-}
-
-/* responsief: onder 640px vallen label en content onder elkaar */
-@media (max-width: 640px) {
-  .pws-table {
-    grid-template-columns: 1fr;  /* één kolom */
-  }
-  .pws-label, .pws-content {
-    border-radius: 8px;
-  }
-}
-
-/* stuk over klassebezoek, ontleent aan bovenstaande secties*/
-
-
-
+    .footer__logos {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .footer__logo {
+      height: 60px;
+      width: auto;
+    }
   </style>
 </head>
+
 <body>
   <main class="page">
-    <section class="hero" aria-label="Introductie">
-      <h1>Experimenteren met Quantum technologie? Bezoek het Qlab Delft!</h1>
-      <p class="lead">Het Quantum Educatie Lab van de TU Delft: 
-        <br>Voor je profielwerkstuk of een workshop voor de klas. Voor VWO &amp; HAVO</p>
-      <div style="text-align: center;">
-      <a class="btn" href="mailto:qlab@tudelft.nl">Voor vragen of een afspraak maken: qlab@tudelft.nl</a>
+    <!-- HERO -->
+    <section class="section section--hero" aria-label="Introductie">
+      <h1 class="hero__title">Experimenteren met Quantum technologie? Bezoek het Qlab Delft!</h1>
+      <p class="lead">
+        Het Quantum Educatie Lab van de TU Delft:
+        <br>Voor je profielwerkstuk of een workshop voor de klas. Voor VWO & HAVO
+      </p>
+
+      <div class="actions actions--stack" aria-label="Contact">
+        <a class="btn" href="mailto:qlab@tudelft.nl">Voor vragen of een afspraak maken: qlab@tudelft.nl</a>
       </div>
-      
+
       <div class="actions" aria-label="Directe opties">
-        <a class="btn primary" href="https://oit.tudelft.nl/QLabDelft/main/intro.html" target="_blank" rel="noopener">
+        <a class="btn btn--primary" href="https://oit.tudelft.nl/QLabDelft/main/intro.html" target="_blank" rel="noopener">
           Experimenten &amp; Handleidingen
         </a>
-        <a class="btn secondary" href="https://pwstudelft.nl/workshops/kwantum" target="_blank" rel="noopener">
+        <a class="btn btn--secondary" href="https://pwstudelft.nl/workshops/kwantum" target="_blank" rel="noopener">
           PWS ideeën
         </a>
       </div>
     </section>
-    
-    <section class="pws-section" aria-labelledby="pws-heading">
-      <div style="text-align: center;">
-      <h2 id="pws-heading" class="pws-title">Profielwerkstuk (PWS):</h2>
-      </div>
+
+    <!-- PWS -->
+    <section class="section section--pws" aria-labelledby="pws-heading">
+      <h2 id="pws-heading" class="section__title">Profielwerkstuk (PWS):</h2>
+
       <div class="pws-table" role="table" aria-label="PWS onderwerpen per vak">
         <!-- Rij 1 -->
         <div class="pws-row" role="row">
-        <div class="pws-label" role="cell">Natuurkunde</div>
-        <div class="pws-content" role="cell">
-        <ul>
-          <li>Alles Quantum, optica en meer.</li>
-          <li>Ontwerp of onderzoek spectroscopie, atomic force microscope, lichtsnelheid.</li>
-        </ul>
+          <div class="pws-label" role="cell">Natuurkunde</div>
+          <div class="pws-content" role="cell">
+            <ul>
+              <li>Alles Quantum, optica en meer.</li>
+              <li>Ontwerp of onderzoek spectroscopie, atomic force microscope, lichtsnelheid.</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
         <!-- Rij 2 -->
         <div class="pws-row" role="row">
-        <div class="pws-label" role="cell" style="background:#1f7ae0">Wiskunde D</div>
-        <div class="pws-content" role="cell">
-        <ul>
-          <li>Statistiek of Jones‑matrices.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Rij 3 -->
-    <div class="pws-row" role="row">
-      <div class="pws-label" role="cell" style="background:#0db59b">Informatica</div>
-      <div class="pws-content" role="cell">
-        <ul>
-          <li>Encryptie, Qubit, Quantum Computer, chipstructuren.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Rij 4 -->
-    <div class="pws-row" role="row">
-      <div class="pws-label" role="cell" style="background:#f28b1f">Scheikunde</div>
-      <div class="pws-content" role="cell">
-        <ul>
-          <li>Spectrometer, Noorderlicht, diamantrooster, atoomschillen.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Rij 5 -->
-    <div class="pws-row" role="row">
-      <div class="pws-label" role="cell" style="background:#2bbf6b">Biologie</div>
-      <div class="pws-content" role="cell">
-        <ul>
-          <li>Atomic Force Microscope: vergelijk de groei van haren (caroteen); onderzoek de kleur blauw in de natuur.</li>
-        </ul>
+          <div class="pws-label pws-label--math" role="cell">Wiskunde D</div>
+          <div class="pws-content" role="cell">
+            <ul>
+              <li>Statistiek of Jones‑matrices.</li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Rij 3 -->
+        <div class="pws-row" role="row">
+          <div class="pws-label pws-label--cs" role="cell">Informatica</div>
+          <div class="pws-content" role="cell">
+            <ul>
+              <li>Encryptie, Qubit, Quantum Computer, chipstructuren.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Rij 4 -->
+        <div class="pws-row" role="row">
+          <div class="pws-label pws-label--chem" role="cell">Scheikunde</div>
+          <div class="pws-content" role="cell">
+            <ul>
+              <li>Spectrometer, Noorderlicht, diamantrooster, atoomschillen.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Rij 5 -->
+        <div class="pws-row" role="row">
+          <div class="pws-label pws-label--bio" role="cell">Biologie</div>
+          <div class="pws-content" role="cell">
+            <ul>
+              <li>Atomic Force Microscope: vergelijk de groei van haren (caroteen); onderzoek de kleur blauw in de natuur.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-<section class="pws-section" aria-label="Introductie">
-  <div style="text-align: center;">
-    <h2 id="pws-heading" class="pws-title">Workshop voor de klas:</h2>
-  </div>
+    <!-- Workshop -->
+    <section class="section section--workshop" aria-labelledby="workshop-heading">
+      <h2 id="workshop-heading" class="section__title">Workshop voor de klas:</h2>
 
-    <div class="pws-content" role="cell" style="background: #3c3f58; color: white; font-weight: 500; font-size: large;">
-    <p class="lead" style="text-align: center; color:#0066ff;">Bezoek met je klas het Quantumlab Delft!</p>
-        <br>Leer over de quantumwereld met leuke experimenten en demonstraties. Voor bovenbouw HAVO &amp; VWO.
-        Wij stellen een programma samen dat past bij het niveau en de interesses van de klas of groep.
-        <p style="font-size: medium;">
+      <div class="workshop-intro">
+        <p class="lead">Bezoek met je klas het Quantumlab Delft!</p>
+        <p>
+          Leer over de quantumwereld met leuke experimenten en demonstraties. Voor bovenbouw HAVO &amp; VWO.
+          Wij stellen een programma samen dat past bij het niveau en de interesses van de klas of groep.
+        </p>
         <ul>
           <li>Voor 6 VWO bieden wij voor het examendomein Quantumwereld aansluitende, maar vooral ook verdiepende experimenten.</li>
           <li>Voor NLT bieden wij aansluitende experimenten bij de modules Kansen met Quantum (VWO) en Quantum Ready! (HAVO!).</li>
           <li>Voor 4 of 5 HAVO en VWO bijvoorbeeld een workshop Quantum waarbij wordt gemeten met een Arduino.</li>
         </ul>
-        </p>
-  
       
-<div style="display: flex; justify-content: center; font-weight: 100;">
-  <div style="text-align: left;">
-    Voorbeeld van een programma:
-    <ul style="list-style-type: none; font-size: smaller; padding-left: 0; margin: 0;">
-      <li>9:30 aankomst Science Centre (gebouw 26 TU Delft)</li>
-      <li>9:45 - start Quantumlab - introductie</li>
-      <li>10:15 - roulerend in tweetallen 2 à 3 experimenten uitvoeren.</li>
-      <li>11.30 - 11:45 kleine pauze</li>
-      <li>13:00 - einde Quantumlab</li>
-      <li>13:00 - 13:15 lopen naar de Aula</li>
-      <li>13:15 - 13:45 lunchpauze</li>
-      <li>13:45 - 14:00 teruglopen via een Quantum computer</li>
-      <li>14:00 -15:00 Escape room Quantum</li>
-      <li>Einde</li>
-    </ul>
-  </div>
-</div>
-</div>
-  <div style="padding: clamp(24px, 4vw, 48px); text-align: center;">
-      <a class="btn" href="mailto:qlab@tudelft.nl">Voor vragen of een afspraak maken: qlab@tudelft.nl</a>
+
+      <div class="schedule" aria-label="Voorbeeldprogramma">
+        <ul class="schedule__card">
+          Voorbeeld van een programma:
+          <li class="schedule__item">09:30 – aankomst Science Centre (gebouw 26 TU Delft)</li>
+          <li class="schedule__item">09:45 – start Quantumlab – introductie</li>
+          <li class="schedule__item">10:15 – roulerend in tweetallen 2 à 3 experimenten uitvoeren</li>
+          <li class="schedule__item">11:30 – 11:45 kleine pauze</li>
+          <li class="schedule__item">13:00 – einde Quantumlab</li>
+          <li class="schedule__item">13:00 – 13:15 lopen naar de Aula</li>
+          <li class="schedule__item">13:15 – 13:45 lunchpauze</li>
+          <li class="schedule__item">13:45 – 14:00 teruglopen via een Quantum computer</li>
+          <li class="schedule__item">14:00 – 15:00 Escape room Quantum</li>
+          <li class="schedule__item">Einde</li>
+        </ul>
       </div>
-    
-</section>
+      </div>
+      <div class="actions actions--stack" aria-label="Contact">
+        <a class="btn" href="mailto:qlab@tudelft.nl">Voor vragen of een afspraak maken: qlab@tudelft.nl</a>
+      </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
-    <a href="https://www.quantumeducation.nl/" style="color: inherit; text-decoration: none;">
-      Quantum Education</a> | <a href="https://share.google/7e0WbSUiXrzqvBImI" style="color: inherit; text-decoration: none;">
-        Qlab, Science Centre TU Delft</a>
-       <br>
-       <img src="logo-qlabs-transparant.png" alt="QLABS Logo" style="height: 60px; width: auto;">
-       <img src="tudelft-logo-white-clear.png" alt="TU Delft Logo" style="height: 60px; width: auto;">
-      </footer>
-
-
+      <a class="footer__link" href="https://www.quantumeducation.nl/" target="_blank" rel="noopener">Quantum Education</a>
+      <a class="footer__link" href="https://share.google/7e0WbSUiXrzqvBImI" target="_blank" rel="noopener">Qlab, Science Centre TU Delft</a>
+      <div class="footer__logos">
+        <img src="logo-qlabs-transparant.png" alt="QLABS Logo" class="footer__logo">
+        <img src="tudelft-logo-white-clear.png" alt="TU Delft Logo" class="footer__logo">
+      </div>
+    </footer>
   </main>
 </body>
 </html>
-``
