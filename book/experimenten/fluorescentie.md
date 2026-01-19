@@ -90,7 +90,7 @@ De halfwaardetijd kan nu door middel van de vervalconstante berekend worden.
     d) Relaissysteem voor het reed-deurcontact.
     e) Computer om de data te ontvangen.
 2) Open het rechter deurtje en pak het sample.
-3) Leg een (kort) belicht sample op de sample tafel voor de PMT (gebruik het kleine stervormige, fosforescentie sample als eerste sample, belicht deze gewoon 10 seconden met het licht van het lab).
+3) Leg een (kort) belicht sample op de sample tafel voor de PMT (gebruik het kleine stervormige, fosforescentie sample als eerste sample, belicht deze bijvoorbeeld 10 seconden met het licht van je zaklamp).
 4) Sluit de deur goed.
 5) Check de scoop of er data binnenkomt.
 6) Nu gaan we de data binnen halen: Type in de **terminal** en druk op enter (of druk net zo lang op pijltje omhoog, tot je het juiste commando vindt in de geschiedenis en druk op enter): 
