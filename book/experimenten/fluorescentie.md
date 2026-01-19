@@ -93,13 +93,13 @@ De halfwaardetijd kan nu door middel van de vervalconstante berekend worden.
 3) Leg een (kort) belicht sample op de sample tafel voor de PMT (gebruik het kleine stervormige, fosforescentie sample als eerste sample, belicht deze gewoon 10 seconden met het licht van het lab).
 4) Sluit de deur goed.
 5) Check de scoop of er data binnenkomt.
-6) Nu gaan we de data binnen halen: Type in de **terminal** en druk op enter: 
+6) Nu gaan we de data binnen halen: Type in de **terminal** en druk op enter (of druk net zo lang op pijltje omhoog, tot je het juiste commando vindt in de geschiedenis en druk op enter): 
 ```bash
 sudo pulse_logger 1
 ```
 (de pulsen worden 1 minuut lang opgeslagen - kies 4 voor 4 minuten lang).
 Er schiet data over het scherm. 
-7) De data wordt opgeslagen in de csv file: pulse_times.csv. **Kopieer** deze zelf naar een bestand met een passende naam en druk op enter: 
+7) De data wordt opgeslagen in de csv file: pulse_times.csv. **Kopieer** deze zelf naar een bestand met een passende naam en druk op enter (of druk net zo lang op pijltje omhoog, tot je het juiste commando vindt in de geschiedenis en druk op enter): 
 ```bash
 cp pulse_times.csv ster_1_min_belicht_4_min_gemeten.csv
 ```
