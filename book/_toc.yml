@@ -11,6 +11,7 @@ parts:
       - file: experimenten/crypto.md
       - file: experimenten/diffractie.md
       - file: experimenten/dubbel.md
+      - file: experimenten/fluorescentie-simple.md
       - file: experimenten/fluorescentie.md
       - file: experimenten/frank.md
       - file: experimenten/hbt.md

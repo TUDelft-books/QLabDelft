@@ -1,4 +1,7 @@
 # Fluorescentie voor dummies
+_deze handleiding is nog **under construction**_
+practicumhandleiding
+
 ## Inleiding
 In het kort werkt dit eenvoudige fluorescentie experiment als volgt: We plaatsen een fosforescerende materiaal in een doosje en belichten dit met UV licht. Vervolgens meten we met een foto-diode en een Arduino elke seconde de hoeveelheid licht en geven dit weer in een grafiek. Hieruit kunnen we de halfwaardetijd bepalen van het fosforescerende materiaal.
 
