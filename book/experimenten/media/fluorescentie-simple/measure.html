@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arduino Serial Plot</title>
+
+<!-- JUISTE script tags -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+<style>
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+canvas {
+    max-width: 100%;
+    height: 450px !important; /* 1.5× groter */
+}
+.controls {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    margin-bottom: 10px;
+}
+.controls label {
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="controls">
+    <button id="connectButton">Verbinden</button>
+    <button id="playPauseButton">Stop</button>
+    <button id="resetButton">Reset</button>
+    <button id="exportButton">Export CSV</button>
+    <button id="saveVisibleCsvButton">Save Visible CSV</button>
+
+    <label>Baudrate:
+        <input type="number" id="baudRate" value="9600" min="300" step="100">
+    </label>
+
+    <label>Schaalfactor:
+        <input type="number" id="scaleFactor" value="1" step="0.001">
+    </label>
+
+    <label>Offset:
+        <input type="number" id="offsetValue" value="0" step="0.0001">
+    </label>
+
+    <label>Puntgrootte:
+        <input type="range" id="pointSize" min="0" max="6" step="1" value="2">
+    </label>
+</div>
+
+<canvas id="chartCanvas"></canvas>
+
+<script>
+let port, reader;
+let keepReading = true;
+let dataPoints = [];
+let sampleIndex = 0;
+let buffer = '';
+
+const scaleFactorEl = document.getElementById("scaleFactor");
+const offsetEl      = document.getElementById("offsetValue");
+const pointSizeEl   = document.getElementById("pointSize");
+
+const ctx = document.getElementById('chartCanvas').getContext('2d');
+
+const chart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        datasets: [{
+            label: 'Spanning (V)',
+            borderColor: 'rgb(75,192,192)',
+            backgroundColor: 'rgb(75,192,192)',
+            showLine: false,
+            pointRadius: 2,
+            data: []
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        scales: {
+            x: {
+                type: 'linear',
+                min: 0,
+                max: 60,
+                ticks: { stepSize: 1 },
+                
+            grid: {
+                color: "#ccc",
+                lineWidth: 0.3
+                }
+
+                ,
+                title: { display:true, text:"Tijd (s)" }
+            },
+            y: {
+                min: 0,
+                title: { display:true, text:"Spanning (V)" }
+            }
+        },
+
+        plugins: {
+            zoom: {
+                pan: { enabled: true, mode: 'xy' },
+                zoom: { wheel:{enabled:true}, pinch:{enabled:true}, mode:'xy' }
+            }
+        }
+    }
+});
+
+async function startReading(freshTime = false) {
+  if (!port || !port.readable) return;
+  try {
+    if (reader) { await reader.cancel(); await reader.releaseLock(); }
+  } catch (_) { /* negeren */ }
+
+  reader = port.readable.getReader();
+  if (freshTime) sampleIndex = 0;   // tijd weer vanaf 0
+  keepReading = true;
+  readLoop();
+}
+
+/* Puntgrootte live */
+pointSizeEl.addEventListener("input", () => {
+    const r = Number(pointSizeEl.value);
+    chart.data.datasets[0].pointRadius = r;
+    chart.update("none");
+});
+
+async function connectSerial() {
+  const baudRate = parseInt(document.getElementById('baudRate').value);
+  try {
+    port = await navigator.serial.requestPort();
+    await port.open({ baudRate });
+    await startReading(true); // direct starten met lezen, tijd vanaf 0
+    document.getElementById('playPauseButton').textContent = 'Stop';
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+async function readLoop() {
+    const decoder = new TextDecoder();
+    while (keepReading) {
+        try {
+            const { value, done } = await reader.read();
+            if (done) break;
+
+            if (value) {
+                buffer += decoder.decode(value, {stream:true});
+                let lines = buffer.split("\n");
+                buffer = lines.pop();
+
+                for (let line of lines) {
+                    line = line.trim();
+                    const raw = parseFloat(line);
+                    if (isNaN(raw)) continue;
+
+                    const scale  = parseFloat(scaleFactorEl.value);
+                    const offset = parseFloat(offsetEl.value);
+                    const voltage = raw * scale + offset;
+
+                    const time = sampleIndex++; // 0,1,2,...
+
+                    dataPoints.push({ x: time, y: voltage });
+
+                    const visible = dataPoints.filter(p => p.x >= time - 60);
+                    chart.data.datasets[0].data = visible;
+
+                    const maxY = Math.max(...visible.map(p => p.y));
+                    chart.options.scales.y.max = maxY + Math.max(0.0001, maxY * 0.1);
+
+                    chart.options.scales.x.min = Math.max(0, time - 60);
+                    chart.options.scales.x.max = time;
+
+                    chart.update('none');
+                }
+            }
+        } catch (err) { console.error(err); break; }
+    }
+}
+
+document.getElementById("connectButton").addEventListener("click", connectSerial);
+
+document.getElementById("playPauseButton").addEventListener("click", async () => {
+  const btn = document.getElementById("playPauseButton");
+  if (keepReading) {
+    // STOP lezen
+    keepReading = false;
+    try {
+      if (reader) { await reader.cancel(); await reader.releaseLock(); }
+    } catch (_) { /* negeren */ }
+    btn.textContent = "Start";
+  } else {
+    // START (opnieuw) lezen
+    await startReading(false); // ga verder in de tijd; sampleIndex loopt door
+    btn.textContent = "Stop";
+  }
+});
+
+document.getElementById("resetButton").addEventListener("click", async () => {
+  // Stop evt. de huidige reader
+  keepReading = false;
+  try {
+    if (reader) { await reader.cancel(); await reader.releaseLock(); }
+  } catch (_) { /* negeren */ }
+
+  // Leeg scherm + assen resetten
+  dataPoints = [];
+  sampleIndex = 0;
+  chart.data.datasets[0].data = [];
+  chart.options.scales.x.min = 0;
+  chart.options.scales.x.max = 60;
+  chart.options.scales.y.min = 0;
+  delete chart.options.scales.y.max;
+  chart.update();
+
+  // Als er een open poort is: direct weer gaan lezen vanaf t=0
+  if (port && port.readable) {
+    await startReading(true);
+    document.getElementById('playPauseButton').textContent = 'Stop';
+  }
+});
+// Export: ALL DATA (semicolon CSV)
+document.getElementById('exportButton').addEventListener('click', () => {
+    let csv = "data:text/csv;charset=utf-8,";
+    csv += "tijd_s;spanning_V\n";
+    csv += dataPoints.map(p => `${p.x};${p.y}`).join("\n");
+
+    const link = document.createElement("a");
+    link.href = encodeURI(csv);
+    link.download = "data.csv";
+    link.click();
+});
+
+// Export: ONLY VISIBLE DATA
+document.getElementById('saveVisibleCsvButton').addEventListener('click', () => {
+    const xMin = chart.options.scales.x.min;
+    const xMax = chart.options.scales.x.max;
+    const visible = dataPoints.filter(p => p.x >= xMin && p.x <= xMax);
+
+    let csv = "data:text/csv;charset=utf-8,";
+    csv += "tijd_s;spanning_V\n";
+    csv += visible.map(p => `${p.x};${p.y}`).join("\n");
+
+    const link = document.createElement("a");
+    link.href = encodeURI(csv);
+    link.download = "visible_data.csv";
+    link.click();
+});
+</script>
+
+</body>
+</html>
