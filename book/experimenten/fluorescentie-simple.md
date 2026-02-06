@@ -22,4 +22,4 @@ Met de link hieronder wordt via javascript code in een .html pagina de spanning 
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
 
-
+De Arduino code is hier eventueel ook te downloaden. {Download}`software<./media/fluorescentie-simple/ReadVoltageNew.ino>`
