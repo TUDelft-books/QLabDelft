@@ -17,9 +17,9 @@ Met de link hieronder wordt via javascript code in een .html pagina de spanning 
 * Lees de halfwaardetijd zo nauwkeurig mogelijk af en noteer deze ergens. 
 * Herhaal de meting een paar keer. Druk daartoe dan op RESET en de meting begint opnieuw. 
 
-<a href="./media/fluorescentie-simple/measure.html" target="_blank">Open measuring applet</a>
+<a href="./media/fluorescentie-simple/measure-versie3.html" target="_blank">Open measuring applet</a>
 <br><br>
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
-{Download}`software<./media/fluorescentie-simple/measure.html>`
+{Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
 
 
