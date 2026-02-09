@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Arduino Serial Plot</title>
+
+  <!-- Chart.js + zoom plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    canvas { max-width: 100%; height: 450px !important; }
+    .controls { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom: 10px; }
+    .controls label { display:flex; align-items:center; gap:6px; }
+    #status { white-space: pre-wrap; background:#f7f7f9; border:1px solid #ddd; padding:8px; border-radius:6px; max-height: 9em; overflow:auto; }
+    .muted { color:#666; font-size: 0.9em; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+</head>
+<body>
+
+<div class="controls">
+  <button id="connectButton">Verbinden</button>
+  <button id="playPauseButton">Stop</button>
+  <button id="resetButton">Reset</button>
+  <button id="exportButton">Export CSV</button>
+  <button id="saveVisibleCsvButton">Save Visible CSV</button>
+  <label>Baudrate:
+    <input type="number" id="baudRate" value="9600" min="300" step="100">
+  </label>
+  <label>Schaalfactor:
+    <input type="number" id="scaleFactor" value="1" step="0.001">
+  </label>
+  <label>Offset:
+    <input type="number" id="offsetValue" value="0" step="0.0001">
+  </label>
+  <label>Puntgrootte:
+    <input type="range" id="pointSize" min="0" max="6" step="1" value="2">
+  </label>
+</div>
+
+<!-- UV-sturing + helderheid -->
+<div class="controls">
+  <label>UV-duur (s):
+    <input type="number" id="uvSeconds" min="1" max="60" value="5">
+  </label>
+  <button id="uvOnButton">UV aan</button>
+
+  <label>Helderheid (0–255):
+    <input type="range" id="uvBrightness" min="0" max="255" step="1" value="150">
+    <span id="uvBrightnessVal" class="mono">150</span>
+  </label>
+  <button id="setBrightnessButton">Instellen</button>
+  <span class="muted">Regels met <code>#</code> zijn status (hieronder zichtbaar); overige regels zijn meetdata.</span>
+</div>
+<!-- verband plot controls-->
+<div>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <button id="fitHalfLifeButton">Verband plotten
+    $$I = I_0 \left( \frac{1}{2} \right)^{\frac{t}{t_{1/2}}}$$
+  </button>
+  <span id="halfLifeResult" class="muted"></span>
+  <button id="fitPowerButton">Verband plotten 
+    $$I = \frac{a}{(t+t_0)^b}$$
+  </button>
+  <span id="fitResult" class="muted"></span>
+</div>
+
+<canvas id="chartCanvas"></canvas>
+
+<h3>Status</h3>
+<div id="status"></div>
+
+<script>
+let port, reader, writer;
+let keepReading = true;
+let dataPoints = [];
+let buffer = '';
+let baseTimeSec = null;     // t=0 bij verbinden of bij reset op UV_OFF
+let encoder = new TextEncoder();
+
+const scaleFactorEl = document.getElementById("scaleFactor");
+const offsetEl = document.getElementById("offsetValue");
+const pointSizeEl = document.getElementById("pointSize");
+const uvSecondsEl = document.getElementById("uvSeconds");
+const uvBrightnessEl = document.getElementById("uvBrightness");
+const uvBrightnessValEl = document.getElementById("uvBrightnessVal");
+const statusBox = document.getElementById("status");
+
+function logStatus(line) {
+  const ts = new Date().toLocaleTimeString();
+  statusBox.textContent += `[${ts}] ${line}\n`;
+  statusBox.scrollTop = statusBox.scrollHeight;
+}
+
+const ctx = document.getElementById('chartCanvas').getContext('2d');
+const chart = new Chart(ctx, {
+  type: 'scatter',
+  data: {
+    datasets: [{
+      label: 'Spanning (V)',
+      borderColor: 'rgb(75,192,192)',
+      backgroundColor: 'rgb(75,192,192)',
+      showLine: false,
+      pointRadius: 2,
+      data: []
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    parsing: false, // we geven x,y objecten
+    scales: {
+      x: {
+        type: 'linear',
+        min: 0,
+        max: 60,
+
+        // ✅ ALTIJD hele seconden
+        ticks: {
+          stepSize: 1,
+          precision: 0,          // geen decimalen
+          autoSkip: false        // geen ticks overslaan
+        },
+
+        // ✅ Gridlijnen exact op hele seconden
+        grid: {
+          drawTicks: true,
+          drawBorder: true,
+          color: (ctx) => {
+            // alle verticale gridlijnen even duidelijk
+            return '#bbb';
+          },
+          lineWidth: 0.6
+        },
+
+        title: {
+          display: true,
+          text: "Tijd (s)"
+        }
+      },
+      y: {
+        min: 0,
+        title: { display:true, text:"Spanning (V)" }
+      }
+    },
+    plugins: {
+      zoom: {
+        pan: { enabled: true, mode: 'xy' },
+        zoom: { wheel:{enabled:true}, pinch:{enabled:true}, mode:'xy' }
+      }
+    }
+  }
+});
+
+// Puntgrootte live
+pointSizeEl.addEventListener("input", () => {
+  const r = Number(pointSizeEl.value);
+  chart.data.datasets[0].pointRadius = r;
+  chart.update("none");
+});
+
+async function connectSerial() {
+  const baudRate = parseInt(document.getElementById('baudRate').value);
+  try {
+    port = await navigator.serial.requestPort();
+    await port.open({ baudRate });
+
+    // Writer voor commando's
+    writer = port.writable.getWriter();
+
+    await startReading(true); // meteen lezen, t=0 vanaf nu
+    document.getElementById('playPauseButton').textContent = 'Stop';
+    logStatus('Verbonden');
+  } catch (err) {
+    console.error(err);
+    logStatus('Fout bij verbinden: ' + err.message);
+  }
+}
+document.getElementById("connectButton").addEventListener("click", connectSerial);
+
+async function startReading(freshTime = false) {
+  if (!port || !port.readable) return;
+  try {
+    if (reader) { await reader.cancel(); reader.releaseLock(); }
+  } catch (_) { /* negeren */ }
+  reader = port.readable.getReader();
+
+  if (freshTime) {
+    baseTimeSec = Date.now() / 1000;   // t=0 nu
+    dataPoints = [];
+    chart.data.datasets[0].data = [];
+    chart.options.scales.x.min = 0;
+    chart.options.scales.x.max = 60;
+    chart.options.scales.y.min = 0;
+    delete chart.options.scales.y.max;
+    chart.update();
+  }
+
+  keepReading = true;
+  readLoop();
+}
+
+async function readLoop() {
+  const decoder = new TextDecoder();
+  while (keepReading) {
+    try {
+      const { value, done } = await reader.read();
+      if (done) break;
+      if (value) {
+        buffer += decoder.decode(value, {stream:true});
+        let lines = buffer.split("\n");
+        buffer = lines.pop();
+        for (let line of lines) {
+          line = line.replace(/\r/g,'').trim();
+          if (!line) continue;
+
+          // Statuslijn?
+          if (line.startsWith('#')) {
+            logStatus(line);
+
+            // NIEUW: resetten zodra UV uitgaat
+            if (line.startsWith('#UV_OFF')) {
+              resetPlotInPlace();   // zie functie onderaan
+            }
+            continue;
+          }
+
+          // Datapunt
+          const raw = parseFloat(line);
+          if (isNaN(raw)) {
+            logStatus('Onbekende lijn: ' + line);
+            continue;
+          }
+          const scale = parseFloat(scaleFactorEl.value);
+          const offset = parseFloat(offsetEl.value);
+          const voltage = raw * scale + offset;
+
+          const tNow = Date.now() / 1000;
+          const tRel = tNow - baseTimeSec; // seconden sinds connect of laatst reset
+
+          dataPoints.push({ x: tRel, y: voltage });
+
+          // Alleen laatste 60 s tonen
+          const minX = Math.max(0, tRel - 60);
+          while (dataPoints.length && dataPoints[0].x < minX) dataPoints.shift();
+
+          chart.data.datasets[0].data = dataPoints;
+
+          // y-as autoscale op zichtbare punten
+          const vis = dataPoints;
+          if (vis.length) {
+            let maxY = Math.max(...vis.map(p => p.y));
+
+            // ✅ y-as begint ALTIJD bij 0 V
+            chart.options.scales.y.min = 0;
+
+            // ✅ alleen bovenkant autoscalen
+            chart.options.scales.y.max = maxY + Math.max(0.01, maxY * 0.1);
+          }
+          chart.options.scales.x.min = minX;
+          chart.options.scales.x.max = tRel;
+
+          chart.update('none');
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      logStatus('Leesfout: ' + err.message);
+      break;
+    }
+  }
+}
+
+document.getElementById("playPauseButton").addEventListener("click", async () => {
+  const btn = document.getElementById("playPauseButton");
+  if (keepReading) {
+    keepReading = false;
+    try { if (reader) { await reader.cancel(); reader.releaseLock(); } } catch (_) {}
+    btn.textContent = "Start";
+  } else {
+    await startReading(false);
+    btn.textContent = "Stop";
+  }
+});
+
+document.getElementById("resetButton").addEventListener("click", async () => {
+  // Stop evt. de huidige reader
+  keepReading = false;
+  try { if (reader) { await reader.cancel(); reader.releaseLock(); } } catch (_) {}
+
+  // Scherm leeg + assen reset
+  dataPoints = [];
+  chart.data.datasets[0].data = [];
+  chart.options.scales.x.min = 0;
+  chart.options.scales.x.max = 60;
+  chart.options.scales.y.min = 0;
+  delete chart.options.scales.y.max;
+  chart.update();
+
+  // Als er een open poort is: opnieuw lezen vanaf t=0
+  if (port && port.readable) {
+    await startReading(true);
+    document.getElementById('playPauseButton').textContent = 'Stop';
+  }
+});
+
+// Export: ALLE data (puntkomma CSV)
+document.getElementById('exportButton').addEventListener('click', () => {
+  let csv = "data:text/csv;charset=utf-8,";
+  csv += "tijd_s;spanning_V\n";
+  csv += dataPoints.map(p => `${p.x.toFixed(3)};${p.y}`).join("\n");
+  const link = document.createElement("a");
+  link.href = encodeURI(csv);
+  link.download = "data.csv";
+  link.click();
+});
+
+// Export: zichtbare data
+document.getElementById('saveVisibleCsvButton').addEventListener('click', () => {
+  const xMin = chart.options.scales.x.min;
+  const xMax = chart.options.scales.x.max;
+  const visible = dataPoints.filter(p => p.x >= xMin && p.x <= xMax);
+  let csv = "data:text/csv;charset=utf-8,";
+  csv += "tijd_s;spanning_V\n";
+  csv += visible.map(p => `${p.x.toFixed(3)};${p.y}`).join("\n");
+  const link = document.createElement("a");
+  link.href = encodeURI(csv);
+  link.download = "visible_data.csv";
+  link.click();
+});
+
+// ===== UV-commando's =====
+
+// Toon numerieke waarde naast slider
+uvBrightnessEl.addEventListener('input', () => {
+  uvBrightnessValEl.textContent = String(uvBrightnessEl.value);
+});
+
+// Knop: Instellen (stuurt BR:<waarde>)
+document.getElementById('setBrightnessButton').addEventListener('click', async () => {
+  await sendCommandBR();
+});
+
+// Optioneel: stuur ook wanneer de slider wordt losgelaten
+uvBrightnessEl.addEventListener('change', async () => {
+  await sendCommandBR();
+});
+
+// Knop: UV aan (stuurt UV:<sec>)
+document.getElementById('uvOnButton').addEventListener('click', async () => {
+  if (!port || !writer) { logStatus('Niet verbonden'); return; }
+  let sec = Math.max(1, Math.min(60, Number(uvSecondsEl.value || 0)));
+  uvSecondsEl.value = sec; // clamp zichtbaar
+  try {
+    await writer.write(encoder.encode(`UV:${sec}\n`));
+    logStatus(`Commando verstuurd: UV:${sec}`);
+  } catch (err) {
+    console.error(err);
+    logStatus('Schrijffout: ' + err.message);
+  }
+});
+
+async function sendCommandBR() {
+  if (!port || !writer) { logStatus('Niet verbonden'); return; }
+  const val = Math.max(0, Math.min(255, Number(uvBrightnessEl.value || 0)));
+  uvBrightnessEl.value = val;
+  uvBrightnessValEl.textContent = String(val);
+  try {
+    await writer.write(encoder.encode(`BR:${val}\n`));
+    logStatus(`Commando verstuurd: BR:${val}`);
+  } catch (err) {
+    console.error(err);
+    logStatus('Schrijffout: ' + err.message);
+  }
+}
+
+// In-place plot resetten zonder de reader te stoppen (gebruikt bij #UV_OFF)
+function resetPlotInPlace() {
+  baseTimeSec = Date.now() / 1000; // nieuwe t=0
+  dataPoints = [];
+  chart.data.datasets[0].data = [];
+  chart.options.scales.x.min = 0;
+  chart.options.scales.x.max = 60;
+  chart.options.scales.y.min = 0;
+  delete chart.options.scales.y.max;
+  chart.update();
+}
+// ===== Machtwet-fit: I = a / (t + t0)^b =====
+
+// Hulp: klassieke least-squares op (x,y) -> y = m*x + c
+function linearFitXY(xs, ys) {
+  const n = xs.length;
+  let sumX = 0, sumY = 0, sumXX = 0, sumXY = 0;
+  for (let i = 0; i < n; i++) {
+    const x = xs[i], y = ys[i];
+    sumX += x; sumY += y; sumXX += x*x; sumXY += x*y;
+  }
+  const denom = n * sumXX - sumX * sumX;
+  if (Math.abs(denom) < 1e-12) return null;
+  const m = (n * sumXY - sumX * sumY) / denom;
+  const c = (sumY - m * sumX) / n;
+  return { m, c };
+}
+
+// Berekent SSE in origineel domein (I) en R^2
+function sseAndR2(origT, origI, a, b, t0) {
+  const n = origI.length;
+  const meanI = origI.reduce((s,v)=>s+v,0)/n;
+  let sse = 0, sst = 0;
+  for (let i = 0; i < n; i++) {
+    const t = origT[i];
+    const pred = a / Math.pow(t + t0, b);
+    const e = origI[i] - pred;
+    sse += e*e;
+    const d = origI[i] - meanI;
+    sst += d*d;
+  }
+  const r2 = (sst > 0) ? (1 - sse/sst) : 1;
+  return { sse, r2 };
+}
+
+// Hoofdfunctie: zoek t0, pas ln-fit toe voor (ln I) vs (ln (t+t0)), kies beste a,b,t0
+function fitPowerLaw(points, bMin = 0.2, bMax = 2.0) {
+  // Neem alleen punten met I>0
+  const valid = points.filter(p => p.y > 0);
+  if (valid.length < 3) return { ok:false, msg:'Te weinig positieve punten voor log-fit.' };
+
+  const tArr = valid.map(p => p.x);   // t in seconden (relatief)
+  const iArr = valid.map(p => p.y);   // I = spanning/waarde
+
+  const minT = Math.min(...tArr);
+  const maxT = Math.max(...tArr);
+  if (!isFinite(minT) || !isFinite(maxT) || maxT <= minT) {
+    return { ok:false, msg:'Ongeldige tijdas.' };
+  }
+
+  // Zoekbereik voor t0: fysisch vaak klein. We nemen 0 .. 0.5*maxT (minstens 5 s)
+  const t0Max = Math.max(5, 0.5*maxT);
+  const N = 80; // aantal rasterpunten voor t0
+  let best = { sse: Infinity, a: NaN, b: NaN, t0: NaN, r2: NaN };
+
+  for (let k = 0; k < N; k++) {
+    const t0 = (k / (N-1)) * t0Max; // 0 .. t0Max
+
+    // Bouw ln‑domein arrays
+    const xs = []; // ln(t + t0)
+    const ys = []; // ln(I)
+    const tKeep = [];
+    const iKeep = [];
+
+    for (let i = 0; i < valid.length; i++) {
+      const t = tArr[i];
+      const I = iArr[i];
+      const u = t + t0;
+      if (u > 0 && I > 0) {
+        xs.push(Math.log(u));
+        ys.push(Math.log(I));
+        tKeep.push(t);
+        iKeep.push(I);
+      }
+    }
+    if (xs.length < 3) continue;
+
+    const lf = linearFitXY(xs, ys);
+    if (!lf) continue;
+
+    let b = -lf.m;       // slope m = -b
+    let a = Math.exp(lf.c);
+
+    // b binnen grenzen afdwingen; kandidaten buiten range overslaan
+    if (b < bMin || b > bMax) continue;
+
+    // SSE evalueren in origineel domein
+    const { sse, r2 } = sseAndR2(tKeep, iKeep, a, b, t0);
+    if (sse < best.sse) {
+      best = { sse, a, b, t0, r2 };
+    }
+  }
+
+  // Fallback: als alle kandidaten buiten b-range vielen, doe clamping op beste ln-fit zonder b-filter
+  if (!isFinite(best.sse)) {
+    let altBest = { sse: Infinity, a: NaN, b: NaN, t0: NaN, r2: NaN };
+    for (let k = 0; k < N; k++) {
+      const t0 = (k / (N-1)) * t0Max;
+      const xs = [], ys = [], tKeep=[], iKeep=[];
+      for (let i = 0; i < valid.length; i++) {
+        const t = tArr[i], I = iArr[i], u = t + t0;
+        if (u > 0 && I > 0) { xs.push(Math.log(u)); ys.push(Math.log(I)); tKeep.push(t); iKeep.push(I); }
+      }
+      if (xs.length < 3) continue;
+      const lf = linearFitXY(xs, ys);
+      if (!lf) continue;
+      let b = -lf.m;
+      b = Math.min(bMax, Math.max(bMin, b)); // clamp
+      const a = Math.exp(lf.c);
+      const { sse, r2 } = sseAndR2(tKeep, iKeep, a, b, t0);
+      if (sse < altBest.sse) altBest = { sse, a, b, t0, r2 };
+    }
+    if (isFinite(altBest.sse)) return { ok:true, ...altBest, n: valid.length, note:'clamped' };
+    return { ok:false, msg:'Geen geschikte t₀ gevonden voor fit.' };
+  }
+
+  return { ok:true, ...best, n: valid.length };
+}
+
+// Maak een mooi lijndataset voor de fit (over [tMin, tMax])
+function buildFitDataset(label, color, a, b, t0, tMin, tMax, step=0.05) {
+  const data = [];
+  for (let t = tMin; t <= tMax + 1e-9; t += step) {
+    const y = a / Math.pow(t + t0, b);
+    if (isFinite(y)) data.push({ x: t, y });
+  }
+  return {
+    label,
+    data,
+    borderColor: color,
+    borderWidth: 2,
+    pointRadius: 0,
+    showLine: true
+  };
+}
+// Klik-handler: fitten en plotten van halfwaardetijd-verval
+document.getElementById('fitHalfLifeButton').addEventListener('click', () => {
+  if (keepReading) { alert("Stop eerst de meting."); return; }
+  if (dataPoints.length < 3) { alert("Te weinig data."); return; }
+
+  const res = fitHalfLife(dataPoints);
+  const outEl = document.getElementById('halfLifeResult');
+
+  if (!res.ok) {
+    outEl.textContent = `Fit mislukt: ${res.msg}`;
+    return;
+  }
+
+  const { I1, tHalf, r2 } = res;
+
+  outEl.textContent =
+    `I₁=${I1.toExponential(3)} (t=1 s), t½=${tHalf.toFixed(3)} s, ` +
+    `R²=${r2.toFixed(4)} (fit vanaf t ≥ 1 s)`;
+
+  // Bepaal plotbereik, maar begin minstens bij 1 s
+  const allT = dataPoints.map(p => p.x);
+  const tMin = Math.max(1.0, Math.min(...allT));
+  const tMax = Math.max(...allT);
+
+  const fitDs = buildHalfLifeDataset_I1(res.I1, tHalf, tMin, tMax);
+
+  chart.data.datasets = [
+    {
+      label: 'Meetpunten',
+      data: dataPoints,
+      backgroundColor: 'rgba(75,192,192,0.6)',
+      showLine: false,
+      pointRadius: chart.data.datasets[0]?.pointRadius ?? 2
+    },
+    fitDs
+  ];
+
+  // Y-as: min op 0 V (zoals je vroeg), max automatisch
+  const allY = [...dataPoints.map(p=>p.y), ...fitDs.data.map(p=>p.y)].filter(Number.isFinite);
+  if (allY.length) {
+    const maxY = Math.max(...allY);
+    chart.options.scales.y.min = 0;
+    chart.options.scales.y.max = maxY * 1.1;
+  }
+
+  // X-as netjes
+  chart.options.scales.x.min = Math.floor(tMin);
+  chart.options.scales.x.max = Math.ceil(tMax);
+
+  chart.update();
+});
+
+// Klik-handler: fitten en plotten
+document.getElementById('fitPowerButton').addEventListener('click', () => {
+  if (keepReading) {
+    alert("Stop eerst de meting om het verband te fitten.");
+    return;
+  }
+  if (dataPoints.length < 3) {
+    alert("Te weinig data om te fitten.");
+    return;
+  }
+
+  // Fit op alle opgeslagen punten (in de huidige sessie)
+  const fit = fitPowerLaw(dataPoints, 0.2, 2.0);
+  const fitResultEl = document.getElementById('fitResult');
+
+  if (!fit.ok) {
+    fitResultEl.textContent = `Fit mislukt: ${fit.msg}`;
+    return;
+  }
+
+  // Toon resultaat
+  const { a, b, t0, r2, n, note } = fit;
+  fitResultEl.textContent =
+    `a=${a.toExponential(3)}, b=${b.toFixed(3)}, t₀=${t0.toFixed(3)} s, R²=${r2.toFixed(4)} ` +
+    (note ? `(opmerking: ${note})` : '');
+
+  // Bouw fit-lijn over het zichtbare tijdsbereik van de data
+  const tMin = Math.max(0, Math.min(...dataPoints.map(p => p.x)));
+  const tMax = Math.max(...dataPoints.map(p => p.x));
+
+  const fitDs = buildFitDataset(`Fit: I=a/(t+t₀)^b`, '#e03a3a', a, b, t0, tMin, tMax, 0.05);
+
+  // Zet datasets: meetpunten + fitlijn
+  chart.data.datasets = [
+    {
+      label: 'Meetpunten',
+      data: dataPoints,
+      backgroundColor: 'rgba(75,192,192,0.6)',
+      showLine: false,
+      pointRadius: chart.data.datasets[0]?.pointRadius ?? 2
+    },
+    fitDs
+  ];
+
+  // Y-as: minimum 0 V blijft geldend, max omhoog indien nodig
+  const allY = [...dataPoints.map(p=>p.y), ...fitDs.data.map(p=>p.y)].filter(Number.isFinite);
+  if (allY.length) {
+    const maxY = Math.max(...allY);
+    chart.options.scales.y.min = 0;
+    chart.options.scales.y.max = maxY + Math.max(0.01, maxY * 0.1);
+  }
+
+  // X-bereik netjes op de volledige data (geen schuivend venster bij statisch verband)
+  chart.options.scales.x.min = Math.floor(tMin);
+  chart.options.scales.x.max = Math.ceil(tMax);
+
+  chart.update();
+  });
+  function fitHalfLife(points) {
+  // Negeer eerste seconde en niet-positieve waarden
+  const valid = points.filter(p => p.x >= 1.0 && p.y > 0);
+  if (valid.length < 3) {
+    return { ok: false, msg: 'Te weinig meetpunten na t ≥ 1 s.' };
+  }
+
+  // t' = t - 1.0  => intercept = ln(I1) bij t=1 s
+  const tsShift = valid.map(p => p.x - 1.0);
+  const lnI     = valid.map(p => Math.log(p.y));
+
+  const fit = linearFitXY(tsShift, lnI);
+  if (!fit) return { ok:false, msg:'Lineaire fit mislukt.' };
+
+  const m = fit.m;     // m = -ln(2)/t_half
+  const c = fit.c;     // c = ln(I1)
+
+  if (m >= 0) {
+    return { ok:false, msg:'Geen verval (helling ≥ 0).' };
+  }
+
+  const tHalf = Math.log(2) / (-m);
+  const I1    = Math.exp(c); // intensiteit bij t = 1 s
+
+  // R^2 in ln-domein (op de geshiftte tijd)
+  const meanLnI = lnI.reduce((a,b)=>a+b,0) / lnI.length;
+  let sse = 0, sst = 0;
+  for (let i = 0; i < lnI.length; i++) {
+    const pred = c + m * tsShift[i];
+    sse += (lnI[i] - pred) ** 2;
+    sst += (lnI[i] - meanLnI) ** 2;
+  }
+  const r2 = (sst > 0) ? (1 - sse / sst) : 1;
+
+  return { ok:true, I1, tHalf, r2, n: valid.length };
+  }
+
+  // Vervang I1 door de mediaan in een venster rond 1 s (bijv. 0.9–1.1 s)
+  function median(arr){ const a=[...arr].sort((x,y)=>x-y); const m=Math.floor(a.length/2); return a.length? (a.length%2?a[m]:(a[m-1]+a[m])/2):NaN; }
+
+  const neighborhood = dataPoints.filter(p => p.x >= 0.9 && p.x <= 1.1 && p.y > 0).map(p=>p.y);
+  if (neighborhood.length >= 3) {
+    const I1_median = median(neighborhood);
+    if (isFinite(I1_median)) {
+    // anker exact op de gemeten waarde bij 1 s
+    res.I1 = I1_median;
+    }
+  }
+
+  function buildHalfLifeDataset_I1(I1, tHalf, tMin, tMax, step = 0.05) {
+  
+    const data = [];
+  const start = Math.max(1.0, tMin);   // alleen t ≥ 1 s plotten
+  for (let t = start; t <= tMax + 1e-9; t += step) {
+    const y = I1 * Math.pow(0.5, (t - 1.0) / tHalf);
+    if (isFinite(y)) data.push({ x: t, y });
+  }
+  return {
+    label: 'Fit (halfwaardetijd, geankerd op t=1 s)',
+    data,
+    borderColor: '#7b2cbf',
+    borderWidth: 2,
+    pointRadius: 0,
+    showLine: true
+  };
+}
+
+</script>
+</body>
+</html>

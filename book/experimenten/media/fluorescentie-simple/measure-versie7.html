@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arduino Serial Plot (Werkende Basis)</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    canvas { max-width: 100%; height: 450px !important; }
+    .controls { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom: 10px; }
+    #status { white-space: pre-wrap; background:#f7f7f9; border:1px solid #ddd; padding:8px; border-radius:6px; max-height: 8em; overflow:auto; }
+    .btn-on { background:#e8f0fe; border:1px solid #3b82f6; }
+  </style>
+</head>
+<body>
+
+<h2>Arduino Live Meting</h2>
+
+<div class="controls">
+  <button id="connect">Verbinden</button>
+  <button id="stop">Stop</button>
+  <button id="reset">Reset</button>
+</div>
+
+<div class="controls">
+  <button id="fitHalf">Halfwaardetijd</button>
+  <span>$ I(t) = I_1 \cdot (1/2)^{(t-1)/t_{1/2}} $</span>
+</div>
+
+<canvas id="plot"></canvas>
+
+<h3>Status</h3>
+<div id="status"></div>
+
+<script>
+let port, reader;
+let running = false;
+let data = [];
+let t0 = null;
+let halfFitOn = false;
+
+const statusBox = document.getElementById('status');
+function log(msg) {
+  statusBox.textContent += msg + '
+';
+  statusBox.scrollTop = statusBox.scrollHeight;
+}
+
+const chart = new Chart(document.getElementById('plot'), {
+  type: 'scatter',
+  data: { datasets: [{ label: 'Spanning (V)', data: [], pointRadius: 2 }] },
+  options: {
+    parsing: false,
+    scales: {
+      x: { type: 'linear', min: 0, max: 60, ticks: { stepSize: 1 } },
+      y: { min: 0 }
+    }
+  }
+});
+
+async function connect() {
+  try {
+    port = await navigator.serial.requestPort();
+    await port.open({ baudRate: 9600 });
+    reader = port.readable.getReader();
+    running = true;
+    t0 = Date.now() / 1000;
+    log('Verbonden');
+    readLoop();
+  } catch (e) {
+    log('Fout: ' + e.message);
+  }
+}
+
+async function readLoop() {
+  const decoder = new TextDecoder();
+  let buf = '';
+  while (running) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buf += decoder.decode(value);
+    const lines = buf.split('
+');
+    buf = lines.pop();
+    for (const l of lines) {
+      const v = parseFloat(l.trim());
+      if (!isNaN(v)) {
+        const t = Date.now() / 1000 - t0;
+        data.push({ x: t, y: v });
+        data = data.filter(p => p.x >= t - 60);
+        chart.data.datasets[0].data = data;
+        chart.options.scales.x.min = Math.max(0, t - 60);
+        chart.options.scales.x.max = t;
+        chart.update('none');
+      }
+    }
+  }
+}
+
+function resetAll() {
+  data = [];
+  chart.data.datasets = [{ label: 'Spanning (V)', data: [], pointRadius: 2 }];
+  chart.options.scales.x.min = 0;
+  chart.options.scales.x.max = 60;
+  chart.update();
+  t0 = Date.now() / 1000;
+  log('Reset');
+}
+
+function fitHalfLife() {
+  if (halfFitOn) {
+    chart.data.datasets = chart.data.datasets.slice(0,1);
+    halfFitOn = false;
+    document.getElementById('fitHalf').classList.remove('btn-on');
+    chart.update();
+    return;
+  }
+  const pts = data.filter(p => p.x >= 1 && p.y > 0);
+  if (pts.length < 3) { alert('Te weinig data'); return; }
+  const t = pts.map(p => p.x);
+  const lnI = pts.map(p => Math.log(p.y));
+  const n = t.length;
+  let sx=0, sy=0, sxx=0, sxy=0;
+  for (let i=0;i<n;i++){ sx+=t[i]; sy+=lnI[i]; sxx+=t[i]*t[i]; sxy+=t[i]*lnI[i]; }
+  const m = (n*sxy - sx*sy)/(n*sxx - sx*sx);
+  const tHalf = Math.log(2)/(-m);
+  const around1 = pts.filter(p => p.x>=0.9 && p.x<=1.1).map(p=>p.y);
+  const I1 = around1.length ? around1.reduce((a,b)=>a+b,0)/around1.length : pts[0].y;
+  const fit = [];
+  const tMin = Math.max(1, Math.min(...t));
+  const tMax = Math.max(...t);
+  for (let tt=tMin; tt<=tMax; tt+=0.1) {
+    fit.push({ x: tt, y: I1*Math.pow(0.5,(tt-1)/tHalf) });
+  }
+  chart.data.datasets.push({ label: 'Halfwaardetijd fit', data: fit, showLine:true, pointRadius:0, borderColor:'purple' });
+  halfFitOn = true;
+  document.getElementById('fitHalf').classList.add('btn-on');
+  chart.update();
+}
+
+// Buttons
+connect.onclick = connect;
+stop.onclick = () => { running = false; log('Gestopt'); };
+reset.onclick = resetAll;
+fitHalf.onclick = fitHalfLife;
+</script>
+</body>
+</html>
