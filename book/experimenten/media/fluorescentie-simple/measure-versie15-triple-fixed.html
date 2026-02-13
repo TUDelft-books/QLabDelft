@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Arduino Serial Plot</title>
+  <!-- Chart.js + zoom plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+  <!-- MathJax (LaTeX) -->
+  <script>
+    window.MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    canvas { max-width: 100%; height: 450px !important; }
+    .controls { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom: 10px; }
+    .controls label { display:flex; align-items:center; gap:6px; }
+    #status { white-space: pre-wrap; background:#f7f7f9; border:1px solid #ddd; padding:8px; border-radius:6px; max-height: 9em; overflow:auto; }
+    .muted { color:#666; font-size: 0.9em; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    /* Ingedrukte toggle-knoppen */
+    .btn-on { background:#e8f0fe; border:1px solid #3b82f6; }
+    /* Speciaal kleurtje voor ingedrukte power-knop */
+    .power-btn.btn-on { background:#ffe4e6; border:1px solid #dc2626; color:#7f1d1d; }
+    /* Handmatige halfwaardeknop (paarse hint) */
+    .manual-on { background:#efe7ff; border:1px solid #7b2cbf; }
+    /* Handmatige sliders */
+    #manualHalfLifeControls input[type="range"], #globalShiftControls input[type="range"] { width: 160px; }
+    #manualHalfLifeControls label, #globalShiftControls label { gap:6px; }
+  </style>
+</head>
+<body>
+  <!-- Basis bediening -->
+  <div class="controls">
+    <button id="connectButton">Verbinden</button>
+    <button id="playPauseButton">Stop</button>
+    <button id="resetButton">Reset</button>
+    <button id="exportButton">Export CSV</button>
+    <button id="saveVisibleCsvButton">Save Visible CSV</button>
+    <label>Baudrate:
+      <input type="number" id="baudRate" value="9600" min="300" step="100">
+    </label>
+    <label>Puntgrootte:
+      <input type="range" id="pointSize" min="0" max="6" step="1" value="2">
+    </label>
+  </div>
+
+  <!-- UV-sturing + helderheid -->
+  <div class="controls">
+    <label>UV-duur (s):
+      <input type="number" id="uvSeconds" min="1" max="60" value="5">
+    </label>
+    <button id="uvOnButton">UV aan</button>
+    <label>Helderheid (0–255):
+      <input type="range" id="uvBrightness" min="0" max="255" step="1" value="150">
+      <span id="uvBrightnessVal" class="mono">150</span>
+    </label>
+    <button id="setBrightnessButton">Instellen</button>
+    <span class="muted">Regels met <code>#</code> zijn status; overige regels zijn meetdata.</span>
+  </div>
+
+  <!-- Verband: halfwaardetijd (nu met achtergrond A) -->
+  <div class="controls">
+    <button id="fitHalfLifeButton">Halfwaardetijd-fit</button>
+    <span class="muted">
+      $I(t)=A + I_0\,\left(\tfrac12\right)^{t/t_{1/2}}$
+    </span>
+    <span id="halfLifeResult" class="muted"></span>
+  </div>
+
+  <!-- Handmatige halfwaardecurve (sliders) -->
+  <div class="controls" id="manualHalfLifeControls">
+    <button id="toggleManualHalfLife">Handmatige halfwaardecurve</button>
+    <span class="muted">
+      $I(t)=A + I_0\,\left(\tfrac12\right)^{t/t_{1/2}}$
+    </span>
+    <label style="margin-left:12px;">$A$ (achtergrond):
+      <input type="range" id="manualBG" min="-1.00" max="5" step="0.01" value="0.00">
+      <input type="number" id="manualBGNum" min="-1.00" max="5" step="0.01" value="0.00" style="width:6em;">
+    </label>
+    <label>$I₀$:
+      <input type="range" id="manualI0" min="0.01" max="5" step="0.01" value="1.00">
+      <input type="number" id="manualI0Num" min="0.01" max="5" step="0.01" value="1.00" style="width:6em;">
+    </label>
+    <label>$t_{1/2}$ (s):
+      <input type="range" id="manualTH" min="0.05" max="30" step="0.01" value="5.00">
+      <input type="number" id="manualTHNum" min="0.05" max="30" step="0.01" value="5.00" style="width:6em;">
+    </label>
+  </div>
+
+  <!-- Verband: machtswet -->
+  <div class="controls">
+    <button id="fitPowerButton" class="power-btn">Machtswet-fit</button>
+    <span class="muted">
+      $I(t)=\dfrac{a}{(t+t_0)^b}$
+    </span>
+    <span id="fitResult" class="muted"></span>
+  </div>
+
+  <!-- Globale horizontale verschuiving voor alle fits -->
+  <div class="controls" id="globalShiftControls">
+    <label>Horizontale verschuiving (s) voor alle fits:
+      <input type="range" id="fitShift" min="-10" max="10" step="0.01" value="0.00">
+      <input type="number" id="fitShiftNum" min="-10" max="10" step="0.01" value="0.00" style="width:6em;">
+    </label>
+    <span class="muted">Positief = naar rechts; negatief = naar links.</span>
+  </div>
+
+  
+  <!-- ======= Triple Exponentiële Fit ======= -->
+  <div class="controls">
+    <button id="fitTripleButton">Triple-exponentiële fit</button>
+    <span class="muted">
+      I(t)=A + B₁e^{-t/τ₁} + B₂e^{-t/τ₂} + B₃e^{-t/τ₃}
+    </span>
+    <span id="tripleFitResult" class="muted"></span>
+  </div>
+
+  <div class="controls" id="tripleControls">
+    <label>A
+      <input type="range" id="tripleA" min="-1" max="5" step="0.01" value="0">
+      <input type="number" id="tripleANum" step="0.01" value="0" style="width:6em;">
+    </label>
+    <label>B₁
+      <input type="range" id="tripleB1" min="0" max="5" step="0.01" value="1">
+      <input type="number" id="tripleB1Num" step="0.01" value="1" style="width:6em;">
+    </label>
+    <label>τ₁
+      <input type="range" id="tripleT1" min="0.1" max="30" step="0.01" value="1">
+      <input type="number" id="tripleT1Num" step="0.01" value="1" style="width:6em;">
+    </label>
+    <label>B₂
+      <input type="range" id="tripleB2" min="0" max="5" step="0.01" value="0.5">
+      <input type="number" id="tripleB2Num" step="0.01" value="0.5" style="width:6em;">
+    </label>
+    <label>τ₂
+      <input type="range" id="tripleT2" min="0.1" max="30" step="0.01" value="5">
+      <input type="number" id="tripleT2Num" step="0.01" value="5" style="width:6em;">
+    </label>
+    <label>B₃
+      <input type="range" id="tripleB3" min="0" max="5" step="0.01" value="0.2">
+      <input type="number" id="tripleB3Num" step="0.01" value="0.2" style="width:6em;">
+    </label>
+    <label>τ₃
+      <input type="range" id="tripleT3" min="0.1" max="30" step="0.01" value="15">
+      <input type="number" id="tripleT3Num" step="0.01" value="15" style="width:6em;">
+    </label>
+  </div>
+
+  <canvas id="chartCanvas"></canvas>
+  <h3>Status</h3>
+  <div id="status"></div>
+
+  <script>
+    /* ======= Globale state ======= */
+    let port, reader, writer;
+    let keepReading = true;
+    let dataPoints = [];
+    let buffer = '';
+    let baseTimeSec = null; // t=0 bij verbinden/reset
+    const encoder = new TextEncoder();
+
+    let fitHalfLifeActive = false;
+    let fitPowerActive = false;
+    let halfLifeDataset = null;
+    let powerDataset = null;
+
+    // Handmatige halfwaardecurve state
+    let manualHalfLifeActive = false;
+    let manualHalfLifeDataset = null;
+
+    // Globale horizontale shift (s)
+    let fitGlobalShift = 0.0;
+
+    // Fit-parameter geheugen voor reconstrueren na verschuiven
+    let lastHalfLifeFit = null; // {A, I0, tHalf, tMax}
+    let lastPowerFit = null;    // {a,b,t0,tMin,tMax}
+
+    const pointSizeEl = document.getElementById("pointSize");
+    const uvSecondsEl = document.getElementById("uvSeconds");
+    const uvBrightnessEl= document.getElementById("uvBrightness");
+    const uvBrightnessValEl = document.getElementById("uvBrightnessVal");
+    const fitHalfLifeBtn= document.getElementById("fitHalfLifeButton");
+    const fitPowerBtn = document.getElementById("fitPowerButton");
+    const halfLifeResultEl = document.getElementById("halfLifeResult");
+    const fitResultEl = document.getElementById("fitResult");
+    const statusBox = document.getElementById("status");
+
+    // Handmatige UI elements
+    const toggleManualHalfLifeBtn = document.getElementById("toggleManualHalfLife");
+    const manualBGRange = document.getElementById("manualBG");
+    const manualBGNum   = document.getElementById("manualBGNum");
+    const manualI0Range = document.getElementById("manualI0");
+    const manualI0Num   = document.getElementById("manualI0Num");
+    const manualTHRange = document.getElementById("manualTH");
+    const manualTHNum   = document.getElementById("manualTHNum");
+
+    // Globale shift UI
+    const fitShiftRange = document.getElementById('fitShift');
+    const fitShiftNum   = document.getElementById('fitShiftNum');
+
+    /* ======= Log ======= */
+    function logStatus(line) {
+      const ts = new Date().toLocaleTimeString();
+      statusBox.textContent += `[${ts}] ${line}\n`;
+      statusBox.scrollTop = statusBox.scrollHeight;
+    }
+
+    /* ======= Chart ======= */
+    const ctx = document.getElementById('chartCanvas').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'Spanning (V)',
+          borderColor: 'rgb(75,192,192)',
+          backgroundColor: 'rgb(75,192,192)',
+          showLine: false,
+          pointRadius: Number(pointSizeEl.value),
+          data: []
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        parsing: false,
+        scales: {
+          x: {
+            type: 'linear',
+            min: 0,
+            max: 60,
+            ticks: { stepSize: 1, precision: 0, autoSkip: false },
+            grid: { drawTicks:true, drawBorder:true, color:'#bbb', lineWidth:0.6 },
+            title: { display:true, text:"Tijd (s)" }
+          },
+          y: {
+            min: 0,
+            title: { display:true, text:"Spanning (V)" }
+          }
+        },
+        plugins: {
+          zoom: {
+            pan: { enabled: true, mode: 'xy' },
+            zoom:{ wheel:{enabled:true}, pinch:{enabled:true}, mode:'xy' }
+          }
+        }
+      }
+    });
+
+    function rebuildDatasets() {
+      const base = {
+        label: 'Spanning (V)',
+        borderColor: 'rgb(75,192,192)',
+        backgroundColor: 'rgb(75,192,192)',
+        showLine: false,
+        pointRadius: Number(pointSizeEl.value),
+        data: dataPoints
+      };
+      const list = [base];
+      if (fitHalfLifeActive && halfLifeDataset) list.push(halfLifeDataset);
+      if (fitPowerActive && powerDataset) list.push(powerDataset);
+      if (manualHalfLifeActive && manualHalfLifeDataset) list.push(manualHalfLifeDataset);
+
+      if (fitTripleActive && tripleDataset) list.push(tripleDataset);
+
+      chart.data.datasets = list;
+      chart.update('none');
+    }
+
+    /* ======= UI ======= */
+    pointSizeEl.addEventListener("input", () => rebuildDatasets());
+
+    /* Verbinden */
+    document.getElementById("connectButton").addEventListener("click", async () => {
+      const baudRate = parseInt(document.getElementById('baudRate').value);
+      try {
+        port = await navigator.serial.requestPort();
+        await port.open({ baudRate });
+        writer = port.writable.getWriter();
+        await startReading(true); // t=0 nu, alles leeg
+        document.getElementById('playPauseButton').textContent = 'Stop';
+        logStatus('Verbonden');
+      } catch (err) {
+        console.error(err);
+        logStatus('Fout bij verbinden: ' + err.message);
+      }
+    });
+
+    async function startReading(freshTime=false) {
+      if (!port || !port.readable) return;
+      try { if (reader) { await reader.cancel(); reader.releaseLock(); } } catch(_) {}
+      reader = port.readable.getReader();
+      if (freshTime) {
+        baseTimeSec = Date.now()/1000;
+        dataPoints = [];
+        buffer = '';
+        // overlays + UI schoon
+        fitHalfLifeActive=false; fitPowerActive=false; manualHalfLifeActive=false;
+        halfLifeDataset=null; powerDataset=null; manualHalfLifeDataset=null;
+        lastHalfLifeFit=null; lastPowerFit=null;
+        fitHalfLifeBtn.classList.remove('btn-on'); fitHalfLifeBtn.textContent='Halfwaardetijd-fit';
+        fitPowerBtn.classList.remove('btn-on'); fitPowerBtn.textContent ='Machtswet-fit';
+        toggleManualHalfLifeBtn.classList.remove('manual-on');
+        halfLifeResultEl.textContent=''; fitResultEl.textContent='';
+        // assen
+        chart.options.scales.x.min = 0;
+        chart.options.scales.x.max = 60;
+        chart.options.scales.y.min = 0;
+        delete chart.options.scales.y.max;
+        rebuildDatasets();
+      }
+      keepReading = true;
+      readLoop();
+    }
+
+    async function readLoop() {
+      const decoder = new TextDecoder();
+      while (keepReading) {
+        try {
+          const { value, done } = await reader.read();
+          if (done) break;
+          if (value) {
+            buffer += decoder.decode(value, {stream:true});
+            let lines = buffer.split("\n");
+            buffer = lines.pop();
+            for (let line of lines) {
+              line = line.replace(/\r/g,'').trim();
+              if (!line) continue;
+              // status
+              if (line.startsWith('#')) {
+                logStatus(line);
+                if (line.startsWith('#UV_OFF')) {
+                  resetPlotAfterUV();
+                }
+                continue;
+              }
+              // datapunt
+              const v = parseFloat(line);
+              if (isNaN(v)) { logStatus('Onbekende lijn: ' + line); continue; }
+              const voltage = v;
+              const tRel = Date.now()/1000 - baseTimeSec;
+              dataPoints.push({ x:tRel, y:voltage });
+              // 60 s venster
+              const minX = Math.max(0, tRel - 60);
+              while (dataPoints.length && dataPoints[0].x < minX) dataPoints.shift();
+              // y-as
+              if (dataPoints.length) {
+                const maxY = Math.max(...dataPoints.map(p=>p.y));
+                chart.options.scales.y.min = 0;
+                chart.options.scales.y.max = maxY + Math.max(0.01, maxY*0.1);
+              }
+              chart.options.scales.x.min = minX;
+              chart.options.scales.x.max = tRel;
+              // Als handmatige curve aan staat, updaten zodat schaal meebeweegt
+              if (manualHalfLifeActive) updateManualCurve();
+              rebuildDatasets();
+            }
+          }
+        } catch (err) {
+          console.error(err);
+          logStatus('Leesfout: ' + err.message);
+          break;
+        }
+      }
+    }
+
+    /* Start/Stop */
+    document.getElementById("playPauseButton").addEventListener("click", async () => {
+      const btn = document.getElementById("playPauseButton");
+      if (keepReading) {
+        keepReading = false; try { if (reader) { await reader.cancel(); reader.releaseLock(); } } catch(_) {}
+        btn.textContent = "Start";
+      } else {
+        await startReading(false);
+        btn.textContent = "Stop";
+      }
+    });
+
+    /* RESET: écht opnieuw (alles weg) */
+    document.getElementById("resetButton").addEventListener("click", async () => {
+      keepReading = false; try { if (reader) { await reader.cancel(); reader.releaseLock(); } } catch(_) {}
+      baseTimeSec = Date.now()/1000;
+      dataPoints = [];
+      buffer = '';
+      // overlays + UI uit
+      fitHalfLifeActive=false; fitPowerActive=false; manualHalfLifeActive=false;
+      halfLifeDataset=null; powerDataset=null; manualHalfLifeDataset=null;
+      lastHalfLifeFit=null; lastPowerFit=null;
+      fitHalfLifeBtn.classList.remove('btn-on'); fitHalfLifeBtn.textContent='Halfwaardetijd-fit';
+      fitPowerBtn.classList.remove('btn-on'); fitPowerBtn.textContent ='Machtswet-fit';
+      toggleManualHalfLifeBtn.classList.remove('manual-on');
+      halfLifeResultEl.textContent=''; fitResultEl.textContent='';
+      // assen
+      chart.options.scales.x.min = 0;
+      chart.options.scales.x.max = 60;
+      chart.options.scales.y.min = 0;
+      delete chart.options.scales.y.max;
+      rebuildDatasets();
+      // status ook leegmaken voor "from scratch"
+      statusBox.textContent = '';
+      if (port && port.readable) {
+        await startReading(true);
+        document.getElementById('playPauseButton').textContent = 'Stop';
+      }
+    });
+
+    /* Export */
+    document.getElementById('exportButton').addEventListener('click', () => {
+      let csv = "data:text/csv;charset=utf-8,";
+      csv += "tijd_s;spanning_V\n";
+      csv += dataPoints.map(p => `${p.x.toFixed(3)};${p.y}`).join("\n");
+      const a = document.createElement("a");
+      a.href = encodeURI(csv);
+      a.download = "data.csv";
+      a.click();
+    });
+
+    document.getElementById('saveVisibleCsvButton').addEventListener('click', () => {
+      const xMin = chart.options.scales.x.min;
+      const xMax = chart.options.scales.x.max;
+      const vis = dataPoints.filter(p => p.x >= xMin && p.x <= xMax);
+      let csv = "data:text/csv;charset=utf-8,";
+      csv += "tijd_s;spanning_V\n";
+      csv += vis.map(p => `${p.x.toFixed(3)};${p.y}`).join("\n");
+      const a = document.createElement("a");
+      a.href = encodeURI(csv);
+      a.download = "visible_data.csv";
+      a.click();
+    });
+
+    /* UV-commando's */
+    uvBrightnessEl.addEventListener('input', () => { uvBrightnessValEl.textContent = String(uvBrightnessEl.value); });
+    document.getElementById('setBrightnessButton').addEventListener('click', async () => { await sendBR(); });
+    uvBrightnessEl.addEventListener('change', async () => { await sendBR(); });
+    document.getElementById('uvOnButton').addEventListener('click', async () => {
+      if (!port || !writer) { logStatus('Niet verbonden'); return; }
+      let sec = Math.max(1, Math.min(60, Number(uvSecondsEl.value || 0)));
+      uvSecondsEl.value = sec;
+      try {
+        await writer.write(encoder.encode(`UV:${sec}\n`));
+        logStatus(`Commando verstuurd: UV:${sec}`);
+      }
+      catch (err) { console.error(err); logStatus('Schrijffout: ' + err.message); }
+    });
+
+    async function sendBR() {
+      if (!port || !writer) { logStatus('Niet verbonden'); return; }
+      const val = Math.max(0, Math.min(255, Number(uvBrightnessEl.value || 0)));
+      uvBrightnessEl.value = val; uvBrightnessValEl.textContent = String(val);
+      try {
+        await writer.write(encoder.encode(`BR:${val}\n`));
+        logStatus(`Commando verstuurd: BR:${val}`);
+      }
+      catch (err) { console.error(err); logStatus('Schrijffout: ' + err.message); }
+    }
+
+    /* Reset na UV_OFF */
+    function resetPlotAfterUV() {
+      baseTimeSec = Date.now()/1000;
+      dataPoints = [];
+      buffer = '';
+      fitHalfLifeActive=false; fitPowerActive=false; manualHalfLifeActive=false;
+      halfLifeDataset=null; powerDataset=null; manualHalfLifeDataset=null;
+      lastHalfLifeFit=null; lastPowerFit=null;
+      fitHalfLifeBtn.classList.remove('btn-on'); fitHalfLifeBtn.textContent='Halfwaardetijd-fit';
+      fitPowerBtn.classList.remove('btn-on'); fitPowerBtn.textContent ='Machtswet-fit';
+      toggleManualHalfLifeBtn.classList.remove('manual-on');
+      halfLifeResultEl.textContent=''; fitResultEl.textContent='';
+      chart.options.scales.x.min = 0;
+      chart.options.scales.x.max = 60;
+      chart.options.scales.y.min = 0;
+      delete chart.options.scales.y.max;
+      rebuildDatasets();
+    }
+
+    /* ======= Fits ======= */
+    function linearFitXY(xs, ys) {
+      const n = xs.length;
+      let sx=0, sy=0, sxx=0, sxy=0;
+      for (let i=0;i<n;i++){ const x=xs[i], y=ys[i]; sx+=x; sy+=y; sxx+=x*x; sxy+=x*y; }
+      const den = n*sxx - sx*sx;
+      if (Math.abs(den) < 1e-12) return null;
+      const m = (n*sxy - sx*sy)/den;
+      const c = (sy - m*sx)/n;
+      return { m, c };
+    }
+
+    /* Halfwaardetijd met achtergrond: I(t) = A + I0 * (1/2)^(t/tHalf) — fit t>=1 s */
+    function fitHalfLifeParamsWithBackground(points) {
+      const valid = points.filter(p => p.x >= 1.0 && p.y > 0);
+      if (valid.length < 3) return { ok:false, msg:'Te weinig punten na t ≥ 1 s.' };
+
+      const t = valid.map(p => p.x);
+      const Y = valid.map(p => p.y);
+      const minY = Math.min(...Y);
+      const maxY = Math.max(...Y);
+      const rangeY = Math.max(1e-9, maxY - minY);
+
+      // Zoek A in [Amin, Amax) met grid; A moet kleiner zijn dan alle Y (anders log negatief)
+      const A_min = Math.max(0, minY - 0.2*rangeY); // laat beetje onder minY toe, maar niet <0
+      const A_max = minY - 1e-6; // strikt onder minY voor stabiliteit
+      if (!(A_max > A_min)) return { ok:false, msg:'Geen geldige A-range (meetwaarden te laag/constant).' };
+
+      const N = 60;
+      let best = { sse: Infinity, A: NaN, I0: NaN, tHalf: NaN, r2: NaN };
+
+      function sseR2(A,I0,tHalf){
+        const mean = Y.reduce((s,v)=>s+v,0)/Y.length;
+        let sse=0, sst=0;
+        for (let i=0;i<Y.length;i++){
+          const pred = A + I0 * Math.pow(0.5, t[i]/tHalf);
+          const e = Y[i] - pred; sse += e*e;
+          const d = Y[i] - mean; sst += d*d;
+        }
+        const r2 = (sst>0) ? (1 - sse/sst) : 1;
+        return {sse,r2};
+      }
+
+      for (let k=0;k<N;k++){
+        const A = A_min + (k/(N-1))*(A_max - A_min);
+        // log-fit op ln(Y - A)
+        const yy = [];
+        for (let i=0;i<Y.length;i++){
+          const diff = Y[i] - A;
+          if (diff <= 0) { yy.length = 0; break; }
+          yy.push(Math.log(diff));
+        }
+        if (yy.length !== Y.length) continue;
+        const lf = linearFitXY(t, yy);
+        if (!lf) continue;
+        const slope = lf.m; // verwacht: slope = -(ln 2)/tHalf
+        if (!(slope < 0)) continue; // vereist verval
+        const tHalf = Math.log(2) / (-slope);
+        const I0 = Math.exp(lf.c);
+        if (!isFinite(tHalf) || !isFinite(I0)) continue;
+        const {sse, r2} = sseR2(A,I0,tHalf);
+        if (sse < best.sse) best = { sse, A, I0, tHalf, r2 };
+      }
+
+      if (!isFinite(best.sse)) return { ok:false, msg:'Fit met achtergrond mislukt (geen geschikte A).' };
+      return { ok:true, A: best.A, I0: best.I0, tHalf: best.tHalf, r2: best.r2 };
+    }
+
+    // Halfwaardecurve: ALTIJD vanaf t=0, met globale shift
+    function buildHalfLifeDataset(A, I0, tHalf, tMax, step=0.05, shift=0) {
+      const data = [];
+      for (let t = 0; t <= tMax + 1e-9; t += step) {
+        const y = A + I0 * Math.pow(0.5, t / tHalf);
+        if (isFinite(y)) data.push({ x:t+shift, y });
+      }
+      return { label:'Fit (halfwaardetijd)', data, borderColor:'#7b2cbf', borderWidth:2, pointRadius:0, showLine:true };
+    }
+
+    /* Machtwet: I = a/(t+t0)^b */
+    function fitPowerLaw(points, bMin=0.2, bMax=2.0) {
+      const valid = points.filter(p => p.y > 0);
+      if (valid.length < 3) return { ok:false, msg:'Te weinig positieve punten voor log-fit.' };
+      const tArr = valid.map(p=>p.x), iArr = valid.map(p=>p.y);
+      const maxT = Math.max(...tArr);
+      const t0Max = Math.max(5, 0.5*maxT);
+      const N=80;
+      function sseR2(a,b,t0, T,I){
+        const n=I.length, mean=I.reduce((s,v)=>s+v,0)/n;
+        let sse=0,sst=0;
+        for (let i=0;i<n;i++){
+          const pred = a / Math.pow(T[i]+t0, b);
+          const e=I[i]-pred; sse+=e*e;
+          const d=I[i]-mean; sst+=d*d;
+        }
+        return {sse, r2:(sst>0)?(1-sse/sst):1};
+      }
+      let best = { sse:Infinity, a:NaN, b:NaN, t0:NaN, r2:NaN };
+      for (let k=0;k<N;k++){
+        const t0=(k/(N-1))*t0Max;
+        const xs=[], ys=[], T=[], I=[];
+        for (let i=0;i<valid.length;i++){
+          const u=tArr[i]+t0, Ival=iArr[i];
+          if (u>0 && Ival>0){ xs.push(Math.log(u)); ys.push(Math.log(Ival)); T.push(tArr[i]); I.push(Ival); }
+        }
+        if (xs.length<3) continue;
+        const lf=linearFitXY(xs,ys); if(!lf) continue;
+        let b=-lf.m; let a=Math.exp(lf.c);
+        if (b<bMin || b>bMax) continue;
+        const {sse,r2}=sseR2(a,b,t0,T,I);
+        if (sse<best.sse) best={sse,a,b,t0,r2};
+      }
+      if (!isFinite(best.sse)) {
+        // fallback met b-clamp
+        for (let k=0;k<N;k++){
+          const t0=(k/(N-1))*t0Max;
+          const xs=[], ys=[], T=[], I=[];
+          for (let i=0;i<valid.length;i++){
+            const u=tArr[i]+t0, Ival=iArr[i];
+            if (u>0 && Ival>0){ xs.push(Math.log(u)); ys.push(Math.log(Ival)); T.push(tArr[i]); I.push(Ival); }
+          }
+          if (xs.length<3) continue;
+          const lf=linearFitXY(xs,ys); if(!lf) continue;
+          let b=Math.min(bMax, Math.max(bMin, -lf.m));
+          const a=Math.exp(lf.c);
+          const {sse,r2}=sseR2(a,b,t0,T,I);
+          if (sse<best.sse) best={sse,a,b,t0,r2};
+        }
+        if (!isFinite(best.sse)) return { ok:false, msg:'Geen geschikte t₀ gevonden.' };
+      }
+      return { ok:true, ...best, n: valid.length };
+    }
+
+    function buildPowerDataset(a,b,t0,tMin,tMax,step=0.05, shift=0){
+      const data=[];
+      for (let t=tMin; t<=tMax+1e-9; t+=step) {
+        const y = a / Math.pow(t + t0, b);
+        if (isFinite(y)) data.push({x:t+shift,y});
+      }
+      return { label:'Fit (machtwet)', data, borderColor:'#e03a3a', borderWidth:2, pointRadius:0, showLine:true };
+    }
+
+    /* ======= Toggle knoppen ======= */
+    fitHalfLifeBtn.addEventListener('click', () => {
+      if (fitHalfLifeActive) {
+        // UIT
+        fitHalfLifeActive=false; halfLifeDataset=null; lastHalfLifeFit=null;
+        halfLifeResultEl.textContent=''; fitHalfLifeBtn.classList.remove('btn-on');
+        fitHalfLifeBtn.textContent='Halfwaardetijd-fit';
+        rebuildDatasets();
+        return;
+      }
+      // AAN
+      if (keepReading) { alert("Stop eerst de meting."); return; }
+      if (dataPoints.length < 3) { alert("Te weinig data."); return; }
+      const res = fitHalfLifeParamsWithBackground(dataPoints);
+      if (!res.ok) { halfLifeResultEl.textContent='Fit mislukt: '+res.msg; return; }
+      const allT = dataPoints.map(p=>p.x);
+      const tMin = Math.max(0, Math.min(...allT));
+      const tMax = Math.max(...allT);
+      // Curve altijd vanaf 0, met globale shift
+      halfLifeDataset = buildHalfLifeDataset(res.A, res.I0, res.tHalf, tMax, 0.05, fitGlobalShift);
+      lastHalfLifeFit = { A: res.A, I0: res.I0, tHalf: res.tHalf, tMax };
+      // assen
+      const allY=[...dataPoints.map(p=>p.y), ...halfLifeDataset.data.map(p=>p.y)].filter(Number.isFinite);
+      if (allY.length){ const maxY=Math.max(...allY); chart.options.scales.y.min=0; chart.options.scales.y.max=maxY*1.1; }
+      chart.options.scales.x.min = Math.floor(Math.min(tMin, (halfLifeDataset.data.length?halfLifeDataset.data[0].x:0)));
+      chart.options.scales.x.max = Math.ceil(Math.max(tMax, (halfLifeDataset.data.length?halfLifeDataset.data[halfLifeDataset.data.length-1].x:0)));
+      halfLifeResultEl.textContent = `A=${res.A.toFixed(3)}, I₀=${res.I0.toExponential(3)}, t½=${res.tHalf.toFixed(3)} s, R²=${res.r2.toFixed(4)}`;
+      fitHalfLifeActive=true; fitHalfLifeBtn.classList.add('btn-on');
+      fitHalfLifeBtn.textContent='Verberg halfwaardetijd fit';
+      // sliders initialiseren op fitwaarden:
+      manualBGRange.value = manualBGNum.value = (+res.A.toFixed(2)).toString();
+      manualI0Range.value = manualI0Num.value = (+res.I0.toFixed(2)).toString();
+      manualTHRange.value = manualTHNum.value = (+res.tHalf.toFixed(2)).toString();
+      rebuildDatasets();
+    });
+
+    fitPowerBtn.addEventListener('click', () => {
+      if (fitPowerActive) {
+        // UIT
+        fitPowerActive=false; powerDataset=null; lastPowerFit=null;
+        fitResultEl.textContent=''; fitPowerBtn.classList.remove('btn-on');
+        fitPowerBtn.textContent='Machtswet-fit';
+        rebuildDatasets();
+        return;
+      }
+      // AAN
+      if (keepReading) { alert("Stop eerst de meting."); return; }
+      if (dataPoints.length < 3) { alert("Te weinig data om te fitten."); return; }
+      const fit = fitPowerLaw(dataPoints, 0.2, 2.0);
+      if (!fit.ok) { fitResultEl.textContent='Fit mislukt: '+fit.msg; return; }
+      const tMin = Math.max(0, Math.min(...dataPoints.map(p=>p.x)));
+      const tMax = Math.max(...dataPoints.map(p=>p.x));
+      powerDataset = buildPowerDataset(fit.a, fit.b, fit.t0, tMin, tMax, 0.05, fitGlobalShift);
+      lastPowerFit = { a:fit.a, b:fit.b, t0:fit.t0, tMin, tMax };
+      const allY=[...dataPoints.map(p=>p.y), ...powerDataset.data.map(p=>p.y)].filter(Number.isFinite);
+      if (allY.length){ const maxY=Math.max(...allY); chart.options.scales.y.min=0; chart.options.scales.y.max=maxY+Math.max(0.01,maxY*0.1); }
+      chart.options.scales.x.min = Math.floor(Math.min(tMin, (powerDataset.data.length?powerDataset.data[0].x:tMin)));
+      chart.options.scales.x.max = Math.ceil(Math.max(tMax, (powerDataset.data.length?powerDataset.data[powerDataset.data.length-1].x:tMax)));
+      fitResultEl.textContent = `a=${fit.a.toExponential(3)}, b=${fit.b.toFixed(3)}, t₀=${fit.t0.toFixed(3)} s, R²=${fit.r2.toFixed(4)}`;
+      fitPowerActive=true; fitPowerBtn.classList.add('btn-on');
+      fitPowerBtn.textContent='Verberg machtswet fit';
+      rebuildDatasets();
+    });
+
+    /* ======= Handmatige halfwaardecurve ======= */
+    function getManualParams() {
+      const A   = parseFloat(manualBGRange.value);
+      const I0  = parseFloat(manualI0Range.value);
+      const tHalf= parseFloat(manualTHRange.value);
+      return { A, I0, tHalf };
+    }
+
+    function syncManualInputs(src) {
+      if (src === 'BG-range') manualBGNum.value = manualBGRange.value;
+      if (src === 'BG-num')   manualBGRange.value = manualBGNum.value;
+      if (src === 'I0-range') manualI0Num.value = manualI0Range.value;
+      if (src === 'I0-num')   manualI0Range.value = manualI0Num.value;
+      if (src === 'TH-range') manualTHNum.value = manualTHRange.value;
+      if (src === 'TH-num')   manualTHRange.value = manualTHNum.value;
+    }
+
+    function buildManualHalfLifeDataset(A, I0, tHalf, tMax, step = 0.05, shift=0) {
+      const data = [];
+      for (let t = 0; t <= tMax + 1e-9; t += step) {
+        const y = A + I0 * Math.pow(0.5, t / tHalf);
+        if (isFinite(y)) data.push({ x: t + shift, y });
+      }
+      return {
+        label: 'Handmatige halfwaardecurve',
+        data,
+        borderColor: '#7b2cbf',
+        borderWidth: 2,
+        pointRadius: 0,
+        showLine: true,
+        borderDash: [6, 3]
+      };
+    }
+
+    function updateManualCurve() {
+      if (!manualHalfLifeActive) return;
+      const { A, I0, tHalf } = getManualParams();
+      const tMax = isFinite(chart.options.scales.x.max)
+        ? chart.options.scales.x.max
+        : (dataPoints.length ? Math.max(...dataPoints.map(p=>p.x)) : 10);
+      manualHalfLifeDataset = buildManualHalfLifeDataset(A, I0, tHalf, Math.max(1, tMax), 0.05, fitGlobalShift);
+      updateAxes();
+      rebuildDatasets();
+    }
+
+    toggleManualHalfLifeBtn.addEventListener('click', () => {
+      manualHalfLifeActive = !manualHalfLifeActive;
+      if (manualHalfLifeActive) {
+        toggleManualHalfLifeBtn.classList.add('manual-on');
+        updateManualCurve(); // initial build
+      } else {
+        toggleManualHalfLifeBtn.classList.remove('manual-on');
+        manualHalfLifeDataset = null;
+        rebuildDatasets();
+      }
+    });
+
+    // Sliders & number inputs synchroon + live update
+    manualBGRange.addEventListener('input', () => { syncManualInputs('BG-range'); updateManualCurve(); });
+    manualBGNum  .addEventListener('input', () => { syncManualInputs('BG-num');   updateManualCurve(); });
+    manualI0Range.addEventListener('input', () => { syncManualInputs('I0-range'); updateManualCurve(); });
+    manualI0Num  .addEventListener('input', () => { syncManualInputs('I0-num');   updateManualCurve(); });
+    manualTHRange.addEventListener('input', () => { syncManualInputs('TH-range'); updateManualCurve(); });
+    manualTHNum  .addEventListener('input', () => { syncManualInputs('TH-num');   updateManualCurve(); });
+
+    // ======= Globale horizontale verschuiving voor alle fits =======
+    function syncFitShiftInputs(src){
+      if (src==='range') fitShiftNum.value = fitShiftRange.value;
+      if (src==='num')   fitShiftRange.value = fitShiftNum.value;
+      fitGlobalShift = parseFloat(fitShiftRange.value) || 0;
+    }
+
+    function rebuildFitsWithShift(){
+      // Half-life fit
+      if (fitHalfLifeActive && lastHalfLifeFit){
+        const tMax = lastHalfLifeFit.tMax ?? (dataPoints.length? Math.max(...dataPoints.map(p=>p.x)) : 10);
+        halfLifeDataset = buildHalfLifeDataset(lastHalfLifeFit.A, lastHalfLifeFit.I0, lastHalfLifeFit.tHalf, tMax, 0.05, fitGlobalShift);
+      }
+      // Power-law fit
+      if (fitPowerActive && lastPowerFit){
+        const tMin = lastPowerFit.tMin ?? 0;
+        const tMax = lastPowerFit.tMax ?? (dataPoints.length? Math.max(...dataPoints.map(p=>p.x)) : 10);
+        powerDataset = buildPowerDataset(lastPowerFit.a, lastPowerFit.b, lastPowerFit.t0, tMin, tMax, 0.05, fitGlobalShift);
+      }
+      // Manual curve
+      if (manualHalfLifeActive) updateManualCurve();
+      updateAxes();
+      rebuildDatasets();
+    }
+
+    fitShiftRange.addEventListener('input', ()=>{ syncFitShiftInputs('range'); rebuildFitsWithShift(); });
+    fitShiftNum  .addEventListener('input', ()=>{ syncFitShiftInputs('num');   rebuildFitsWithShift(); });
+
+    // ======= As-update helper =======
+    function updateAxes(){
+      const datasetsToConsider = [];
+      if (dataPoints.length) datasetsToConsider.push(...dataPoints.map(p=>({x:p.x,y:p.y})));
+      if (fitHalfLifeActive && halfLifeDataset) datasetsToConsider.push(...halfLifeDataset.data);
+      if (fitPowerActive && powerDataset) datasetsToConsider.push(...powerDataset.data);
+      if (manualHalfLifeActive && manualHalfLifeDataset) datasetsToConsider.push(...manualHalfLifeDataset.data);
+      const xs = datasetsToConsider.map(p=>p.x).filter(Number.isFinite);
+      const ys = datasetsToConsider.map(p=>p.y).filter(Number.isFinite);
+      if (xs.length){
+        const minX = Math.min(...xs);
+        const maxX = Math.max(...xs);
+        chart.options.scales.x.min = Math.floor(minX);
+        chart.options.scales.x.max = Math.ceil(maxX);
+      }
+      if (ys.length){
+        const maxY = Math.max(...ys);
+        chart.options.scales.y.min = 0;
+        chart.options.scales.y.max = maxY + Math.max(0.01, maxY*0.1);
+      }
+    }
+  
+/* ======= Triple Exponentiële Fit ======= */
+
+let fitTripleActive = false;
+let tripleDataset = null;
+
+function tripleModel(t,A,B1,T1,B2,T2,B3,T3){
+  return A 
+    + B1*Math.exp(-t/T1)
+    + B2*Math.exp(-t/T2)
+    + B3*Math.exp(-t/T3);
+}
+
+function buildTripleDataset(A,B1,T1,B2,T2,B3,T3,step=0.05){
+  const data=[];
+  if(dataPoints.length===0) return null;
+  const tMax = Math.max(...dataPoints.map(p=>p.x));
+  for(let t=0;t<=tMax;t+=step){
+    data.push({x:t+fitGlobalShift,y:tripleModel(t,A,B1,T1,B2,T2,B3,T3)});
+  }
+  return {
+    label:"Fit (triple exp)",
+    data,
+    borderColor:"#1b5e20",
+    borderWidth:2,
+    pointRadius:0,
+    showLine:true
+  };
+}
+
+function syncTripleInputs(src,idRange,idNum){
+  const r=document.getElementById(idRange);
+  const n=document.getElementById(idNum);
+  if(src==="range") n.value=r.value;
+  if(src==="num") r.value=n.value;
+}
+
+function getTripleParams(){
+  return {
+    A:parseFloat(tripleA.value),
+    B1:parseFloat(tripleB1.value),
+    T1:parseFloat(tripleT1.value),
+    B2:parseFloat(tripleB2.value),
+    T2:parseFloat(tripleT2.value),
+    B3:parseFloat(tripleB3.value),
+    T3:parseFloat(tripleT3.value)
+  };
+}
+
+function updateTripleCurve(){
+  if(!fitTripleActive) return;
+  const p=getTripleParams();
+  tripleDataset=buildTripleDataset(p.A,p.B1,p.T1,p.B2,p.T2,p.B3,p.T3);
+  rebuildDatasets();
+  updateAxes();
+  rebuildDatasets();
+  document.getElementById("tripleFitResult").textContent =
+    `A=${p.A.toFixed(3)}, B1=${p.B1.toFixed(3)}, τ1=${p.T1.toFixed(3)}, ` +
+    `B2=${p.B2.toFixed(3)}, τ2=${p.T2.toFixed(3)}, ` +
+    `B3=${p.B3.toFixed(3)}, τ3=${p.T3.toFixed(3)}`;
+}
+
+function autoTripleFit(){
+  if(dataPoints.length<10) return;
+  let {A,B1,T1,B2,T2,B3,T3}=getTripleParams();
+  const lr=1e-4;
+  for(let iter=0;iter<2000;iter++){
+    let dA=0,dB1=0,dT1=0,dB2=0,dT2=0,dB3=0,dT3=0;
+    for(const p of dataPoints){
+      const pred=tripleModel(p.x,A,B1,T1,B2,T2,B3,T3);
+      const e=pred-p.y;
+      dA+=2*e;
+      dB1+=2*e*Math.exp(-p.x/T1);
+      dT1+=2*e*B1*Math.exp(-p.x/T1)*(p.x/(T1*T1));
+      dB2+=2*e*Math.exp(-p.x/T2);
+      dT2+=2*e*B2*Math.exp(-p.x/T2)*(p.x/(T2*T2));
+      dB3+=2*e*Math.exp(-p.x/T3);
+      dT3+=2*e*B3*Math.exp(-p.x/T3)*(p.x/(T3*T3));
+    }
+    A-=lr*dA; B1-=lr*dB1; T1-=lr*dT1;
+    B2-=lr*dB2; T2-=lr*dT2;
+    B3-=lr*dB3; T3-=lr*dT3;
+    T1=Math.max(0.1,T1);
+    T2=Math.max(0.1,T2);
+    T3=Math.max(0.1,T3);
+  }
+  tripleA.value=tripleANum.value=A;
+  tripleB1.value=tripleB1Num.value=B1;
+  tripleT1.value=tripleT1Num.value=T1;
+  tripleB2.value=tripleB2Num.value=B2;
+  tripleT2.value=tripleT2Num.value=T2;
+  tripleB3.value=tripleB3Num.value=B3;
+  tripleT3.value=tripleT3Num.value=T3;
+}
+
+document.getElementById("fitTripleButton").addEventListener("click",()=>{
+  if(fitTripleActive){
+    fitTripleActive=false;
+    tripleDataset=null;
+    document.getElementById("tripleFitResult").textContent="";
+    rebuildDatasets();
+    return;
+  }
+  if(keepReading){ alert("Stop eerst de meting."); return; }
+  fitTripleActive=true;
+  autoTripleFit();
+  updateTripleCurve();
+});
+
+["A","B1","T1","B2","T2","B3","T3"].forEach(s=>{
+  const r=document.getElementById("triple"+s);
+  const n=document.getElementById("triple"+s+"Num");
+  r.addEventListener("input",()=>{syncTripleInputs("range","triple"+s,"triple"+s+"Num");updateTripleCurve();});
+  n.addEventListener("input",()=>{syncTripleInputs("num","triple"+s,"triple"+s+"Num");updateTripleCurve();});
+});
+
+</script>
+</body>
+</html>

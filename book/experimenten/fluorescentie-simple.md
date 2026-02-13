@@ -28,7 +28,7 @@ Met de link hieronder wordt via javascript code in een .html pagina de spanning 
 * Lees de halfwaardetijd op minstens 2 verschillende plaatsen zo nauwkeurig mogelijk af en noteer deze ergens. Bij voorbeeld aan het begin en vanaf 3 seconden oid. Is dit hetzelfde?
 * Herhaal de meting een paar keer. Druk daartoe dan op RESET en stel de UV tijd en intensiteit in en druk op "UV aan". De meting begint opnieuw. 
 
-<a href="./media/fluorescentie-simple/measure-versie9.html" target="_blank">Open measuring applet</a>
+<a href="./media/fluorescentie-simple/measure-versie11.html" target="_blank">Open measuring applet</a>
 <br><br>
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
