@@ -7,7 +7,7 @@ In het kort werkt dit eenvoudige fluorescentie experiment als volgt: We plaatsen
 Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal vrij lang nagloeien. Bij fluorescentie is dit nanosecondes, bij fosforescentie duurt dit millisecondes tot uren. Dit proces is eenvoudig(er) meetbaar. Waarom fosforescentie zoveel langer duurt is te vinden in de theorie aan het einde.
 
 ## Materiaal
-* Doosje (3D geprint), lichtdicht. Download hier de 3D bestanden (STL): {Download}`software<./media/fluorescentie-simple/Small box with hinged lid -aangepast-versie-with-holes.stl>`
+* Doosje (3D geprint), lichtdicht, met in het deksel 4x 1mm gaatje geboord. Download hier de 3D bestanden (STL): {Download}`software<./media/fluorescentie-simple/Small box with hinged lid -aangepast-versie-with-holes.stl>`
 * Fototransistor (Kingbright l-53p3c) (korte poot is collector, aangesloten op 5V).
 * UV led (mat, ander uiterlijk dan fototransistor ivm verwarring)
 * Dupont jumper cables M-F 20 of 30cm 4 stuks.
@@ -32,19 +32,27 @@ Het schakelschema staat hieronder:
 ## Meten
 Met de link hieronder wordt via javascript code in een webpagina de spanning die de Arduino meet weergegeven. De gemeten spanning is een maat voor de hoeveelheid licht die op de fototransistor valt. 
 
-* Schijn flink met de UV lamp op het sample (het fosforescerende materiaal in het doosje). 
-* Sluit het doosje en snel: 
-* Sluit de USB poort aan. 
-* Open onderstaande link met een **Chrome** of Edge browser en 
-* Druk op de verbinding maken en geef de USB poort toestemming.  
-* De meting begint vanzelf. Als de doos dicht is, is de spanning laag (bijna 0V), als de doos open is dan is de spanning hoog (bijna 5V).
-* Sluit de doos en druk op "UV aan". De UV lamp in de doos schijnt standaard 5 seconden op het sample. Na 5 seconden reset de grafiek en:
-* Meet gedurende circa 30 seconden en STOP dan de meting.
-* Lees de halfwaardetijd op minstens 2 verschillende plaatsen zo nauwkeurig mogelijk af en noteer deze ergens. Bij voorbeeld aan het begin en vanaf 3 seconden oid. Is dit hetzelfde?
-* Herhaal de meting een paar keer. Druk daartoe dan op RESET en stel de UV tijd en intensiteit in en druk op "UV aan". De meting begint opnieuw. 
+1) Open het doosje door een beetje op de voorkant van de onderzijde te drukken en tegelijk de bovenkant omhoog te draaien naar achteren.
+2) Bekijk de binnenkant: Beneden bevindt zich fosforescerend, zelfklevend papier. Aan de binnenkant van de deksel bevinden zich links een matte UVled en rechts de fototransistor.
+3) Sluit het doosje.
+4) Sluit de USB poort aan. 
+5) Open onderstaande link met een **Chrome** of Edge browser en 
+6) Druk op de verbinding maken en geef de USB poort toestemming.  
+7) De meting begint vanzelf. Als de doos dicht is, is de spanning laag (bijna 0V), als de doos open is dan is de spanning hoog (bijna 5V). Probeer maar.
+8) Sluit de doos en druk op "UV aan". De UV lamp in de doos schijnt standaard 5 seconden op het sample. Na 5 seconden reset de grafiek en meet hij verder:
+9) Meet gedurende circa 30 seconden en STOP dan de meting.
+10) Lees de halfwaardetijd op minstens 2 verschillende plaatsen zo nauwkeurig mogelijk af en noteer deze ergens. Bij voorbeeld aan het begin en vanaf 3 seconden oid. Is dit hetzelfde?
+11) Druk op de Halfwaardetijd-fit knop. Herken je de functie? De A staat voor achtergrond. Het programma probeert een fit te maken, maar deze is niet erg goed. 
+12) Probeer nu met de Handmatige halfwaardecurve knop een betere fit te krijgen:
+13) Bepaal eerst de achtergrond. Sluit daartoe het doosje en reset de meting (druk 2x op Reset). Hoe groot is de spanning in compleet duister?
+13) Doe de meting opnieuw: Herhaal punt **8 en 9**. 
+14) Druk op de Handmatige halfwaardecurve knop en stel met de schuiven de achtergrond in en ook $I_0$. Probeer vervolgens met de laatste schuif de fit zo goed mogelijk passen te krijgen. (Als de grafiek raar zoomt kun je dat herstellen door 2x op de halfwaardetijd-fit knop te drukken) 
+15) Hoe groot is de best passende halfwaarde tijd? Komt die overeen met de waardes die je vond bij **10**?
+16) Zoals je hebt gemerkt is de fit niet geweldig passend. Probeer nu de Machtswet-fit eens...die past perfect! Meer hierover in de theorie.
 
 <a href="./media/fluorescentie-simple/measure-versie11.html" target="_blank">Open measuring applet</a>
 <br><br>
+
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
 
