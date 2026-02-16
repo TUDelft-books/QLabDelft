@@ -22,8 +22,9 @@ Het schakelschema staat hieronder:
     :align: left
 ``` 
 <br>
+
 ```{figure} ./media/fluorescentie-simple/schema.png
-    :width: 400
+    :width: 700
     :name: schema
     :align: left
 ``` 
