@@ -17,7 +17,7 @@ Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal
 
 Het schakelschema staat hieronder:
 ```{figure} ./media/fluorescentie-simple/schema-tinkercad.png
-    :width: 400
+    :width: 700
     :name: schema
     :align: left
 ``` 
