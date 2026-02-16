@@ -21,11 +21,11 @@ Het schakelschema staat hieronder:
     :name: schema
     :align: left
 ``` 
-
+<br>
 ```{figure} ./media/fluorescentie-simple/schema.png
     :width: 400
     :name: schema
-    :align: right
+    :align: left
 ``` 
 
 ## Meten
