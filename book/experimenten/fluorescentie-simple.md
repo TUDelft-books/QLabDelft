@@ -11,7 +11,7 @@ Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal
 * Fototransistor (Kingbright l-53p3c) (korte poot is collector, aangesloten op 5V).
 * UV led (mat, ander uiterlijk dan fototransistor ivm verwarring)
 * Dupont jumper cables M-F 20 of 30cm 4 stuks.
-* Arduino Leonardo + case en kabel
+* Arduino Uno of Leonardo + case en kabel De Arduino is vooraf geprogrammeerd. De Arduino code is hier eventueel te downloaden. {Download}`software<./media/fluorescentie-simple/ReadVoltageNew.ino>`
 * Stukje zwart ducktape
 * Fluorescerend materiaal (accufolie??)
 
@@ -56,7 +56,7 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
 
-De Arduino code is hier eventueel ook te downloaden. {Download}`software<./media/fluorescentie-simple/ReadVoltageNew.ino>`
+
 
 ## Theoretische achtergrond
 De fosforescentie wordt veroorzaakt door 
