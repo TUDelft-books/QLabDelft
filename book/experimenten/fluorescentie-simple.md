@@ -73,6 +73,47 @@ By Curtis Mobley, from: https://www.oceanopticsbook.info/view/scattering/level-2
 
 uitleg triple states
 
+Met hulp van notebooklm 
+
+Bronnen:  
+
+ 
+
+De Triplettoestand en de Verboden Overgang 
+
+(Opgeslagen reacties kunnen alleen worden weergegeven) 
+
+Om het verhaal van de verboden overgang en de triplet state te begrijpen, moeten we kijken naar hoe elektronen in moleculen hun "spin" (draairichting) organiseren. 
+
+Wat is een Triplet State? 
+
+De meeste stabiele moleculen bevinden zich in de grondtoestand in een singlet state (S0 ). Dit betekent dat alle elektronen in paren voorkomen waarbij hun spins tegenovergesteld zijn ("paired"), waardoor het totale spin-impulsmoment nul is. 
+
+Wanneer een molecuul wordt aangeslagen door licht, springt een elektron naar een hoger energieniveau. Er zijn dan twee mogelijkheden: 
+
+1. Singlet excited state (S1 ): De spin van het aangeslagen elektron verandert niet; de spins blijven tegenovergesteld. 
+
+2. Triplet excited state (T1 ): De spin van het aangeslagen elektron klapt om ("reorients"), waardoor er twee ongepaarde elektronen zijn met dezelfde spin-orientatie. 
+
+De naam "triplet" komt voort uit het feit dat zo'n toestand in een magnetisch veld wordt gesplitst in drie verschillende energieniveaus (gebaseerd op de oriëntatie van het spin-impulsmoment ten opzichte van het veld). Een belangrijk kenmerk is dat de laagste triplet toestand (T1 ) bijna altijd een lagere energie heeft dan de laagste aangeslagen singlet toestand (S1 ). 
+
+Het verhaal van de "Verboden Overgang" 
+
+In de kwantummechanica wordt de overgang tussen een singlet toestand en een triplet toestand beschouwd als "verboden". Dit betekent niet dat het onmogelijk is, maar dat de waarschijnlijkheid dat het gebeurt zeer klein is. 
+
+• Licht kan spins niet flippen: Spectroscopische processen, zoals de absorptie of emissie van een foton, kunnen de richting van een elektronenspin niet zomaar veranderen. Omdat de grondtoestand (S0 ) een singlet is en de triplet toestand (T1 ) een andere spin-multipliciteit heeft, kan een molecuul niet direct door licht te absorberen in een triplet toestand komen. 
+
+• Intersystem Crossing: Moleculen bereiken de triplet toestand meestal via een omweg genaamd intersystem crossing, waarbij een molecuul vanuit de aangeslagen singlet toestand (S1 ) zonder straling overgaat naar de triplet toestand (T1 ). 
+
+• De valstrik: Eenmaal in de triplet toestand zit het molecuul als het ware "gevangen". Omdat de terugkeer naar de singlet grondtoestand (S0 ) weer een verboden overgang is (de spin moet immers weer terugklappen), gebeurt dit proces heel traag. 
+
+Waarom dit zorgt voor nagloeien 
+
+Omdat de overgang van triplet naar singlet "verboden" is, is de levensduur van de triplet toestand uitzonderlijk lang in vergelijking met die van een singlet toestand. Terwijl fluorescentie (singlet-naar-singlet) bijna direct stopt (minder dan 10−7 seconden), kan fosforescentie (triplet-naar-singlet) fracties van seconden tot zelfs minuten duren. 
+
+De enige manier waarop deze verboden overgang toch kan plaatsvinden, is door spin-orbit koppeling. Dit is een interactie waarbij de spin van het elektron "mengt" met zijn baanbeweging, waardoor de triplet toestand een klein beetje "singlet-karakter" leent en de overgang heel langzaam toch mogelijk wordt. Moleculen met zware atomen (zoals jodium of broom) hebben een sterkere spin-orbit koppeling, waardoor de verboden overgang iets makkelijker (sneller) verloopt. 
+
+* 
 op materiaal niveau (vele fotonen)
 enkel foton is (poisson)kans proces --> vele fotonen exponentieel verval verband.
 echter materiaal eigenschappen zorgern ervoor dat:
