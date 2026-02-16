@@ -20,14 +20,14 @@ Het schakelschema staat hieronder:
     :width: 700
     :name: schema
     :align: left
-``` 
+```
 <br>
 
 ```{figure} ./media/fluorescentie-simple/schema.png
     :width: 700
     :name: schema
     :align: left
-``` 
+```
 
 ## Meten
 Met de link hieronder wordt via javascript code in een webpagina de spanning die de Arduino meet weergegeven. De gemeten spanning is een maat voor de hoeveelheid licht die op de fototransistor valt. 
@@ -39,7 +39,7 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 * Druk op de verbinding maken en geef de USB poort toestemming.  
 * De meting begint vanzelf. Als de doos dicht is, is de spanning laag (bijna 0V), als de doos open is dan is de spanning hoog (bijna 5V).
 * Sluit de doos en druk op "UV aan". De UV lamp in de doos schijnt standaard 5 seconden op het sample. Na 5 seconden reset de grafiek en:
-* Meet gedurende circa 50 seconden en STOP dan de meting.
+* Meet gedurende circa 30 seconden en STOP dan de meting.
 * Lees de halfwaardetijd op minstens 2 verschillende plaatsen zo nauwkeurig mogelijk af en noteer deze ergens. Bij voorbeeld aan het begin en vanaf 3 seconden oid. Is dit hetzelfde?
 * Herhaal de meting een paar keer. Druk daartoe dan op RESET en stel de UV tijd en intensiteit in en druk op "UV aan". De meting begint opnieuw. 
 
