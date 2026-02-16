@@ -121,6 +121,11 @@ uitleg Fosforescentie ontstaat doordat elektronen vast komen te zitten in "traps
 
 
 
+Laten we de halfwaardetijd ($t_{1/2}$) berekenen vanaf het startpunt $t=0$:De intensiteit op $t=0$ is $I_0 = \frac{a}{t_0^b}$. We zoeken het tijdstip $t_{1/2}$ waarop $I(t) = \frac{1}{2} I_0$.De formule hiervoor is:$t_{1/2} = t_0 \cdot (2^{1/b} - 1)$ 
+voorbeeld
+$t_0 = 0.253$ $b = 0.718$ $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1)$ $t_{1/2} = 0.253 \cdot (2^{1.3927} - 1)$ $t_{1/2} = 0.253 \cdot (2.625 - 1)$ $t_{1/2} \approx 0.411$ seconden
+
+
 afleiding 
 
 % Afleiding van de vervaltijd t_x voor een Power Law
