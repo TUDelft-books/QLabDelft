@@ -59,7 +59,8 @@ Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en ve
 
 
 ## Theoretische achtergrond
-Fluorescentie wordt uitgebreid behandeld in de NLT-module **Quantum Ready!**. Hieronder zie je een fluorescentie-energiediagram uit deze module. Een foton brengt een molecuul in de aangeslagen toestand: Het electron komt in een hoger energieniveau. Vervolgens wordt er wat energie verloren *Q* via een stralingsvrije overgang. Tenslotte valt het electron terug naar de grondtoestand onder het uitzenden van een foton (met minder energie en dus een andere kleur dan het oorspronkelijke foton). Dit is over het algemeen een proces dat nanosecondes duurt. 
+### Waarom fosforescentie langer duurt dan fluorescentie
+Fluorescentie wordt uitgebreid behandeld in de NLT-module **Quantum Ready!**. Hieronder zie je een fluorescentie-energiediagram uit deze module. Een foton brengt een molecuul in de aangeslagen toestand: Het electron komt in een hoger energieniveau. Vervolgens komt er wat energie vrij *Q* via een stralingsvrije overgang. Tenslotte valt het electron terug naar de grondtoestand onder het uitzenden van een foton (met minder energie en dus een andere kleur dan het oorspronkelijke foton). Dit is over het algemeen een proces dat nanosecondes duurt. 
 
 ```{figure} ./media/fluorescentie-simple/energiediam1.png
     :width: 400
@@ -77,100 +78,61 @@ By Curtis Mobley, from: https://www.oceanopticsbook.info/view/scattering/level-2
 ``` 
 
 Een foton brengt een molecuul in de aangeslagen toestand, waarbij een electron in een hoger energie niveau komt. 
-Het electron zat in de grondtoestand in gepaarde toestand: Het ene electron had een spin-up, het andere spin-down. Dit noemen we een singlet toestand $S_0$. Als het ene electron in een hoger niveau komt, blijft zijn spin behouden/ hetzelfde ($S_1$). Via een intersystem-crossing, (ook een stralingsvrije overgang waarbij wat energie verloren gaat), komt het electron in een triplet toestand $T_1$ terecht, 
+Het electron zat in de grondtoestand in gepaarde toestand: Het ene electron had een spin-up, het andere spin-down. Dit noemen we een singlet toestand $S_0$. (Het spin-impulsmoment is hierbij nul). Als het ene electron in een hoger niveau komt, blijft zijn spin behouden/ hetzelfde ($S_1$). Via een intersystem-crossing waarbij wat energie vrij komt, komt het electron in een triplet toestand $T_1$ terecht, maar dan is de spin van het electron geflipt! (Het kostte wat energie om he te flippen, maar die kwam vrij). Wanneer het electron nu wil terugkeren naar de grondtoestand $S_0$ is er een probleem: Hij heeft dezelfde spin als het oorspronkelijk gepaarde electron. We noemen dit daarom een **verboden overgang**. Het electron moet wachten tot het voldoende energie heeft om de spinflip te maken, voordat het kan terugvallen naar de grondtoestand $S_0$. (Deze energie kan niet uit een foton komen, maar komt uit de spin-baan koppeling (bron: ??).) Dit "wachten" op de spinflip zorgt ervoor dat fluorescentie zolang kan bestaan.
 
-wordt veroorzaakt door 
-op energie niveau (1 foton)
-jablonski diagram
+### Waarom welk verband
+Het terugvallen van aangeslagen elektronen en daarbij het vrijkomen van fotonen is een kansproces. We verwachten daarom een afnemend exponentieel verband, waarbij 50% van de fotonen is teruggevallen bij de fosforescentie-halfwaardetijd van het molecuul. 
+Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. Ze zitten in zogenaamde "traps" van verschillende diepte (bron: ???.). In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte, wat leidt tot exponentieel verval. Traps van verschillende diepte zorgen voor een (ontelbare) optelsom van exponentiële functies: De machtreeks.
 
+### Rekenen met de machtreeks
+Uit de machtreeks is vrij eenvoudig de halfwaardetijd te berekenen: 
 
+$I(t) = \frac{a}{(t + t_0)^b}$
+We zoeken het tijdstip $t_{1/2}$ waarop $I(t) = \frac{1}{2} I_0$.
 
-
-
-uitleg triple states
-
-Met hulp van notebooklm 
-
-Bronnen:  
-
- 
-
-De Triplettoestand en de Verboden Overgang 
-
-(Opgeslagen reacties kunnen alleen worden weergegeven) 
-
-Om het verhaal van de verboden overgang en de triplet state te begrijpen, moeten we kijken naar hoe elektronen in moleculen hun "spin" (draairichting) organiseren. 
-
-Wat is een Triplet State? 
-
-De meeste stabiele moleculen bevinden zich in de grondtoestand in een singlet state (S0 ). Dit betekent dat alle elektronen in paren voorkomen waarbij hun spins tegenovergesteld zijn ("paired"), waardoor het totale spin-impulsmoment nul is. 
-
-Wanneer een molecuul wordt aangeslagen door licht, springt een elektron naar een hoger energieniveau. Er zijn dan twee mogelijkheden: 
-
-1. Singlet excited state (S1 ): De spin van het aangeslagen elektron verandert niet; de spins blijven tegenovergesteld. 
-
-2. Triplet excited state (T1 ): De spin van het aangeslagen elektron klapt om ("reorients"), waardoor er twee ongepaarde elektronen zijn met dezelfde spin-orientatie. 
-
-De naam "triplet" komt voort uit het feit dat zo'n toestand in een magnetisch veld wordt gesplitst in drie verschillende energieniveaus (gebaseerd op de oriëntatie van het spin-impulsmoment ten opzichte van het veld). Een belangrijk kenmerk is dat de laagste triplet toestand (T1 ) bijna altijd een lagere energie heeft dan de laagste aangeslagen singlet toestand (S1 ). 
-
-Het verhaal van de "Verboden Overgang" 
-
-In de kwantummechanica wordt de overgang tussen een singlet toestand en een triplet toestand beschouwd als "verboden". Dit betekent niet dat het onmogelijk is, maar dat de waarschijnlijkheid dat het gebeurt zeer klein is. 
-
-• Licht kan spins niet flippen: Spectroscopische processen, zoals de absorptie of emissie van een foton, kunnen de richting van een elektronenspin niet zomaar veranderen. Omdat de grondtoestand (S0 ) een singlet is en de triplet toestand (T1 ) een andere spin-multipliciteit heeft, kan een molecuul niet direct door licht te absorberen in een triplet toestand komen. 
-
-• Intersystem Crossing: Moleculen bereiken de triplet toestand meestal via een omweg genaamd intersystem crossing, waarbij een molecuul vanuit de aangeslagen singlet toestand (S1 ) zonder straling overgaat naar de triplet toestand (T1 ). 
-
-• De valstrik: Eenmaal in de triplet toestand zit het molecuul als het ware "gevangen". Omdat de terugkeer naar de singlet grondtoestand (S0 ) weer een verboden overgang is (de spin moet immers weer terugklappen), gebeurt dit proces heel traag. 
-
-Waarom dit zorgt voor nagloeien 
-
-Omdat de overgang van triplet naar singlet "verboden" is, is de levensduur van de triplet toestand uitzonderlijk lang in vergelijking met die van een singlet toestand. Terwijl fluorescentie (singlet-naar-singlet) bijna direct stopt (minder dan 10−7 seconden), kan fosforescentie (triplet-naar-singlet) fracties van seconden tot zelfs minuten duren. 
-
-De enige manier waarop deze verboden overgang toch kan plaatsvinden, is door spin-orbit koppeling. Dit is een interactie waarbij de spin van het elektron "mengt" met zijn baanbeweging, waardoor de triplet toestand een klein beetje "singlet-karakter" leent en de overgang heel langzaam toch mogelijk wordt. Moleculen met zware atomen (zoals jodium of broom) hebben een sterkere spin-orbit koppeling, waardoor de verboden overgang iets makkelijker (sneller) verloopt. 
-
-* 
-op materiaal niveau (vele fotonen)
-enkel foton is (poisson)kans proces --> vele fotonen exponentieel verval verband.
-echter materiaal eigenschappen zorgern ervoor dat:
-uitleg Fosforescentie ontstaat doordat elektronen vast komen te zitten in "traps" (defecten in het kristalrooster - gedoteerd). Om te emitteren, moeten ze eerst thermisch worden geactiveerd om uit die trap te ontsnappen.In een perfect kristal hebben alle traps dezelfde diepte (leidt tot exponentieel verval).In fosforescerend papier (vaak gedoteerd met zeldzame aarden zoals $SrAl_2O_4:Eu,Dy$) is er een distributie van trap-dieptes.
+Op t=0 geldt:
+$I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
+dus op tijdstip $t=t_{1/2}$ geldt: 
+$I(t) = \frac{1}{2} I_0 = \frac{1}{2}\frac{a}{t_0^b} = \frac{a}{(t + t_0)^b}$
+wegstrepen a en omdraaien of kruislings-vermenigvuldigen levert:
+$2t_0^b = (t+t_0)^b$
+links en rechts de b-macht wortel nemen:
+$2^{1/b}\cdot t_0 = t+t_0$
+dus: 
+$t = 2^{1/b}\cdot t_0 - t_0$ 
+en netter:
+$t = t_0(2^{1/b}-1)$
 
 
+Bijvoorbeeld als je de volgende waarden hebt gevonden: $t_0 = 0.253$ en $b = 0.718$, dan geldt:
+ $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1)$ $t_{1/2} = 0.253 \cdot (2^{1.3927} - 1)$ $t_{1/2} = 0.253 \cdot (2.625 - 1)$ $t_{1/2} \approx 0.41$ seconden
 
-Laten we de halfwaardetijd ($t_{1/2}$) berekenen vanaf het startpunt $t=0$:De intensiteit op $t=0$ is $I_0 = \frac{a}{t_0^b}$. We zoeken het tijdstip $t_{1/2}$ waarop $I(t) = \frac{1}{2} I_0$.De formule hiervoor is:$t_{1/2} = t_0 \cdot (2^{1/b} - 1)$ 
-voorbeeld
-$t_0 = 0.253$ $b = 0.718$ $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1)$ $t_{1/2} = 0.253 \cdot (2^{1.3927} - 1)$ $t_{1/2} = 0.253 \cdot (2.625 - 1)$ $t_{1/2} \approx 0.411$ seconden
-
-
-afleiding 
-
+Je kunt nu zelf narekenen dat voor het tijdstip dat je 1% over hebt, geldt:
 % Afleiding van de vervaltijd t_x voor een Power Law
 
 % De basisformule voor intensiteit
-$I(t) = \frac{a}{(t + t_0)^b}$
+%$I(t) = \frac{a}{(t + t_0)^b}
 
 % Stap 1: De beginintensiteit bepalen (t = 0)
-$I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
+%$I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
 
 % Stap 2: De conditie voor fractie x opstellen
-$\frac{a}{(t_x + t_0)^b} = x \cdot \frac{a}{t_0^b}$
+%$\frac{a}{(t_x + t_0)^b} = x \cdot \frac{a}{t_0^b}$
 
 % Stap 3: De constante a elimineren en de vergelijking omdraaien
-$(t_x + t_0)^b = \frac{t_0^b}{x}$
+%$(t_x + t_0)^b = \frac{t_0^b}{x}$
 
 % Stap 4: De macht b isoleren door te verheffen tot de macht 1/b
-$t_x + t_0 = \left( \frac{t_0^b}{x} \right)^{1/b}$
+%$t_x + t_0 = \left( \frac{t_0^b}{x} \right)^{1/b}$
 
 % Stap 5: Vereenvoudigen en t_x oplossen
-$t_x + t_0 = t_0 \cdot \left( \frac{1}{x} \right)^{1/b}$
-$t_x = t_0 \cdot \left( \frac{1}{x} \right)^{1/b} - t_0$
+%$t_x + t_0 = t_0 \cdot \left( \frac{1}{x} \right)^{1/b}$
+%$t_x = t_0 \cdot \left( \frac{1}{x} \right)^{1/b} - t_0$
 
 % Stap 6: De definitieve formule (buiten haakjes halen)
-$t_x = t_0 \cdot \left( \left[ \frac{1}{x} \right]^{1/b} - 1 \right)$
+%$t_x = t_0 \cdot \left( \left[ \frac{1}{x} \right]^{1/b} - 1 \right)$
 
-
-
-$t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) \approx 153,1 \text{ s}$
+$t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) \approx 153 \text{ s}$
 
 ## Bronnen
 Quantum Ready! NLT module voor havo en vwo 2025, door R. Ockhorst en L. Koopman.
