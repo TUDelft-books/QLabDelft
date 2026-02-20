@@ -59,10 +59,15 @@ Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en ve
 
 
 ## Theoretische achtergrond
-De fosforescentie wordt veroorzaakt door 
+Fluorescentie wordt uitgebreid behandeld in de NLT-module **Quantum Ready!**. Hieronder zie je een fluorescentie-energiediagram uit deze module. Een foton brengt een molecuul in de aangeslagen toestand: Het electron komt in een hoger energieniveau. Vervolgens wordt er wat energie verloren *Q* via een stralingsvrije overgang. Tenslotte valt het electron terug naar de grondtoestand onder het uitzenden van een foton (met minder energie en dus een andere kleur dan het oorspronkelijke foton). Dit is over het algemeen een proces dat nanosecondes duurt. 
 
-op energie niveau (1 foton)
-jablonski diagram
+```{figure} ./media/fluorescentie-simple/energiediam1.png
+    :width: 400
+    :name: energiediagram
+    :align: center 
+Uit de NLT-module Quantum Ready
+``` 
+Bij fosforescentie gebeurt iets vergelijkbaars, echter dit proces duurt milisecondes tot uren. Hieronder staat het energiediagram (ook wel Jablonski diagram genoemd) weergegeven, wat daaronder verder wordt toegelicht. 
 
 ```{figure} ./media/fluorescentie/Jablonski.png
     :width: 400
@@ -70,6 +75,17 @@ jablonski diagram
     :align: center 
 By Curtis Mobley, from: https://www.oceanopticsbook.info/view/scattering/level-2/theory-fluorescence-and-phosphorescence
 ``` 
+
+Een foton brengt een molecuul in de aangeslagen toestand, waarbij een electron in een hoger energie niveau komt. 
+Het electron zat in de grondtoestand in gepaarde toestand: Het ene electron had een spin-up, het andere spin-down. Dit noemen we een singlet toestand $S_0$. Als het ene electron in een hoger niveau komt, blijft zijn spin behouden/ hetzelfde ($S_1$). Via een intersystem-crossing, (ook een stralingsvrije overgang waarbij wat energie verloren gaat), komt het electron in een triplet toestand $T_1$ terecht, 
+
+wordt veroorzaakt door 
+op energie niveau (1 foton)
+jablonski diagram
+
+
+
+
 
 uitleg triple states
 
@@ -156,3 +172,5 @@ $t_x = t_0 \cdot \left( \left[ \frac{1}{x} \right]^{1/b} - 1 \right)$
 
 $t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) \approx 153,1 \text{ s}$
 
+## Bronnen
+Quantum Ready! NLT module voor havo en vwo 2025, door R. Ockhorst en L. Koopman.
