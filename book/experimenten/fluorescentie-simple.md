@@ -85,29 +85,40 @@ Het terugvallen van aangeslagen elektronen en daarbij het vrijkomen van fotonen 
 Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. Ze zitten in zogenaamde "traps" van verschillende diepte (bron: ???.). In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte, wat leidt tot exponentieel verval. Traps van verschillende diepte zorgen voor een (ontelbare) optelsom van exponentiële functies: De machtreeks.
 
 ### Rekenen met de machtreeks
-Uit de machtreeks is vrij eenvoudig de halfwaardetijd te berekenen: 
-
-$I(t) = \frac{a}{(t + t_0)^b}$
+Uit de machtreeks $I(t) = \frac{a}{(t + t_0)^b}$ is vrij eenvoudig de halfwaardetijd te berekenen: 
+<br>
 We zoeken het tijdstip $t_{1/2}$ waarop $I(t) = \frac{1}{2} I_0$.
-
+<br>
 Op t=0 geldt:
+<br>
 $I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
+<br>
 dus op tijdstip $t=t_{1/2}$ geldt: 
+<br>
 $I(t) = \frac{1}{2} I_0 = \frac{1}{2}\frac{a}{t_0^b} = \frac{a}{(t + t_0)^b}$
+<br>
 wegstrepen a en omdraaien of kruislings-vermenigvuldigen levert:
+<br>
 $2t_0^b = (t+t_0)^b$
+<br>
 links en rechts de b-macht wortel nemen:
+<br>
 $2^{1/b}\cdot t_0 = t+t_0$
-dus: 
+<br>
+dus:
+<br> 
 $t = 2^{1/b}\cdot t_0 - t_0$ 
+<br>
 en netter:
+<br>
 $t = t_0(2^{1/b}-1)$
-
+<br>
 
 Bijvoorbeeld als je de volgende waarden hebt gevonden: $t_0 = 0.253$ en $b = 0.718$, dan geldt:
- $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1)$ $t_{1/2} = 0.253 \cdot (2^{1.3927} - 1)$ $t_{1/2} = 0.253 \cdot (2.625 - 1)$ $t_{1/2} \approx 0.41$ seconden
-
-Je kunt nu zelf narekenen dat voor het tijdstip dat je 1% over hebt, geldt:
+<br>
+ $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1) = 0.41 s$.
+<br><br>
+Je kunt nu zelf narekenen dat voor het tijdstip dat je bijvoorbeeld 1% over hebt, geldt:
 % Afleiding van de vervaltijd t_x voor een Power Law
 
 % De basisformule voor intensiteit
@@ -132,7 +143,7 @@ Je kunt nu zelf narekenen dat voor het tijdstip dat je 1% over hebt, geldt:
 % Stap 6: De definitieve formule (buiten haakjes halen)
 %$t_x = t_0 \cdot \left( \left[ \frac{1}{x} \right]^{1/b} - 1 \right)$
 
-$t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) \approx 153 \text{ s}$
+$t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) = 153 \text{ s}$
 
 ## Bronnen
 Quantum Ready! NLT module voor havo en vwo 2025, door R. Ockhorst en L. Koopman.
