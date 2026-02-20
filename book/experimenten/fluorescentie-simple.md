@@ -62,7 +62,7 @@ Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en ve
 ### Waarom fosforescentie langer duurt dan fluorescentie
 Fluorescentie wordt uitgebreid behandeld in de NLT-module **Quantum Ready!**. Hieronder zie je een fluorescentie-energiediagram uit deze module. Een foton brengt een molecuul in de aangeslagen toestand: Het electron komt in een hoger energieniveau. Vervolgens komt er wat energie vrij *Q* via een stralingsvrije overgang. Tenslotte valt het electron terug naar de grondtoestand onder het uitzenden van een foton (met minder energie en dus een andere kleur dan het oorspronkelijke foton). Dit is over het algemeen een proces dat nanosecondes duurt. 
 
-```{figure} ./media/fluorescentie-simple/energiediam1.png
+```{figure} ./media/fluorescentie-simple/energiediagram1.png
     :width: 400
     :name: energiediagram
     :align: center 
