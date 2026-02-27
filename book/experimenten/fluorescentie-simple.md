@@ -78,11 +78,11 @@ By Curtis Mobley, from: https://www.oceanopticsbook.info/view/scattering/level-2
 ``` 
 
 Een foton brengt een molecuul in de aangeslagen toestand, waarbij een electron in een hoger energie niveau komt. 
-Het electron zat in de grondtoestand in gepaarde toestand: Het ene electron had een spin-up, het andere spin-down. Dit noemen we een singlet toestand $S_0$. (Het spin-impulsmoment is hierbij nul). Als het ene electron in een hoger niveau komt, blijft zijn spin behouden/ hetzelfde ($S_1$). Via een intersystem-crossing waarbij wat energie vrij komt, komt het electron in een triplet toestand $T_1$ terecht, maar dan is de spin van het electron geflipt! (Het kostte wat energie om he te flippen, maar die kwam vrij). Wanneer het electron nu wil terugkeren naar de grondtoestand $S_0$ is er een probleem: Hij heeft dezelfde spin als het oorspronkelijk gepaarde electron. We noemen dit daarom een **verboden overgang**. Het electron moet wachten tot het voldoende energie heeft om de spinflip te maken, voordat het kan terugvallen naar de grondtoestand $S_0$. (Deze energie kan niet uit een foton komen, maar komt uit de spin-baan koppeling (bron: ??).) Dit "wachten" op de spinflip zorgt ervoor dat fluorescentie zolang kan bestaan.
+Het electron zat in de grondtoestand in gepaarde toestand: Het ene electron had een spin-up, het andere spin-down. Dit noemen we een singlet toestand $S_0$. (Het spin-impulsmoment is hierbij nul). Als het ene electron in een hoger niveau komt, blijft zijn spin behouden/ hetzelfde ($S_1$). Via een intersystem-crossing waarbij wat energie vrij komt, komt het electron in een triplet toestand $T_1$ terecht, maar dan is de spin van het electron geflipt! (Het kostte wat energie om he te flippen, maar die kwam vrij). Wanneer het electron nu wil terugkeren naar de grondtoestand $S_0$ is er een probleem: Hij heeft dezelfde spin als het oorspronkelijk gepaarde electron. Dit is in strijd is met het *Pauli‑uitsluitingsprincipe*. We noemen dit daarom een **verboden overgang**. Het electron moet wachten tot het voldoende energie heeft om de spinflip te maken, voordat het kan terugvallen naar de grondtoestand $S_0$. (Deze energie kan niet uit een foton komen, maar komt uit de spin-baan koppeling.) Dit "wachten" op de spinflip zorgt ervoor dat fluorescentie zolang kan bestaan.
 
 ### Waarom welk verband
 Het terugvallen van aangeslagen elektronen en daarbij het vrijkomen van fotonen is een kansproces. We verwachten daarom een afnemend exponentieel verband, waarbij 50% van de fotonen is teruggevallen bij de fosforescentie-halfwaardetijd van het molecuul. 
-Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. Ze zitten in zogenaamde "traps" van verschillende diepte (bron: ???.). In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte, wat leidt tot exponentieel verval. Traps van verschillende diepte zorgen voor een (ontelbare) optelsom van exponentiële functies: De machtreeks.
+Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. Ze zitten in zogenaamde energy-"traps" (vallen) van verschillende diepte. In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte, wat leidt tot exponentieel verval. Traps van verschillende diepte zorgen voor een (ontelbare) optelsom van exponentiële functies: De machtreeks.
 
 ### Rekenen met de machtreeks
 Uit de machtreeks $I(t) = \frac{a}{(t + t_0)^b}$ is vrij eenvoudig de halfwaardetijd te berekenen: 
@@ -145,5 +145,14 @@ Je kunt nu zelf narekenen dat voor het tijdstip dat je bijvoorbeeld 1% over hebt
 
 $t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) = 153 \text{ s}$
 
+<br>
+Wil je de halfwaardetijd uit de machtreeks laten berekenen door de computer, gebruik dan deze applet:
+<br>
+<a href="./media/fluorescentie-simple/halfwaardetijd.html" target="_blank">Open calculating applet</a>
+<br><br>
+
 ## Bronnen
-Quantum Ready! NLT module voor havo en vwo 2025, door R. Ockhorst en L. Koopman.
+1) Quantum Ready! NLT module voor havo en vwo 2025, door R. Ockhorst en L. Koopman.
+2) James Lincoln; Phosphorescence as an exponential decay. Phys. Teach. 1 March 2021; 59 (3): 220–221. https://doi.org/10.1119/10.0003675
+3) Tsai, C. Y., Lin, J. W., Huang, Y. P., & Huang, Y. C. (2014). Modeling and assessment of long afterglow decay curves. TheScientificWorldJournal, 2014, 102524. https://doi.org/10.1155/2014/102524
+4) George C. Lisensky, Manish N. Patel, and Megan L. Reich. Experiments with Glow-in-the-Dark Toys: Kinetics of Doped ZnS Phosphorescence. Journal of Chemical Education 1996 73 (11), 1048. https://doi.org/10.1021/ed073p1048

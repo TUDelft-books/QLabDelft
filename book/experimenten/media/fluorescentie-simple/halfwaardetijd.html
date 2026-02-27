@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Halfwaardetijd (stretched exponential)</title>
+  <style>
+    :root{
+      --bg:#0f172a;          /* slate-900 */
+      --panel:#111827;       /* gray-900 */
+      --ink:#e5e7eb;         /* gray-200 */
+      --muted:#9ca3af;       /* gray-400 */
+      --accent:#60a5fa;      /* blue-400 */
+      --ok:#22c55e;          /* green-500 */
+      --warn:#f59e0b;        /* amber-500 */
+      --err:#ef4444;         /* red-500 */
+      --border:#1f2937;      /* gray-800 */
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,\"Apple Color Emoji\",\"Segoe UI Emoji\";
+      background:var(--bg); color:var(--ink);
+      display:flex; align-items:flex-start; justify-content:center; padding:2rem 1rem;
+    }
+    .card{ width:min(900px,100%); background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    h1{font-size:1.25rem; margin:0 0 .25rem}
+    p{margin:.25rem 0 .75rem; color:var(--muted)}
+
+    form{display:grid; grid-template-columns:repeat(12,1fr); gap:.75rem; align-items:end; margin:.75rem 0 1rem}
+    .field{grid-column:span 4}
+    .field label{display:block; font-size:.9rem; color:var(--muted); margin:0 0 .25rem}
+    .field input{
+      width:100%; padding:.6rem .7rem; border-radius:8px; border:1px solid var(--border);
+      background:#0b1220; color:var(--ink); outline:none;
+    }
+    .field input:focus{border-color:var(--accent); box-shadow:0 0 0 3px rgba(96,165,250,.2)}
+
+    .actions{grid-column:span 4; display:flex; gap:.5rem}
+    button{
+      padding:.65rem .9rem; border-radius:8px; border:1px solid var(--border);
+      background:linear-gradient(180deg,#1f2937,#111827); color:var(--ink); cursor:pointer;
+    }
+    button.primary{ background:linear-gradient(180deg,#2563eb,#1d4ed8); border-color:#1e40af }
+    button.secondary{ background:linear-gradient(180deg,#374151,#111827) }
+
+    .msg{margin:.25rem 0 .75rem; font-size:.92rem}
+    .msg.ok{color:var(--ok)}
+    .msg.warn{color:var(--warn)}
+    .msg.err{color:var(--err)}
+
+    table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:10px; border:1px solid var(--border)}
+    thead th{ text-align:left; font-weight:600; color:var(--muted); background:#0b1220 }
+    th, td{ padding:.6rem .7rem; border-bottom:1px solid var(--border)}
+    tbody tr:hover{ background:#0b1220 }
+    .right{ text-align:right }
+    .mono{ font-variant-numeric:tabular-nums; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace }
+
+    .footer{margin-top:.9rem; display:flex; gap:.5rem; justify-content:flex-end}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Halfwaardetijd berekenen (stretched exponential)</h1>
+    <p>Formule: <span class="mono">t<sub>1/2</sub> = t<sub>0</sub>(2<sup>1/b</sup> − 1)</span>. Vul <span class="mono">b</span> en <span class="mono">t<sub>0</sub></span> in en voeg de regel toe aan de tabel. De tabel groeit per invoer en blijft bestaan tot je de pagina ververst.</p>
+
+    <form id="frm">
+      <div class="field">
+        <label for="b">b (bijv. 0,957 of 1.311)</label>
+        <input id="b" name="b" inputmode="decimal" autocomplete="off" placeholder="1,000" />
+      </div>
+      <div class="field">
+        <label for="t0">t₀ (bijv. 0,855 of 0.388)</label>
+        <input id="t0" name="t0" inputmode="decimal" autocomplete="off" placeholder="0,100" />
+      </div>
+      <div class="actions">
+        <button type="submit" class="primary">Bereken & voeg toe</button>
+        <button type="button" id="clear" class="secondary" title="Leeg de tabel">Leeg tabel</button>
+      </div>
+    </form>
+
+    <div id="msg" class="msg" aria-live="polite"></div>
+
+    <table aria-label="Resultaten">
+      <thead>
+        <tr>
+          <th class="right">#</th>
+          <th class="right">b</th>
+          <th class="right">t₀</th>
+          <th class="right">t<sub>1/2</sub></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+
+    <div class="footer">
+      <button type="button" id="downloadCsv" class="secondary">Download CSV</button>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const $ = (sel) => document.querySelector(sel);
+  const rowsEl = $("#rows");
+  const msgEl  = $("#msg");
+  const bEl    = $("#b");
+  const t0El   = $("#t0");
+  let counter = 0;
+
+  function parseLocaleNumber(str){
+    if (typeof str !== 'string') return NaN;
+    // Sta zowel \n, spaties, en NBSP niet toe
+    str = str.trim().replace(/\s+/g,'');
+    // Vervang komma door punt zodat 1,23 werkt
+    str = str.replace(',', '.');
+    return Number(str);
+  }
+
+  function fmt(num){
+    // Toon NL-notatie met een verstandige precisie
+    return Number(num).toLocaleString('nl-NL', { maximumFractionDigits: 6 });
+  }
+
+  function computeHalfLife(b, t0){
+    // t_{1/2} = t0 * ( 2^{1/b} - 1 )
+    return t0 * ( Math.pow(2, 1/b) - 1 );
+  }
+
+  function showMsg(text, type='ok'){
+    msgEl.className = 'msg ' + type;
+    msgEl.textContent = text;
+  }
+
+  function addRow(b, t0, th){
+    counter += 1;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="right mono">${counter}</td>
+      <td class="right mono" title="b">${fmt(b)}</td>
+      <td class="right mono" title="t0">${fmt(t0)}</td>
+      <td class="right mono" title="t_1/2">${fmt(th)}</td>
+    `;
+    rowsEl.appendChild(tr);
+  }
+
+  function validateInputs(bVal, t0Val){
+    if (!Number.isFinite(bVal) || !Number.isFinite(t0Val)){
+      return { ok:false, reason:'Ongeldige invoer. Gebruik cijfers, bijvoorbeeld 1,05 en 0,200.' };
+    }
+    if (bVal === 0){
+      return { ok:false, reason:'b mag niet 0 zijn.' };
+    }
+    if (bVal < 0){
+      return { ok:false, reason:'b moet positief zijn.' };
+    }
+    if (t0Val < 0){
+      return { ok:false, reason:'t₀ moet ≥ 0 zijn.' };
+    }
+    return { ok:true };
+  }
+
+  $('#frm').addEventListener('submit', (ev)=>{
+    ev.preventDefault();
+    const bVal  = parseLocaleNumber(bEl.value);
+    const t0Val = parseLocaleNumber(t0El.value);
+
+    const check = validateInputs(bVal, t0Val);
+    if (!check.ok){
+      showMsg(check.reason, 'err');
+      return;
+    }
+
+    const tHalf = computeHalfLife(bVal, t0Val);
+
+    if (!Number.isFinite(tHalf)){
+      showMsg('Kon t₁⁄₂ niet berekenen (controleer invoer).', 'err');
+      return;
+    }
+
+    addRow(bVal, t0Val, tHalf);
+    showMsg('Toegevoegd: t₁⁄₂ = ' + fmt(tHalf), 'ok');
+
+    // Optioneel: laat waarden staan voor seriematige input
+    t0El.select();
+  });
+
+  $('#clear').addEventListener('click', ()=>{
+    rowsEl.innerHTML = '';
+    counter = 0;
+    showMsg('Tabel geleegd.', 'warn');
+  });
+
+  // Download CSV van de huidige tabel
+  $('#downloadCsv').addEventListener('click', ()=>{
+    const lines = [['#','b','t0','t_1/2']];
+    [...rowsEl.querySelectorAll('tr')].forEach(tr=>{
+      const cells = [...tr.children].map(td=>td.textContent.replace(/\u00A0/g,' ').trim());
+      // Vervang duizendtussentekens en gebruik punt als decimaal in CSV
+      const norm = cells.map((v,i)=>{
+        if (i===0) return v; // teller
+        const s = v.replace(/\./g,'').replace(',','.');
+        return s;
+      });
+      lines.push(norm);
+    });
+    const csv = lines.map(r=>r.join(',')).join('\n');
+    const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'halfwaardetijden.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+})();
+</script>
+</body>
+</html>
