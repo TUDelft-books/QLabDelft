@@ -50,7 +50,7 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 15) Hoe groot is de best passende halfwaarde tijd? Komt die overeen met de waardes die je vond bij **10**?
 16) Zoals je hebt gemerkt is de fit niet geweldig passend. Probeer nu de Machtswet-fit eens...die past perfect! Meer hierover in de theorie.
 
-<a href="./media/fluorescentie-simple/measure-versie11.html" target="_blank">Open measuring applet</a>
+<a href="./media/fluorescentie-simple/measure-versie12.html" target="_blank">Open measuring applet</a>
 <br><br>
 
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
