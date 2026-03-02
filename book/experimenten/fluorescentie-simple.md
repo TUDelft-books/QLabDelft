@@ -1,10 +1,7 @@
 # Fluorescentie voor dummies
 practicumhandleiding
 
-<div style="display: flex;">
-  <img src="./media/fluorescentie-simple/doosje.jpeg" style="width: 50%;">
-  <img src="./media/fluorescentie-simple/doosje-open.jpeg" style="width: 50%;">
-</div>
+<img src="./media/fluorescentie-simple/doosje-open.jpeg" style="width: 25%;">
 
 ## Inleiding
 In het kort werkt dit eenvoudige fluorescentie experiment als volgt: We plaatsen een fosforescerende materiaal in een doosje en belichten dit met UV licht. Vervolgens meten we met een foto-diode (fototransistor) en een Arduino elke tijdstap (0,2 (s)) de hoeveelheid licht en geven dit weer in een grafiek. Hieruit kunnen we de halfwaardetijd bepalen van het fosforescerende materiaal.
@@ -21,6 +18,9 @@ Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal
 * De leerling kan reflecteren op de betrouwbaarheid van verschillende fitmethodes en op de invloed van het begin- en staartgedeelte van de meetcurve.
 
 ## Materiaal
+<img src="./media/fluorescentie-simple/doosje.jpeg" style="width: 50%;">
+<br>
+
 * Doosje (3D geprint), lichtdicht, met in het deksel 4x 1mm gaatje geboord. Download hier de 3D bestanden (STL): {Download}`software<./media/fluorescentie-simple/Small box with hinged lid -aangepast-versie-with-holes.stl>`
 * Fototransistor (Kingbright l-53p3c) (korte poot is collector, aangesloten op 5V, lange poot op AO)
 * Weerstand 470kOhm (aangesloten op A0 en GND).  (In A0 zitten dus 2 pootjes!).
@@ -72,12 +72,10 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 12) Probeer nu met de Handmatige halfwaardecurve knop een betere fit te krijgen:
 13) Druk op de Handmatige halfwaardecurve knop en stel met de schuiven de achtergrond in en ook $I_0$. Probeer vervolgens met de laatste schuif de fit zo goed mogelijk passen te krijgen. (Als de grafiek raar zoomt kun je dat herstellen door 2x op de halfwaardetijd-fit knop te drukken).
 14) Hoe groot is de best passende halfwaarde tijd? Komt die overeen met de waardes die je vond bij **10**?
-15) Zoals je hebt gemerkt is de fit niet geweldig passend. Probeer nu de Machtswet-fit eens...die past perfect! Meer hierover in de theorie. 
-<br> 
-Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
+15) Zoals je hebt gemerkt is de fit niet geweldig passend. Probeer nu de Machtswet-fit eens...die past perfect! Meer hierover in de theorie. Noteer nu eerst de (fit-)variabelen.
 16) Doe nu een een langere meeting, van een minuut of langer: Wat valt je op aan de halfwaardetijd-fit als je de eerste 10 seconden negeert? 
 17) Herhaal het experiment eventueel met een andere sample.
-18) Bestudeer de theorie als je dat nog niet gedaan hebt.
+
 
 <br>
 <a href="./media/fluorescentie-simple/measure-versie12.html" target="_blank">Open measuring applet</a>
@@ -86,8 +84,11 @@ Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
 
-
-
+## Opdrachten
+Bestudeer de theorie als je dat nog niet gedaan hebt en beantwoord vervolgens de volgende vragen:
+1) Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
+2) Leg uit waarom men normaal gesproken onderzoek doet naar fosforescentie bij temperaturen waarbij stikstof vloeibaar is.
+3) Leg uit wat (je denkt dat) er gebeurt met de halfwaardetijd wanneer je je sample eerst heel erg warm maakt voordat je gaat meten.
 
 ## Theoretische achtergrond
 ### Waarom fosforescentie langer duurt dan fluorescentie
