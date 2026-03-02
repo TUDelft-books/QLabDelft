@@ -3,7 +3,8 @@ _deze handleiding is nog **under construction**_
 practicumhandleiding
 
 ## Inleiding
-In het kort werkt dit eenvoudige fluorescentie experiment als volgt: We plaatsen een fosforescerende materiaal in een doosje en belichten dit met UV licht. Vervolgens meten we met een foto-diode (fototransistor) en een Arduino elke seconde de hoeveelheid licht en geven dit weer in een grafiek. Hieruit kunnen we de halfwaardetijd bepalen van het fosforescerende materiaal.
+In het kort werkt dit eenvoudige fluorescentie experiment als volgt: We plaatsen een fosforescerende materiaal in een doosje en belichten dit met UV licht. Vervolgens meten we met een foto-diode (fototransistor) en een Arduino elke tijdstap (0,2 (s)) de hoeveelheid licht en geven dit weer in een grafiek. Hieruit kunnen we de halfwaardetijd bepalen van het fosforescerende materiaal.
+<br>
 Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal vrij lang nagloeien. Bij fluorescentie is dit nanosecondes, bij fosforescentie duurt dit millisecondes tot uren. Dit proces is eenvoudig(er) meetbaar. Waarom fosforescentie zoveel langer duurt, heeft te maken met *spin* en is te vinden in de theorie aan het einde.
 
 ## Materiaal
@@ -37,24 +38,27 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 3) Sluit het doosje.
 4) Sluit de USB poort aan. 
 5) Open onderstaande link met een **Chrome** of Edge browser en 
-6) Druk op de verbinding maken en geef de USB poort toestemming.  
+6) Druk op **"Verbinden"** om de verbinding te maken met de Arduino en geef de USB poort toestemming.  
 7) De meting begint vanzelf. Als de doos dicht is, is de spanning laag (bijna 0V), als de doos open is dan is de spanning hoog (bijna 5V). Probeer maar.
-8) Sluit de doos en druk op "UV aan". De UV lamp in de doos schijnt standaard 5 seconden op het sample. Na 5 seconden reset de grafiek en meet hij verder:
-9) Meet gedurende circa 30 seconden en STOP dan de meting.
+8) Sluit de doos, stel de meettijd in op 30 seconden en druk op **"UV aan & start meeting"**. De UV lamp in de doos schijnt standaard 5 seconden op het sample. 
+9) Na 5 seconden reset de grafiek en meet hij verder en stopt vanzelf aan het einde van de meettijd.
 10) Lees de halfwaardetijd op minstens 2 verschillende plaatsen zo nauwkeurig mogelijk af en noteer deze ergens. Bij voorbeeld aan het begin en vanaf 3 seconden oid. Is dit hetzelfde?
 11) Druk op de Halfwaardetijd-fit knop. Herken je de functie? De A staat voor achtergrond. Het programma probeert een fit te maken, maar deze is niet erg goed. 
 12) Probeer nu met de Handmatige halfwaardecurve knop een betere fit te krijgen:
-13) Bepaal eerst de achtergrond. Sluit daartoe het doosje en reset de meting (druk 2x op Reset). Hoe groot is de spanning in compleet duister?
-13) Doe de meting opnieuw: Herhaal punt **8 en 9**. 
-14) Druk op de Handmatige halfwaardecurve knop en stel met de schuiven de achtergrond in en ook $I_0$. Probeer vervolgens met de laatste schuif de fit zo goed mogelijk passen te krijgen. (Als de grafiek raar zoomt kun je dat herstellen door 2x op de halfwaardetijd-fit knop te drukken) 
-15) Hoe groot is de best passende halfwaarde tijd? Komt die overeen met de waardes die je vond bij **10**?
-16) Zoals je hebt gemerkt is de fit niet geweldig passend. Probeer nu de Machtswet-fit eens...die past perfect! Meer hierover in de theorie.
+13) Druk op de Handmatige halfwaardecurve knop en stel met de schuiven de achtergrond in en ook $I_0$. Probeer vervolgens met de laatste schuif de fit zo goed mogelijk passen te krijgen. (Als de grafiek raar zoomt kun je dat herstellen door 2x op de halfwaardetijd-fit knop te drukken).
+14) Hoe groot is de best passende halfwaarde tijd? Komt die overeen met de waardes die je vond bij **10**?
+15) Zoals je hebt gemerkt is de fit niet geweldig passend. Probeer nu de Machtswet-fit eens...die past perfect! Meer hierover in de theorie. 
+<br> 
+Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
+16) Doe nu een een langere meeting, van een minuut of langer: Wat valt je op aan de halfwaardetijd-fit als je de eerste 10 seconden negeert? 
 
+<br>
 <a href="./media/fluorescentie-simple/measure-versie12.html" target="_blank">Open measuring applet</a>
 <br><br>
 
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
 {Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
+
 
 
 
@@ -82,7 +86,7 @@ Het electron zat in de grondtoestand in gepaarde toestand: Het ene electron had 
 
 ### Waarom welk verband
 Het terugvallen van aangeslagen elektronen en daarbij het vrijkomen van fotonen is een kansproces. We verwachten daarom een afnemend exponentieel verband, waarbij 50% van de fotonen is teruggevallen bij de fosforescentie-halfwaardetijd van het molecuul. 
-Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. Ze zitten in zogenaamde energy-"traps" (vallen) van verschillende diepte. In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte, wat leidt tot exponentieel verval. Traps van verschillende diepte zorgen voor een (ontelbare) optelsom van exponentiële functies: De machtreeks.
+Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. Ze zitten in zogenaamde energy-"traps" (vallen) van verschillende diepte. In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte, wat leidt tot exponentieel verval. Maar in de dit geval zorgen traps van verschillende diepte voor een (ontelbare) optelsom van exponentiële functies: De machtreeks. Het laatste deel (de staart) van de machtreeks komt overeen met de staart van de halfwaardetijd-fit. De staart en daarmee de gevonden halfwaardetijd van de halfwaardetijd-fit geeft (ook) informatie over hoelang de fosforescentie "doorwerkt".
 
 ### Rekenen met de machtreeks
 Uit de machtreeks $I(t) = \frac{a}{(t + t_0)^b}$ is vrij eenvoudig de halfwaardetijd te berekenen: 
