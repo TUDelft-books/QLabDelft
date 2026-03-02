@@ -26,6 +26,13 @@ Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal
 * Fluorescerend materiaal (accufolie??)
 
 Het schakelschema staat hieronder. 
+De kabels van het doosje **van links naar rechts** (de kleuren kunnen wisselen): 
+
+|links|||rechts|
+|grijs|oranje|rood|zwart|
+|-----|-----|-----|-----|
+|GND (linksboven)| 6~ | 5V | A0 |
+
 **Sluit de 4 kabels van het doosje op de juiste manier aan. Vergeet daarbij niet de weerstand!**
 
 ```{figure} ./media/fluorescentie-simple/schema-tinkercad.png
