@@ -71,6 +71,7 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
 16) Doe nu een een langere meeting, van een minuut of langer: Wat valt je op aan de halfwaardetijd-fit als je de eerste 10 seconden negeert? 
 17) Herhaal het experiment eventueel met een andere sample.
+18) Bestudeer de theorie als je dat nog niet gedaan hebt.
 
 <br>
 <a href="./media/fluorescentie-simple/measure-versie12.html" target="_blank">Open measuring applet</a>
