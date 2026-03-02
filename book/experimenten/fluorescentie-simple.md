@@ -17,14 +17,17 @@ Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal
 
 ## Materiaal
 * Doosje (3D geprint), lichtdicht, met in het deksel 4x 1mm gaatje geboord. Download hier de 3D bestanden (STL): {Download}`software<./media/fluorescentie-simple/Small box with hinged lid -aangepast-versie-with-holes.stl>`
-* Fototransistor (Kingbright l-53p3c) (korte poot is collector, aangesloten op 5V).
+* Fototransistor (Kingbright l-53p3c) (korte poot is collector, aangesloten op 5V, lange poot op AO)
+* Weerstand 470kOhm (aangesloten op A0 en GND).  (In A0 zitten dus 2 pootjes!).
 * UV led (mat, ander uiterlijk dan fototransistor ivm verwarring)
 * Dupont jumper cables M-F 20 of 30cm 4 stuks.
 * Arduino Uno of Leonardo + case en kabel De Arduino is vooraf geprogrammeerd. De Arduino code is hier eventueel te downloaden. {Download}`software<./media/fluorescentie-simple/ReadVoltageNew.ino>`
 * Stukje zwart ducktape
 * Fluorescerend materiaal (accufolie??)
 
-Het schakelschema staat hieronder:
+Het schakelschema staat hieronder. 
+**Sluit de 4 kabels van het doosje op de juiste manier aan. Vergeet daarbij niet de weerstand!**
+
 ```{figure} ./media/fluorescentie-simple/schema-tinkercad.png
     :width: 700
     :name: schema
@@ -37,6 +40,7 @@ Het schakelschema staat hieronder:
     :name: schema
     :align: left
 ```
+
 
 ## Meten
 Met de link hieronder wordt via javascript code in een webpagina de spanning die de Arduino meet weergegeven. De gemeten spanning is een maat voor de hoeveelheid licht die op de fototransistor valt. 
