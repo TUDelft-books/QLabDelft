@@ -34,7 +34,7 @@
 <body>
   <!-- Basis bediening -->
   <div class="controls">
-    <button id="connectButton">Verbinden</button>
+    <button id="connectButton" style="background-color:#61f2f9; color:black;">Verbinden</button>
     <button id="playPauseButton">Stop</button>
     <button id="resetButton">Reset</button>
     <button id="exportButton">Export CSV</button>
@@ -52,7 +52,7 @@
     <label>Meettijd (s): <input type="number" id="measureSeconds" min="0" step="1" placeholder="" style="width:6em;"> UV-duur (s):
  <input type="number" id="uvSeconds" min="1" max="60" value="5">
  </label>
-    <button id="uvOnButton">UV aan & start meting</button>
+    <button id="uvOnButton" style="background-color: greenyellow; color: black">UV aan & start meting</button>
     <label>Helderheid (0–255):
       <input type="range" id="uvBrightness" min="0" max="255" step="1" value="150">
       <span id="uvBrightnessVal" class="mono">150</span>
@@ -80,12 +80,12 @@
       <input type="number" id="manualBGNum" min="-1.00" max="5" step="0.01" value="0.00" style="width:6em;">
     </label>
     <label>$I₀$:
-      <input type="range" id="manualI0" min="0.01" max="5" step="0.01" value="1.00">
-      <input type="number" id="manualI0Num" min="0.01" max="5" step="0.01" value="1.00" style="width:6em;">
+      <input type="range" id="manualI0" min="0.1" max="5" step="0.1" value="1.00">
+      <input type="number" id="manualI0Num" min="0.1" max="5" step="0.1" value="1.00" style="width:6em;">
     </label>
     <label>$t_{1/2}$ (s):
-      <input type="range" id="manualTH" min="0.05" max="30" step="0.01" value="5.00">
-      <input type="number" id="manualTHNum" min="0.05" max="30" step="0.01" value="5.00" style="width:6em;">
+      <input type="range" id="manualTH" min="0.1" max="30" step="0.1" value="5.00">
+      <input type="number" id="manualTHNum" min="0.1" max="30" step="0.1" value="5.00" style="width:6em;">
     </label>
   </div>
 
@@ -98,7 +98,7 @@
     <span id="fitResult" class="muted"></span>
   </div>
 
-  <!-- Globale horizontale verschuiving voor alle fits -->
+  <!-- Globale horizontale verschuiving voor alle fits 
   <div class="controls" id="globalShiftControls">
     <label>Horizontale verschuiving (s) voor alle fits:
       <input type="range" id="fitShift" min="-10" max="10" step="0.01" value="0.00">
@@ -106,6 +106,7 @@
     </label>
     <span class="muted">Positief = naar rechts; negatief = naar links.</span>
   </div>
+  -->
 
   <canvas id="chartCanvas"></canvas>
   <h3>Status</h3>
@@ -266,7 +267,7 @@
         halfLifeResultEl.textContent=''; fitResultEl.textContent='';
         // assen
         chart.options.scales.x.min = 0;
-        chart.options.scales.x.max = 60;
+        chart.options.scales.x.max = 120;
         chart.options.scales.y.min = 0;
         delete chart.options.scales.y.max;
         rebuildDatasets();
@@ -302,9 +303,9 @@
               const voltage = v;
               const tRel = Date.now()/1000 - baseTimeSec;
               dataPoints.push({ x:tRel, y:voltage });
-              // 60 s venster
-              const minX = Math.max(0, tRel - 60);
-              while (dataPoints.length && dataPoints[0].x < minX) dataPoints.shift();
+              // 120 s venster
+              const TIME_WINDOW = 60;
+              const minX = Math.max(0, tRel - TIME_WINDOW);
               // y-as
               if (dataPoints.length) {
                 const maxY = Math.max(...dataPoints.map(p=>p.y));
@@ -357,7 +358,7 @@
       halfLifeResultEl.textContent=''; fitResultEl.textContent='';
       // assen
       chart.options.scales.x.min = 0;
-      chart.options.scales.x.max = 60;
+      chart.options.scales.x.max = 120;
       chart.options.scales.y.min = 0;
       delete chart.options.scales.y.max;
       rebuildDatasets();
@@ -432,7 +433,7 @@
       toggleManualHalfLifeBtn.classList.remove('manual-on');
       halfLifeResultEl.textContent=''; fitResultEl.textContent='';
       chart.options.scales.x.min = 0;
-      chart.options.scales.x.max = 60;
+      chart.options.scales.x.max = 120;
       chart.options.scales.y.min = 0;
       delete chart.options.scales.y.max;
       rebuildDatasets();
