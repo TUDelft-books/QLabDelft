@@ -1,11 +1,19 @@
 # Fluorescentie voor dummies
-_deze handleiding is nog **under construction**_
 practicumhandleiding
 
 ## Inleiding
 In het kort werkt dit eenvoudige fluorescentie experiment als volgt: We plaatsen een fosforescerende materiaal in een doosje en belichten dit met UV licht. Vervolgens meten we met een foto-diode (fototransistor) en een Arduino elke tijdstap (0,2 (s)) de hoeveelheid licht en geven dit weer in een grafiek. Hieruit kunnen we de halfwaardetijd bepalen van het fosforescerende materiaal.
 <br>
 Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal vrij lang nagloeien. Bij fluorescentie is dit nanosecondes, bij fosforescentie duurt dit millisecondes tot uren. Dit proces is eenvoudig(er) meetbaar. Waarom fosforescentie zoveel langer duurt, heeft te maken met *spin* en is te vinden in de theorie aan het einde.
+
+### Leerdoelen
+* De leerling kan het verschil uitleggen tussen fluorescentie en fosforescentie, inclusief het begrip halfwaardetijd.
+* De leerling kan beschrijven hoe spin en het Pauli‑uitsluitingsprincipe leiden tot het vertraagde verval bij fosforescentie.
+* De leerling kan met behulp van een eenvoudige opstelling met een Arduino meetgegevens verzamelen van een fosforescerend materiaal.
+* De leerling kan een vervalcurve analyseren en een exponentiële fit of machtswet-fit uitvoeren.
+* De leerling kan uit meetgegevens en fitparameters de halfwaardetijd bepalen en berekenen.
+* De leerling kan uitleggen waarom fosforescentie in niet‑ideale kristallen beter beschreven wordt door een machtswet dan door een enkelvoudig exponentieel verval.
+* De leerling kan reflecteren op de betrouwbaarheid van verschillende fitmethodes en op de invloed van het begin- en staartgedeelte van de meetcurve.
 
 ## Materiaal
 * Doosje (3D geprint), lichtdicht, met in het deksel 4x 1mm gaatje geboord. Download hier de 3D bestanden (STL): {Download}`software<./media/fluorescentie-simple/Small box with hinged lid -aangepast-versie-with-holes.stl>`
@@ -51,6 +59,7 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 <br> 
 Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
 16) Doe nu een een langere meeting, van een minuut of langer: Wat valt je op aan de halfwaardetijd-fit als je de eerste 10 seconden negeert? 
+17) Herhaal het experiment eventueel met een andere sample.
 
 <br>
 <a href="./media/fluorescentie-simple/measure-versie12.html" target="_blank">Open measuring applet</a>
