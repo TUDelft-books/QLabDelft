@@ -85,7 +85,7 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 <br><br>
 
 Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en vervolgens te openen in een **Chrome** of Edge browser.
-{Download}`software<./media/fluorescentie-simple/measure-versie3.html>`
+{Download}`software<./media/fluorescentie-simple/measure-versie12.html>`
 
 ## Opdrachten
 Bestudeer de theorie als je dat nog niet gedaan hebt en beantwoord vervolgens de volgende vragen:
