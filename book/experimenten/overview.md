@@ -30,9 +30,13 @@ Met dit experiment wordt interferentie bij losse fotonen in een dubbel spleet ex
 <br>
 Met dit experiment worden elektronen door grafiet geschoten. Hierbij treedt diffractie op en ontstaat een ringvormig interferentiepatroon.
 
-**[Fluorescentie experiment](fluorescentie.md)**
+**[Fosforescentie experiment](fosforescentie.md)**
 <br>
-Met dit experiment wordt fluorescentie onderzocht en de halfwaardetijd bepaald van een aantal stoffen.
+Met dit experiment wordt fosforescentie onderzocht en de halfwaardetijd bepaald van een aantal stoffen.
+
+**[Fosforescentie vereenvoudigd](fosforescentie-simple.md)**
+<br>
+Met dit experiment wordt fosforescentie onderzocht en de halfwaardetijd bepaald van een aantal stoffen.
 
 **[Franck en Hertz](frank.md)** 
 <br>

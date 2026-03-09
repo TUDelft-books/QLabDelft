@@ -1,7 +1,7 @@
-# Fluorescentie
+# Fosforescentie
 
 ## Inleiding
-In dit experiment wordt onderzocht hoe fluorescentie werkt en de halfwaardetijd van diverse fluorescerende stoffen bepaald. Eigenlijk gaat het hier om **fosforescentie**, omdat het effect langer duurt. 
+In dit experiment wordt onderzocht hoe fosforescentie werkt en wordt de halfwaardetijd van diverse fosforescerende stoffen bepaald. Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal vrij lang nagloeien.
 
 ## Doel
 Het bepalen van de halfwaardetijd van diverse fosforescerende stoffen en materialen. 
