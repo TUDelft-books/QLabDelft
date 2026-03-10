@@ -46,7 +46,7 @@ In de tabel staat hoe je de kabels moet aansluiten **van links naar rechts** t.o
 
 Het schakelschema staat hieronder. De kleuren van de kabels zijn een voorbeeld - bij je doosje **zijn de kleuren anders!**
 
-```{figure} ./media/fluorescentie-simple/schema-nummer.png
+```{figure} ./media/fluorescentie-simple/schema-nummer.jpeg
     :width: 700
     :name: schema
     :align: left
