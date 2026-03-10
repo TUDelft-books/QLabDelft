@@ -41,7 +41,7 @@ In de tabel staat hoe je de kabels moet aansluiten **van links naar rechts** t.o
 <br>
 
 | doosje | 1 | 2 | 3 | 4 |
-|-----|-----|-----|-----|
+|-----|-----|-----|-----|-----|
 | Arduino | GND | 6~ | 5V | A0 |
 
 Het schakelschema staat hieronder. De kleuren van de kabels zijn een voorbeeld - bij je doosje **zijn de kleuren anders!**
