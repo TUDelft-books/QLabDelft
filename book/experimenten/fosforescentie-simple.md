@@ -40,9 +40,9 @@ In de tabel staat hoe je de kabels moet aansluiten **van links naar rechts** t.o
 <img src="./media/fluorescentie-simple/doosje-kabels.jpeg" style="width: 50%;">
 <br>
 
-|1|2|3|4|
+| doosje | 1 | 2 | 3 | 4 |
 |-----|-----|-----|-----|
-|GND (linksboven)| 6~ | 5V | A0 |
+| Arduino | GND | 6~ | 5V | A0 |
 
 Het schakelschema staat hieronder. De kleuren van de kabels zijn een voorbeeld - bij je doosje **zijn de kleuren anders!**
 
