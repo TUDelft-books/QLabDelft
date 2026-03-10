@@ -35,14 +35,16 @@ Bij fosforescentie blijft, in tegenstelling tot bij fluorescentie, een materiaal
 
 **Sluit (zonodig) de 4 kabels van het doosje op de juiste manier aan. Vergeet daarbij niet de weerstand!**
 
-Het schakelschema staat hieronder. 
-In de tabel staan de kabels **van links naar rechts** t.o.v. het doosje (voorkant voor - de kleuren kunnen wisselen): 
+In de tabel staat hoe je de kabels moet aansluiten **van links naar rechts** t.o.v. de voorkant van het doosje (zie foto). **Let niet op de kleuren!**
 
-|grijs (links)|oranje|rood|zwart (rechts)|
+<img src="./media/fluorescentie-simple/doosje-kabels.jpeg" style="width: 50%;">
+<br>
+
+|1|2|3|4|
 |-----|-----|-----|-----|
 |GND (linksboven)| 6~ | 5V | A0 |
 
-
+Het schakelschema staat hieronder. De kleuren van de kabels zijn een voorbeeld - bij je doosje **zijn de kleuren anders!**
 
 ```{figure} ./media/fluorescentie-simple/schema-tinkercad.png
     :width: 700
