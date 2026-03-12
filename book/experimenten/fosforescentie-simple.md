@@ -195,7 +195,7 @@ Wil je de halfwaardetijd uit de machtswet laten berekenen door de computer, gebr
 ### Simulatiespel van het fosforescentie verval model
 In de link is een simulatiespel te vinden met als doel het kansproces te demonstreren dat achter het fosforescentie verval model zit (de zogenaamde tweede orde kinetiek).
 <br>
-<a href="./media/fluorescentie-simple/spel_perfect_b1_toggle.html" target="_blank">open spel</a>
+<a href="./media/fluorescentie-simple/spel_perfect.html" target="_blank">open spel</a>
 <br><br>
 #### Speluitleg
 * Er zijn 30 aangeslagen elektronen en 30 gaten om naar terug te keren.
