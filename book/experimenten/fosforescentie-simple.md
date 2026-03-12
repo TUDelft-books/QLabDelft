@@ -94,6 +94,7 @@ Bestudeer de theorie als je dat nog niet gedaan hebt en beantwoord vervolgens de
 1) Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
 2) Leg uit waarom men normaal gesproken onderzoek doet naar fosforescentie bij temperaturen waarbij stikstof vloeibaar is.
 3) Leg uit wat (je denkt dat) er gebeurt met de halfwaardetijd wanneer je je sample eerst heel erg warm maakt voordat je gaat meten.
+4) Onderzoek met het simulatiespel onderaan het kansproces en bepaal een aantal maal de (gemiddelde) halfwaarde"tijd" (aantal). 
 
 ## Theoretische achtergrond
 ### Waarom fosforescentie langer duurt dan fluorescentie
@@ -119,10 +120,13 @@ Het electron zat in de grondtoestand in gepaarde toestand: Het ene electron had 
 
 ### Waarom welk verband
 Het terugvallen van aangeslagen elektronen en daarbij het vrijkomen van fotonen is een kansproces. We verwachten daarom een afnemend exponentieel verband, waarbij 50% van de fotonen is teruggevallen bij de fosforescentie-halfwaardetijd van het molecuul. 
-Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. Ze zitten in zogenaamde energy-"traps" (vallen) van verschillende diepte. In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte, wat leidt tot exponentieel verval. Maar in de dit geval zorgen traps van verschillende diepte voor een (ontelbare) optelsom van exponentiële functies: De machtreeks. Het laatste deel (de staart) van de machtreeks komt overeen met de staart van de halfwaardetijd-fit. De staart en daarmee de gevonden halfwaardetijd van de halfwaardetijd-fit geeft (ook) informatie over hoelang de fosforescentie "doorwerkt".
+Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. 
+In een fosforescerende halfgeleider zoals wij dat hebben kunnen de elektronen in twee banden zitten: De *valentieband* (grondtoestand) met de *gaten* en de *geleidingsband* (aangeslagen-toestand) met de aangeslagen, ontsnapte elektronen (een *gat* is een ontbrekend elektron in een rooster). Het aantal gaten voor elektronen om naar terug te vallen is beperkt. Dit zorgt ervoor dat de eerste elektronen meer kans hebben op een plekje dan de latere elektronen. Hieruit volgt een verval volgens een (tweede orde) machtswet in plaats van een exponentiële functie. Dit wordt onderaan wiskundig toegelicht, net als een simulatiespel van deze twee banden.  
+Daarnaast zitten de aangeslagen elektronen in zogenaamde energy-"traps" (vallen) van verschillende diepte. In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte en zijn er oneindig veel gaten, wat leidt tot exponentieel verval. Maar in de dit geval zorgen traps van verschillende diepte voor een (ontelbare) optelsom van exponentiële functies: De machtswet. Het laatste deel (de staart) van de machtswet komt overeen met de staart van de halfwaardetijd-fit. De staart en daarmee de gevonden halfwaardetijd van de halfwaardetijd-fit geeft (ook) informatie over hoelang de fosforescentie "doorwerkt".
+De combinatie van deze fysische factoren zorgt voor een model als hieronder, waarbij de b in de praktijk kan variëren tussen de 0,2 en 2. 
 
-### Rekenen met de machtreeks
-Uit de machtreeks $I(t) = \frac{a}{(t + t_0)^b}$ is vrij eenvoudig de halfwaardetijd te berekenen: 
+### Rekenen met de machtswet
+Uit de machtswet $I(t) = \frac{a}{(t + t_0)^b}$ is vrij eenvoudig de halfwaardetijd te berekenen: 
 <br>
 We zoeken het tijdstip $t_{1/2}$ waarop $I(t) = \frac{1}{2} I_0$.
 <br>
@@ -183,13 +187,36 @@ Je kunt nu zelf narekenen dat voor het tijdstip dat je bijvoorbeeld 1% over hebt
 $t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) = 153 \text{ s}$
 
 <br>
-Wil je de halfwaardetijd uit de machtreeks laten berekenen door de computer, gebruik dan deze applet:
+Wil je de halfwaardetijd uit de machtswet laten berekenen door de computer, gebruik dan deze applet:
 <br>
 <a href="./media/fluorescentie-simple/halfwaardetijd.html" target="_blank">Open calculating applet</a>
 <br><br>
+
+### Simulatiespel van het fosforescentie verval model
+In de link is een simulatiespel te vinden met als doel het kansproces te demonstreren dat achter het fosforescentie verval model zit (de zogenaamde tweede orde kinetiek).
+<br>
+<a href="./media/fluorescentie-simple/spel_perfect_b1_toggle.html" target="_blank">open spel</a>
+<br><br>
+#### Speluitleg
+* Er zijn 30 aangeslagen elektronen en 30 gaten om naar terug te keren.
+* Er wordt gegooid met twee 30 kantige dobbelstenen: De ene dobbelsteen definieert het precieze aangeslagen elektron dat mag recombineren met een gat (bijvoorbeeld het 12e elektron mag vertrekken). De andere dobbelsteen definieert het gat waarnaar het elektron mag terugkeren (bijvoorbeeld het 28e gat). Aan beide voorwaarden moet voldaan worden voor een geslaagde recombinatie. 
+* Druk op "Gooi" en je kunt handmatig gooien.
+* Druk op "Auto" en de computer gooit voor jou.
+* Druk op "Stop Auto" als "Auto" te lang doorgaat.
+* Druk op "Machtswetfit" om een (eerste orde) machtswet te fitten. 
+(Bij een eerste orde machtswet van aantal, hoort een tweede orde machtswet van intensiteit - denk aan: Activiteit is de afgeleide van het aantal deeltjes in de tijd.)
+
+### Wiskundige afleiding van de (tweede orde) machtswet
+Moet nog
+
+
+
+
 
 ## Bronnen
 1) Quantum Ready! NLT module voor havo en vwo 2025, door R. Ockhorst en L. Koopman.
 2) James Lincoln; Phosphorescence as an exponential decay. Phys. Teach. 1 March 2021; 59 (3): 220–221. https://doi.org/10.1119/10.0003675
 3) Tsai, C. Y., Lin, J. W., Huang, Y. P., & Huang, Y. C. (2014). Modeling and assessment of long afterglow decay curves. TheScientificWorldJournal, 2014, 102524. https://doi.org/10.1155/2014/102524
 4) George C. Lisensky, Manish N. Patel, and Megan L. Reich. Experiments with Glow-in-the-Dark Toys: Kinetics of Doped ZnS Phosphorescence. Journal of Chemical Education 1996 73 (11), 1048. https://doi.org/10.1021/ed073p1048
+5) Malgieri, M., Rosi, T., Onorato, P., & Oss, S. (2018). Looking at phosphorescence with a smartphone, explaining phosphorescence with a dice toy model. Physics Education, 53(6), Artikel 065016. https://doi.org/10.1088/1361-6552/aaddf1
+

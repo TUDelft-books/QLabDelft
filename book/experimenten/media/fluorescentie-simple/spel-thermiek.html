@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Fosforescentie met Thermische Barrière</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .panel { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 10px; width: 90%; max-width: 800px; }
+        .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .board { display: grid; grid-template-columns: repeat(15, 20px); gap: 5px; margin: 10px 0; justify-content: center; }
+        .square { width: 20px; height: 20px; border: 1px solid #ddd; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+        .coin { width: 14px; height: 14px; background-color: #ff4d4f; border-radius: 50%; }
+        input[type="range"] { width: 100%; }
+        #chart-container { height: 300px; width: 100%; }
+    </style>
+</head>
+<body>
+
+    <h1>Thermische Barrière Model</h1>
+
+    <div class="panel">
+        <div class="controls">
+            <div>
+                <label>Temperatuur (T): <span id="val-t">293</span> K</label>
+                <input type="range" id="param-t" min="100" max="500" value="293" oninput="updateParams()">
+                <p><small>Hogere T = sneller verval [6].</small></p>
+            </div>
+            <div>
+                <label>Activatie-energie (Ea): <span id="val-ea">15</span> kJ/mol</label>
+                <input type="range" id="param-ea" min="1" max="50" value="15" oninput="updateParams()">
+                <p><small>Ea voor ZnS:Cu is ca. 15 kJ/mol [2].</small></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div id="board-h" class="board"></div>
+        <div style="text-align: center;">
+            <button onclick="autoPlay()">Start Simulatie</button>
+            <button onclick="resetGame()">Reset</button>
+            <div id="info" style="margin-top: 10px;">Worpen: 0 | Munten: 30</div>
+            <div id="p-info" style="color: blue; font-weight: bold;">Ontsnappingskans: --</div>
+        </div>
+    </div>
+
+    <div class="panel" id="chart-container">
+        <canvas id="decayChart"></canvas>
+    </div>
+
+<script>
+    const S = 30;
+    const R_GAS = 8.314; // Gasconstante in J/(mol·K)
+    let rowH = new Array(S).fill(true);
+    let rowL = new Array(S).fill(false);
+    let throwCount = 0;
+    let dataPoints = [{x: 0, y: S}];
+    let chart;
+
+    function updateParams() {
+        const T = parseFloat(document.getElementById('param-t').value);
+        const Ea = parseFloat(document.getElementById('param-ea').value) * 1000; // Omzetten naar Joules
+        document.getElementById('val-t').innerText = T;
+        document.getElementById('val-ea').innerText = Ea / 1000;
+
+        // Bereken ontsnappingskans (Boltzmann/Arrhenius factor) [3, 4]
+        const p_escape = Math.exp(-Ea / (R_GAS * T));
+        document.getElementById('p-info').innerText = `Kans op thermische sprong: ${(p_escape * 100).toFixed(2)}%`;
+        return p_escape;
+    }
+
+    function playTurn() {
+        throwCount++;
+        const p_escape = updateParams();
+        
+        let r = Math.floor(Math.random() * S);
+        let w = Math.floor(Math.random() * S);
+
+        // Tweede-orde logica + Thermische Barrière [1, 3, 7]
+        if (rowH[r] && !rowL[w]) {
+            if (Math.random() < p_escape) {
+                rowH[r] = false;
+                rowL[w] = true;
+            }
+        }
+        
+        dataPoints.push({x: throwCount, y: rowH.filter(c => c).length});
+        updateUI();
+    }
+
+    function updateUI() {
+        const bh = document.getElementById('board-h');
+        bh.innerHTML = '';
+        rowH.forEach(c => bh.innerHTML += `<div class="square">${c ? '<div class="coin"></div>' : ''}</div>`);
+        
+        document.getElementById('info').innerText = `Worpen: ${throwCount} | Munten in H: ${rowH.filter(c => c).length}`;
+        chart.data.datasets.data = dataPoints;
+        chart.update('none');
+    }
+
+    function autoPlay() {
+        let timer = setInterval(() => {
+            playTurn();
+            if (rowH.every(c => !c) || throwCount > 1000) clearInterval(timer);
+        }, 10);
+    }
+
+    function resetGame() {
+        rowH.fill(true); rowL.fill(false);
+        throwCount = 0; dataPoints = [{x: 0, y: S}];
+        updateUI();
+    }
+
+    const ctx = document.getElementById('decayChart').getContext('2d');
+    chart = new Chart(ctx, {
+        type: 'line',
+        data: { datasets: [{ label: 'Munten in H (nH)', data: dataPoints, borderColor: '#1890ff', pointRadius: 0 }] },
+        options: { scales: { x: { type: 'linear', min: 0 }, y: { min: 0, max: 30 } }, maintainAspectRatio: false }
+    });
+
+    createBoards = () => { updateUI(); updateParams(); };
+    window.onload = createBoards;
+</script>
+</body>
+</html>
