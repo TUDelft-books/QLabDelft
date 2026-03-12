@@ -207,22 +207,37 @@ In de link is een simulatiespel te vinden met als doel het kansproces te demonst
 (Bij een eerste orde machtswet van aantal, hoort een tweede orde machtswet van intensiteit - denk aan: Activiteit is de afgeleide van het aantal deeltjes in de tijd.)
 
 ### Wiskundige afleiding van de (tweede orde) machtswet
-De afleiding van de machtswet (power law) uit de kansberekening van het spelmodel verloopt via de overgang van discrete kansstappen naar een continue differentiaalvergelijking. In het model met $S=30$ vakjes voor zowel rij H als rij L, wordt de kans op een succesvolle verplaatsing bepaald door twee onafhankelijke voorwaarden:
+De afleiding van de machtswet uit de kansberekening van het spelmodel gaat als volgt: Eerst wordt de kans per worp bepaald. Aan de hand daarvan stellen we een functie op (een differentiaalvergelijking). Door deze functie te integreren verkrijgen we de oplossing hiervan en kunnen deze schrijven in een machtwet vorm.
 1. De kans per worp bepalen
+Uitgangspunt is dat In het model met $S=30$ vakjes voor zowel rij H als rij L, wordt de kans op een succesvolle verplaatsing bepaald door twee onafhankelijke voorwaarden:
 De overgangskans ($\wp$) dat een munt van rij H naar rij L verhuist tijdens één worp (tijdstap), is het product van twee afzonderlijke kansen:
-Kans op het kiezen van een bezet vakje in H: De rode dobbelsteen moet een vakje kiezen waar een munt ligt. Omdat er $n_H$ munten zijn op een totaal van $N_H = 30$ vakjes, is deze kans: $P(H) = \frac{n_H}{N_H}$.
-Kans op het kiezen van een leeg vakje in L: De witte dobbelsteen moet een vakje kiezen in de onderste rij dat nog leeg is. Het aantal lege vakjes in L is gelijk aan $N_L - n_L$. Omdat alle munten die uit H verdwijnen in L terechtkomen, geldt $n_L = N_H - n_H$. Hierdoor is het aantal lege plekken in L gelijk aan $N_L - (N_H - n_H)$. Gezien $N_H = N_L = S = 30$, versimpelt dit tot exact $n_H$ lege plekken. De kans op een leeg vakje is dus: $P(\bar{L}) = \frac{n_H}{N_L}$.
-De totale overgangskans per tijdstap $t$ is:$$\wp(H \to L) = P(H) \cdot P(\bar{L}) = \frac{n_H}{S} \cdot \frac{n_H}{S} = \left( \frac{n_H}{S} \right)^2$$.
+Kans op het kiezen van een bezet vakje in H: De rode dobbelsteen moet een vakje kiezen waar een munt ligt. Omdat er $n_H$ elektronen zijn op een totaal van $N_H = 30$ vakjes, is deze kans: $P(H) = \frac{n_H}{N_H}$
+Kans op het kiezen van een leeg vakje in L: De witte dobbelsteen moet een vakje kiezen in de onderste rij dat nog leeg is. Het aantal lege vakjes in L is gelijk aan $N_L - n_L$. Omdat alle elektronen die uit H verdwijnen in L terechtkomen, geldt $n_L = N_H - n_H$. Hierdoor is het aantal lege plekken in L gelijk aan $N_L - (N_H - n_H)$. Gezien $N_H = N_L = S = 30$, versimpelt dit tot exact $n_H$ lege plekken. De kans op een leeg vakje is dus: $P(\bar{L}) = \frac{n_H}{N_L}$
+De totale overgangskans per tijdstap $t$ is:
+$\wp(H \to L) = P(H) \cdot P(\bar{L}) = \frac{n_H}{S} \cdot \frac{n_H}{S} = \left( \frac{n_H}{S} \right)^2$
 2. De differentiaalvergelijking (Tweede-orde kinetiek)
-In de continue limiet stellen we de verandering van het aantal munten per tijdseenheid (de emissiesnelheid) gelijk aan deze kans:$$-\frac{dn_H}{dt} = k \cdot n_H^2$$Hierbij is $k$ een constante die in dit model gelijk is aan $\frac{1}{S^2}$. Dit type vergelijking staat bekend als tweede-orde kinetiek.
+In de continue limiet stellen we de verandering van het aantal elektronen per tijdseenheid (de emissiesnelheid) gelijk aan deze kans:$-\frac{dn_H}{dt} = k \cdot n_H^2$. 
+Hierbij is $k$ een constante die in dit model gelijk is aan $\frac{1}{S^2}$. Dit type vergelijking staat bekend als tweede-orde kinetiek.
 3. Integratie naar de machtswet
-Om $n_H(t)$ te vinden, integreren we de vergelijking 4:
+Om $n_H(t)$ te vinden, integreren we de vergelijking:
 Scheid de variabelen: $\frac{dn_H}{n_H^2} = -k \, dt$.
 Integreer beide zijden: $\int \frac{1}{n_H^2} dn_H = \int -k \, dt$.
-Dit geeft de lineaire relatie voor het omgekeerde aantal munten: $$\frac{1}{n_H(t)} - \frac{1}{n_H(0)} = kt$$.
-Als we dit omschrijven naar $n_H(t)$, krijgen we de formule voor het verval van het aantal munten 4, 5:$$n_H(t) = \frac{n_H(0)}{1 + n_H(0)kt}$$Dit kan worden herschreven in de standaardvorm van een inverse machtswet: $n_H(t) = \frac{\alpha}{t + t_0}$.
-4. Intensiteit van het licht
-De gemeten lichtintensiteit $I(t)$ is evenredig met de snelheid van het verval ($-\frac{dn_H}{dt}$). Omdat de intensiteit afhankelijk is van $n_H^2$, volgt voor de intensiteit de machtswet:$$I(t) \propto \frac{1}{(t + t_0)^2}$$In experimenten met echte materialen zoals ZnS:Cu (koper-geactiveerd zinksulfide) varieert de exponent van deze machtswet vaak tussen de 1 en 2, afhankelijk van de complexiteit van de energievallen in het materiaal.
+Dit geeft de lineaire relatie voor het omgekeerde aantal elektronen: 
+$\frac{1}{n_H(t)} - \frac{1}{n_H(0)} = kt$
+Als we dit omschrijven naar $n_H(t)$, krijgen we de formule voor het verval van het aantal elektronen, 
+$n_H(t) = \frac{n_H(0)}{1 + n_H(0)kt}$. Dit kan worden herschreven in de standaardvorm van een inverse machtswet: $n_H(t) = \frac{\alpha}{t + t_0}$.
+
+4. Herschrijven naar de machtswet-vorm
+Om de formule te krijgen in de juiste vorm, isoleren we $n_H(t)$ via de volgende algebraïsche stappen: 
+Isoleer $1/n_H(t)$:$\frac{1}{n_H(t)} = kt + \frac{1}{n_H(0)}$
+Breng de rechterkant onder één noemer:$\frac{1}{n_H(t)} = \frac{kt \cdot n_H(0) + 1}{n_H(0)}$
+Inverteer de breuk om $n_H(t)$ te vinden:$n_H(t) = \frac{n_H(0)}{n_H(0)kt + 1}$
+Deel teller en noemer door $n_H(0)k$ om de vorm $(t + t_0)$ in de noemer te krijgen:
+$n_H(t) = \frac{1/k}{t + \frac{1}{n_H(0)k}}$
+
+5. Intensiteit van het licht
+De gemeten lichtintensiteit $I(t)$ is evenredig met de snelheid van het verval ($-\frac{dn_H}{dt}$). Omdat de intensiteit afhankelijk is van $n_H^2$, volgt voor de intensiteit de machtswet:
+$I(t) \propto \frac{1}{(t + t_0)^2}$. In experimenten met echte materialen zoals ZnS:Cu (koper-geactiveerd zinksulfide) varieert de exponent van deze machtswet vaak tussen de 1 en 2, afhankelijk van de complexiteit van de energievallen in het materiaal.
 
 
 
