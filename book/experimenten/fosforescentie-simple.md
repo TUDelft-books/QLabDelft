@@ -206,7 +206,7 @@ In de link is een simulatiespel te vinden met als doel het kansproces te demonst
 * Druk op "Machtswetfit" om een (eerste orde) machtswet te fitten. 
 (Bij een eerste orde machtswet van aantal, hoort een tweede orde machtswet van intensiteit - denk aan: Activiteit is de afgeleide van het aantal deeltjes in de tijd.)
 
-### Wiskundige afleiding van de (tweede orde) machtswet
+### Wiskundige afleiding van de (tweede orde) machtswet (moet nog ge-edit)
 De afleiding van de machtswet uit de kansberekening van het spelmodel gaat als volgt: Eerst wordt de kans per worp bepaald. Aan de hand daarvan stellen we een functie op (een differentiaalvergelijking). Door deze functie te integreren verkrijgen we de oplossing hiervan en kunnen deze schrijven in een machtwet vorm.
 1. De kans per worp bepalen
 Uitgangspunt is dat In het model met $S=30$ vakjes voor zowel rij H als rij L, wordt de kans op een succesvolle verplaatsing bepaald door twee onafhankelijke voorwaarden:
