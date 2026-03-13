@@ -37,8 +37,8 @@ Laptop, USB-kabel, Arduino, breadboard, 5 jumper-kabels, drukknop, weerstand 220
 
 ### Opstelling 
 Bouw onderstaande schematische tekening na. <br>
-```{figure} ./media/planck/opstelling.png
-    :name: opstelling
+```{figure} ./media/planck/schema.png
+    :name: schema
     :align: center 
 ``` 
 ### Uitvoering
