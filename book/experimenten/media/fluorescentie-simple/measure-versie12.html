@@ -64,7 +64,7 @@
   <div class="controls">
     <button id="fitHalfLifeButton">Halfwaardetijd-fit</button>
     <span class="muted">
-      $I(t)=A + I_0\,\left(\tfrac12\right)^{t/t_{1/2}}$
+      $I(t)=I_0\,\left(\tfrac12\right)^{t/t_{1/2}} + B$
     </span>
     <span id="halfLifeResult" class="muted"></span>
   </div>
@@ -73,9 +73,9 @@
   <div class="controls" id="manualHalfLifeControls">
     <button id="toggleManualHalfLife">Handmatige halfwaardecurve</button>
     <span class="muted">
-      $I(t)=A + I_0\,\left(\tfrac12\right)^{t/t_{1/2}}$
+      $I(t)=I_0\,\left(\tfrac12\right)^{t/t_{1/2}} + B$
     </span>
-    <label style="margin-left:12px;">$A$ (achtergrond):
+    <label style="margin-left:12px;">$B$ (achtergrond):
       <input type="range" id="manualBG" min="-1.00" max="5" step="0.01" value="0.00">
       <input type="number" id="manualBGNum" min="-1.00" max="5" step="0.01" value="0.00" style="width:6em;">
     </label>

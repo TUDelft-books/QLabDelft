@@ -73,7 +73,7 @@ Met de link hieronder wordt via javascript code in een webpagina de spanning die
 8) Sluit de doos, stel de meettijd in op 30 seconden en druk op **"UV aan & start meeting"**. De UV lamp in de doos schijnt standaard 5 seconden op het sample. 
 9) Na 5 seconden reset de grafiek en meet hij verder en stopt vanzelf aan het einde van de meettijd.
 10) Lees de halfwaardetijd op minstens 2 verschillende plaatsen zo nauwkeurig mogelijk af en noteer deze ergens. Bij voorbeeld aan het begin en vanaf 3 seconden oid. Is dit hetzelfde?
-11) Druk op de Halfwaardetijd-fit knop. Herken je de functie? De A staat voor achtergrond. Het programma probeert een fit te maken, maar deze is niet erg goed. 
+11) Druk op de Halfwaardetijd-fit knop. Herken je de functie? De B staat voor achtergrond. Het programma probeert een fit te maken, maar deze is niet erg goed. 
 12) Probeer nu met de Handmatige halfwaardecurve knop een betere fit te krijgen:
 13) Druk op de Handmatige halfwaardecurve knop en stel met de schuiven de achtergrond in en ook $I_0$. Probeer vervolgens met de laatste schuif de fit zo goed mogelijk passen te krijgen. (Als de grafiek raar zoomt kun je dat herstellen door 2x op de halfwaardetijd-fit knop te drukken).
 14) Hoe groot is de best passende halfwaarde tijd? Komt die overeen met de waardes die je vond bij **10**?
@@ -196,6 +196,7 @@ Wil je de halfwaardetijd uit de machtswet laten berekenen door de computer, gebr
 In de link is een simulatiespel te vinden met als doel het kansproces te demonstreren dat achter het fosforescentie verval model zit (de zogenaamde tweede orde kinetiek).
 <br>
 <a href="./media/fluorescentie-simple/spel_perfect.html" target="_blank">open spel</a>
+<a href="./media/fluorescentie-simple/spel_perfect2.html" target="_blank">open spel versie2</a>
 <br><br>
 #### Speluitleg
 * Er zijn 30 aangeslagen elektronen en 30 gaten om naar terug te keren.

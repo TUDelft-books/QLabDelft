@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Fosforescentie Verval Model — 2e orde + 1e orde (∞)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [["$","$"],["\\(","\\)"]] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { font-family: sans-serif; display:flex; flex-direction:column; align-items:center; background:#f0f0f0; }
+    .row-wrapper { display:flex; gap:10px; align-items:flex-start; }
+    .board{display:grid;grid-template-columns:repeat(10,30px);gap:5px;margin:10px;}
+    .square{width:30px;height:30px;border:1px solid #333;display:flex;align-items:center;justify-content:center;font-size:10px;border-radius:3px;}
+    .row-h{background:#ffcccc;} .row-l{background:#ccffcc;}
+    .coin{width:20px;height:20px;background:#444;border-radius:50%;}
+    #chart-container{width:80%;max-width:720px;background:white;padding:10px;border-radius:8px;}
+    .die-box { min-width:48px; min-height:48px; padding:6px 8px; background:#fff; border:1px solid #999; border-radius:6px; box-shadow:0 1px 2px rgba(0,0,0,.08);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:bold; }
+    .die-label { font-size:11px; color:#444; font-weight:600; margin-bottom:4px; }
+    .controls { display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap; max-width:720px; }
+    .toggle-on { background:#222; color:#fff; }
+  </style>
+</head>
+
+<body>
+  <h1>Fosforescentie Verval Model</h1>
+  <p>Simulatie terugvallende elektronen van de aangeslagen toestand naar de grondtoestand met twéé 30 zijdige dobbelstenen [Malgieri, 2018]
+  <br>Met machtswet-verval (normaal - 2 dobbelstenen) of exponentieel-verval (∞‑modus = de grondtoestand heeft oneindig veel plek - 1 dobbelsteen)</p>
+
+  <!-- H -->
+  <div class="status-text">Aangeslagen toestand (H)</div>
+  <div class="row-wrapper">
+    <div id="board-h" class="board"></div>
+    <div class="die-box">
+      <div class="die-label">H worp</div>
+      <div id="dieH">–</div>
+    </div>
+  </div>
+
+  <!-- L -->
+  <div class="status-text">Grondtoestand (L)</div>
+  <div class="row-wrapper">
+    <div id="board-l" class="board"></div>
+    <div class="die-box">
+      <div class="die-label">L worp</div>
+      <div id="dieL">–</div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div align="center">
+    <button onclick="playTurn()">Gooi</button>
+    <button id="autoBtn" onclick="autoToggle()">Auto</button>
+    <button onclick="resetGame()">Reset</button>
+    <button onclick="fitReciprocalPlot()">Machtswet-fit</button>
+    <button onclick="fitExponentialPlot()">Exponentiële fit</button>
+    <button id="infBtn" onclick="toggleInfinity()" title="1e‑orde verval: alleen H‑dobbelsteen">∞‑modus</button>
+    </div>
+    <div id="fit-info" style="width:100%; margin-top:10px;"></div>
+    <div>Machtswet model: $N_H(n)=\frac{a}{(n+n_0)}$</div>
+    <div>Exponentieel model (∞‑modus): $N_H(n)=N_0 e^{-kn}$</div>
+    <br><br>
+    <div id="worp-info">Worpen: 0 — Resterende: 30</div>
+  </div>
+
+  <div id="chart-container"><canvas id="decayChart"></canvas></div>
+
+<script>
+/* ----------------------- DATA ----------------------- */
+const S=30;
+let rowH=new Array(S).fill(true);
+let rowL=new Array(S).fill(false);
+let throwCount=0;
+let history=[{x:0,y:S}];
+let chart;
+
+let autoRunning=false;
+let autoIntervalId=null;
+
+let infinityMode=false;   // TRUE = exponentieel model (Optie A)
+
+/* ----------------------- UI ----------------------- */
+function createBoard(){
+  const bh=document.getElementById('board-h');
+  const bl=document.getElementById('board-l');
+  bh.innerHTML=''; bl.innerHTML='';
+
+  for(let i=0;i<S;i++){
+    bh.innerHTML += `<div id="h-${i}" class="square row-h">${rowH[i]?'<div class="coin"></div>':''}</div>`;
+    bl.innerHTML += `<div id="l-${i}" class="square row-l">${rowL[i]?'<div class="coin"></div>':''}</div>`;
+  }
+  document.getElementById('dieH').textContent='–';
+  document.getElementById('dieL').textContent='–';
+}
+
+function updateUI(){
+  for(let i=0;i<S;i++){
+    document.getElementById(`h-${i}`).innerHTML=rowH[i]?'<div class="coin"></div>':'';
+    document.getElementById(`l-${i}`).innerHTML=rowL[i]?'<div class="coin"></div>':'';
+  }
+  const c=rowH.filter(x=>x).length;
+  document.getElementById('worp-info').innerText=`Worpen: ${throwCount} — Resterende: ${c}`;
+  chart.data.datasets[0].data=history;
+  chart.update();
+}
+
+/* ----------------------- HELPERS ----------------------- */
+function randomFreeL(){
+  const free=[];
+  for(let i=0;i<S;i++) if(!rowL[i]) free.push(i);
+  if(free.length===0) return -1;
+  return free[Math.floor(Math.random()*free.length)];
+}
+
+/* ----------------------- SPELLOGICA ----------------------- */
+function playTurn(){
+  throwCount++;
+
+  const r=Math.floor(Math.random()*S);  // H-dobbelsteen
+  document.getElementById('dieH').textContent=(r+1);
+
+  if(infinityMode){
+    // === OPTIE A — EXPONENTIEEL VERVAL (1e orde) ===
+    document.getElementById('dieL').textContent='∞';
+
+    if(rowH[r]){
+      rowH[r]=false;
+      const Lspot=randomFreeL();  // willekeurige vrije L-plek
+      if(Lspot!==-1) rowL[Lspot]=true;
+    }
+
+  } else {
+    // === ORIGINEEL 2e‑ORDE MODEL ===
+    const w=Math.floor(Math.random()*S);
+    document.getElementById('dieL').textContent=(w+1);
+
+    if(rowH[r] && !rowL[w]){
+      rowH[r]=false;
+      rowL[w]=true;
+    }
+  }
+
+  history.push({x:throwCount, y: rowH.filter(x=>x).length});
+  updateUI();
+}
+
+/* ----------------------- MODUS ----------------------- */
+function toggleInfinity(){
+  infinityMode=!infinityMode;
+  const b=document.getElementById('infBtn');
+  b.classList.toggle('toggle-on', infinityMode);
+  b.textContent=infinityMode?'∞‑modus (aan)':'∞‑modus';
+  document.getElementById('dieL').textContent=infinityMode?'∞':'–';
+}
+
+/* ----------------------- AUTO ----------------------- */
+function autoToggle(){
+  const btn=document.getElementById('autoBtn');
+  if(!autoRunning){
+    autoRunning=true; btn.textContent='Stop Auto';
+    autoIntervalId=setInterval(()=>{
+      playTurn();
+      if(rowH.every(x=>!x)){
+        clearInterval(autoIntervalId);
+        autoIntervalId=null;
+        autoRunning=false;
+        btn.textContent='Auto';
+      }
+    },50);
+  } else {
+    autoRunning=false; btn.textContent='Auto';
+    if(autoIntervalId) clearInterval(autoIntervalId);
+  }
+}
+
+/* ----------------------- RESET ----------------------- */
+function resetGame(){
+  if(autoIntervalId){ clearInterval(autoIntervalId); autoIntervalId=null; }
+  autoRunning=false;
+  document.getElementById('autoBtn').textContent='Auto';
+
+  infinityMode=false;
+  const b=document.getElementById('infBtn');
+  b.classList.remove('toggle-on');
+  b.textContent='∞‑modus';
+
+  rowH=new Array(S).fill(true);
+  rowL=new Array(S).fill(false);
+  throwCount=0;
+  history=[{x:0,y:S}];
+
+  if(chart.data.datasets.length>1) chart.data.datasets.splice(1); // verwijder fits
+
+  createBoard();
+  updateUI();
+}
+
+/* ----------------------- FITS ----------------------- */
+// --- 2e orde (reciproque) ---
+function fitReciprocal(points){
+  const valid=points.filter(p=>p.y>0);
+  if(valid.length<3) return {ok:false,msg:'Te weinig punten'};
+  const x=valid.map(p=>p.x);
+  const y=valid.map(p=>p.y);
+
+  const maxX=Math.max(...x);
+  const t0Max=Math.max(5,0.5*maxX);
+  const N=80;
+
+  function score(t0){
+    let sum_yu=0,sum_u2=0;
+    for(let i=0;i<x.length;i++){
+      const u=1/(x[i]+t0);
+      sum_yu+=y[i]*u;
+      sum_u2+=u*u;
+    }
+    if(sum_u2<=0) return {a:NaN,sse:Infinity,r2:NaN};
+    const a=sum_yu/sum_u2;
+    const mean=y.reduce((s,v)=>s+v,0)/y.length;
+    let sse=0,sst=0;
+    for(let i=0;i<x.length;i++){
+      const pred=a/(x[i]+t0);
+      const e=y[i]-pred; sse+=e*e;
+      const d=y[i]-mean; sst+=d*d;
+    }
+    const r2=(sst>0)?(1-sse/sst):1;
+    return {a,sse,r2};
+  }
+
+  let best={sse:Infinity,a:NaN,t0:NaN,r2:NaN};
+  for(let k=0;k<N;k++){
+    const t0=(k/(N-1))*t0Max;
+    const {a,sse,r2}=score(t0);
+    if(sse<best.sse) best={sse,a,t0,r2};
+  }
+  if(!isFinite(best.sse)) return {ok:false,msg:'Fit mislukt'};
+  return {ok:true,a:best.a,t0:best.t0,r2:best.r2};
+}
+
+function buildReciprocalDataset(a,t0,nMin,nMax){
+  const data=[]; const step=0.1;
+  for(let n=nMin; n<=nMax+1e-9; n+=step){
+    const y=a/(n+t0); if(isFinite(y)) data.push({x:n,y});
+  }
+  return { label:'Fit 2e orde: a/(n+n0)', data, borderColor:'blue', borderWidth:2, pointRadius:0, showLine:true };
+}
+
+function fitReciprocalPlot(){
+  // zorg dat fits naast elkaar kunnen bestaan: eerst verwijder oude 2e-orde curve (index 1 of 2)
+  chart.data.datasets = chart.data.datasets.filter(ds => !(ds._isRecipFit===true));
+
+  const res=fitReciprocal(history);
+  if(!res.ok){ document.getElementById('fit-info').innerText='Fit mislukt: '+res.msg; return; }
+  const nMin=Math.min(...history.map(p=>p.x));
+  const nMax=Math.max(...history.map(p=>p.x));
+  const ds=buildReciprocalDataset(res.a,res.t0,nMin,nMax); ds._isRecipFit=true;
+  chart.data.datasets.push(ds);
+  chart.update();
+  document.getElementById('fit-info').innerText=
+    `2e orde: a=${res.a.toExponential(3)}, n0=${res.t0.toFixed(3)}, R²=${res.r2.toFixed(4)}`;
+}
+
+// --- 1e orde (exponentieel) ---
+// We fitten ln(y) = ln(A) - k x via OLS.
+function fitExponential(points){
+  const valid = points.filter(p=>p.y>0);
+  if(valid.length < 3) return {ok:false, msg:'Te weinig punten'};
+  const x = valid.map(p=>p.x);
+  const ly = valid.map(p=>Math.log(p.y));
+  const n = x.length;
+  const sumx = x.reduce((s,v)=>s+v,0);
+  const sumy = ly.reduce((s,v)=>s+v,0);
+  const sumxx = x.reduce((s,v)=>s+v*v,0);
+  const sumxy = x.reduce((s,xi,i)=>s+xi*ly[i],0);
+  const denom = n*sumxx - sumx*sumx;
+  if(Math.abs(denom) < 1e-12) return {ok:false, msg:'Singuliere data'};
+  const m = (n*sumxy - sumx*sumy) / denom;   // m = -k
+  const b = (sumy - m*sumx) / n;             // b = ln(A)
+  const k = -m, A = Math.exp(b);
+  // R^2 op log-schaal
+  const meanLy = sumy/n;
+  let sse=0, sst=0; for(let i=0;i<n;i++){ const pred = m*x[i] + b; const e = ly[i]-pred; sse += e*e; const d = ly[i]-meanLy; sst += d*d; }
+  const r2 = (sst>0) ? (1 - sse/sst) : 1;
+  return {ok:true, A, k, r2};
+}
+
+function buildExponentialDataset(A, k, nMin, nMax){
+  const data=[]; const step=0.1;
+  for(let n=nMin; n<=nMax+1e-9; n+=step){
+    const y=A * Math.exp(-k*n); if(isFinite(y)) data.push({x:n,y});
+  }
+  return { label:'Fit 1e orde: A·e^{-k n}', data, borderColor:'green', borderWidth:2, pointRadius:0, showLine:true, borderDash:[6,4] };
+}
+
+function fitExponentialPlot(){
+  // verwijder oude 1e-orde curve(s)
+  chart.data.datasets = chart.data.datasets.filter(ds => !(ds._isExpFit===true));
+
+  const res = fitExponential(history);
+  if(!res.ok){ document.getElementById('fit-info').innerText = 'Exp-fit mislukt: '+res.msg; return; }
+  const nMin = Math.min(...history.map(p=>p.x));
+  const nMax = Math.max(...history.map(p=>p.x));
+  const ds = buildExponentialDataset(res.A, res.k, nMin, nMax); ds._isExpFit=true;
+  chart.data.datasets.push(ds);
+  chart.update();
+  document.getElementById('fit-info').innerText =
+    `Exponentieel model: N0=${res.A.toExponential(3)}, k=${res.k.toFixed(4)}, R²=${res.r2.toFixed(4)}`;
+}
+
+/* ----------------------- CHART ----------------------- */
+const ctx=document.getElementById('decayChart').getContext('2d');
+chart=new Chart(ctx,{
+  type:'line',
+  data:{datasets:[
+    { label:'N_H(n)', data:history, borderColor:'red', tension:0.1 }
+  ]},
+  options:{
+    scales:{
+      x:{type:'linear', title:{display:true,text:'worpen'}},
+      y:{min:0,max:S,title:{display:true,text:'N_H'}}
+    }
+  }
+});
+
+/* ----------------------- INIT ----------------------- */
+createBoard();
+</script>
+
+</body>
+</html>
