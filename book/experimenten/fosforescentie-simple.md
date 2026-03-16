@@ -196,6 +196,7 @@ Wil je de halfwaardetijd uit de machtswet laten berekenen door de computer, gebr
 In de link is een simulatiespel te vinden met als doel het kansproces te demonstreren dat achter het fosforescentie verval model zit (de zogenaamde tweede orde kinetiek).
 <br>
 <a href="./media/fluorescentie-simple/spel_perfect.html" target="_blank">open spel</a>
+<br>
 <a href="./media/fluorescentie-simple/spel_perfect2.html" target="_blank">open spel versie2</a>
 <br><br>
 #### Speluitleg
