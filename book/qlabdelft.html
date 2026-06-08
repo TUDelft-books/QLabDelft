@@ -104,6 +104,8 @@
       background: radial-gradient(closest-side, rgba(58,134,255,0.35), transparent 70%);
       filter: blur(4px);
       transform: rotate(8deg);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .hero__title {
@@ -132,6 +134,8 @@
 
     /* Knoppenrij */
     .actions {
+      position: relative;
+      z-index: 2;
       margin-top: clamp(20px, 3vw, 32px);
       display: grid;
       grid-template-columns: 1fr 1fr;
