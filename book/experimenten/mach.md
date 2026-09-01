@@ -64,6 +64,11 @@ Figuur 1: De Mach Zehnder
 opstelling<img src="./media/mach/mimage1.jpg"
 style="width:6.26042in;height:4.71875in" alt="figuur 1" />
 
+Figuur 1b: Van boven met uitleg
+<img src="./media/mach/top-foto.png"
+style="width:6.26042in;height:4.71875in" alt="figuur 1b" />
+
+
 ## Uitvoering
 
 ### Veiligheid
