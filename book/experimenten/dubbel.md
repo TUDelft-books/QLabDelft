@@ -102,19 +102,19 @@ In deze opstelling maken we daarnaast gebruik van een rode (639 nm) en een groen
 >- Zet de laser uit als deze niet wordt gebruikt.
 
 
-1) Plaats de groene laser in de houder en controleer de uitlijning van de laser op de dubbelspleet. Zorg dat de laserbundel precies op de dubbelspleet valt (zie foto bij opstelling.). Let hierbij goed de **veiligheid!** De laser is ten alle tijden richting de muur gericht.
+1) Sluit de groene laser aan en druk op de knop op de USB stekker om deze aan te zetten. Controleer de uitlijning van de laser op de dubbelspleet (normaal gesproken is dit al goed). De laserbundel moet precies op de dubbelspleet vallen (zie foto bij opstelling.). Let hierbij goed de **veiligheid!** De laser is ten alle tijden richting de muur gericht.
 2) Meet met de rolmaat de afstand van dubbelspleet tot de muur op. Noem deze $L$, van lengte.
 3) Meet met de liniaal of geodriehoek de afstand tussen de minima van het enkelspleetpatroon op (zie figuur 6 of 8). Noem deze $y_1$.
 4) Meet met de liniaal of geodriehoek de afstand van maximum tot maximum van het regelmatige, kleine patroon binnen het enkelspleetpatroon op (zie figuur 8). Noem deze $y_2$.
 
-5) Plaats nu de rode laser in de houder en controleer de uitlijning van de laser op de dubbelspleet. Zorg dat de laserbundel precies op de dubbelspleet valt (zie foto bij opstelling.). Let hierbij goed de **veiligheid!** De laser is ten alle tijden richting de muur gericht.
+5) Sluit nu de rode laser aan en druk op de knop op de USB stekker om deze aan te zetten. Controleer de uitlijning van de laser op de dubbelspleet (normaal gesproken is dit al goed). De laserbundel moet precies op de dubbelspleet vallen (zie foto bij opstelling.). Let hierbij goed de **veiligheid!** De laser is ten alle tijden richting de muur gericht.
 6) Meet met de rolmaat de afstand van dubbelspleet tot de muur op. Noem deze $L$, van lengte.
-7) Meet met de liniaal of geodriehoek de afstand tussen de minima van het enkelspleetpatroon op (zie figuur 6 of 8). Noem deze $y_1$.
-8) Meet met de liniaal of geodriehoek de afstand van maximum tot maximum van het regelmatige, kleine patroon binnen het enkelspleetpatroon op (zie figuur 8). Noem deze $y_2$.
+7) Meet met de liniaal of geodriehoek de afstand tussen de minima van het enkelspleetpatroon op (zie figuur 6 of 8). Noem deze $y_1$ (voor rood).
+8) Meet met de liniaal of geodriehoek de afstand van maximum tot maximum van het regelmatige, kleine patroon binnen het enkelspleetpatroon op (zie figuur 8). Noem deze $y_2$ (voor rood).
 
 ### Verwerking Experiment 1
 * Bereken voor beide metingen, met de groene en de rode laser, voor beide patronen ($y_1$ en $y_2$) de hoek $\Theta$ m.b.v. je meetgegevens ($\frac{y}{L}=tan\Theta$). Dit geeft als het goed is 4 verschillende waarden.
-* Bereken met behulp van deze hoeken en de bekende golflengte van de groene (520 nm) en de rode laser (635 nm) de breedte van de gebruikte spleet $a$ en de afstand tussen de spleten $d$. Je krijgt dus twee waarden voor $d$ (rood en groen) en twee voor $a$.
+* Bereken met behulp van deze hoeken en de bekende golflengte van de groene (520 nm) en de rode laser (639 nm) de breedte van de gebruikte spleet $a$ en de afstand tussen de spleten $d$. Je krijgt dus twee waarden voor $d$ (rood en groen) en twee voor $a$.
 
 ### Conclusie en discussie Experiment 1
 1) Vergelijk je gevonden waarden voor $d$ en $a$ tussen twee kleuren laserlicht.
