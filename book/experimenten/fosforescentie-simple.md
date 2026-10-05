@@ -91,7 +91,7 @@ Als alternatief is het ook mogelijk de html-pagina hieronder te downloaden en ve
 
 ## Opdrachten
 Bestudeer de theorie als je dat nog niet gedaan hebt en beantwoord vervolgens de volgende vragen:
-1) Bereken met behulp van de theorie de halfwaardetijd van jouw machtswet-fit.
+1) Leg uit waarom het verval van glow-in-the-dark materiaal niet exponentieel is.
 2) Leg uit waarom men normaal gesproken onderzoek doet naar fosforescentie bij temperaturen waarbij stikstof vloeibaar is.
 3) Leg uit wat (je denkt dat) er gebeurt met de halfwaardetijd wanneer je je sample eerst heel erg warm maakt voordat je gaat meten.
 4) Onderzoek met het simulatiespel onderaan het kansproces en bepaal een aantal maal de (gemiddelde) halfwaarde"tijd" (aantal). 
@@ -123,75 +123,7 @@ Het terugvallen van aangeslagen elektronen en daarbij het vrijkomen van fotonen 
 Echter materiaal eigenschappen van het molecuul zorgen ervoor dat niet alle elektronen een even grote kans hebben. 
 In een fosforescerende halfgeleider zoals wij dat hebben kunnen de elektronen in twee banden zitten: De *valentieband* (grondtoestand) met de *gaten* en de *geleidingsband* (aangeslagen-toestand) met de aangeslagen, ontsnapte elektronen (een *gat* is een ontbrekend elektron in een rooster). Het aantal gaten voor elektronen om naar terug te vallen is beperkt. Dit zorgt ervoor dat de eerste elektronen meer kans hebben op een plekje dan de latere elektronen. Hieruit volgt een verval volgens een (tweede orde) machtswet in plaats van een exponentiële functie. Dit wordt onderaan wiskundig toegelicht, net als een simulatiespel van deze twee banden.  
 Daarnaast zitten de aangeslagen elektronen in zogenaamde energy-"traps" (vallen) van verschillende diepte. In een perfect molecuul/kristalrooster hebben alle traps dezelfde diepte en zijn er oneindig veel gaten, wat leidt tot exponentieel verval. Maar in de dit geval zorgen traps van verschillende diepte voor een (ontelbare) optelsom van exponentiële functies: De machtswet. Het laatste deel (de staart) van de machtswet komt overeen met de staart van de halfwaardetijd-fit. De staart en daarmee de gevonden halfwaardetijd van de halfwaardetijd-fit geeft (ook) informatie over hoelang de fosforescentie "doorwerkt".
-De combinatie van deze fysische factoren zorgt voor een model als hieronder, waarbij de b in de praktijk kan variëren tussen de 0,2 en 2. 
-
-### Rekenen met de machtswet
-Uit de machtswet $I(t) = \frac{a}{(t + t_0)^b}$ is vrij eenvoudig de halfwaardetijd te berekenen: 
-<br>
-We zoeken het tijdstip $t_{1/2}$ waarop $I(t) = \frac{1}{2} I_0$.
-<br>
-Op t=0 geldt:
-<br>
-$I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
-<br>
-dus op tijdstip $t=t_{1/2}$ geldt: 
-<br>
-$I(t) = \frac{1}{2} I_0 = \frac{1}{2}\frac{a}{t_0^b} = \frac{a}{(t + t_0)^b}$
-<br>
-wegstrepen a en omdraaien of kruislings-vermenigvuldigen levert:
-<br>
-$2t_0^b = (t+t_0)^b$
-<br>
-links en rechts de b-macht wortel nemen:
-<br>
-$2^{1/b}\cdot t_0 = t+t_0$
-<br>
-dus:
-<br> 
-$t = 2^{1/b}\cdot t_0 - t_0$ 
-<br>
-en netter:
-<br>
-$t = t_0(2^{1/b}-1)$
-<br>
-
-Bijvoorbeeld als je de volgende waarden hebt gevonden: $t_0 = 0.253$ en $b = 0.718$, dan geldt:
-<br>
- $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1) = 0.41 s$.
-<br><br>
-Je kunt nu zelf narekenen dat voor het tijdstip dat je bijvoorbeeld 1% over hebt, geldt:
-% Afleiding van de vervaltijd t_x voor een Power Law
-
-% De basisformule voor intensiteit
-%$I(t) = \frac{a}{(t + t_0)^b}
-
-% Stap 1: De beginintensiteit bepalen (t = 0)
-%$I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
-
-% Stap 2: De conditie voor fractie x opstellen
-%$\frac{a}{(t_x + t_0)^b} = x \cdot \frac{a}{t_0^b}$
-
-% Stap 3: De constante a elimineren en de vergelijking omdraaien
-%$(t_x + t_0)^b = \frac{t_0^b}{x}$
-
-% Stap 4: De macht b isoleren door te verheffen tot de macht 1/b
-%$t_x + t_0 = \left( \frac{t_0^b}{x} \right)^{1/b}$
-
-% Stap 5: Vereenvoudigen en t_x oplossen
-%$t_x + t_0 = t_0 \cdot \left( \frac{1}{x} \right)^{1/b}$
-%$t_x = t_0 \cdot \left( \frac{1}{x} \right)^{1/b} - t_0$
-
-% Stap 6: De definitieve formule (buiten haakjes halen)
-%$t_x = t_0 \cdot \left( \left[ \frac{1}{x} \right]^{1/b} - 1 \right)$
-
-$t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) = 153 \text{ s}$
-
-<br>
-Wil je de halfwaardetijd uit de machtswet laten berekenen door de computer, gebruik dan deze applet:
-<br>
-<a href="./media/fluorescentie-simple/halfwaardetijd.html" target="_blank">Open calculating applet</a>
-<br><br>
-
+De combinatie van deze fysische factoren zorgt voor het machtswet-model $I(t) = \frac{a}{(t + t_0)^b}$, waarbij de b in de praktijk kan variëren tussen de 0,2 en 2. 
 
 ## Fysisch model en mathematisch model
 ### Simulatiespel van het fosforescentie verval model
@@ -391,7 +323,76 @@ De lichtintensiteit volgt dus een machtswet met exponent $-2$.
 
 Bij echte glow-in-the-dark-materialen, zoals ZnS:Cu (koper-geactiveerd zinksulfide), wordt vaak een exponent tussen 1 en 2 gemeten. Dat komt doordat in echte materialen meerdere soorten energievallen en relaxatieprocessen tegelijk een rol spelen, terwijl het spelmodel een vereenvoudigde beschrijving geeft.
 
+## Extra
 
+### Rekenen met de machtswet
+Uit de machtswet $I(t) = \frac{a}{(t + t_0)^b}$ is vrij eenvoudig de halfwaardetijd te berekenen: 
+<br>
+We zoeken het tijdstip $t_{1/2}$ waarop $I(t) = \frac{1}{2} I_0$.
+<br>
+Op t=0 geldt:
+<br>
+$I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
+<br>
+dus op tijdstip $t=t_{1/2}$ geldt: 
+<br>
+$I(t) = \frac{1}{2} I_0 = \frac{1}{2}\frac{a}{t_0^b} = \frac{a}{(t + t_0)^b}$
+<br>
+wegstrepen a en omdraaien of kruislings-vermenigvuldigen levert:
+<br>
+$2t_0^b = (t+t_0)^b$
+<br>
+links en rechts de b-macht wortel nemen:
+<br>
+$2^{1/b}\cdot t_0 = t+t_0$
+<br>
+dus:
+<br> 
+$t = 2^{1/b}\cdot t_0 - t_0$ 
+<br>
+en netter:
+<br>
+$t = t_0(2^{1/b}-1)$
+<br>
+
+Bijvoorbeeld als je de volgende waarden hebt gevonden: $t_0 = 0.253$ en $b = 0.718$, dan geldt:
+<br>
+ $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1) = 0.41 s$.
+<br><br>
+Je kunt nu zelf narekenen dat voor het tijdstip dat je bijvoorbeeld 1% over hebt, geldt:
+% Afleiding van de vervaltijd t_x voor een Power Law
+
+% De basisformule voor intensiteit
+%$I(t) = \frac{a}{(t + t_0)^b}
+
+% Stap 1: De beginintensiteit bepalen (t = 0)
+%$I_0 = I(0) = \frac{a}{(0 + t_0)^b} = \frac{a}{t_0^b}$
+
+% Stap 2: De conditie voor fractie x opstellen
+%$\frac{a}{(t_x + t_0)^b} = x \cdot \frac{a}{t_0^b}$
+
+% Stap 3: De constante a elimineren en de vergelijking omdraaien
+%$(t_x + t_0)^b = \frac{t_0^b}{x}$
+
+% Stap 4: De macht b isoleren door te verheffen tot de macht 1/b
+%$t_x + t_0 = \left( \frac{t_0^b}{x} \right)^{1/b}$
+
+% Stap 5: Vereenvoudigen en t_x oplossen
+%$t_x + t_0 = t_0 \cdot \left( \frac{1}{x} \right)^{1/b}$
+%$t_x = t_0 \cdot \left( \frac{1}{x} \right)^{1/b} - t_0$
+
+% Stap 6: De definitieve formule (buiten haakjes halen)
+%$t_x = t_0 \cdot \left( \left[ \frac{1}{x} \right]^{1/b} - 1 \right)$
+
+$t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) = 153 \text{ s}$
+
+*Bij een exponentieel verval is de halfwaardetijd constant. Bij een machtswet is dat niet zo. De hierboven berekende $t_{1/2}$​ is alleen de tijd die nodig is om van de beginintensiteit naar de halve beginintensiteit te gaan. Daarna worden de opeenvolgende "halfwaardetijden" steeds groter. Dit is dus heel anders dan bij radioactief verval.*
+
+<br>
+Wil je de halfwaardetijd uit de machtswet laten berekenen door de computer, gebruik dan deze applet:
+<br>
+<a href="./media/fluorescentie-simple/halfwaardetijd.html" target="_blank">Open calculating applet</a>
+<br><br>
 
 
 ## Bronnen
