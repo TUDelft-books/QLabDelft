@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Fosforescentie Verval Model — 2e orde + 1e orde (∞)</title>
+  <title>Fosforescentie Verval Model</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     window.MathJax = { tex: { inlineMath: [["$","$"],["\\(","\\)"]] } };
@@ -381,7 +381,7 @@ function buildReciprocalDataset(a,t0,nMin,nMax){
   for(let n=nMin; n<=nMax+1e-9; n+=step){
     const y=a/(n+t0); if(isFinite(y)) data.push({x:n,y});
   }
-  return { label:'Fit 2e orde: a/(n+n0)', data, borderColor:'blue', borderWidth:2, pointRadius:0, showLine:true };
+  return { label:'Fit: a/(n+n0)^b', data, borderColor:'blue', borderWidth:2, pointRadius:0, showLine:true };
 }
 
 function fitReciprocalPlot(){
@@ -395,7 +395,7 @@ function fitReciprocalPlot(){
   chart.data.datasets.push(ds);
   chart.update();
   document.getElementById('fit-info').innerText=
-    `2e orde: a=${res.a.toExponential(3)}, n0=${res.t0.toFixed(3)}, R²=${res.r2.toFixed(4)}`;
+    `a=${res.a.toExponential(3)}, n0=${res.t0.toFixed(3)}, R²=${res.r2.toFixed(4)}`;
 }
 
 function fitExponential(points){
@@ -424,7 +424,7 @@ function buildExponentialDataset(A, k, nMin, nMax){
   for(let n=nMin; n<=nMax+1e-9; n+=step){
     const y=A * Math.exp(-k*n); if(isFinite(y)) data.push({x:n,y});
   }
-  return { label:'Fit 1e orde: A·e^{-k n}', data, borderColor:'green', borderWidth:2, pointRadius:0, showLine:true, borderDash:[6,4] };
+  return { label:'Fit: A·e^{-k n}', data, borderColor:'green', borderWidth:2, pointRadius:0, showLine:true, borderDash:[6,4] };
 }
 
 function fitExponentialPlot(){
