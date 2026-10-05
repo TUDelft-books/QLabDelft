@@ -241,7 +241,186 @@ $n_H(t) = \frac{1/k}{t + \frac{1}{n_H(0)k}}$
 De gemeten lichtintensiteit $I(t)$ is evenredig met de snelheid van het verval ($-\frac{dn_H}{dt}$). Omdat de intensiteit afhankelijk is van $n_H^2$, volgt voor de intensiteit de machtswet:
 $I(t) \propto \frac{1}{(t + t_0)^2}$. In experimenten met echte materialen zoals ZnS:Cu (koper-geactiveerd zinksulfide) varieert de exponent van deze machtswet vaak tussen de 1 en 2, afhankelijk van de complexiteit van de energievallen in het materiaal.
 
+## Wiskundige afleiding van de machtswet (edit2)
 
+De machtswet kan worden afgeleid uit de kansrekening van het spelmodel. Eerst bepalen we de kans op een succesvolle verplaatsing tijdens één worp. Vervolgens vertalen we deze kans naar een differentiaalvergelijking. Door deze vergelijking op te lossen vinden we een machtswet voor het verval.
+
+### 1. Kans op een succesvolle verplaatsing
+
+We bekijken het model met twee rijen van elk \(S=30\) vakjes. In rij H (aangeslagen toestand) bevinden zich \(n_H\) elektronen.
+
+Tijdens één worp moet aan twee onafhankelijke voorwaarden worden voldaan:
+
+1. De rode dobbelsteen moet een bezet vakje in rij H (aangeslagen toestand) aanwijzen.
+2. De groene dobbelsteen moet een leeg vakje in rij L (grondtoestand) aanwijzen.
+
+De kans op een bezet vakje in H is
+
+\[
+P(H)=\frac{n_H}{S}.
+\]
+
+Het aantal munten in rij L is gelijk aan het aantal munten dat uit H is verdwenen:
+
+\[
+n_L=S-n_H.
+\]
+
+Het aantal lege vakjes in L is dan
+
+\[
+S-n_L=S-(S-n_H)=n_H.
+\]
+
+De kans op een leeg vakje in L wordt dus
+
+\[
+P(\overline{L})=\frac{n_H}{S}.
+\]
+
+Omdat beide gebeurtenissen onafhankelijk zijn, is de totale overgangskans
+
+\[
+\wp(H\rightarrow L)
+=
+P(H)\cdot P(\overline{L})
+=
+\frac{n_H}{S}\cdot\frac{n_H}{S}
+=
+\left(\frac{n_H}{S}\right)^2.
+\]
+
+De kans op een succesvolle overgang is dus evenredig met \(n_H^2\).
+
+### 2. Van kans naar differentiaalvergelijking
+
+Wanneer we veel worpen beschouwen, kunnen we de tijd als continu behandelen. De afname van het aantal elektronen in rij H is dan evenredig met de overgangskans.
+
+Daarom schrijven we
+
+\[
+-\frac{dn_H}{dt}=k\,n_H^2,
+\]
+
+waarbij \(k\) een evenredigheidsconstante is.
+
+Deze vergelijking staat bekend als een tweede-orde vervalvergelijking.
+
+### 3. Oplossen van de differentiaalvergelijking
+
+We scheiden eerst de variabelen:
+
+\[
+\frac{dn_H}{n_H^2}=-k\,dt.
+\]
+
+Vervolgens integreren we beide kanten:
+
+\[
+\int\frac{1}{n_H^2}\,dn_H
+=
+\int -k\,dt.
+\]
+
+Dit levert op:
+
+\[
+-\frac{1}{n_H(t)}
+=
+-kt+C.
+\]
+
+Met de beginvoorwaarde \(n_H(0)\) volgt:
+
+\[
+\frac{1}{n_H(t)}-\frac{1}{n_H(0)}
+=
+kt.
+\]
+
+### 4. Herschrijven naar een machtswet
+
+We lossen deze vergelijking op naar \(n_H(t)\):
+
+\[
+\frac{1}{n_H(t)}
+=
+kt+\frac{1}{n_H(0)}.
+\]
+
+Omkeren van beide zijden geeft
+
+\[
+n_H(t)
+=
+\frac{n_H(0)}
+     {1+n_H(0)kt}.
+\]
+
+Deze formule kan worden herschreven als
+
+\[
+n_H(t)
+=
+\frac{1/k}
+     {t+\frac{1}{n_H(0)k}}.
+\]
+
+Definiëren we
+
+\[
+\alpha=\frac{1}{k}
+\qquad\text{en}\qquad
+t_0=\frac{1}{n_H(0)k},
+\]
+
+dan krijgen we
+
+\[
+n_H(t)=\frac{\alpha}{t+t_0}.
+\]
+
+Dit is een machtswet met exponent \(-1\), omdat
+
+\[
+n_H(t)\propto (t+t_0)^{-1}.
+\]
+
+### 5. Lichtintensiteit
+
+De gemeten lichtintensiteit is evenredig met de snelheid waarmee de aangeslagen toestanden verdwijnen:
+
+\[
+I(t)\propto -\frac{dn_H}{dt}.
+\]
+
+Uit de differentiaalvergelijking volgt
+
+\[
+-\frac{dn_H}{dt}=k\,n_H^2.
+\]
+
+Dus
+
+\[
+I(t)\propto n_H^2.
+\]
+
+Omdat
+
+\[
+n_H(t)\propto \frac{1}{t+t_0},
+\]
+
+volgt
+
+\[
+I(t)\propto \frac{1}{(t+t_0)^2}.
+\]
+
+De lichtintensiteit volgt dus een machtswet met exponent \(-2\).
+
+Bij echte glow-in-the-dark-materialen, zoals ZnS:Cu (koper-geactiveerd zinksulfide), wordt vaak een exponent tussen 1 en 2 gemeten. Dat komt doordat in echte materialen meerdere soorten energievallen en relaxatieprocessen tegelijk een rol spelen, terwijl het spelmodel een vereenvoudigde beschrijving geeft.
 
 
 
