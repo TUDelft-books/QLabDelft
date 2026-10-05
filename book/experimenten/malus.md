@@ -132,7 +132,7 @@ Daarom geldt:
 
 $$
 I_3=\frac{I_2}{2}=\frac{I_0}{8}
-$$​
+$$
 
 **Conclusie**
 
@@ -145,7 +145,6 @@ $$
 oftewel
 
 $$12{,}5\%$$
-
 
 over.
 
