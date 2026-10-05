@@ -139,8 +139,13 @@ $$​
 Van het oorspronkelijke ongepolariseerde licht blijft uiteindelijk:
 
 $$
-I_3=\frac{I_0}{8}=12{,}5\%
+I_3=\frac{I_0}{8}
 $$
+
+oftewel
+
+$$12{,}5\%$$
+
 
 over.
 
