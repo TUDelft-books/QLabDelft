@@ -359,6 +359,8 @@ $t = t_0(2^{1/b}-1)$
 Bijvoorbeeld als je de volgende waarden hebt gevonden: $t_0 = 0.253$ en $b = 0.718$, dan geldt:
 <br>
  $t_{1/2} = 0.253 \cdot (2^{1/0.718} - 1) = 0.41 s$.
+<br>
+*Bij een exponentieel verval is de halfwaardetijd constant. Bij een machtswet is dat niet zo. De hierboven berekende $t_{1/2}$​ is alleen de tijd die nodig is om van de beginintensiteit naar de halve beginintensiteit te gaan. Daarna worden de opeenvolgende "halfwaardetijden" steeds groter. Dit is dus heel anders dan bij radioactief verval.*
 <br><br>
 Je kunt nu zelf narekenen dat voor het tijdstip dat je bijvoorbeeld 1% over hebt, geldt:
 % Afleiding van de vervaltijd t_x voor een Power Law
@@ -387,7 +389,6 @@ Je kunt nu zelf narekenen dat voor het tijdstip dat je bijvoorbeeld 1% over hebt
 
 $t_{1\%} = 0,253 \cdot \left( \left[ \frac{1}{0,01} \right]^{1/0,718} - 1 \right) = 153 \text{ s}$
 
-*Bij een exponentieel verval is de halfwaardetijd constant. Bij een machtswet is dat niet zo. De hierboven berekende $t_{1/2}$​ is alleen de tijd die nodig is om van de beginintensiteit naar de halve beginintensiteit te gaan. Daarna worden de opeenvolgende "halfwaardetijden" steeds groter. Dit is dus heel anders dan bij radioactief verval.*
 
 <br>
 Wil je de halfwaardetijd uit de machtswet laten berekenen door de computer, gebruik dan deze applet:
