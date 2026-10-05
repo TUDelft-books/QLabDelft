@@ -241,7 +241,7 @@ $n_H(t) = \frac{1/k}{t + \frac{1}{n_H(0)k}}$
 De gemeten lichtintensiteit $I(t)$ is evenredig met de snelheid van het verval ($-\frac{dn_H}{dt}$). Omdat de intensiteit afhankelijk is van $n_H^2$, volgt voor de intensiteit de machtswet:
 $I(t) \propto \frac{1}{(t + t_0)^2}$. In experimenten met echte materialen zoals ZnS:Cu (koper-geactiveerd zinksulfide) varieert de exponent van deze machtswet vaak tussen de 1 en 2, afhankelijk van de complexiteit van de energievallen in het materiaal.
 
-## Wiskundige afleiding van de machtswet (edit2)
+## Wiskundige afleiding van de machtswet
 
 De machtswet kan worden afgeleid uit de kansrekening van het spelmodel. Eerst bepalen we de kans op een succesvolle verplaatsing tijdens één worp. Vervolgens vertalen we deze kans naar een differentiaalvergelijking. Door deze vergelijking op te lossen vinden we een machtswet voor het verval.
 
