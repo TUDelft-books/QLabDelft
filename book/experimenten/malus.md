@@ -105,54 +105,107 @@ Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedr
 4. Derde polarisator (90°): Normaal zou deze geen licht doorlaten (zoals bij twee polarisatoren), maar nu wél! Dit komt doordat het licht van de tussenliggende polarisator een component heeft in de 90°-richting.
 
 #### Wiskundige uitleg
-- **Eerste polarisator (0°)**  
-  - Alleen de verticale component van het licht blijft over.
-  - $ E_1 = E_0 \), \( I_1 = I_0 $.
+**Eerste polarisator (0°)**  
+Ongepolariseerd licht bevat alle polarisatierichtingen.
+Een ideale polarisator laat alleen de *E*-component door die evenwijdig is aan zijn transmissierichting.
+Daardoor blijft de helft van de oorspronkelijke intensiteit $$I_0$$ over: 
 
-- **Tweede polarisator (45°)**  
-  - De verticale golf wordt gedeeltelijk doorgelaten. De nieuwe $ \mathbf{E} $-vector maakt een hoek van 45°.
-  - $ E_2 = E_1 \cos(45^\circ) = \frac{E_1}{\sqrt{2}} $. En omdat geldt: $I \propto E^2$, is:
-  - $ I_2 = I_1 \cos^2(45^\circ) = \frac{I_1}{2} $.
+$$I_1=\frac{I_0}{2}$$
 
-- **Derde polarisator (90°)**  
-  - Nu is het licht al in een 45°-superpositie. De polarisator selecteert de horizontale component van deze golf.
-  - $ E_3 = E_2 \cos(45^\circ) = \frac{E_2}{\sqrt{2}} $.
-  - $ I_3 = I_2 \cos^2(45^\circ) = \frac{I_2}{2} = \frac{I_0}{4} $.
+Het licht is nu volledig verticaal gepolariseerd.
 
-Er blijft dus **25% van de oorspronkelijke intensiteit** over, terwijl je zonder de tweede polarisator **0%** had gehad!
 
-#### **Met de quantummechanische benadering: Superpositie van fotonen**  
+**Tweede polarisator (45°)**  
+Het verticaal gepolariseerde licht valt op een polarisator die 45° gedraaid staat.
+Volgens de wet van Malus geldt: $$I_2=I_1\cos^2(45^\circ)$$
+Omdat $$cos^2(45^\circ)=\frac{1}{2}:$$
 
-Licht bestaat uit **fotonen**. Wanneer een foton een polarisator passeert, wordt het in een **quantummechanische superpositie** van toestanden gezet.
+$$I_2=\frac{I_1}{2} =\frac{I_0}{4}$$
 
-**Wat gebeurt er bij drie polarisatoren?**  
 
-- **Eerste polarisator (0°)**  
-  - Een inkomend foton wordt gemeten in de **verticale** (V) basis.
-  - Als het foton oorspronkelijk ongepolariseerd was, is er **50% kans** dat het wordt geabsorbeerd en **50% kans dat het doorgaat**. 
-  - De fotonen die doorgaan, zijn nu in de toestand $|V\rangle $.
+**Derde polarisator (90°)**
+Het licht is nu gepolariseerd onder 45° en passeert vervolgens een polarisator op 90°.
+Het hoekverschil is opnieuw 45°, dus: $$I_3=I_2\cos^2(45^\circ)$$
 
-- **Tweede polarisator (45°)**  
-  - Een foton in $|V\rangle $ kan in de **45° basis** als superpositie geschreven worden:  
-    $
-    |V\rangle = \frac{1}{\sqrt{2}}(|45^\circ\rangle + |-45^\circ\rangle)
-    $
-  - Wanneer het foton door de 45°-polarisator gaat, wordt het gemeten in de **45°-basis**, en blijft er een **50% kans** over dat het doorgaat.
-  - De doorgelaten fotonen zitten nu in de toestand $ |45^\circ\rangle $.
+Daarom: $$I_3=\frac{I_2}{2} =\frac{I_0}{8}$$​
 
-- **Derde polarisator (90°)**  
-  - In de **90°-basis** schrijven we de 45°-toestand als:
-    $
-    |45^\circ\rangle = \frac{1}{\sqrt{2}}(|V\rangle + |H\rangle)
-    $
-  - De kans dat het foton nu wordt doorgelaten (als $ |H\rangle $) is opnieuw **50%**.
-  - Dit betekent dat **25% van de oorspronkelijke fotonen doorgaat**.
+Conclusie
+
+Van het oorspronkelijke ongepolariseerde licht blijft uiteindelijk:
+
+$$I_3=\frac{I_0}{8}=12{,}5\%$$
+
+over.
+
+Zonder de tweede polarisator zouden de eerste en derde polarisator loodrecht op elkaar staan (0° en 90°), waardoor volgens de wet van Malus:
+
+$$I_1\cos^2(90^\circ)=0$$
+
+en er dus geen licht doorgelaten wordt.
+
+Opmerkelijk genoeg zorgt de middelste polarisator er dus voor dat er weer licht door het systeem kan gaan: 12,5% van de oorspronkelijke intensiteit in plaats van 0%.
+
+
+#### **Met de quantummechanische benadering**  
+Licht bestaat uit fotonen. De polarisatie van een foton kan worden beschreven als een quantumtoestand. Een polarisator voert een meting uit in een bepaalde polarisatiebasis. Alleen de component van de toestand die overeenkomt met de transmissierichting wordt doorgelaten.
+
+**Eerste polarisator (0°)**
+Het invallende licht is ongepolariseerd.
+Voor elk foton is de kans om door een verticale polarisator te gaan:
+$$P=12.P=\frac{1}{2}$$
+De doorgelaten fotonen bevinden zich nu allemaal in de verticale toestand:
+$$|V\rangle$$
+
+Dus 50% van de fotonen gaat door.
+
+**Tweede polarisator (45°)**
+De verticale toestand kan worden geschreven in de 45°-basis als:
+$$|V\rangle = \frac{1}{\sqrt2}|45^\circ\rangle + \frac{1}{\sqrt2}|135^\circ\rangle$$
+De kans dat een foton wordt doorgelaten door de 45°-polarisator is het kwadraat van de amplitude:
+$$P = \left|\frac{1}{\sqrt2}\right|^2 = \frac12$$
+De fotonen die doorgaan worden geprojecteerd op de toestand
+$$|45^\circ\rangle$$
+
+Van de oorspronkelijke bundel blijft nu:
+
+$$\frac12 \times \frac12 = \frac14$$
+
+over.
+
+**Derde polarisator (90°)**
+De toestand ∣$$|45^\circ\rangle$$ kan worden geschreven als:
+$$|45^\circ\rangle = \frac{1}{\sqrt2}|V\rangle + \frac{1}{\sqrt2}|H\rangle$$
+Vanuit het perspectief van de derde polarisator is het foton dus een superpositie van verticale en horizontale polarisatie.
+De derde polarisator projecteert deze toestand op de horizontale polarisatierichting. (De meting zorgt dat de superpositie instort tot één van de mogelijkheden).
+
+Een horizontale polarisator (90°) laat de toestand $$∣H⟩|H\rangle$$ door.
+De kans op doorgang is opnieuw:
+$$P = \left|\frac{1}{\sqrt2}\right|^2 = \frac12$$
+
+Daarom blijft uiteindelijk over:
+
+$$\frac12 \times \frac12 \times \frac12 = \frac18$$
+
+oftewel
+
+$$12,5\%$$
+
+
+**conclusie**
+
+Een foton dat uit de eerste polarisator komt bevindt zich in de toestand $$|V\rangle$$. Deze toestand is loodrecht (orthogonaal) op $$|H\rangle$$, waardoor een directe overgang van 0° naar 90° onmogelijk is.
+De 45°-polarisator introduceert echter een tussenbasis. Hierdoor wordt het foton eerst geprojecteerd op $$|45^\circ\rangle$$. Vanuit die toestand bestaat vervolgens weer een kans van 50% om als $$|H\rangle$$ gemeten te worden.
+
+Daarom gaat met drie polarisatoren 12,5% van het oorspronkelijke ongepolariseerde licht door, terwijl bij alleen de eerste en derde polarisator 0% wordt doorgelaten.
+
+Dit is een mooi voorbeeld van hoe een **extra quantummeting** nieuwe toegestane uitkomsten kan creëren. In de klassieke golfbeschrijving volgt exact hetzelfde resultaat uit de wet van Malus.
+
 
 #### **Samengevat**
 | Benadering   | Wat gebeurt er? |
 |-------------|----------------|
-| **Klassiek (E-vectoren)** | De tussenliggende polarisator draait de veldvector stapsgewijs, waardoor er een component in de eindrichting blijft. |
-| **Kwantummechanisch (fotonen)** | Het foton wordt bij elke polarisator in een nieuwe superpositie gezet. Hierdoor kan het foton doorgaan waar het normaal geblokkeerd zou worden. De tussenliggende polarisator introduceert een nieuwe meetbasis waardoor er licht kan passeren, terwijl zonder deze polarisator het licht volledig zou worden geabsorbeerd. |
+| **Klassiek (E-vectoren)** | De doorgelaten intensiteit wordt bepaald door de projectie van het elektrische veld op de transmissierichting van elke polarisator (wet van Malus).|
+| **Quantummechanisch (fotonen)** | Elke polarisator projecteert de fotontoestand op een nieuwe polarisatietoestand, waardoor de kans op doorgang door volgende polarisatoren verandert. |
 
 ## Conclusie deel 3
-Dit experiment toont aan dat het invoegen van een derde polarisator onder een hoek een niet-intuïtieve invloed kan hebben op de doorgelaten intensiteit, wat verklaard kan worden zowel klassiek door golfoptica als door het quantummechanische principe van superpositie.
+Dit experiment toont aan dat het invoegen van een derde polarisator onder een hoek een niet-intuïtieve invloed kan hebben op de doorgelaten intensiteit, wat verklaard kan worden zowel klassiek door de wet van malus als door de quantummechanica.
