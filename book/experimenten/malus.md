@@ -130,18 +130,25 @@ Het hoekverschil is opnieuw 45°, dus: $I_3=I_2\cos^2(45^\circ)$
 
 Daarom geldt:
 
-$$I_3=\frac{I_2}{2}=\frac{I_0}{8}$$​
+$$
+I_3=\frac{I_2}{2}=\frac{I_0}{8}
+$$​
 
 **Conclusie**
+
 Van het oorspronkelijke ongepolariseerde licht blijft uiteindelijk:
 
-$$I_3=\frac{I_0}{8}=12{,}5\%$$
+$$
+I_3=\frac{I_0}{8}=12{,}5\%
+$$
 
 over.
 
 Zonder de tweede polarisator zouden de eerste en derde polarisator loodrecht op elkaar staan (0° en 90°), waardoor volgens de wet van Malus:
 
-$$I_1\cos^2(90^\circ)=0$$
+$$
+I_1\cos^2(90^\circ)=0
+$$
 
 en er dus geen licht doorgelaten wordt.
 
