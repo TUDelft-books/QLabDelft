@@ -128,10 +128,8 @@ De combinatie van deze fysische factoren zorgt voor het machtswet-model $I(t) = 
 ## Fysisch model en mathematisch model
 ### Simulatiespel van het fosforescentie verval model
 In de link is een simulatiespel te vinden met als doel het kansproces te demonstreren dat achter het fosforescentie verval model zit (de zogenaamde tweede orde kinetiek).
-<br>
-<a href="./media/fluorescentie-simple/spel_perfect.html" target="_blank">open spel</a>
-<br>
-<a href="./media/fluorescentie-simple/spel_perfect2.html" target="_blank">open spel versie2</a>
+<br><br>
+<a href="./media/fluorescentie-simple/spel_perfect4.html" target="_blank">open de simulatie</a>
 <br><br>
 #### Speluitleg
 * Er zijn 30 aangeslagen elektronen en 30 gaten om naar terug te keren.
@@ -139,8 +137,11 @@ In de link is een simulatiespel te vinden met als doel het kansproces te demonst
 * Druk op "Gooi" en je kunt handmatig gooien.
 * Druk op "Auto" en de computer gooit voor jou.
 * Druk op "Stop Auto" als "Auto" te lang doorgaat.
-* Druk op "Machtswetfit" om een (eerste orde) machtswet te fitten. 
-(Bij een eerste orde machtswet van aantal, hoort een tweede orde machtswet van intensiteit - denk aan: Activiteit is de afgeleide van het aantal deeltjes in de tijd.)
+* Druk op "Machtswetfit" om een machtswet te fitten. Vergelijk dit met "Exponentiële fit".
+* Druk "Reset"
+* Probeer nu de infinity of ∞‑modus. Nu heeft de grondtoestand oneindig veel plek en wordt er gegooid met 1 dobbelsteen. Probeer weer de "Machtswetfit" en de "Exponentiële fit". Welke past nu het best en waarom?
+
+
 
 ### Wiskundige afleiding van de machtswet
 
