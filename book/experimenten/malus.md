@@ -130,13 +130,16 @@ Het hoekverschil is opnieuw 45°, dus: $I_3=I_2\cos^2(45^\circ)$
 
 Daarom geldt:
 
-$$I_3=\frac{I_2}{2} =\frac{I_0}{8}$$​
+$$ I_3=\frac{I_2}{2}=\frac{I_0}{8} $$​
+
 
 **Conclusie**
 
 Van het oorspronkelijke ongepolariseerde licht blijft uiteindelijk:
 
-$$I_3=\frac{I_0}{8}=12{,}5\%$$
+
+$$ I_3=\frac{I_0}{8}=12{,}5\% $$
+
 
 over.
 
