@@ -101,7 +101,7 @@ Als je nu een **derde** polarisator **tussen** de eerste twee plaatst, maar gedr
 1. Elke lichtgolf heeft een Elektrische veld vector, die bestaat uit een horizontale en verticale component met een bepaalde grootte (afhankelijk van de oriëntatie t.o.v. de horizon).
 2. Eerste polarisator (0°): Laat alleen licht door dat in de 0°-richting trilt. Alleen de verticale component van elke vector wordt doorgelaten. (Projecteer (ontbind) elke E-vector op de verticale-as).
 3. Tweede polarisator (45°): Dit absorbeert een deel van het licht, maar het licht dat het wél doorlaat wordt opnieuw gepolariseerd in de 45°-richting. (Projecteer elke E-vector op de 45°-as).
-4. Derde polarisator (90°): Normaal zou deze geen licht doorlaten (zoals bij twee loodrechte polarisatoren), maar nu wél! Dit komt doordat het licht van de tussenliggende polarisator een component heeft in de 90°-richting. (Projecteer de vector horizontale-as)
+4. Derde polarisator (90°): Normaal zou deze geen licht doorlaten (zoals bij twee loodrechte polarisatoren), maar nu wél! Dit komt doordat het licht van de tussenliggende polarisator een component heeft in de 90°-richting. (Projecteer de vector op de horizontale-as)
 
 ### Wiskundige uitleg met de Wet van Malus
 
@@ -130,16 +130,12 @@ Het hoekverschil is opnieuw 45°, dus: $I_3=I_2\cos^2(45^\circ)$
 
 Daarom geldt:
 
-$$ I_3=\frac{I_2}{2}=\frac{I_0}{8} $$​
-
+$$I_3=\frac{I_2}{2}=\frac{I_0}{8}$$​
 
 **Conclusie**
-
 Van het oorspronkelijke ongepolariseerde licht blijft uiteindelijk:
 
-
-$$ I_3=\frac{I_0}{8}=12{,}5\% $$
-
+$$I_3=\frac{I_0}{8}=12{,}5\%$$
 
 over.
 
